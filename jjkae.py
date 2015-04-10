@@ -174,7 +174,7 @@ def check_iiwy():
                     while True:
                         try:
                             comment = ''
-                            comment += '"'+desc+'"\n\n---\n\n###Links\n\n [TextJake.com](http://textjake.com/)\n\n [If I Were You Bingo](http://iiwybingo.appspot.com)'
+                            comment += '"'+desc+'"\n\n---\n\n###Links\n\n [TextJake.com](http://textjake.com/)\n\n [If I Were You Bingo](http://iiwybingo.appspot.com)\n\n [Source Code](https://github.com/popcorncolonel/JakeandAmirBot)'
                             if sponsor_list != []:
                                 n_sponsors = len(sponsor_list)
                                 last_sponsor = sponsor_list[-1]
