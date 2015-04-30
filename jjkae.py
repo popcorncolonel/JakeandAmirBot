@@ -55,8 +55,10 @@ def get_iiwy_info(depth=0):
     try:
         r = requests.get('https://www.spreaker.com/user/ifiwereyou', timeout=10)
         soup = BeautifulSoup(''.join(r.text))
-        episode_part = soup.findAll('h2', {'class':'track_title'})[0].contents[3]
-        name = episode_part.contents[0]
+        episode_part = soup.findAll('h2', {'class':'track_title'})[0]
+        #episode_part = episode_part.contents[3]
+        episode_part = episode_part.findAll('a')[0]
+        name = episode_part.text
         url = episode_part['href']
         duration = soup.findAll('div', {'class':'trkl_ep_duration'})[0].contents[0].strip()
         if len(duration) > 0:
@@ -290,20 +292,23 @@ def time_to_post_discussion(dt):
 
 # list of emails to notify for the subreddit discussion
 def send_emails(permalink):
-    global next_episode
-    email_list = []
-    params = {
-            'api_user':'jakeandamirbot',
-            'api_key':'my_buddy_samuel',
-            'to[]':'cmey63@gmail.com',
-            'bcc[]':email_list,
-            'subject':'Jake and Amir Subreddit Rewatch #%d' %(next_episode),
-            'text': permalink,
-            'from':'popcorncolonel@gmail.com',
-    }
-    url = 'https://api.sendgrid.com/api/mail.send.json'
-    r = requests.post(url, params=params)
-    print r.text
+    try:
+        global next_episode
+        email_list = []
+        params = {
+                'api_user': 'jakeandamirbot',
+                'api_key': get_password(),
+                'to[]':'cmey63@gmail.com',
+                'bcc[]':email_list,
+                'subject':'Jake and Amir Subreddit Rewatch #%d' %(next_episode),
+                'text': permalink,
+                'from':'popcorncolonel@gmail.com',
+        }
+        url = 'https://api.sendgrid.com/api/mail.send.json'
+        r = requests.post(url, params=params)
+        print r.text
+    except Exception as e:
+        print e
 
 first_day = True
 
@@ -328,7 +333,7 @@ def mod_actions():
                 sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
                 print "Successfully submitted sticky! Time to celebrate."
         # post rewatch episode (every day other than discussion days)
-        elif not first_day and new_day in ['Friday', 'Saturday', 'Sunday', 'Monday', '', 'Wednesday', 'Thursday']: 
+        elif not first_day and new_day in ['Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']: 
         #elif new_day in []:
             episode = episodes[next_episode-1] # next_episode is indexed by 1
             if ',,' in episode.title: # multipart episode
