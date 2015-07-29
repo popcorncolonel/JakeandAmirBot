@@ -11,14 +11,14 @@ import HTMLParser
 from rewatch import episodes
 from BeautifulSoup import BeautifulSoup
 # have to create a reddit_password.py file with a get_password() function
-from reddit_password import get_password
+import reddit_password
 
 SENTINEL = ''
 debug = False
 
 r = praw.Reddit(user_agent = 'JakeandAmirBot by /u/popcorncolonel')
 user = 'JakeandAmirBot'
-paw = get_password()
+paw = reddit_password.get_password()
 subreddit = 'jakeandamir'
 
 sub = r.get_subreddit(subreddit)
@@ -76,9 +76,9 @@ def get_iiwy_info(depth=0):
                     sponsorlist.append(csvs[1].strip())
                     sponsorlist.append(csvs[2].strip())
                     sponsorlist.append(csvs[3].split('and')[1].strip().rstrip('.').rstrip('!'))
-            elif 'and' in sponsors: # Squarespace.com and DollarShaveClub.com
-                sponsorlist.append(sponsors.split('and')[0].strip())
-                sponsorlist.append(sponsors.split('and')[1].strip().rstrip('.').rstrip('!'))
+            elif ' and ' in sponsors: # Squarespace.com and DollarShaveClub.com
+                sponsorlist.append(sponsors.split(' and ')[0].strip())
+                sponsorlist.append(sponsors.split(' and ')[1].strip().rstrip('.').rstrip('!'))
             else: # MeUndies.com
                 sponsorlist.append(sponsors.strip().rstrip('.').rstrip('!'))
             return sponsorlist
@@ -97,11 +97,11 @@ def get_iiwy_info(depth=0):
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:
-        print "encountered podcastone Timeout. recursing."
+        print "encountered spreaker Timeout. recursing."
         time.sleep(3)
         return get_iiwy_info()
     except Exception as e:
-        print "encountered podcastone error =("
+        print "encountered spreaker error =("
         print e
         time.sleep(3)
         return get_iiwy_info(depth=depth+1)
@@ -152,7 +152,7 @@ def submit(title, text=None, url=None):
 def check_iiwy():
     global iiwyname, iiwyurl, desc, sponsor_list, duration, foundlist, i, debug, r, user, paw, subreddit
     (iiwyname, iiwyurl, desc, sponsor_list, duration) = get_iiwy_info()
-    if duration in foundlist and 'Episode ' not in iiwyname: # podcastone error
+    if duration in foundlist and 'Episode ' not in iiwyname: # spreaker error
         pass
     elif iiwyname in foundlist: # if episode found before
         pass
@@ -296,13 +296,13 @@ def send_emails(permalink):
         global next_episode
         email_list = []
         params = {
-                'api_user': 'jakeandamirbot',
-                'api_key': get_password(),
+                'api_user': reddit_password.get_sendgrid_username(),
+                'api_key': reddit_password.get_sendgrid_password(),
                 'to[]':'cmey63@gmail.com',
                 'bcc[]':email_list,
                 'subject':'Jake and Amir Subreddit Rewatch #%d' %(next_episode),
                 'text': permalink,
-                'from':'popcorncolonel@gmail.com',
+                'from':'ericbailey94' + '@' + 'gmail.com', #for antispam
         }
         url = 'https://api.sendgrid.com/api/mail.send.json'
         r = requests.post(url, params=params)
