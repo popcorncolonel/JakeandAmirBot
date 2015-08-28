@@ -62,6 +62,11 @@ def get_iiwy_info(depth=0):
         url = episode_part['href']
         duration = soup.findAll('div', {'class':'trkl_ep_duration'})[0].contents[0].strip()
         if len(duration) > 0:
+            minutes = int(duration.split(':')[0])
+            if minutes >= 60:
+                hours = str(minutes / 60)
+                minutes = '%02d' % (minutes % 60)
+                duration = hours + ':' + minutes + ':' + duration.split(':')[1]
             name += ' [' + duration + ']'
         def get_sponsors(sponsors):
             sponsorlist = []
