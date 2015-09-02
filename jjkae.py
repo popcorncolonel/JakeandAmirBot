@@ -1,11 +1,11 @@
 import re
 import sys
 import time
-import praw
 import urllib2
 import requests
 import datetime
 import calendar
+import warnings
 import webbrowser
 import HTMLParser
 from rewatch import episodes
@@ -13,10 +13,14 @@ from BeautifulSoup import BeautifulSoup
 # have to create a reddit_password.py file with a get_password() function
 import reddit_password
 
+with warnings.catch_warnings():
+    warnings.simplefilter("ignore")
+    import praw
+
 SENTINEL = ''
 debug = False
 
-r = praw.Reddit(user_agent = 'JakeandAmirBot by /u/popcorncolonel')
+r = praw.Reddit(user_agent = 'JakeandAmir program by /u/popcorncolonel')
 user = 'JakeandAmirBot'
 paw = reddit_password.get_password()
 subreddit = 'jakeandamir'
@@ -53,7 +57,10 @@ def get_ep_num(name):
 def get_iiwy_info(depth=0):
     (name, url, desc, sponsorlist) = (SENTINEL, SENTINEL, SENTINEL, [])
     try:
-        r = requests.get('https://www.spreaker.com/user/ifiwereyou', timeout=10)
+        r = None
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            r = requests.get('https://www.spreaker.com/user/ifiwereyou', timeout=10)
         soup = BeautifulSoup(''.join(r.text))
         episode_part = soup.findAll('h2', {'class':'track_title'})[0]
         #episode_part = episode_part.contents[3]
@@ -88,7 +95,9 @@ def get_iiwy_info(depth=0):
                 sponsorlist.append(sponsors.strip().rstrip('.').rstrip('!'))
             return sponsorlist
         try:
-            r = requests.get(url, timeout=10)
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                r = requests.get(url, timeout=10)
             soup = BeautifulSoup(''.join(r.text))
             desc = soup.findAll('div', {'class':'track_description'})[0].contents
             desctext = desc[0].strip()
@@ -204,6 +213,20 @@ def check_iiwy():
                             break
                         except requests.exceptions.HTTPerror:
                             pass
+
+                    # old rewatch/discussion
+                    bottom_sticky = sub.get_sticky()
+                    bottom_sticky.unsticky()
+                    # old IIWY
+                    top_sticky = sub.get_sticky()
+                    top_sticky.unsticky()
+
+                    # new IIWY
+                    submission.sticky(bottom=False)
+                    # old rewatch/discussion
+                    bottom_sticky.sticky(bottom=True)
+
+                    submission.distinguish()
                     webbrowser.open(submission.permalink)
                     print "Successfully submitted link! Time to celebrate."
                     break
@@ -333,7 +356,7 @@ def mod_actions():
                 title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
                 submission = submit(title, text=discussion_string)
                 webbrowser.open(submission.permalink)
-                submission.sticky()
+                submission.sticky(bottom=True)
                 submission.distinguish()
                 sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
                 print "Successfully submitted sticky! Time to celebrate."
@@ -349,7 +372,7 @@ def mod_actions():
                 title = 'Subreddit Rewatch #%d: %s (%s)' %(next_episode, episode.title, episode.date_str)
                 submission = submit(title, text=get_rewatch_string(episode))
             webbrowser.open(submission.permalink)
-            submission.sticky()
+            submission.sticky(bottom=True)
             submission.distinguish()
             sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
             send_emails(submission.permalink)
