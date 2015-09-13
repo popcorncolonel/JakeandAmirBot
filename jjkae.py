@@ -13,6 +13,8 @@ from BeautifulSoup import BeautifulSoup
 # have to create a reddit_password.py file with a get_password() function
 import reddit_password
 
+open_in_browser = False
+
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import praw
@@ -174,14 +176,16 @@ def check_iiwy():
         if not debug:
             while True:
                 try:
-                    webbrowser.open(iiwyurl)
+                    if open_in_browser:
+                        webbrowser.open(iiwyurl)
                     r.login(user, paw)
                     try:
                         submission = r.submit(subreddit, iiwyname, url=iiwyurl)
                     except praw.errors.AlreadySubmitted as e:
                         print e
-                        webbrowser.open(iiwyurl)
-                        webbrowser.open('http://already_submitted_error')
+                        if open_in_browser:
+                            webbrowser.open(iiwyurl)
+                            webbrowser.open('http://already_submitted_error')
                         break
                     sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
                     submission.approve()
@@ -227,7 +231,8 @@ def check_iiwy():
                     bottom_sticky.sticky(bottom=True)
 
                     submission.distinguish()
-                    webbrowser.open(submission.permalink)
+                    if open_in_browser:
+                        webbrowser.open(submission.permalink)
                     print "Successfully submitted link! Time to celebrate."
                     break
                 except requests.exceptions.HTTPError:
@@ -355,7 +360,8 @@ def mod_actions():
             if new_day == 'Saturday': # don't post it twice (once on sunday and once on saturday - just once on the weekend)
                 title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
                 submission = submit(title, text=discussion_string)
-                webbrowser.open(submission.permalink)
+                if open_in_browser:
+                    webbrowser.open(submission.permalink)
                 submission.sticky(bottom=True)
                 submission.distinguish()
                 sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
@@ -371,7 +377,8 @@ def mod_actions():
             else:
                 title = 'Subreddit Rewatch #%d: %s (%s)' %(next_episode, episode.title, episode.date_str)
                 submission = submit(title, text=get_rewatch_string(episode))
-            webbrowser.open(submission.permalink)
+            if open_in_browser:
+                webbrowser.open(submission.permalink)
             submission.sticky(bottom=True)
             submission.distinguish()
             sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
