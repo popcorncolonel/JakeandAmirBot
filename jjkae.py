@@ -219,16 +219,22 @@ def check_iiwy():
                             pass
 
                     # old rewatch/discussion
-                    bottom_sticky = sub.get_sticky()
+                    bottom_sticky = sub.get_sticky(bottom=True)
                     bottom_sticky.unsticky()
                     # old IIWY
-                    top_sticky = sub.get_sticky()
+                    top_sticky = sub.get_sticky(bottom=False)
                     top_sticky.unsticky()
 
                     # new IIWY
-                    submission.sticky(bottom=False)
+                    try:
+                        submission.sticky(bottom=False)
+                    except:
+                        pass
                     # old rewatch/discussion
-                    bottom_sticky.sticky(bottom=True)
+                    try:
+                        bottom_sticky.sticky(bottom=True)
+                    except:
+                        pass
 
                     submission.distinguish()
                     if open_in_browser:
