@@ -14,13 +14,15 @@ else:
 DEFAULT_STR = ''
 
 class IIWY:
-    def __init__(self, number, title, duration, monthstring, sponsor_list, reddit_url=None, desc=None):
+    def __init__(self, number, title, duration, monthstring, sponsor_list, url=None, reddit_url=None, desc=None):
         self.number = number
         self.title = title
         self.duration = duration
         self.monthstring = monthstring
         self.sponsor_list = sponsor_list
         self.reddit_url = reddit_url
+        self.url = url
+        self.desc = desc
 
     def __repr__(self):
         return "IIWY submission object: " + self.title
@@ -122,7 +124,7 @@ def get_iiwy_info(depth=0):
     sponsorlist = list(map(to_reddit_url, sponsorlist))
     desc = desc.replace('"', "'").strip()
     iiwy_obj = IIWY(number=episode_num, title=name, duration=duration,
-                    monthstring=history.this_monthstring(),
+                    monthstring=history.this_monthstring(), url=url,
                     sponsor_list=sponsorlist, desc=desc)
     return iiwy_obj
 
