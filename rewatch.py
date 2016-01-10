@@ -29,7 +29,7 @@ episodes = [transform(episode) for episode in episodes]
 #https://gdata.youtube.com/feeds/api/videos?q=jake+and+amir+notified&max-results=2&v=2&alt=json
 if __name__ == '__main__':
     for episode in episodes:
-        print episode
-        print
+        print(episode)
+        print()
         if 'jakeandamir' in episode.url:
-            print episode
+            print(episode)

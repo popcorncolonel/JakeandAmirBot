@@ -3,16 +3,22 @@ import sys
 import time
 import iiwy
 import history
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 import requests
 import datetime
 import calendar
 import warnings
 import webbrowser
-import HTMLParser
+import html.parser
 
 from rewatch import episodes
-from BeautifulSoup import BeautifulSoup
+python_3 = False
+if sys.version_info >= (3, 0):
+    python_3 = True
+    from bs4 import BeautifulSoup
+else:
+    from BeautifulSoup import BeautifulSoup
+
 # have to create a reddit_password.py file with a get_password() function
 import reddit_password
 
@@ -38,8 +44,8 @@ if len(sys.argv) > 1:
     next_episode = int(sys.argv[1])
 
 if next_episode > -1:
-    print 'Previous episode:', episodes[next_episode-2]
-    print 'Next episode to be posted:', episodes[next_episode-1]
+    print('Previous episode:', episodes[next_episode-2])
+    print('Next episode to be posted:', episodes[next_episode-1])
     time.sleep(3)
 
 timeout = default_timeout = 5 #don't spam the servers :D
@@ -73,13 +79,13 @@ def submit(title, text=None, url=None):
             else:
                 raise ValueError('No self-text or url specified')
         except requests.exceptions.HTTPError as e:
-            print "had trouble submitting D: HTTPError."
-            print e
+            print("had trouble submitting D: HTTPError.")
+            print(e)
             time.sleep(3)
             pass
         except Exception as e:
-            print "had trouble submitting D:"
-            print "Exception:", str(e)
+            print("had trouble submitting D:")
+            print("Exception:", str(e))
             time.sleep(3)
             pass
 
@@ -104,21 +110,22 @@ def get_comment_text(iiwy_obj):
                         iiwy_obj.sponsor_list[3])
 
 def post_iiwy(iiwy_obj):
+    global past_history
     if open_in_browser:
         webbrowser.open(iiwy_obj.url)
     r.login(user, paw)
     try:
         submission = r.submit(subreddit, iiwy_obj.title, url=iiwy_obj.url)
     except praw.errors.AlreadySubmitted as e:
-        print e
+        print(e)
         if open_in_browser:
             webbrowser.open(iiwy_obj.url)
             webbrowser.open('http://already_submitted_error')
         return
     sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
     submission.approve()
-    print "NEW IIWY!!! WOOOOO!!!!"
-    print iiwy_obj.title
+    print("NEW IIWY!!! WOOOOO!!!!")
+    print(iiwy_obj.title)
     while True:
         try:
             comment_text = get_comment_text(iiwy_obj)
@@ -151,6 +158,7 @@ def post_iiwy(iiwy_obj):
         webbrowser.open(submission.permalink)
     iiwy_obj.reddit_url = submission.permalink
     past_history.add_iiwy(iiwy_obj)
+    past_history.write()
     print("Successfully submitted link! Time to celebrate.")
 
 # check for a new IIWY
@@ -271,9 +279,9 @@ def send_emails(permalink):
         }
         url = 'https://api.sendgrid.com/api/mail.send.json'
         r = requests.post(url, params=params)
-        print r.text
+        print(r.text)
     except Exception as e:
-        print e
+        print(e)
 
 first_day = True
 
@@ -297,7 +305,7 @@ def mod_actions():
                 submission.sticky(bottom=True)
                 submission.distinguish()
                 sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
-                print "Successfully submitted sticky! Time to celebrate."
+                print("Successfully submitted sticky! Time to celebrate.")
         # post rewatch episode (every day other than discussion days)
         elif not first_day and new_day in ['Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']: 
         #elif new_day in []:
@@ -315,7 +323,7 @@ def mod_actions():
             submission.distinguish()
             sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
             send_emails(submission.permalink)
-            print "Successfully submitted sticky! Time to celebrate."
+            print("Successfully submitted sticky! Time to celebrate.")
             next_episode += 1
 
 def adjust_timeout():
@@ -341,15 +349,15 @@ print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiw
 
 def printinfo(i):
     global next_episode
-    print i,
+    print(i, end=' ')
     if i % 25 == 13:
-        print '- previous episode: #%d (%s)' % (next_episode-1, episodes[next_episode-2].title),
+        print('- previous episode: #%d (%s)' % (next_episode-1, episodes[next_episode-2].title), end=' ')
     if i % 25 == 14:
-        print '- next episode: #%d (%s)' % (next_episode, episodes[next_episode-1].title),
+        print('- next episode: #%d (%s)' % (next_episode, episodes[next_episode-1].title), end=' ')
     if debug:
-        print foundlist if i % 5 == 1 else ""
+        print(foundlist if i % 5 == 1 else "")
     else:
-        print foundlist if i % 25 == 1 else ""
+        print(foundlist if i % 25 == 1 else "")
 
 i = 1
 
