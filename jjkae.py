@@ -1,15 +1,14 @@
+from __future__ import print_function
 import re
 import sys
 import time
 import iiwy
 import history
-import urllib.request, urllib.error, urllib.parse
 import requests
 import datetime
 import calendar
 import warnings
 import webbrowser
-import html.parser
 
 from rewatch import episodes
 python_3 = False
@@ -110,7 +109,7 @@ def get_comment_text(iiwy_obj):
                         iiwy_obj.sponsor_list[3])
 
 def post_iiwy(iiwy_obj):
-    global past_history
+    global r, past_history, open_in_browser
     if open_in_browser:
         webbrowser.open(iiwy_obj.url)
     r.login(user, paw)
@@ -350,10 +349,14 @@ print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiw
 def printinfo(i):
     global next_episode
     print(i, end=' ')
-    if i % 25 == 13:
-        print('- previous episode: #%d (%s)' % (next_episode-1, episodes[next_episode-2].title), end=' ')
-    if i % 25 == 14:
-        print('- next episode: #%d (%s)' % (next_episode, episodes[next_episode-1].title), end=' ')
+    if next_episode > -1:
+        if i % 25 == 13:
+            print('- previous episode: #%d (%s)' % (next_episode-1, episodes[next_episode-2].title), end=' ')
+        if i % 25 == 14:
+            print('- next episode: #%d (%s)' % (next_episode, episodes[next_episode-1].title), end=' ')
+    else:
+        if i % 25 == 13:
+            print(foundlist, end=' ')
     if debug:
         print(foundlist if i % 5 == 1 else "")
     else:
