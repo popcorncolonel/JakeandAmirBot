@@ -14,13 +14,14 @@ else:
 DEFAULT_STR = ''
 
 class IIWY:
-    def __init__(self, number, title, duration, monthstring, sponsor_list, url=None, reddit_url=None, desc=None):
+    def __init__(self, number, title, duration, monthstring, sponsor_list, reddit_title=None, url=None, reddit_url=None, desc=None):
         self.number = number
         self.title = title
         self.duration = duration
         self.monthstring = monthstring
         self.sponsor_list = sponsor_list
         self.reddit_url = reddit_url
+        self.reddit_title = reddit_title
         self.url = url
         self.desc = desc
 
@@ -46,6 +47,9 @@ def get_iiwy_info(depth=0):
         episode_part = soup.findAll('h2', {'class':'track_title'})[0]
         episode_part = episode_part.findAll('a')[0]
         name = episode_part.text
+        title = name
+        if ':' in title: #"Episode 191: The Emotionary" -> "The Emotionary"
+            title = title.split(':')[1].strip()
         url = episode_part['href']
         duration = soup.findAll('div', {'class':'trkl_ep_duration'})[0].contents[0].strip()
         if len(duration) > 0:
@@ -104,7 +108,7 @@ def get_iiwy_info(depth=0):
         print(e)
         time.sleep(3)
         return get_iiwy_info(depth=depth+1)
-    episode_num = name.split(':')[0].split('Episode ')[1]
+    episode_num = name.split(':')[0].split('Episode')[1].strip()
     episode_num = int(episode_num)
     try:
         if 'If I Were You' not in name:
@@ -123,8 +127,8 @@ def get_iiwy_info(depth=0):
 
     sponsorlist = list(map(to_reddit_url, sponsorlist))
     desc = desc.replace('"', "'").strip()
-    iiwy_obj = IIWY(number=episode_num, title=name, duration=duration,
-                    monthstring=history.this_monthstring(), url=url,
+    iiwy_obj = IIWY(number=episode_num, title=title, duration=duration,
+                    reddit_title=name, monthstring=history.this_monthstring(), url=url,
                     sponsor_list=sponsorlist, desc=desc)
     return iiwy_obj
 

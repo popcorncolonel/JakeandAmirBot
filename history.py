@@ -5,6 +5,12 @@ class History:
     def __init__(self, history_dict):
         self.history_dict = history_dict
 
+    def __iter__(self):
+        return iter(self.history_dict)
+
+    def __getitem__(self, key):
+        return self.history_dict[key]
+
     def write(self):
         with open("history.json", "w") as json_file:
             json.dump(self.history_dict, json_file, sort_keys=True, indent=4)

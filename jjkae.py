@@ -107,6 +107,7 @@ def get_comment_text(iiwy_obj):
                         iiwy_obj.sponsor_list[1] + ', ' +
                         iiwy_obj.sponsor_list[2] + ', and ' + 
                         iiwy_obj.sponsor_list[3])
+    return comment
 
 def post_iiwy(iiwy_obj):
     global r, past_history, open_in_browser
@@ -114,9 +115,12 @@ def post_iiwy(iiwy_obj):
         webbrowser.open(iiwy_obj.url)
     r.login(user, paw)
     try:
-        submission = r.submit(subreddit, iiwy_obj.title, url=iiwy_obj.url)
+        submission = r.submit(subreddit, iiwy_obj.reddit_title, url=iiwy_obj.url)
     except praw.errors.AlreadySubmitted as e:
         print(e)
+        iiwy_obj.reddit_url = 'abc123'
+        past_history.add_iiwy(iiwy_obj)
+        past_history.write()
         if open_in_browser:
             webbrowser.open(iiwy_obj.url)
             webbrowser.open('http://already_submitted_error')
@@ -124,14 +128,17 @@ def post_iiwy(iiwy_obj):
     sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
     submission.approve()
     print("NEW IIWY!!! WOOOOO!!!!")
-    print(iiwy_obj.title)
+    print(iiwy_obj.reddit_title)
     while True:
         try:
             comment_text = get_comment_text(iiwy_obj)
             comment = submission.add_comment(comment_text)
             comment.approve()
             break
-        except requests.exceptions.HTTPerror:
+        except requests.exceptions.HTTPError:
+            pass
+        except Exception as e:
+            print(e)
             pass
 
     # old rewatch/discussion
@@ -188,7 +195,9 @@ def check_iiwy():
 
 
 discussion_string = '''\
-Montly discussion posts will be posted on the last weekend of every month, and subreddit rewatch episodes will be posted on the other days!
+Monthly discussion posts will be posted on the last weekend of every month, and subreddit rewatch episodes will be posted on the other days!
+
+%s
 
 Suggested topics:
 
@@ -200,6 +209,23 @@ Suggested topics:
 
 These are just suggestions, so feel free to talk about anything that you want and discuss with others!
 '''
+def get_discussion_string(monthstring):
+    global discussion_string, past_history
+    # Example podcast list:
+    '''
+    * [Episode 191: The Emotionary (w/Eden Sher!)](https://www.reddit.com/r/jakeandamir/comments/3zdczz/if_i_were_you_episode_191_the_emotionary_weden/)
+    * [Episode 192: Surge Dude](https://www.reddit.com/r/jakeandamir/comments/40f0j6/if_i_were_you_episode192_surge_dude_10005/)
+    '''
+    added_text = ""
+    if monthstring in past_history:
+        if 'IIWY' in past_history[monthstring]:
+            added_text += "**Podcasts released this month**:\n\n"
+            for history_dict in past_history[monthstring]['IIWY']:
+                added_text += "* [Episode %d: %s](%s)\n" %(history_dict['number'],
+                                                           history_dict['title'],
+                                                           history_dict['reddit_url'])
+
+    return discussion_string % added_text
 
 def get_multipart_string(episode):
     s = '''\
@@ -287,7 +313,7 @@ first_day = True
 # If it just turned the last weekend of the month EST, post the monthly discussion.
 # else, post the next subreddit rewatch (pointed to by next_episode) and sticky it.
 def mod_actions():
-    global next_episode, debug, r, user, paw, day, discussion_string
+    global next_episode, debug, r, user, paw, day
     global first_day
     episode = episodes[next_episode-1]
     today_datetime = datetime.datetime.now()
@@ -298,7 +324,7 @@ def mod_actions():
         if new_day in ['Saturday', 'Sunday'] and time_to_post_discussion(today_datetime): # post discussion of the month
             if new_day == 'Saturday': # don't post it twice (once on sunday and once on saturday - just once on the weekend)
                 title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
-                submission = submit(title, text=discussion_string)
+                submission = submit(title, text=get_discussion_string(history.this_monthstring()))
                 if open_in_browser:
                     webbrowser.open(submission.permalink)
                 submission.sticky(bottom=True)
