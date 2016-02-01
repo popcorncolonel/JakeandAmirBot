@@ -179,6 +179,7 @@ def check_iiwy():
         while True:
             try:
                 post_iiwy(iiwy_obj)
+                break
             except requests.exceptions.HTTPError:
                 print("HTTP error while trying to submit - retrying to resubmit")
                 pass
@@ -188,8 +189,8 @@ def check_iiwy():
             except Exception as e:
                 print("Error", e)
                 break
-    foundlist.append(iiwy_obj.duration)
     foundlist.append(iiwy_obj.number)
+    foundlist.append(iiwy_obj.duration)
     printinfo(i)
     i += 1
 

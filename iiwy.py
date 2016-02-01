@@ -3,6 +3,9 @@ import time
 import history
 import requests
 import warnings
+import HTMLParser
+
+html_parser = HTMLParser.HTMLParser()
 
 python_3 = False
 if sys.version_info >= (3, 0):
@@ -127,6 +130,9 @@ def get_iiwy_info(depth=0):
 
     sponsorlist = list(map(to_reddit_url, sponsorlist))
     desc = desc.replace('"', "'").strip()
+    name = html_parser.unescape(name)
+    title = html_parser.unescape(title)
+    desc = html_parser.unescape(desc)
     iiwy_obj = IIWY(number=episode_num, title=title, duration=duration,
                     reddit_title=name, monthstring=history.this_monthstring(), url=url,
                     sponsor_list=sponsorlist, desc=desc)
