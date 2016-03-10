@@ -3,6 +3,7 @@ import re
 import sys
 import time
 import iiwy
+import tests
 import history
 import requests
 import datetime
@@ -390,6 +391,12 @@ def printinfo(i):
         print(foundlist if i % 25 == 1 else "")
 
 i = 1
+
+errors = tests.run_tests()
+if errors != []:
+    for error in errors:
+        print(error)
+    sys.exit()
 
 foundlist = [DEFAULT_STR]
 foundlist.append(iiwy_obj.number)
