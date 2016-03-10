@@ -12,10 +12,10 @@ class JjkaeTest(unittest.TestCase):
         import iiwy
         iiwy_obj = iiwy.get_iiwy_info()
         self.assertIs(type(iiwy_obj.number), int)
-        self.assertIs(type(iiwy_obj.title), unicode)
-        self.assertIs(type(iiwy_obj.reddit_title), unicode)
-        self.assertIs(type(iiwy_obj.url), unicode)
-        self.assertIs(type(iiwy_obj.desc), unicode)
+        self.assertIn(type(iiwy_obj.title), {unicode, str})
+        self.assertIn(type(iiwy_obj.reddit_title), {unicode, str})
+        self.assertIn(type(iiwy_obj.url), {unicode, str})
+        self.assertIn(type(iiwy_obj.desc), {unicode, str})
         self.assertIs(type(iiwy_obj.sponsor_list), list)
 
 # Returns the list of errors of the tests
