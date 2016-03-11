@@ -1,23 +1,24 @@
 from __future__ import print_function
-import re
+
+import calendar
+import datetime
 import sys
 import time
-import iiwy
-import tests
-import history
-import requests
-import datetime
-import calendar
 import warnings
 import webbrowser
 
+import requests
+
+import history
+import iiwy
+import tests
 from rewatch import episodes
+
 python_3 = False
 if sys.version_info >= (3, 0):
     python_3 = True
-    from bs4 import BeautifulSoup
 else:
-    from BeautifulSoup import BeautifulSoup
+    pass
 
 # have to create a reddit_password.py file with a get_password() function
 import reddit_password
@@ -88,112 +89,6 @@ def submit(title, text=None, url=None):
             print("Exception:", str(e))
             time.sleep(3)
             pass
-
-def get_comment_text(iiwy_obj):
-    comment = ''
-    comment += '"'+iiwy_obj.desc+'"\n\n---\n\n###Links\n\n [If I Were You Bingo](http://iiwybingo.appspot.com)\n\n [Source Code](https://github.com/popcorncolonel/JakeandAmirBot)'
-    if iiwy_obj.sponsor_list != []:
-        n_sponsors = len(iiwy_obj.sponsor_list)
-        comment += '\n\n This episode\'s sponsors: '
-        if n_sponsors == 1:
-            comment += iiwy_obj.sponsor_list[0]
-        elif n_sponsors == 2:
-            comment += iiwy_obj.sponsor_list[0] + ' and ' + iiwy_obj.sponsor_list[1]
-        elif n_sponsors == 3:
-            comment += (iiwy_obj.sponsor_list[0] + ', ' +
-                        iiwy_obj.sponsor_list[1] + ', and ' + 
-                        iiwy_obj.sponsor_list[2])
-        elif n_sponsors == 4:
-            comment += (iiwy_obj.sponsor_list[0] + ', ' +
-                        iiwy_obj.sponsor_list[1] + ', ' +
-                        iiwy_obj.sponsor_list[2] + ', and ' + 
-                        iiwy_obj.sponsor_list[3])
-    return comment
-
-def post_iiwy(iiwy_obj):
-    global r, past_history, open_in_browser
-    if open_in_browser:
-        webbrowser.open(iiwy_obj.url)
-    r.login(user, paw)
-    try:
-        submission = r.submit(subreddit, iiwy_obj.reddit_title, url=iiwy_obj.url)
-    except praw.errors.AlreadySubmitted as e:
-        print(e)
-        iiwy_obj.reddit_url = 'abc123'
-        past_history.add_iiwy(iiwy_obj)
-        past_history.write()
-        if open_in_browser:
-            webbrowser.open(iiwy_obj.url)
-            webbrowser.open('http://already_submitted_error')
-        return
-    sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
-    submission.approve()
-    print("NEW IIWY!!! WOOOOO!!!!")
-    print(iiwy_obj.reddit_title)
-    while True:
-        try:
-            comment_text = get_comment_text(iiwy_obj)
-            comment = submission.add_comment(comment_text)
-            comment.approve()
-            break
-        except requests.exceptions.HTTPError:
-            pass
-        except Exception as e:
-            print(e)
-            pass
-
-    # old rewatch/discussion
-    bottom_sticky = sub.get_sticky(bottom=True)
-    bottom_sticky.unsticky()
-    # old IIWY
-    top_sticky = sub.get_sticky(bottom=False)
-    top_sticky.unsticky()
-
-    # new IIWY
-    try:
-        submission.sticky(bottom=False)
-    except Exception as e:
-        print("Caught exception while trying to sticky:", e)
-    # old rewatch/discussion
-    try:
-        bottom_sticky.sticky(bottom=True)
-    except Exception as e:
-        print("Caught exception while trying to sticky:", e)
-
-    submission.distinguish()
-    if open_in_browser:
-        webbrowser.open(submission.permalink)
-    iiwy_obj.reddit_url = submission.permalink
-    past_history.add_iiwy(iiwy_obj)
-    past_history.write()
-    print("Successfully submitted link! Time to celebrate.")
-
-# check for a new IIWY
-def check_iiwy():
-    global i, foundlist, debug, r, user, paw, subreddit
-    iiwy_obj = iiwy.get_iiwy_info()
-    if iiwy_obj.number in foundlist or iiwy_obj.duration in foundlist: # if episode found before
-        printinfo(i)
-        i += 1
-        return
-    if not debug:
-        while True:
-            try:
-                post_iiwy(iiwy_obj)
-                break
-            except requests.exceptions.HTTPError:
-                print("HTTP error while trying to submit - retrying to resubmit")
-                pass
-            except praw.errors.AlreadySubmitted:
-                print('Already submitted.')
-                break
-            except Exception as e:
-                print("Error", e)
-                break
-    foundlist.append(iiwy_obj.number)
-    foundlist.append(iiwy_obj.duration)
-    printinfo(i)
-    i += 1
 
 
 discussion_string = '''\
@@ -374,22 +269,6 @@ print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiw
       "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
       "and duration", iiwy_obj.duration)
 
-def printinfo(i):
-    global next_episode
-    print(i, end=' ')
-    if next_episode > -1:
-        if i % 25 == 13:
-            print('- previous episode: #%d (%s)' % (next_episode-1, episodes[next_episode-2].title), end=' ')
-        if i % 25 == 14:
-            print('- next episode: #%d (%s)' % (next_episode, episodes[next_episode-1].title), end=' ')
-    else:
-        if i % 25 == 13:
-            print(foundlist, end=' ')
-    if debug:
-        print(foundlist if i % 5 == 1 else "")
-    else:
-        print(foundlist if i % 25 == 1 else "")
-
 i = 1
 
 errors = tests.run_tests()
@@ -403,7 +282,7 @@ foundlist.append(iiwy_obj.number)
 foundlist.append(iiwy_obj.duration)
 
 while True:
-    check_iiwy()
+    i = iiwy.check_iiwy(i, foundlist, debug, r, user, paw, episodes, past_history, open_in_browser, next_episode)
 
     if next_episode > -1:
         mod_actions()

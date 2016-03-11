@@ -1,9 +1,15 @@
 import sys
 import time
+import webbrowser
+
+import praw
+
 import history
 import requests
 import warnings
 import HTMLParser
+
+import jjkae_tools
 
 html_parser = HTMLParser.HTMLParser()
 
@@ -141,3 +147,117 @@ def get_iiwy_info(depth=0):
 if __name__ == '__main__':
     print(get_iiwy_info())
 
+
+def check_iiwy(i, foundlist, debug, r, user, paw, episodes, past_history, open_in_browser, next_episode):
+    iiwy_obj = get_iiwy_info()
+    if iiwy_obj.number in foundlist or iiwy_obj.duration in foundlist: # if episode found before
+        jjkae_tools.printinfo(i, episodes, foundlist, debug, next_episode)
+        return i + 1
+    if not debug:
+        while True:
+            try:
+                post_iiwy(iiwy_obj, r, user, paw, past_history, open_in_browser)
+                break
+            except requests.exceptions.HTTPError:
+                print("HTTP error while trying to submit - retrying to resubmit")
+                pass
+            except praw.errors.AlreadySubmitted:
+                print('Already submitted.')
+                break
+            except Exception as e:
+                print("Error", e)
+                break
+    foundlist.append(iiwy_obj.number)
+    foundlist.append(iiwy_obj.duration)
+    jjkae_tools.printinfo(i, episodes, foundlist, debug, next_episode)
+    return i + 1
+
+def get_comment_text(iiwy_obj):
+    comment = ''
+    comment += '"'+iiwy_obj.desc+'"\n\n---\n\n###Links\n\n [If I Were You Bingo](http://iiwybingo.appspot.com)\n\n [Source Code](https://github.com/popcorncolonel/JakeandAmirBot)'
+    if iiwy_obj.sponsor_list != []:
+        n_sponsors = len(iiwy_obj.sponsor_list)
+        comment += '\n\n This episode\'s sponsors: '
+        if n_sponsors == 1:
+            comment += iiwy_obj.sponsor_list[0]
+        elif n_sponsors == 2:
+            comment += iiwy_obj.sponsor_list[0] + ' and ' + iiwy_obj.sponsor_list[1]
+        elif n_sponsors == 3:
+            comment += (iiwy_obj.sponsor_list[0] + ', ' +
+                        iiwy_obj.sponsor_list[1] + ', and ' +
+                        iiwy_obj.sponsor_list[2])
+        elif n_sponsors == 4:
+            comment += (iiwy_obj.sponsor_list[0] + ', ' +
+                        iiwy_obj.sponsor_list[1] + ', ' +
+                        iiwy_obj.sponsor_list[2] + ', and ' +
+                        iiwy_obj.sponsor_list[3])
+    return comment
+
+def replace_top_sticky(sub, submission):
+    # old rewatch/discussion
+    bottom_sticky = sub.get_sticky(bottom=True)
+    bottom_sticky.unsticky()
+    # old IIWY
+    top_sticky = sub.get_sticky(bottom=False)
+    top_sticky.unsticky()
+
+    # new IIWY
+    try:
+        submission.sticky(bottom=False)
+    except Exception as e:
+        print("Caught exception while trying to sticky:", e)
+    # old rewatch/discussion
+    try:
+        bottom_sticky.sticky(bottom=True)
+    except Exception as e:
+        print("Caught exception while trying to sticky:", e)
+
+    submission.distinguish()
+
+def post_iiwy(iiwy_obj, r, user, paw, past_history, open_in_browser):
+    subreddit = 'jakeandamir'
+    sub = r.get_subreddit(subreddit)
+    if open_in_browser:
+        webbrowser.open(iiwy_obj.url)
+    r.login(user, paw)
+    try:
+        submission = r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
+    except praw.errors.AlreadySubmitted as e:
+        print(e)
+        iiwy_obj.reddit_url = 'abc123'
+        past_history.add_iiwy(iiwy_obj)
+        past_history.write()
+        if open_in_browser:
+            webbrowser.open(iiwy_obj.url)
+            webbrowser.open('http://already_submitted_error')
+        return
+    sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
+    submission.approve()
+
+    print("NEW IIWY!!! WOOOOO!!!!")
+    print(iiwy_obj.reddit_title)
+
+    post_subreddit_comment(submission, iiwy_obj)
+
+    iiwy_obj.reddit_url = submission.permalink
+
+    replace_top_sticky(sub, submission)
+
+    if open_in_browser:
+        webbrowser.open(submission.permalink)
+    past_history.add_iiwy(iiwy_obj)
+    past_history.write()
+    print("Successfully submitted link! Time to celebrate.")
+
+def post_subreddit_comment(submission, iiwy_obj):
+    while True:
+        try:
+            comment_text = get_comment_text(iiwy_obj)
+            comment = submission.add_comment(comment_text)
+            comment.approve()
+            break
+        except requests.exceptions.HTTPError:
+            pass
+        except Exception as e:
+            print(e)
+            pass
