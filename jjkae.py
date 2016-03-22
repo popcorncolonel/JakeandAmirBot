@@ -11,6 +11,7 @@ import webbrowser
 import history
 import iiwy
 import tests
+from mod_stuff import mod_actions
 from rewatch import episodes
 
 python_3 = False
