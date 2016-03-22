@@ -151,8 +151,8 @@ if __name__ == '__main__':
 def check_iiwy(i, foundlist, debug, r, user, paw, episodes, past_history, open_in_browser, next_episode):
     iiwy_obj = get_iiwy_info()
     if iiwy_obj.number in foundlist or iiwy_obj.duration in foundlist: # if episode found before
-        jjkae_tools.printinfo(i, episodes, foundlist, debug, next_episode)
-        return i + 1
+        jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
+        return
     if not debug:
         while True:
             try:
@@ -169,8 +169,7 @@ def check_iiwy(i, foundlist, debug, r, user, paw, episodes, past_history, open_i
                 break
     foundlist.append(iiwy_obj.number)
     foundlist.append(iiwy_obj.duration)
-    jjkae_tools.printinfo(i, episodes, foundlist, debug, next_episode)
-    return i + 1
+    jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
 
 def get_comment_text(iiwy_obj):
     comment = ''

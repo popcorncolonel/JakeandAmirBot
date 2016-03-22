@@ -22,7 +22,6 @@ class Episode(object):
 #converts from list form to object form
 def transform(episode):
     return Episode(episode[0], episode[1], episode[2], episode[4], episode[5] or None)
-    return Episode(episode[1] + ' ' + episode[2] + ', ' + episode[0], episode[3], episode[4], episode[6], episode[7] or None)
 
 episodes = [transform(episode) for episode in episodes]
 
