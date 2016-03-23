@@ -4,16 +4,16 @@ import reddit_password
 
 
 def printinfo(i, episodes, foundlist, next_episode):
-    print(i, end='\n')
+    print(i, end=' ')
     if next_episode > -1:
         if i % 25 == 13:
             print('- previous episode: #%d (%s)' % (next_episode-1, episodes[next_episode-2].title), end=' ')
-            if i % 25 == 14:
-                print('- next episode: #%d (%s)' % (next_episode, episodes[next_episode-1].title), end=' ')
-            else:
-                if i % 25 == 13:
-                    print(foundlist, end=' ')
-                print(foundlist if i % 25 == 1 else "")
+        if i % 25 == 14:
+            print('- next episode: #%d (%s)' % (next_episode, episodes[next_episode-1].title), end=' ')
+    if i % 25 == 1:
+        print('- ', end='')
+        print(foundlist, end=' ')
+    print()
 
 
 def send_emails(permalink):

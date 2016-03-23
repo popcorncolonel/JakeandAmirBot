@@ -11,6 +11,7 @@ import webbrowser
 import history
 import iiwy
 import tests
+from mod_stuff import mod_actions
 from rewatch import episodes
 
 python_3 = False
@@ -91,9 +92,10 @@ while True:
 
     if next_episode > -1:
         mod_actions(next_episode, debug, r, user, paw, day)
+        today_datetime = datetime.datetime.now()
         day = today_datetime.strftime('%A')
 
-    adjust_timeout(default_timeout)
+    timeout = adjust_timeout(default_timeout)
 
     if timeout != 0:
         time.sleep(timeout)

@@ -1,8 +1,7 @@
 import history
-from jjkae import isnum
 from jjkae_tools import send_emails, isnum
 from rewatch import episodes
-
+import datetime
 
 discussion_string = '''\
 Monthly discussion posts will be posted on the last weekend of every month, and subreddit rewatch episodes will be posted on the other days!
