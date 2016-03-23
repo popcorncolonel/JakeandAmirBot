@@ -1,7 +1,8 @@
 import history
-from jjkae_tools import send_emails, isnum
+from jjkae_tools import send_emails, isnum, submit
 from rewatch import episodes
 import datetime
+import calendar
 
 discussion_string = '''\
 Monthly discussion posts will be posted on the last weekend of every month, and subreddit rewatch episodes will be posted on the other days!
@@ -18,8 +19,8 @@ Suggested topics:
 
 These are just suggestions, so feel free to talk about anything that you want and discuss with others!
 '''
-def get_discussion_string(monthstring):
-    global discussion_string, past_history
+def get_discussion_string(monthstring, past_history):
+    global discussion_string
     # Example podcast list:
     '''
     * [Episode 191: The Emotionary (w/Eden Sher!)](https://www.reddit.com/r/jakeandamir/comments/3zdczz/if_i_were_you_episode_191_the_emotionary_weden/)
@@ -91,10 +92,10 @@ Some suggested points of discussion:
 
 
 def mod_actions(next_episode, debug, r, user, paw, day):
-    '''
+    """
     If it just turned the last weekend of the month EST, post the monthly discussion.
      else, post the next subreddit rewatch (pointed to by next_episode) and sticky it.
-    '''
+    """
 
     subreddit_name = 'jakeandamir'
     sub = r.get_subreddit(subreddit_name)
@@ -102,29 +103,33 @@ def mod_actions(next_episode, debug, r, user, paw, day):
     today_datetime = datetime.datetime.now()
     new_day = today_datetime.strftime('%A')
     if new_day != day: # on a new day at midnight
-        if new_day in ['Saturday', 'Sunday'] and time_to_post_discussion(today_datetime): # post discussion of the month
-            if new_day == 'Saturday': # don't post it twice (once on sunday and once on saturday - just once on the weekend)
+        # post discussion of the month
+        if new_day in ['Saturday', 'Sunday'] and time_to_post_discussion(today_datetime): 
+            # don't post it twice (once on sunday and once on saturday - just once on the weekend)
+            if new_day == 'Saturday': 
                 title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
-                submission = submit(title, text=get_discussion_string(history.this_monthstring()))
+                submission = submit(title, r, user, paw, subreddit_name,
+                                    text=get_discussion_string(history.this_monthstring(), history.get_history()))
                 submission.sticky(bottom=True)
                 submission.distinguish()
                 sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
                 print("Successfully submitted sticky! Time to celebrate.")
         # post rewatch episode (every day other than discussion days)
         elif new_day in ['Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']:
-        #elif new_day in []:
             episode = episodes[next_episode-1] # next_episode is indexed by 1
             if ',,' in episode.title: # multipart episode
                 episode_title = episode.title.split(',,')[0].split('Part')[0].split('Pt.')[0].split('pt.')[0].split('Ep.')[0].strip()
                 title = 'Subreddit Rewatch #%d: %s (Series) (%s - %s)' %(next_episode, episode_title, episode.date_str.split(',,')[0], episode.date_str.split(',,')[-1])
-                submission = submit(title, text=get_multipart_string(episode))
+                submission = submit(title, r, user, paw, subreddit_name,
+                                    text=get_multipart_string(episode))
             else:
                 title = 'Subreddit Rewatch #%d: %s (%s)' %(next_episode, episode.title, episode.date_str)
-                submission = submit(title, text=get_rewatch_string(episode))
+                submission = submit(title, r, user, paw, subreddit_name,
+                                    text=get_rewatch_string(episode))
             submission.sticky(bottom=True)
             submission.distinguish()
             sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
-            send_emails(submission.permalink)
+            send_emails(submission.permalink, next_episode)
             print("Successfully submitted sticky! Time to celebrate.")
             next_episode += 1
 
@@ -138,7 +143,7 @@ def get_ep_num(name):
 
 
 def time_to_post_discussion(dt):
-    ''' returns true on the last weekend of the month '''
+    """ Returns true on the last weekend of the month """
     day_of_month = int(dt.strftime('%d'))
     month, year = int(dt.strftime('%m')), int(dt.strftime('%Y'))
     num_days_in_mo = calendar.monthrange(year, month)[1]
@@ -146,31 +151,5 @@ def time_to_post_discussion(dt):
         return True
     else:
         return False
-
-
-def submit(title, text=None, url=None):
-    '''
-    Submits the relevant information to the subreddit
-    '''
-    global r, user, paw, subreddit
-    while True:
-        try:
-            r.login(user, paw)
-            if text:
-                return r.submit(subreddit, title, text=text, resubmit=True)
-            elif url:
-                return r.submit(subreddit, title, url=url)
-            else:
-                raise ValueError('No self-text or url specified')
-        except requests.exceptions.HTTPError as e:
-            print("had trouble submitting D: HTTPError.")
-            print(e)
-            time.sleep(3)
-            pass
-        except Exception as e:
-            print("had trouble submitting D:")
-            print("Exception:", str(e))
-            time.sleep(3)
-            pass
 
 

@@ -1,5 +1,7 @@
 from __future__ import print_function
 
+import time
+import requests
 import reddit_password
 
 
@@ -16,19 +18,18 @@ def printinfo(i, episodes, foundlist, next_episode):
     print()
 
 
-def send_emails(permalink):
-    '''
+def send_emails(permalink, next_episode):
+    """
     List of emails to notify for the subreddit discussion
-    '''
+    """
     try:
-        global next_episode
         email_list = []
         params = {
                 'api_user': reddit_password.get_sendgrid_username(),
                 'api_key': reddit_password.get_sendgrid_password(),
                 'to[]':'cmey63@gmail.com',
                 'bcc[]':email_list,
-                'subject':'Jake and Amir Subreddit Rewatch #%d' %(next_episode),
+                'subject': u'Jake and Amir Subreddit Rewatch #{0}'.format(next_episode),
                 'text': permalink,
                 'from':'ericbailey94' + '@' + 'gmail.com', #for antispam
         }
@@ -45,3 +46,30 @@ def isnum(s):
         return True
     except ValueError:
         return False
+
+def submit(title, r, user, paw, subreddit, text=None, url=None):
+    """
+    Submits the relevant information to the subreddit
+    """
+    while True:
+        try:
+            r.login(user, paw)
+            if text:
+                return r.submit(subreddit, title, text=text, resubmit=True)
+            elif url:
+                return r.submit(subreddit, title, url=url)
+            else:
+                raise ValueError('No self-text or url specified')
+        except requests.exceptions.HTTPError as e:
+            print("had trouble submitting D: HTTPError.")
+            print(e)
+            time.sleep(3)
+            pass
+        except Exception as e:
+            print("had trouble submitting D:")
+            print("Exception:", str(e))
+            time.sleep(3)
+            pass
+
+
+

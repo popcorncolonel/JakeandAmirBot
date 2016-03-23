@@ -40,9 +40,13 @@ class IIWY:
     def __str__(self):
         return self.__repr__()
 
-# returns a tuple (string, string) representing the title and URL
-#    of the most recent If I Were You episode
+
 def get_iiwy_info(depth=0):
+    """
+    TODO: split this up
+    Returns a tuple (string, string) representing the title and URL
+        of the most recent If I Were You episode
+    """
     (name, url, desc, sponsorlist) = (DEFAULT_STR, DEFAULT_STR, DEFAULT_STR, [])
     try:
         r = None
@@ -143,9 +147,6 @@ def get_iiwy_info(depth=0):
                     reddit_title=name, monthstring=history.this_monthstring(), url=url,
                     sponsor_list=sponsorlist, desc=desc)
     return iiwy_obj
-
-if __name__ == '__main__':
-    print(get_iiwy_info())
 
 
 def check_iiwy(i, foundlist, debug, r, user, paw, episodes, past_history, open_in_browser, next_episode):
@@ -260,3 +261,7 @@ def post_subreddit_comment(submission, iiwy_obj):
         except Exception as e:
             print(e)
             pass
+
+
+if __name__ == '__main__':
+    print(get_iiwy_info())

@@ -1,12 +1,9 @@
 from __future__ import print_function
 
-import calendar
 import datetime
-import requests
 import sys
 import time
 import warnings
-import webbrowser
 
 import history
 import iiwy
@@ -31,6 +28,7 @@ with warnings.catch_warnings():
 
 DEFAULT_STR = ''
 debug = False
+force_submit = False
 
 r = praw.Reddit(user_agent = 'JakeandAmir program by /u/popcorncolonel')
 user = 'JakeandAmirBot'
@@ -66,7 +64,6 @@ def adjust_timeout(default_timeout):
 
 ############################ LOGIC #############################
 
-day = datetime.datetime.now().strftime('%A')
 
 iiwy_obj = iiwy.get_iiwy_info()
 print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
@@ -82,15 +79,18 @@ if errors != []:
         print(error)
     sys.exit()
 
+day = datetime.datetime.now().strftime('%A')
+
 foundlist = [DEFAULT_STR]
 foundlist.append(iiwy_obj.number)
 foundlist.append(iiwy_obj.duration)
 
 while True:
     iiwy.check_iiwy(i, foundlist, debug, r, user, paw, episodes, past_history, open_in_browser, next_episode)
-    i += 1
 
     if next_episode > -1:
+        if force_submit and i == 1:
+            day = None
         mod_actions(next_episode, debug, r, user, paw, day)
         today_datetime = datetime.datetime.now()
         day = today_datetime.strftime('%A')
@@ -99,4 +99,6 @@ while True:
 
     if timeout != 0:
         time.sleep(timeout)
+
+    i += 1
 
