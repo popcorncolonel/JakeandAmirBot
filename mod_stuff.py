@@ -1,5 +1,5 @@
 import history
-from jjkae_tools import send_emails, isnum, submit
+from jjkae_tools import send_rewatch_email, isnum, submit
 from rewatch import episodes
 import datetime
 import calendar
@@ -129,7 +129,7 @@ def mod_actions(next_episode, debug, r, user, paw, day):
             submission.sticky(bottom=True)
             submission.distinguish()
             sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
-            send_emails(submission.permalink, next_episode)
+            send_rewatch_email(submission.permalink, next_episode)
             print("Successfully submitted sticky! Time to celebrate.")
             next_episode += 1
 

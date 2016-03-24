@@ -17,27 +17,32 @@ def printinfo(i, episodes, foundlist, next_episode):
         print(foundlist, end=' ')
     print()
 
-
-def send_emails(permalink, next_episode):
-    """
-    List of emails to notify for the subreddit discussion
-    """
+def send_email(subject, body, to, bcc_list):
     try:
-        email_list = []
         params = {
                 'api_user': reddit_password.get_sendgrid_username(),
                 'api_key': reddit_password.get_sendgrid_password(),
-                'to[]':'cmey63@gmail.com',
-                'bcc[]':email_list,
-                'subject': u'Jake and Amir Subreddit Rewatch #{0}'.format(next_episode),
-                'text': permalink,
+                'to[]':to,
+                'bcc[]':bcc_list,
+                'subject': subject,
+                'text': body,
                 'from':'ericbailey94' + '@' + 'gmail.com', #for antispam
         }
         url = 'https://api.sendgrid.com/api/mail.send.json'
         r = requests.post(url, params=params)
         print(r.text)
     except Exception as e:
-        print(e)
+        print("TRIED TO SEND EMAIL. It didn't work.", e)
+
+def send_rewatch_email(permalink, next_episode):
+    """
+    List of emails to notify for the subreddit discussion
+    """
+    email_list = []
+    send_email(subject=u'Jake and Amir Subreddit Rewatch #{0}'.format(next_episode),
+               body=permalink,
+               to='cmey63@gmail.com',
+               bcc_list=email_list)
 
 
 def isnum(s):

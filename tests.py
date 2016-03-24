@@ -18,6 +18,14 @@ class JjkaeTest(unittest.TestCase):
         self.assertIn(type(iiwy_obj.desc), {unicode, str})
         self.assertIs(type(iiwy_obj.sponsor_list), list)
 
+    def test_prints(self):
+        import jjkae_tools
+        from rewatch import episodes
+        foundlist = []
+        next_episode = 100
+        for i in range(1, 150):
+            jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
+
 # Returns the list of errors of the tests
 def run_tests(verbosity=0):
     suite = unittest.TestLoader().loadTestsFromTestCase(JjkaeTest)
