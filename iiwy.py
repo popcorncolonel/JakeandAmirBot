@@ -149,25 +149,25 @@ def get_iiwy_info(depth=0):
     return iiwy_obj
 
 
-def check_iiwy(i, foundlist, debug, r, user, paw, episodes, past_history, open_in_browser, next_episode):
+def check_iiwy(i, foundlist, r, user, paw, episodes, past_history, next_episode, force_submit=False):
     iiwy_obj = get_iiwy_info()
-    if iiwy_obj.number in foundlist or iiwy_obj.duration in foundlist: # if episode found before
-        jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
-        return
-    if not debug:
-        while True:
-            try:
-                post_iiwy(iiwy_obj, r, user, paw, past_history, open_in_browser)
-                break
-            except requests.exceptions.HTTPError:
-                print("HTTP error while trying to submit - retrying to resubmit")
-                pass
-            except praw.errors.AlreadySubmitted:
-                print('Already submitted.')
-                break
-            except Exception as e:
-                print("Error", e)
-                break
+    if not force_submit:
+        if iiwy_obj.number in foundlist or iiwy_obj.duration in foundlist: # if episode found before
+            jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
+            return
+    while True:
+        try:
+            post_iiwy(iiwy_obj, r, user, paw, past_history)
+            break
+        except requests.exceptions.HTTPError:
+            print("HTTP error while trying to submit - retrying to resubmit")
+            pass
+        except praw.errors.AlreadySubmitted:
+            print('Already submitted.')
+            break
+        except Exception as e:
+            print("Error", e)
+            break
     foundlist.append(iiwy_obj.number)
     foundlist.append(iiwy_obj.duration)
     jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
@@ -214,11 +214,9 @@ def replace_top_sticky(sub, submission):
 
     submission.distinguish()
 
-def post_iiwy(iiwy_obj, r, user, paw, past_history, open_in_browser):
+def post_iiwy(iiwy_obj, r, user, paw, past_history):
     subreddit = 'jakeandamir'
     sub = r.get_subreddit(subreddit)
-    if open_in_browser:
-        webbrowser.open(iiwy_obj.url)
     r.login(user, paw)
     try:
         submission = r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
@@ -227,9 +225,6 @@ def post_iiwy(iiwy_obj, r, user, paw, past_history, open_in_browser):
         iiwy_obj.reddit_url = 'abc123'
         past_history.add_iiwy(iiwy_obj)
         past_history.write()
-        if open_in_browser:
-            webbrowser.open(iiwy_obj.url)
-            webbrowser.open('http://already_submitted_error')
         return
     sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
     submission.approve()
@@ -243,8 +238,6 @@ def post_iiwy(iiwy_obj, r, user, paw, past_history, open_in_browser):
 
     replace_top_sticky(sub, submission)
 
-    if open_in_browser:
-        webbrowser.open(submission.permalink)
     past_history.add_iiwy(iiwy_obj)
     past_history.write()
     print("Successfully submitted link! Time to celebrate.")

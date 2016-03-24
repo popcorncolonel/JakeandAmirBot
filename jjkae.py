@@ -1,57 +1,27 @@
 from __future__ import print_function
 
-import datetime
 import sys
 import time
-import warnings
-
-import history
 import iiwy
 import tests
-from mod_stuff import mod_actions
-from rewatch import episodes
+import history
+import datetime
+import warnings
 
-python_3 = False
-if sys.version_info >= (3, 0):
-    python_3 = True
-else:
-    pass
+from rewatch import episodes
+from mod_stuff import mod_actions
 
 # have to create a reddit_password.py file with a get_password() function
 import reddit_password
-
-open_in_browser = False
 
 with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import praw
 
-DEFAULT_STR = ''
-debug = False
-force_submit = False
+force_submit_rewatch = False # This causes mod_actions to post the rewatch the first iteration (i==1).
+force_submit_iiwy = False
 
-r = praw.Reddit(user_agent = 'JakeandAmir program by /u/popcorncolonel')
-user = 'JakeandAmirBot'
-paw = reddit_password.get_password()
-subreddit = 'jakeandamir'
-
-sub = r.get_subreddit(subreddit)
-r.config.decode_html_entities = True
-
-next_episode = -1 # START AT 1
-if len(sys.argv) > 1:
-    next_episode = int(sys.argv[1])
-
-if next_episode > -1:
-    print('Previous episode:', episodes[next_episode-2])
-    print('Next episode to be posted:', episodes[next_episode-1])
-    time.sleep(3)
-
-timeout = default_timeout = 5 #don't spam the servers :D
-
-past_history = history.get_history()
-
-def adjust_timeout(default_timeout):
+def get_timeout(default_timeout):
     hour = int(datetime.datetime.now().strftime('%H'))
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
@@ -62,43 +32,69 @@ def adjust_timeout(default_timeout):
     else:
         return default_timeout
 
-############################ LOGIC #############################
+#TODO: move this stuff to more functions? It's p long
+def main():
+    global force_submit_iiwy, force_submit_rewatch
 
+    r = praw.Reddit(user_agent = 'JakeandAmir program by /u/popcorncolonel')
+    user = 'JakeandAmirBot'
+    paw = reddit_password.get_password()
 
-iiwy_obj = iiwy.get_iiwy_info()
-print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
-      "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
-      "and duration", iiwy_obj.duration)
+    r.config.decode_html_entities = True
 
-
-i = 1
-
-errors = tests.run_tests()
-if errors != []:
-    for error in errors:
-        print(error)
-    sys.exit()
-
-day = datetime.datetime.now().strftime('%A')
-
-foundlist = [DEFAULT_STR]
-foundlist.append(iiwy_obj.number)
-foundlist.append(iiwy_obj.duration)
-
-while True:
-    iiwy.check_iiwy(i, foundlist, debug, r, user, paw, episodes, past_history, open_in_browser, next_episode)
+    next_episode = -1 # START AT 1
+    if len(sys.argv) > 1:
+        next_episode = int(sys.argv[1])
 
     if next_episode > -1:
-        if force_submit and i == 1:
-            day = None
-        mod_actions(next_episode, debug, r, user, paw, day)
-        today_datetime = datetime.datetime.now()
-        day = today_datetime.strftime('%A')
+        print('Previous episode:', episodes[next_episode-2])
+        print('Next episode to be posted:', episodes[next_episode-1])
+        time.sleep(1)
 
-    timeout = adjust_timeout(default_timeout)
+    default_timeout = 5 #don't spam the servers :D
 
-    if timeout != 0:
-        time.sleep(timeout)
+    past_history = history.get_history()
 
-    i += 1
+    i = 1
 
+    errors = tests.run_tests()
+    if errors != []:
+        for error in errors:
+            print(error)
+        sys.exit()
+
+    iiwy_obj = iiwy.get_iiwy_info()
+    print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
+          "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
+          "and duration", iiwy_obj.duration)
+
+    day = datetime.datetime.now().strftime('%A')
+
+    foundlist = [""]
+    foundlist.append(iiwy_obj.number)
+    foundlist.append(iiwy_obj.duration)
+
+    while True:
+        # Just using extra caution.
+        if force_submit_iiwy == True:
+            iiwy.check_iiwy(i, foundlist, r, user, paw, episodes, past_history, next_episode, force_submit=force_submit_iiwy)
+        else:
+            iiwy.check_iiwy(i, foundlist, r, user, paw, episodes, past_history, next_episode, force_submit=False)
+        force_submit_iiwy = False
+
+        if next_episode > -1:
+            if force_submit_rewatch and i == 1:
+                day = None # This causes mod_actions to post the rewatch the first iteration (i==1).
+            mod_actions(next_episode, r, user, paw, day)
+            today_datetime = datetime.datetime.now()
+            day = today_datetime.strftime('%A')
+
+        timeout = get_timeout(default_timeout)
+
+        if timeout != 0:
+            time.sleep(timeout)
+
+        i += 1
+
+if __name__ == "__main__":
+    main()

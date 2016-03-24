@@ -91,7 +91,7 @@ Some suggested points of discussion:
     return s.format(date_str=today_datetime.strftime('%d'), episode=episode)
 
 
-def mod_actions(next_episode, debug, r, user, paw, day):
+def mod_actions(next_episode, r, user, paw, day):
     """
     If it just turned the last weekend of the month EST, post the monthly discussion.
      else, post the next subreddit rewatch (pointed to by next_episode) and sticky it.
