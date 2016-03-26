@@ -149,7 +149,7 @@ def get_iiwy_info(depth=0):
     return iiwy_obj
 
 
-def check_iiwy(i, foundlist, r, user, paw, episodes, past_history, next_episode, force_submit=False):
+def check_iiwy_and_post_if_new(i, foundlist, r, user, paw, episodes, past_history, next_episode, force_submit=False):
     iiwy_obj = get_iiwy_info()
     if not force_submit:
         if iiwy_obj.number in foundlist or iiwy_obj.duration in foundlist: # if episode found before
@@ -222,7 +222,7 @@ def post_iiwy(iiwy_obj, r, user, paw, past_history):
         submission = r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
     except praw.errors.AlreadySubmitted as e:
         print(e)
-        iiwy_obj.reddit_url = 'abc123'
+        iiwy_obj.reddit_url = 'TODO: Get the real submitted object'
         past_history.add_iiwy(iiwy_obj)
         past_history.write()
         return
