@@ -9,7 +9,7 @@ import datetime
 import warnings
 
 from rewatch import episodes
-from mod_stuff import mod_actions
+from mod_stuff import mod_actions, ModInfo
 
 # have to create a reddit_password.py file with a get_password() function
 import reddit_password
@@ -21,7 +21,7 @@ with warnings.catch_warnings():
 force_submit_rewatch = False # This causes mod_actions to post the rewatch the first iteration (i==1).
 force_submit_iiwy = False
 
-def get_timeout(default_timeout):
+def get_timeout(default_timeout=5):
     hour = int(datetime.datetime.now().strftime('%H'))
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
@@ -33,11 +33,11 @@ def get_timeout(default_timeout):
         return default_timeout
 
 
-def mod_loop(i, r, user, paw, day, next_episode, force_submit_rewatch):
-    if next_episode > -1:
-        if force_submit_rewatch and i == 1:
+def mod_loop(i, r, user, paw, day, mod_info, force_submit_rewatch):
+    if mod_info.next_episode > -1:
+        if force_submit_rewatch:
             day = None  # This causes mod_actions to post the rewatch the first iteration (i==1).
-        mod_actions(next_episode, r, user, paw, day)
+        mod_actions(mod_info, r, user, paw, day)
 
 
 def iiwy_loop(i, user, r, paw, foundlist, past_history, next_episode, force_submit_iiwy):
@@ -73,28 +73,29 @@ def main():
     i = 1
     default_timeout = 5 #don't spam the servers :D
     r = praw.Reddit(user_agent = 'JakeandAmir program by /u/popcorncolonel')
-    r.config.decode_html_entities = True # Idk what this does
+    r.config.decode_html_entities = True # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
     user = 'JakeandAmirBot'
     paw = reddit_password.get_password()
     day = datetime.datetime.now().strftime('%A')
 
-    next_episode = -1 # START AT 1
+    test_before_running()
+    past_history = history.get_history()
+
+    mod_info = ModInfo(-1) # STARTS AT 1
     if len(sys.argv) > 1:
-        next_episode = int(sys.argv[1])
-        if next_episode > -1:
-            print('Previous episode:', episodes[next_episode-2])
-            print('Next episode to be posted:', episodes[next_episode-1])
+        mod_info.next_episode = int(sys.argv[1])
+        if mod_info.next_episode > -1:
+            print('Previous episode:', episodes[mod_info.next_episode-2])
+            print('Next episode to be posted:', episodes[mod_info.next_episode-1])
             time.sleep(1)
 
-    past_history = history.get_history()
-    test_before_running()
     foundlist = initialize_foundlist()
 
     while True:
-        iiwy_loop(i, user, r, paw, foundlist, past_history, next_episode, force_submit_iiwy)
+        iiwy_loop(i, user, r, paw, foundlist, past_history, mod_info.next_episode, force_submit_iiwy)
         force_submit_iiwy = False
 
-        mod_loop(i, r, user, paw, day, next_episode, force_submit_rewatch)
+        mod_loop(i, r, user, paw, day, mod_info, force_submit_rewatch)
         today_datetime = datetime.datetime.now()
         day = today_datetime.strftime('%A')
 
