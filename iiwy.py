@@ -1,6 +1,5 @@
 import sys
 import time
-import webbrowser
 
 import praw
 

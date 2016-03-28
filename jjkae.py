@@ -33,11 +33,9 @@ def get_timeout(default_timeout=5):
         return default_timeout
 
 
-def mod_loop(i, r, user, paw, day, mod_info, force_submit_rewatch):
+def mod_loop(i, r, user, paw, mod_info, force_submit_rewatch=False):
     if mod_info.next_episode > -1:
-        if force_submit_rewatch:
-            day = None  # This causes mod_actions to post the rewatch the first iteration (i==1).
-        mod_actions(mod_info, r, user, paw, day)
+        mod_actions(mod_info, r, user, paw, force_submit_rewatch)
 
 
 def iiwy_loop(i, user, r, paw, foundlist, past_history, next_episode, force_submit_iiwy):
@@ -76,7 +74,6 @@ def main():
     r.config.decode_html_entities = True # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
     user = 'JakeandAmirBot'
     paw = reddit_password.get_password()
-    day = datetime.datetime.now().strftime('%A')
 
     test_before_running()
     past_history = history.get_history()
@@ -91,13 +88,13 @@ def main():
 
     foundlist = initialize_foundlist()
 
+    # TODO: bundle "r, user, paw, etc." into mod_info and pass that around.
     while True:
         iiwy_loop(i, user, r, paw, foundlist, past_history, mod_info.next_episode, force_submit_iiwy)
-        force_submit_iiwy = False
+        force_submit_iiwy = False # Only do it once
 
-        mod_loop(i, r, user, paw, day, mod_info, force_submit_rewatch)
-        today_datetime = datetime.datetime.now()
-        day = today_datetime.strftime('%A')
+        mod_loop(i, r, user, paw, mod_info, force_submit_rewatch)
+        force_submit_rewatch = False # Only do it once
 
         timeout = get_timeout(default_timeout)
 

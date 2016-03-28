@@ -5,7 +5,6 @@ class JjkaeTest(unittest.TestCase):
         import json
         with open("history.json") as json_file:
             json_data = json.load(json_file)
-        import sys
         self.assertNotEqual(len(json_data), 0)
 
     def test_iiwy(self):

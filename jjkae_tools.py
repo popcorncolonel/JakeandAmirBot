@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import time
 import requests
+import datetime
 import reddit_password
 
 
@@ -76,5 +77,7 @@ def submit(title, r, user, paw, subreddit, text=None, url=None):
             time.sleep(3)
             pass
 
-
-
+def get_day():
+    today_datetime = datetime.datetime.now()
+    day = today_datetime.strftime('%A')
+    return day
