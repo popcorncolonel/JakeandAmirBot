@@ -71,17 +71,19 @@ def main():
     paw = reddit_password.get_password()
 
     test_before_running()
-    past_history = history.get_history()
 
+    past_history = history.get_history()
     foundlist = initialize_foundlist()
 
-    mod_info = ModInfo(-1, r, user, paw, i, foundlist, episodes, past_history) # STARTS AT 1
+    next_episode = -1
     if len(sys.argv) > 1:
-        mod_info.next_episode = int(sys.argv[1])
-        if mod_info.next_episode > -1:
-            print('Previous episode:', episodes[mod_info.next_episode-2])
-            print('Next episode to be posted:', episodes[mod_info.next_episode-1])
-            time.sleep(1)
+        next_episode = int(sys.argv[1])
+
+    mod_info = ModInfo(next_episode, r, user, paw, i, foundlist, episodes, past_history) # STARTS AT 1
+
+    if mod_info.next_episode > -1:
+        print('Previous episode:', episodes[mod_info.next_episode-2])
+        print('Next episode to be posted:', episodes[mod_info.next_episode-1])
 
     while True:
         iiwy_loop(mod_info, force_submit_iiwy)
@@ -95,7 +97,7 @@ def main():
         if timeout != 0:
             time.sleep(timeout)
 
-        i += 1
+        mod_info.i += 1
 
 if __name__ == "__main__":
     main()
