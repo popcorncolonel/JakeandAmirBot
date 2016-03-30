@@ -20,10 +20,13 @@ class JjkaeTest(unittest.TestCase):
     def test_prints(self):
         import jjkae_tools
         from rewatch import episodes
+        from mod_stuff import ModInfo
         foundlist = []
         next_episode = 100
-        for i in range(1, 150):
-            jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
+        mod_info = ModInfo(next_episode=next_episode, r=None, user=None, paw=None, i=1, foundlist=foundlist, episodes=episodes, past_history=None)
+        for i in range(1, 153):
+            mod_info.i = i
+            jjkae_tools.printinfo(mod_info)
 
 # Returns the list of errors of the tests
 def run_tests(verbosity=0):

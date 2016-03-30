@@ -6,16 +6,16 @@ import datetime
 import reddit_password
 
 
-def printinfo(i, episodes, foundlist, next_episode):
-    print(i, end=' ')
-    if next_episode > -1:
-        if i % 25 == 13:
-            print('- previous episode: #%d (%s)' % (next_episode-1, episodes[next_episode-2].title), end=' ')
-        if i % 25 == 14:
-            print('- next episode: #%d (%s)' % (next_episode, episodes[next_episode-1].title), end=' ')
-    if i % 25 == 1:
+def printinfo(mod_info):
+    print(mod_info.i, end=' ')
+    if mod_info.next_episode > -1:
+        if mod_info.i % 25 == 13:
+            print('- previous episode: #%d (%s)' % (mod_info.next_episode-1, mod_info.episodes[mod_info.next_episode-2].title), end=' ')
+        if mod_info.i % 25 == 14:
+            print('- next episode: #%d (%s)' % (mod_info.next_episode, mod_info.episodes[mod_info.next_episode-1].title), end=' ')
+    if mod_info.i % 25 == 1:
         print('- ', end='')
-        print(foundlist, end=' ')
+        print(mod_info.foundlist, end=' ')
     print()
 
 def send_email(subject, body, to, bcc_list):
@@ -53,17 +53,17 @@ def isnum(s):
     except ValueError:
         return False
 
-def submit(title, r, user, paw, subreddit, text=None, url=None):
+def submit(title, mod_info, subreddit, text=None, url=None):
     """
     Submits the relevant information to the subreddit
     """
     while True:
         try:
-            r.login(user, paw)
+            mod_info.login()
             if text:
-                return r.submit(subreddit, title, text=text, resubmit=True)
+                return mod_info.r.submit(subreddit, title, text=text, resubmit=True)
             elif url:
-                return r.submit(subreddit, title, url=url)
+                return mod_info.r.submit(subreddit, title, url=url)
             else:
                 raise ValueError('No self-text or url specified')
         except requests.exceptions.HTTPError as e:

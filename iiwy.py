@@ -148,15 +148,15 @@ def get_iiwy_info(depth=0):
     return iiwy_obj
 
 
-def check_iiwy_and_post_if_new(i, foundlist, r, user, paw, episodes, past_history, next_episode, force_submit=False):
+def check_iiwy_and_post_if_new(mod_info, force_submit=False):
     iiwy_obj = get_iiwy_info()
     if not force_submit:
-        if iiwy_obj.number in foundlist or iiwy_obj.duration in foundlist: # if episode found before
-            jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
+        if iiwy_obj.number in mod_info.foundlist or iiwy_obj.duration in mod_info.foundlist: # if episode found before
+            jjkae_tools.printinfo(mod_info)
             return
     while True:
         try:
-            post_iiwy(iiwy_obj, r, user, paw, past_history)
+            post_iiwy(iiwy_obj, mod_info)
             break
         except requests.exceptions.HTTPError:
             print("HTTP error while trying to submit - retrying to resubmit")
@@ -167,9 +167,9 @@ def check_iiwy_and_post_if_new(i, foundlist, r, user, paw, episodes, past_histor
         except Exception as e:
             print("Error", e)
             break
-    foundlist.append(iiwy_obj.number)
-    foundlist.append(iiwy_obj.duration)
-    jjkae_tools.printinfo(i, episodes, foundlist, next_episode)
+    mod_info.foundlist.append(iiwy_obj.number)
+    mod_info.foundlist.append(iiwy_obj.duration)
+    jjkae_tools.printinfo(mod_info)
 
 def get_comment_text(iiwy_obj):
     comment = ''
@@ -213,17 +213,17 @@ def replace_top_sticky(sub, submission):
 
     submission.distinguish()
 
-def post_iiwy(iiwy_obj, r, user, paw, past_history):
+def post_iiwy(iiwy_obj, mod_info):
     subreddit = 'jakeandamir'
-    sub = r.get_subreddit(subreddit)
-    r.login(user, paw)
+    sub = mod_info.r.get_subreddit(subreddit)
+    mod_info.login()
     try:
-        submission = r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
+        submission = mod_info.r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
     except praw.errors.AlreadySubmitted as e:
         print(e)
         iiwy_obj.reddit_url = 'TODO: Get the real submitted object'
-        past_history.add_iiwy(iiwy_obj)
-        past_history.write()
+        mod_info.past_history.add_iiwy(iiwy_obj)
+        mod_info.past_history.write()
         return
     sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
     submission.approve()
@@ -237,8 +237,8 @@ def post_iiwy(iiwy_obj, r, user, paw, past_history):
 
     replace_top_sticky(sub, submission)
 
-    past_history.add_iiwy(iiwy_obj)
-    past_history.write()
+    mod_info.past_history.add_iiwy(iiwy_obj)
+    mod_info.past_history.write()
     print("Successfully submitted link! Time to celebrate.")
 
 def post_subreddit_comment(submission, iiwy_obj):

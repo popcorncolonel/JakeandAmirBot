@@ -33,18 +33,13 @@ def get_timeout(default_timeout=5):
         return default_timeout
 
 
-def mod_loop(i, r, user, paw, mod_info, force_submit_rewatch=False):
+def mod_loop(mod_info, force_submit_rewatch=False):
     if mod_info.next_episode > -1:
-        mod_actions(mod_info, r, user, paw, force_submit_rewatch)
+        mod_actions(mod_info, force_submit_rewatch)
 
 
-def iiwy_loop(i, user, r, paw, foundlist, past_history, next_episode, force_submit_iiwy):
-    if force_submit_iiwy == True: # Just using extra caution.
-        iiwy.check_iiwy_and_post_if_new(i, foundlist, r, user, paw, episodes, past_history, next_episode,
-                                        force_submit=force_submit_iiwy)
-    else:
-        iiwy.check_iiwy_and_post_if_new(i, foundlist, r, user, paw, episodes, past_history, next_episode,
-                                        force_submit=False)
+def iiwy_loop(mod_info, force_submit_iiwy=False):
+    iiwy.check_iiwy_and_post_if_new(mod_info, force_submit=force_submit_iiwy)
 
 
 def test_before_running():
@@ -78,7 +73,9 @@ def main():
     test_before_running()
     past_history = history.get_history()
 
-    mod_info = ModInfo(-1) # STARTS AT 1
+    foundlist = initialize_foundlist()
+
+    mod_info = ModInfo(-1, r, user, paw, i, foundlist, episodes, past_history) # STARTS AT 1
     if len(sys.argv) > 1:
         mod_info.next_episode = int(sys.argv[1])
         if mod_info.next_episode > -1:
@@ -86,14 +83,11 @@ def main():
             print('Next episode to be posted:', episodes[mod_info.next_episode-1])
             time.sleep(1)
 
-    foundlist = initialize_foundlist()
-
-    # TODO: bundle "r, user, paw, etc." into mod_info and pass that around.
     while True:
-        iiwy_loop(i, user, r, paw, foundlist, past_history, mod_info.next_episode, force_submit_iiwy)
+        iiwy_loop(mod_info, force_submit_iiwy)
         force_submit_iiwy = False # Only do it once
 
-        mod_loop(i, r, user, paw, mod_info, force_submit_rewatch)
+        mod_loop(mod_info, force_submit_rewatch)
         force_submit_rewatch = False # Only do it once
 
         timeout = get_timeout(default_timeout)
