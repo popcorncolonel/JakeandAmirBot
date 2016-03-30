@@ -28,6 +28,19 @@ class JjkaeTest(unittest.TestCase):
             mod_info.i = i
             jjkae_tools.printinfo(mod_info)
 
+    def test_mod_stuff(self):
+        from mod_stuff import ModInfo, mod_actions
+        from rewatch import episodes
+        import praw, reddit_password, history
+        r = praw.Reddit(user_agent = 'JakeandAmir program by /u/popcorncolonel')
+        r.config.decode_html_entities = True # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
+        user = 'JakeandAmirBot'
+        paw = reddit_password.get_password()
+
+        mod_info = ModInfo(15, r, user, paw, 1, [], episodes, history.get_history())
+        mod_actions(mod_info, testmode=False)
+        print("Tested mod actions")
+
 # Returns the list of errors of the tests
 def run_tests(verbosity=0):
     suite = unittest.TestLoader().loadTestsFromTestCase(JjkaeTest)
