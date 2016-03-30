@@ -106,58 +106,62 @@ Some suggested points of discussion:
     return s.format(date_str=today_datetime.strftime('%d'), episode=episode)
 
 
-def mod_actions(mod_info, force_submit_rewatch=False):
+def mod_actions(mod_info, force_submit_rewatch=False, testmode=False):
     """
     If it just turned the last weekend of the month EST, post the monthly discussion.
      else, post the next subreddit rewatch (pointed to by mod_info.next_episode) and sticky it.
     """
-    subreddit_name = 'jakeandamir'
-
     new_day = get_day()
     if force_submit_rewatch or new_day != mod_info.day: # only happens on a new day at midnight
         # post discussion of the month
         if new_day in ['Saturday', 'Sunday'] and time_to_post_discussion():
             # don't post it twice (once on sunday and once on saturday - just once on the weekend)
             if new_day == 'Saturday':
-                post_monthly_discussion(mod_info)
+                post_monthly_discussion(mod_info, testmode)
         # post rewatch episode (every day other than discussion days)
         elif new_day in ['Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']:
-            post_new_rewatch(mod_info)
+            post_new_rewatch(mod_info, testmode)
             mod_info.next_episode += 1
     mod_info.day = new_day
 
 
-def post_new_rewatch(mod_info):
+def post_new_rewatch(mod_info, testmode=False):
     sub = mod_info.r.get_subreddit('jakeandamir')
     episode = episodes[mod_info.next_episode - 1]  # next_episode is indexed by 1
+    submission = None
     if ',,' in episode.title:  # multipart episode
         episode_title = episode.title.split(',,')[0].split('Part')[0].split('Pt.')[0].split('pt.')[0].split('Ep.')[
             0].strip()
         title = 'Subreddit Rewatch #%d: %s (Series) (%s - %s)' % (
         mod_info.next_episode, episode_title, episode.date_str.split(',,')[0], episode.date_str.split(',,')[-1])
-        submission = submit(title, mod_info, 'jakeandamir',
-                            text=get_multipart_string(episode))
+        if not testmode:
+            submission = submit(title, mod_info, 'jakeandamir',
+                                text=get_multipart_string(episode))
     else:
         title = 'Subreddit Rewatch #%d: %s (%s)' % (mod_info.next_episode, episode.title, episode.date_str)
-        submission = submit(title, mod_info, 'jakeandamir',
-                            text=get_rewatch_string(episode))
-    submission.sticky(bottom=True)
-    submission.distinguish()
-    sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
-    send_rewatch_email(submission.permalink, mod_info.next_episode)
+        if not testmode:
+            submission = submit(title, mod_info, 'jakeandamir',
+                                text=get_rewatch_string(episode))
+    if not testmode:
+        submission.sticky(bottom=True)
+        submission.distinguish()
+        sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
+        send_rewatch_email(submission.permalink, mod_info.next_episode)
     print("Successfully submitted sticky! Time to celebrate.")
-    return submission
+    if not testmode:
+        return submission
 
-def post_monthly_discussion(mod_info):
+def post_monthly_discussion(mod_info, testmode=False):
     today_datetime = datetime.datetime.now()
     title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
-    submission = submit(title, mod_info, 'jakeandamir',
-                        text=get_discussion_string(history.this_monthstring(), history.get_history()))
-    submission.sticky(bottom=True)
-    submission.distinguish()
-    mod_info.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
-    print("Successfully submitted sticky! Time to celebrate.")
-    return submission
+    if not testmode:
+        submission = submit(title, mod_info, 'jakeandamir',
+                            text=get_discussion_string(history.this_monthstring(), history.get_history()))
+        submission.sticky(bottom=True)
+        submission.distinguish()
+        mod_info.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
+        print("Successfully submitted sticky! Time to celebrate.")
+        return submission
 
 
 def get_ep_num(name):
