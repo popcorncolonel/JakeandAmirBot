@@ -1,6 +1,7 @@
 import json
 import datetime
 
+
 class History:
     def __init__(self, history_dict):
         self.history_dict = history_dict
@@ -22,11 +23,11 @@ class History:
         if 'IIWY' not in self.history_dict[monthstring]:
             self.history_dict[monthstring]['IIWY'] = []
         self.history_dict[monthstring]['IIWY'].append({
-                "title": iiwy.title,
-                "reddit_url": iiwy.reddit_url,
-                "number": iiwy.number,
-                "duration": iiwy.duration
-            })
+            "title": iiwy.title,
+            "reddit_url": iiwy.reddit_url,
+            "number": iiwy.number,
+            "duration": iiwy.duration
+        })
 
 
 def get_history():
@@ -34,10 +35,11 @@ def get_history():
         json_data = json.load(json_file)
     return History(json_data)
 
+
 history = get_history()
+
 
 def this_monthstring():
     today_datetime = datetime.datetime.now()
     month, year = today_datetime.strftime('%b'), today_datetime.strftime('%Y')
     return month + " " + year
-

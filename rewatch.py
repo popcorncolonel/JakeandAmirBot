@@ -1,6 +1,3 @@
-import sys
-import os
-
 with open('episodes.txt', 'r') as f:
     episodes = list(f)[1:]
 episodes = [x.split('|')[1:-1] for x in episodes]

@@ -17,7 +17,7 @@ class JjkaeTest(unittest.TestCase):
         self.assertIn(type(iiwy_obj.desc), {unicode, str})
         self.assertIs(type(iiwy_obj.sponsor_list), list)
 
-    def test_prints(self):
+    def test__prints(self):
         import jjkae_tools
         from rewatch import episodes
         from mod_stuff import ModInfo

@@ -6,6 +6,7 @@ import praw
 import history
 import requests
 import warnings
+# noinspection PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility
 import HTMLParser
 
 import jjkae_tools
