@@ -18,16 +18,17 @@ with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     import praw
 
-force_submit_rewatch = False # This causes mod_actions to post the rewatch the first iteration (i==1).
+force_submit_rewatch = False  # This causes mod_actions to post the rewatch the first iteration (i==1).
 force_submit_iiwy = False
+
 
 def get_timeout(default_timeout=5):
     hour = int(datetime.datetime.now().strftime('%H'))
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
-            (23, 'Sunday'), (0, 'Monday'), (1, 'Monday'), (2, 'Monday'), # IIWY episodes
-            (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday') # IIWY bonus episodes
-        ]:
+        (23, 'Sunday'), (0, 'Monday'), (1, 'Monday'), (2, 'Monday'),  # IIWY episodes
+        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday')  # IIWY bonus episodes
+    ]:
         return 1
     else:
         return default_timeout
@@ -44,19 +45,18 @@ def iiwy_loop(mod_info, force_submit_iiwy=False):
 
 def test_before_running():
     errors = tests.run_tests()
-    if errors != []:
+    if errors:
         for error in errors:
             print(error)
         sys.exit()
+
 
 def initialize_foundlist():
     iiwy_obj = iiwy.get_iiwy_info()
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
           "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
           "and duration", iiwy_obj.duration)
-    foundlist = [""]
-    foundlist.append(iiwy_obj.number)
-    foundlist.append(iiwy_obj.duration)
+    foundlist = ["", iiwy_obj.number, iiwy_obj.duration]
     return foundlist
 
 
@@ -64,9 +64,10 @@ def main():
     global force_submit_iiwy, force_submit_rewatch
 
     i = 1
-    default_timeout = 5 #don't spam the servers :D
-    r = praw.Reddit(user_agent = 'JakeandAmir program by /u/popcorncolonel')
-    r.config.decode_html_entities = True # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
+    default_timeout = 5  # don't spam the servers :D
+    r = praw.Reddit(user_agent='JakeandAmir program by /u/popcorncolonel')
+    # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
+    r.config.decode_html_entities = True
     user = 'JakeandAmirBot'
     paw = reddit_password.get_password()
 
@@ -79,18 +80,18 @@ def main():
     if len(sys.argv) > 1:
         next_episode = int(sys.argv[1])
 
-    mod_info = ModInfo(next_episode, r, user, paw, i, foundlist, episodes, past_history) # STARTS AT 1
+    mod_info = ModInfo(next_episode, r, user, paw, i, foundlist, episodes, past_history)  # STARTS AT 1
 
     if mod_info.next_episode > -1:
-        print('Previous episode:', episodes[mod_info.next_episode-2])
-        print('Next episode to be posted:', episodes[mod_info.next_episode-1])
+        print('Previous episode:', episodes[mod_info.next_episode - 2])
+        print('Next episode to be posted:', episodes[mod_info.next_episode - 1])
 
     while True:
         iiwy_loop(mod_info, force_submit_iiwy)
-        force_submit_iiwy = False # Only do it once
+        force_submit_iiwy = False  # Only do it once
 
         mod_loop(mod_info, force_submit_rewatch)
-        force_submit_rewatch = False # Only do it once
+        force_submit_rewatch = False  # Only do it once
 
         timeout = get_timeout(default_timeout)
 
@@ -98,6 +99,7 @@ def main():
             time.sleep(timeout)
 
         mod_info.i += 1
+
 
 if __name__ == "__main__":
     main()

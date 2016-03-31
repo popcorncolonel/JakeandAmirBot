@@ -4,6 +4,7 @@ from rewatch import episodes
 import datetime
 import calendar
 
+
 class ModInfo:
     def __init__(self, next_episode, r, user, paw, i, foundlist, episodes, past_history):
         self.next_episode = next_episode
@@ -18,6 +19,7 @@ class ModInfo:
 
     def login(self):
         self.r.login(self.user, self.paw)
+
 
 discussion_string = '''\
 Monthly discussion posts will be posted on the last weekend of every month, and subreddit rewatch episodes will be posted on the other days!
@@ -34,6 +36,8 @@ Suggested topics:
 
 These are just suggestions, so feel free to talk about anything that you want and discuss with others!
 '''
+
+
 def get_discussion_string(monthstring, past_history):
     global discussion_string
     # Example podcast list:
@@ -46,9 +50,9 @@ def get_discussion_string(monthstring, past_history):
         if 'IIWY' in past_history[monthstring]:
             added_text += "**Podcasts released this month**:\n\n"
             for history_dict in past_history[monthstring]['IIWY']:
-                added_text += "* [Episode %d: %s](%s)\n" %(history_dict['number'],
-                                                           history_dict['title'],
-                                                           history_dict['reddit_url'])
+                added_text += "* [Episode %d: %s](%s)\n" % (history_dict['number'],
+                                                            history_dict['title'],
+                                                            history_dict['reddit_url'])
 
     return discussion_string % added_text
 
@@ -63,10 +67,10 @@ Today's episodes are a multi-part series! The episodes in this series are:\n\n''
     durations = episode.duration.split(',,')
     dates = episode.date_str.split(',,')
     for (title, url, duration, date_str) in zip(titles, urls, durations, dates):
-        s += '* **[%s](%s)** (%s), originally aired %s.  \n' %(title, url, duration, date_str)
+        s += '* **[%s](%s)** (%s), originally aired %s.  \n' % (title, url, duration, date_str)
 
     if episode.bonus_footage:
-        s += '\n\n**Bonus footage**: %s' %episode.bonus_footage
+        s += '\n\n**Bonus footage**: %s' % episode.bonus_footage
 
     s += '''
 
@@ -112,7 +116,7 @@ def mod_actions(mod_info, force_submit_rewatch=False, testmode=False):
      else, post the next subreddit rewatch (pointed to by mod_info.next_episode) and sticky it.
     """
     new_day = get_day()
-    if force_submit_rewatch or new_day != mod_info.day: # only happens on a new day at midnight
+    if force_submit_rewatch or new_day != mod_info.day:  # only happens on a new day at midnight
         # post discussion of the month
         if new_day in ['Saturday', 'Sunday'] and time_to_post_discussion():
             # don't post it twice (once on sunday and once on saturday - just once on the weekend)
@@ -133,7 +137,7 @@ def post_new_rewatch(mod_info, testmode=False):
         episode_title = episode.title.split(',,')[0].split('Part')[0].split('Pt.')[0].split('pt.')[0].split('Ep.')[
             0].strip()
         title = 'Subreddit Rewatch #%d: %s (Series) (%s - %s)' % (
-        mod_info.next_episode, episode_title, episode.date_str.split(',,')[0], episode.date_str.split(',,')[-1])
+            mod_info.next_episode, episode_title, episode.date_str.split(',,')[0], episode.date_str.split(',,')[-1])
         if not testmode:
             submission = submit(title, mod_info, 'jakeandamir',
                                 text=get_multipart_string(episode))
@@ -150,6 +154,7 @@ def post_new_rewatch(mod_info, testmode=False):
     print("Successfully submitted sticky! Time to celebrate.")
     if not testmode:
         return submission
+
 
 def post_monthly_discussion(mod_info, testmode=False):
     today_datetime = datetime.datetime.now()
@@ -181,5 +186,3 @@ def time_to_post_discussion():
         return True
     else:
         return False
-
-

@@ -22,8 +22,10 @@ else:
 
 DEFAULT_STR = ''
 
+
 class IIWY:
-    def __init__(self, number, title, duration, monthstring, sponsor_list, reddit_title=None, url=None, reddit_url=None, desc=None):
+    def __init__(self, number, title, duration, monthstring, sponsor_list, reddit_title=None, url=None, reddit_url=None,
+                 desc=None):
         self.number = number
         self.title = title
         self.duration = duration
@@ -57,14 +59,14 @@ def get_iiwy_info(depth=0):
             soup = BeautifulSoup(''.join(r.text), "html.parser")
         else:
             soup = BeautifulSoup(''.join(r.text))
-        episode_part = soup.findAll('h2', {'class':'track_title'})[0]
+        episode_part = soup.findAll('h2', {'class': 'track_title'})[0]
         episode_part = episode_part.findAll('a')[0]
         name = episode_part.text
         title = name
-        if ':' in title: #"Episode 191: The Emotionary" -> "The Emotionary"
+        if ':' in title:  # "Episode 191: The Emotionary" -> "The Emotionary"
             title = title.split(':')[1].strip()
         url = episode_part['href']
-        duration = soup.findAll('div', {'class':'trkl_ep_duration'})[0].contents[0].strip()
+        duration = soup.findAll('div', {'class': 'trkl_ep_duration'})[0].contents[0].strip()
         if len(duration) > 0:
             minutes = int(duration.split(':')[0])
             if minutes >= 60:
@@ -75,7 +77,7 @@ def get_iiwy_info(depth=0):
 
         def get_sponsors(sponsors):
             sponsorlist = []
-            if ',' in sponsors: # Squarespace.com, MeUndies.com, and DollarShaveClub.com!
+            if ',' in sponsors:  # Squarespace.com, MeUndies.com, and DollarShaveClub.com!
                 csvs = sponsors.split(',')
                 if len(csvs) == 3:
                     sponsorlist.append(csvs[0].strip())
@@ -86,10 +88,10 @@ def get_iiwy_info(depth=0):
                     sponsorlist.append(csvs[1].strip())
                     sponsorlist.append(csvs[2].strip())
                     sponsorlist.append(csvs[3].split('and')[1].strip().rstrip('.').rstrip('!'))
-            elif ' and ' in sponsors: # Squarespace.com and DollarShaveClub.com
+            elif ' and ' in sponsors:  # Squarespace.com and DollarShaveClub.com
                 sponsorlist.append(sponsors.split(' and ')[0].strip())
                 sponsorlist.append(sponsors.split(' and ')[1].strip().rstrip('.').rstrip('!'))
-            else: # MeUndies.com
+            else:  # MeUndies.com
                 sponsorlist.append(sponsors.strip().rstrip('.').rstrip('!'))
             return sponsorlist
 
@@ -101,7 +103,7 @@ def get_iiwy_info(depth=0):
                 soup = BeautifulSoup(''.join(r.text), "html.parser")
             else:
                 soup = BeautifulSoup(''.join(r.text))
-            desc = soup.findAll('div', {'class':'track_description'})[0].contents
+            desc = soup.findAll('div', {'class': 'track_description'})[0].contents
             desctext = desc[0].strip()
             longtext = ''.join([str(s) for s in desc])
             desc = desctext
@@ -120,7 +122,7 @@ def get_iiwy_info(depth=0):
         print("encountered spreaker error =(")
         print(e)
         time.sleep(3)
-        return get_iiwy_info(depth=depth+1)
+        return get_iiwy_info(depth=depth + 1)
     episode_num = name.split(':')[0].split('Episode')[1].strip()
     episode_num = int(episode_num)
     try:
@@ -135,7 +137,7 @@ def get_iiwy_info(depth=0):
 
     def to_reddit_url(link):
         if '.com' in link or '.org' in link or '.net' in link:
-            link = '['+link.split('.com')[0].split('.org')[0].split('.net')[0]+'](http://'+link.lower()+')'
+            link = '[' + link.split('.com')[0].split('.org')[0].split('.net')[0] + '](http://' + link.lower() + ')'
         return link
 
     sponsorlist = list(map(to_reddit_url, sponsorlist))
@@ -152,7 +154,7 @@ def get_iiwy_info(depth=0):
 def check_iiwy_and_post_if_new(mod_info, force_submit=False):
     iiwy_obj = get_iiwy_info()
     if not force_submit:
-        if iiwy_obj.number in mod_info.foundlist or iiwy_obj.duration in mod_info.foundlist: # if episode found before
+        if iiwy_obj.number in mod_info.foundlist or iiwy_obj.duration in mod_info.foundlist:  # if episode found before
             jjkae_tools.printinfo(mod_info)
             return
     while True:
@@ -172,9 +174,10 @@ def check_iiwy_and_post_if_new(mod_info, force_submit=False):
     mod_info.foundlist.append(iiwy_obj.duration)
     jjkae_tools.printinfo(mod_info)
 
+
 def get_comment_text(iiwy_obj):
     comment = ''
-    comment += '"'+iiwy_obj.desc+'"\n\n---\n\n###Links\n\n [If I Were You Bingo](http://iiwybingo.appspot.com)\n\n [Source Code](https://github.com/popcorncolonel/JakeandAmirBot)'
+    comment += '"' + iiwy_obj.desc + '"\n\n---\n\n###Links\n\n [If I Were You Bingo](http://iiwybingo.appspot.com)\n\n [Source Code](https://github.com/popcorncolonel/JakeandAmirBot)'
     if iiwy_obj.sponsor_list != []:
         n_sponsors = len(iiwy_obj.sponsor_list)
         comment += '\n\n This episode\'s sponsors: '
@@ -192,6 +195,7 @@ def get_comment_text(iiwy_obj):
                         iiwy_obj.sponsor_list[2] + ', and ' +
                         iiwy_obj.sponsor_list[3])
     return comment
+
 
 def replace_top_sticky(sub, submission):
     # old rewatch/discussion
@@ -213,6 +217,7 @@ def replace_top_sticky(sub, submission):
         print("Caught exception while trying to sticky:", e)
 
     submission.distinguish()
+
 
 def post_iiwy(iiwy_obj, mod_info):
     subreddit = 'jakeandamir'
@@ -241,6 +246,7 @@ def post_iiwy(iiwy_obj, mod_info):
     mod_info.past_history.add_iiwy(iiwy_obj)
     mod_info.past_history.write()
     print("Successfully submitted link! Time to celebrate.")
+
 
 def post_subreddit_comment(submission, iiwy_obj):
     while True:
