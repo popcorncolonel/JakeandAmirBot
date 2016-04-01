@@ -9,6 +9,7 @@ import HTMLParser
 
 from jjkae_tools import replace_top_sticky
 
+html_parser = HTMLParser.HTMLParser()
 
 class LNH:
     def __init__(self, title, number, url, reddit_title, monthstring, reddit_url):
@@ -25,8 +26,23 @@ class LNH:
 
 def get_lnh_info(depth=0):
     monthstring = history.this_monthstring()
-    lnh_obj = LNH(title="test", number=1, url='x.com', reddit_title='title',
-                  monthstring=monthstring, reddit_url='reddit.com')
+
+    r = requests.get('http://vimeo.com/???', timeout=10)
+    html_body = r.text
+
+    # Parse most recent episode info
+
+    reddit_title = 'title'
+    reddit_title = html_parser.unescape(reddit_title)
+    lnh_url = 'x.com'
+    title="test"
+    title = html_parser.unescape(title)
+    number = 1
+    reddit_url = 'reddit.com'
+
+    lnh_obj = LNH(title=title, number=number, url=lnh_url,
+                  reddit_title=reddit_title,
+                  monthstring=monthstring, reddit_url=reddit_url)
     return lnh_obj
 
 def check_lnh_and_post_if_new(mod_info, force_submit=False):
@@ -74,3 +90,24 @@ def post_lnh(lnh_obj, mod_info):
     mod_info.past_history.add_lnh(lnh_obj)
     mod_info.past_history.write()
     print("Successfully submitted link! Time to celebrate.")
+
+
+def get_comment_text(lnh_obj):
+    return ':)'
+
+def post_subreddit_comment(submission, lnh_obj):
+    while True:
+        try:
+            comment_text = get_comment_text(lnh_obj)
+            comment = submission.add_comment(comment_text)
+            comment.approve()
+            break
+        except requests.exceptions.HTTPError:
+            pass
+        except Exception as e:
+            print(e)
+            pass
+
+
+if __name__ == '__main__':
+    print(get_lnh_info())
