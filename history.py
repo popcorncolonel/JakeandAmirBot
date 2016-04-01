@@ -29,6 +29,18 @@ class History:
             "duration": iiwy.duration
         })
 
+    def add_lnh(self, lnh):
+        monthstring = lnh.monthstring
+        if monthstring not in self.history_dict:
+            self.history_dict[monthstring] = dict()
+        if 'LNH' not in self.history_dict[monthstring]:
+            self.history_dict[monthstring]['LNH'] = []
+        self.history_dict[monthstring]['IIWY'].append({
+            "title": lnh.title,
+            "reddit_url": lnh.reddit_url,
+            "number": lnh.number
+        })
+
 
 def get_history():
     with open("history.json") as json_file:

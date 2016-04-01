@@ -7,6 +7,7 @@ import tests
 import history
 import datetime
 import warnings
+import jjkae_tools
 
 from rewatch import episodes
 from mod_stuff import mod_actions, ModInfo
@@ -98,6 +99,7 @@ def main():
         if timeout != 0:
             time.sleep(timeout)
 
+        jjkae_tools.printinfo(mod_info)
         mod_info.i += 1
 
 

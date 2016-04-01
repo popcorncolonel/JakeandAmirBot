@@ -81,3 +81,25 @@ def get_day():
     today_datetime = datetime.datetime.now()
     day = today_datetime.strftime('%A')
     return day
+
+
+def replace_top_sticky(sub, submission):
+    # old rewatch/discussion
+    bottom_sticky = sub.get_sticky(bottom=True)
+    bottom_sticky.unsticky()
+    # old IIWY
+    top_sticky = sub.get_sticky(bottom=False)
+    top_sticky.unsticky()
+
+    # new IIWY
+    try:
+        submission.sticky(bottom=False)
+    except Exception as e:
+        print("Caught exception while trying to sticky:", e)
+    # old rewatch/discussion
+    try:
+        bottom_sticky.sticky(bottom=True)
+    except Exception as e:
+        print("Caught exception while trying to sticky:", e)
+
+    submission.distinguish()

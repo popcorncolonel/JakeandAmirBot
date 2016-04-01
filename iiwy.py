@@ -1,15 +1,15 @@
 import sys
 import time
+import warnings
 
 import praw
+import requests
 
 import history
-import requests
-import warnings
 # noinspection PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility
 import HTMLParser
 
-import jjkae_tools
+from jjkae_tools import replace_top_sticky
 
 html_parser = HTMLParser.HTMLParser()
 
@@ -155,7 +155,6 @@ def check_iiwy_and_post_if_new(mod_info, force_submit=False):
     iiwy_obj = get_iiwy_info()
     if not force_submit:
         if iiwy_obj.number in mod_info.foundlist or iiwy_obj.duration in mod_info.foundlist:  # if episode found before
-            jjkae_tools.printinfo(mod_info)
             return
     while True:
         try:
@@ -172,7 +171,6 @@ def check_iiwy_and_post_if_new(mod_info, force_submit=False):
             break
     mod_info.foundlist.append(iiwy_obj.number)
     mod_info.foundlist.append(iiwy_obj.duration)
-    jjkae_tools.printinfo(mod_info)
 
 
 def get_comment_text(iiwy_obj):
@@ -195,28 +193,6 @@ def get_comment_text(iiwy_obj):
                         iiwy_obj.sponsor_list[2] + ', and ' +
                         iiwy_obj.sponsor_list[3])
     return comment
-
-
-def replace_top_sticky(sub, submission):
-    # old rewatch/discussion
-    bottom_sticky = sub.get_sticky(bottom=True)
-    bottom_sticky.unsticky()
-    # old IIWY
-    top_sticky = sub.get_sticky(bottom=False)
-    top_sticky.unsticky()
-
-    # new IIWY
-    try:
-        submission.sticky(bottom=False)
-    except Exception as e:
-        print("Caught exception while trying to sticky:", e)
-    # old rewatch/discussion
-    try:
-        bottom_sticky.sticky(bottom=True)
-    except Exception as e:
-        print("Caught exception while trying to sticky:", e)
-
-    submission.distinguish()
 
 
 def post_iiwy(iiwy_obj, mod_info):
