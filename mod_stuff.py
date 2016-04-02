@@ -1,24 +1,49 @@
+from __future__ import print_function
+
+import praw
 import history
-from jjkae_tools import send_rewatch_email, isnum, submit, get_day
-from rewatch import episodes
 import datetime
 import calendar
+import reddit_password
+
+from rewatch import episodes
+from jjkae_tools import send_rewatch_email, isnum, submit, get_day
 
 
 class ModInfo:
-    def __init__(self, next_episode, r, user, paw, i, foundlist, episodes, past_history):
+    def get_r(self):
+        r = praw.Reddit(user_agent='JakeandAmir program by /u/popcorncolonel')
+        # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
+        r.config.decode_html_entities = True
+        return r
+
+    def __init__(self, next_episode, foundlist):
         self.next_episode = next_episode
         self.day = get_day()
-        self.r = r
-        self.user = user
-        self.paw = paw
-        self.i = i
+
+        self.r = self.get_r()
+        self.i = 1  # How many cycles the program has run for
         self.foundlist = foundlist
         self.episodes = episodes
-        self.past_history = past_history
+        self.past_history = history.get_history()
+
+        self.client_id = reddit_password.get_client_id()
+        self.client_secret = reddit_password.get_client_secret()
+        self.access_token = reddit_password.get_access_token()
+        self.scope = reddit_password.get_scope()
+        self.refresh_token = reddit_password.get_refresh_token()
 
     def login(self):
-        self.r.login(self.user, self.paw)
+        #  For anyone reading this and trying to get this to run yourself: follow this tutorial: https://redd.it/3lotxj/
+        #  and implement the client_id, refresh_token stuff yourself. You don't need username and password anymore.
+        self.r.set_oauth_app_info(client_id=self.client_id,
+                                  client_secret=self.client_secret,
+                                  redirect_uri='http://127.0.0.1:65010/authorize_callback')
+        access_info = {u'access_token': self.access_token,
+                       u'scope': self.scope,
+                       u'refresh_token': self.refresh_token}
+        self.r.refresh_access_information(access_info['refresh_token'])
+        self.r.set_access_credentials(**access_info)
 
 
 discussion_string = '''\

@@ -43,13 +43,34 @@ class IIWY:
         return self.__repr__()
 
 
+
+def get_sponsors(sponsors):
+    sponsorlist = []
+    if ',' in sponsors:  # Squarespace.com, MeUndies.com, and DollarShaveClub.com!
+        csvs = sponsors.split(',')
+        if len(csvs) == 3:
+            sponsorlist.append(csvs[0].strip())
+            sponsorlist.append(csvs[1].strip())
+            sponsorlist.append(csvs[2].split('and')[1].strip().rstrip('.').rstrip('!'))
+        elif len(csvs) == 4:
+            sponsorlist.append(csvs[0].strip())
+            sponsorlist.append(csvs[1].strip())
+            sponsorlist.append(csvs[2].strip())
+            sponsorlist.append(csvs[3].split('and')[1].strip().rstrip('.').rstrip('!'))
+    elif ' and ' in sponsors:  # Squarespace.com and DollarShaveClub.com
+        sponsorlist.append(sponsors.split(' and ')[0].strip())
+        sponsorlist.append(sponsors.split(' and ')[1].strip().rstrip('.').rstrip('!'))
+    else:  # MeUndies.com
+        sponsorlist.append(sponsors.strip().rstrip('.').rstrip('!'))
+    return sponsorlist
+
+
+def to_reddit_url(link):
+    if '.com' in link or '.org' in link or '.net' in link:
+        link = '[' + link.split('.com')[0].split('.org')[0].split('.net')[0] + '](http://' + link.lower() + ')'
+    return link
+
 def get_iiwy_info(depth=0):
-    """
-    TODO: split this up
-    Returns a tuple (string, string) representing the title and URL
-        of the most recent If I Were You episode
-    """
-    (name, url, desc, sponsorlist) = (DEFAULT_STR, DEFAULT_STR, DEFAULT_STR, [])
     try:
         r = None
         with warnings.catch_warnings():
@@ -74,26 +95,6 @@ def get_iiwy_info(depth=0):
                 minutes = '%02d' % (minutes % 60)
                 duration = hours + ':' + minutes + ':' + duration.split(':')[1]
             name += ' [' + duration + ']'
-
-        def get_sponsors(sponsors):
-            sponsorlist = []
-            if ',' in sponsors:  # Squarespace.com, MeUndies.com, and DollarShaveClub.com!
-                csvs = sponsors.split(',')
-                if len(csvs) == 3:
-                    sponsorlist.append(csvs[0].strip())
-                    sponsorlist.append(csvs[1].strip())
-                    sponsorlist.append(csvs[2].split('and')[1].strip().rstrip('.').rstrip('!'))
-                elif len(csvs) == 4:
-                    sponsorlist.append(csvs[0].strip())
-                    sponsorlist.append(csvs[1].strip())
-                    sponsorlist.append(csvs[2].strip())
-                    sponsorlist.append(csvs[3].split('and')[1].strip().rstrip('.').rstrip('!'))
-            elif ' and ' in sponsors:  # Squarespace.com and DollarShaveClub.com
-                sponsorlist.append(sponsors.split(' and ')[0].strip())
-                sponsorlist.append(sponsors.split(' and ')[1].strip().rstrip('.').rstrip('!'))
-            else:  # MeUndies.com
-                sponsorlist.append(sponsors.strip().rstrip('.').rstrip('!'))
-            return sponsorlist
 
         try:
             with warnings.catch_warnings():
@@ -135,11 +136,6 @@ def get_iiwy_info(depth=0):
         print(e)
         time.sleep(3)
 
-    def to_reddit_url(link):
-        if '.com' in link or '.org' in link or '.net' in link:
-            link = '[' + link.split('.com')[0].split('.org')[0].split('.net')[0] + '](http://' + link.lower() + ')'
-        return link
-
     sponsorlist = list(map(to_reddit_url, sponsorlist))
     desc = desc.replace('"', "'").strip()
     name = html_parser.unescape(name)
@@ -151,14 +147,14 @@ def get_iiwy_info(depth=0):
     return iiwy_obj
 
 
-def check_iiwy_and_post_if_new(mod_info, force_submit=False):
+def check_iiwy_and_post_if_new(mod_info, force_submit=False, testmode=False):
     iiwy_obj = get_iiwy_info()
     if not force_submit:
         if iiwy_obj.number in mod_info.foundlist or iiwy_obj.duration in mod_info.foundlist:  # if episode found before
             return
     while True:
         try:
-            post_iiwy(iiwy_obj, mod_info)
+            post_iiwy(iiwy_obj, mod_info, testmode=testmode)
             break
         except requests.exceptions.HTTPError:
             print("HTTP error while trying to submit - retrying to resubmit")
@@ -195,33 +191,38 @@ def get_comment_text(iiwy_obj):
     return comment
 
 
-def post_iiwy(iiwy_obj, mod_info):
+def post_iiwy(iiwy_obj, mod_info, testmode=False):
     subreddit = 'jakeandamir'
     sub = mod_info.r.get_subreddit(subreddit)
     mod_info.login()
-    try:
-        submission = mod_info.r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
-    except praw.errors.AlreadySubmitted as e:
-        print(e)
-        iiwy_obj.reddit_url = 'TODO: Get the real submitted object'
-        mod_info.past_history.add_iiwy(iiwy_obj)
-        mod_info.past_history.write()
-        return
-    sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
-    submission.approve()
+    submission = None
+    if not testmode:
+        try:
+            submission = mod_info.r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
+        except praw.errors.AlreadySubmitted as e:
+            print(e)
+            iiwy_obj.reddit_url = 'TODO: Get the real submitted object'
+            mod_info.past_history.add_iiwy(iiwy_obj)
+            mod_info.past_history.write()
+            return
+        sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
+        submission.approve()
 
     print("NEW IIWY!!! WOOOOO!!!!")
     print(iiwy_obj.reddit_title)
+    if not testmode:
+        print("(didn't actually submit anything - dont freak out)")
 
-    post_subreddit_comment(submission, iiwy_obj)
+    if not testmode:
+        post_subreddit_comment(submission, iiwy_obj)
+        iiwy_obj.reddit_url = submission.permalink
 
-    iiwy_obj.reddit_url = submission.permalink
+    if not testmode:
+        replace_top_sticky(sub, submission)
 
-    replace_top_sticky(sub, submission)
-
-    mod_info.past_history.add_iiwy(iiwy_obj)
-    mod_info.past_history.write()
-    print("Successfully submitted link! Time to celebrate.")
+        mod_info.past_history.add_iiwy(iiwy_obj)
+        mod_info.past_history.write()
+        print("Successfully submitted link! Time to celebrate.")
 
 
 def post_subreddit_comment(submission, iiwy_obj):

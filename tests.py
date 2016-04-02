@@ -1,6 +1,21 @@
 import unittest
 
+from mod_stuff import ModInfo
+
 class JjkaeTest(unittest.TestCase):
+    foundlist = []
+    next_episode = 100
+    mod_info = ModInfo(next_episode=next_episode, foundlist=foundlist)
+
+    def __init__(self, *args, **kwargs):
+        super(JjkaeTest, self).__init__(*args, **kwargs)
+        self.mod_info = JjkaeTest.mod_info
+
+    def test_login(self):
+        print("Logging in...")
+        self.mod_info.login()
+        print("Logged in.")
+
     def test_load_history_json(self):
         import json
         with open("history.json") as json_file:
@@ -16,28 +31,19 @@ class JjkaeTest(unittest.TestCase):
         self.assertIn(type(iiwy_obj.url), {unicode, str})
         self.assertIn(type(iiwy_obj.desc), {unicode, str})
         self.assertIs(type(iiwy_obj.sponsor_list), list)
+        iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
 
     def test__prints(self):
         import jjkae_tools
-        from rewatch import episodes
-        from mod_stuff import ModInfo
-        foundlist = []
-        next_episode = 100
-        mod_info = ModInfo(next_episode=next_episode, r=None, user=None, paw=None, i=1, foundlist=foundlist, episodes=episodes, past_history=None)
         for i in range(1, 153):
-            mod_info.i = i
-            jjkae_tools.printinfo(mod_info)
+            self.mod_info.i = i
+            jjkae_tools.printinfo(self.mod_info)
+        self.mod_info.i = 1
 
     def test_mod_stuff(self):
         from mod_stuff import ModInfo, mod_actions
-        from rewatch import episodes
-        import praw, reddit_password, history
-        r = praw.Reddit(user_agent = 'JakeandAmir program by /u/popcorncolonel')
-        r.config.decode_html_entities = True # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
-        user = 'JakeandAmirBot'
-        paw = reddit_password.get_password()
 
-        mod_info = ModInfo(15, r, user, paw, 1, [], episodes, history.get_history())
+        mod_info = ModInfo(next_episode=15, foundlist=[])
         mod_actions(mod_info, testmode=False)
         print("Tested mod actions")
 
