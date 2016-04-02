@@ -37,13 +37,20 @@ def iiwy_loop(mod_info, force_submit_iiwy=False):
 def lnh_loop(mod_info, force_submit_lnh=False):
     lonely.check_lnh_and_post_if_new(mod_info, force_submit=force_submit_lnh)
 
-def test_before_running():
-    errors = tests.run_tests()
-    if errors:
-        for error in errors:
-            print(error)
-        sys.exit()
 
+
+def test_before_running():
+    def run_tests():
+        errors = tests.run_tests()
+        if errors:
+            for error in errors:
+                print(error)
+            sys.exit()
+
+    import threading
+    t = threading.Thread(target=run_tests)
+    t.daemon = True
+    t.start()
 
 def initialize_foundlist():
     iiwy_obj = iiwy.get_iiwy_info()

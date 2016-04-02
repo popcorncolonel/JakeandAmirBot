@@ -41,10 +41,12 @@ class JjkaeTest(unittest.TestCase):
         self.mod_info.i = 1
 
     def test_mod_stuff(self):
-        from mod_stuff import ModInfo, mod_actions
+        from mod_stuff import ModInfo, mod_actions, post_monthly_discussion
 
         mod_info = ModInfo(next_episode=15, foundlist=[])
-        mod_actions(mod_info, testmode=False)
+        mod_actions(mod_info, testmode=True)
+        post_monthly_discussion(mod_info, testmode=True)
+
         print("Tested mod actions")
 
 # Returns the list of errors of the tests

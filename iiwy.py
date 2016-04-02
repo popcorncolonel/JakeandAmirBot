@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import sys
 import time
 import warnings
@@ -6,7 +8,6 @@ import praw
 import requests
 
 import history
-# noinspection PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility,PyCompatibility
 import HTMLParser
 
 from jjkae_tools import replace_top_sticky
@@ -195,34 +196,33 @@ def post_iiwy(iiwy_obj, mod_info, testmode=False):
     subreddit = 'jakeandamir'
     sub = mod_info.r.get_subreddit(subreddit)
     mod_info.login()
-    submission = None
-    if not testmode:
-        try:
-            submission = mod_info.r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
-        except praw.errors.AlreadySubmitted as e:
-            print(e)
-            iiwy_obj.reddit_url = 'TODO: Get the real submitted object'
-            mod_info.past_history.add_iiwy(iiwy_obj)
-            mod_info.past_history.write()
-            return
-        sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
-        submission.approve()
+
+    if testmode:
+        print("testmode - not actually submitting anything.")
+        print("testmode - IIWY found: ", iiwy_obj.reddit_title)
+        return
+
+    try:
+        submission = mod_info.r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
+    except praw.errors.AlreadySubmitted as e:
+        print(e)
+        iiwy_obj.reddit_url = 'TODO: Get the real submitted object'
+        mod_info.past_history.add_iiwy(iiwy_obj)
+        mod_info.past_history.write()
+        return
+    sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
+    submission.approve()
 
     print("NEW IIWY!!! WOOOOO!!!!")
     print(iiwy_obj.reddit_title)
-    if not testmode:
-        print("(didn't actually submit anything - dont freak out)")
+    post_subreddit_comment(submission, iiwy_obj)
+    iiwy_obj.reddit_url = submission.permalink
+    replace_top_sticky(sub, submission)
 
-    if not testmode:
-        post_subreddit_comment(submission, iiwy_obj)
-        iiwy_obj.reddit_url = submission.permalink
-
-    if not testmode:
-        replace_top_sticky(sub, submission)
-
-        mod_info.past_history.add_iiwy(iiwy_obj)
-        mod_info.past_history.write()
-        print("Successfully submitted link! Time to celebrate.")
+    mod_info.past_history.add_iiwy(iiwy_obj)
+    mod_info.past_history.write()
+    print("Successfully submitted link! Time to celebrate.")
+    return submission
 
 
 def post_subreddit_comment(submission, iiwy_obj):
