@@ -7,7 +7,6 @@ import calendar
 import reddit_password
 
 import jjkae_tools
-print(dir(jjkae_tools))
 from rewatch import episodes
 
 
