@@ -48,13 +48,3 @@ class JjkaeTest(unittest.TestCase):
         post_monthly_discussion(mod_info, testmode=True)
 
         print("Tested mod actions")
-
-# Returns the list of errors of the tests
-def run_tests(verbosity=0):
-    suite = unittest.TestLoader().loadTestsFromTestCase(JjkaeTest)
-    results = unittest.TextTestRunner(verbosity=verbosity).run(suite)
-    return results.errors
-
-if __name__ == '__main__':
-    run_tests()
-

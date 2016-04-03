@@ -3,13 +3,12 @@ from __future__ import print_function
 import sys
 import time
 import iiwy
-import tests
 import lonely
 import datetime
 import jjkae_tools
 
-from rewatch import episodes
 from mod_stuff import mod_actions, ModInfo
+from rewatch import episodes
 
 force_submit_rewatch = False  # This causes mod_actions to post the rewatch the first iteration (i==1).
 force_submit_iiwy = False
@@ -38,20 +37,6 @@ def lnh_loop(mod_info, force_submit_lnh=False):
     lonely.check_lnh_and_post_if_new(mod_info, force_submit=force_submit_lnh)
 
 
-
-def test_before_running():
-    def run_tests():
-        errors = tests.run_tests()
-        if errors:
-            for error in errors:
-                print(error)
-            sys.exit()
-
-    import threading
-    t = threading.Thread(target=run_tests)
-    t.daemon = True
-    t.start()
-
 def initialize_foundlist():
     iiwy_obj = iiwy.get_iiwy_info()
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
@@ -60,13 +45,12 @@ def initialize_foundlist():
     foundlist = ["", iiwy_obj.number, iiwy_obj.duration]
     return foundlist
 
-
 def main():
     global force_submit_iiwy, force_submit_rewatch
 
     default_timeout = 5  # don't spam the servers :D
 
-    test_before_running()
+    jjkae_tools.start_test_thread()
 
     foundlist = initialize_foundlist()
 

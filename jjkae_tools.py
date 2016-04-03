@@ -1,10 +1,11 @@
 from __future__ import print_function
 
+import sys
 import time
+import unittest
 import requests
 import datetime
 import reddit_password
-
 
 def printinfo(mod_info):
     print(mod_info.i, end=' ')
@@ -18,7 +19,9 @@ def printinfo(mod_info):
         print(mod_info.foundlist, end=' ')
     print()
 
-def send_email(subject, body, to, bcc_list):
+def send_email(subject, body, to, bcc_list=None):
+    if bcc_list is None:
+        bcc_list = []
     try:
         params = {
                 'api_user': reddit_password.get_sendgrid_username(),
@@ -82,6 +85,10 @@ def get_day():
     day = today_datetime.strftime('%A')
     return day
 
+def get_hour():
+    today_datetime = datetime.datetime.now()
+    hour = today_datetime.strftime('%H')
+    return hour
 
 def replace_top_sticky(sub, submission):
     # old rewatch/discussion
@@ -103,3 +110,30 @@ def replace_top_sticky(sub, submission):
         print("Caught exception while trying to sticky:", e)
 
     submission.distinguish()
+
+def start_test_thread(email_if_failures=False):
+    """
+    :rtype: threading.Thread
+    """
+    def run_tests():
+        errors = run_jjkae_tests()
+        if errors:
+            error_synopsis = '\n\n'.join([str(error) for error in errors])
+            if email_if_failures:
+                send_email('J&ABot Error', error_synopsis, 'popcorncolonel' '@' 'gmail.com')
+            for error in errors:
+                print(error)
+            # sys.exit() #idk if I wanna sys.exit
+
+    import threading
+    t = threading.Thread(target=run_tests)
+    t.daemon = True # makes calls to "sys.exit" actually exit the program within the thread
+    t.start()
+    return t
+
+# Returns the list of errors of the tests
+def run_jjkae_tests(verbosity=0):
+    from tests import JjkaeTest
+    suite = unittest.TestLoader().loadTestsFromTestCase(JjkaeTest)
+    results = unittest.TextTestRunner(verbosity=verbosity).run(suite)
+    return results.errors
