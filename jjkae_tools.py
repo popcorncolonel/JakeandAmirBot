@@ -117,6 +117,7 @@ def start_test_thread(email_if_failures=False):
         errors = run_jjkae_tests()
         if errors:
             error_synopsis = '\n\n'.join([str(error) for error in errors])
+            error_synopsis.replace('\\n','\n').replace('\n', '\r\n')
             if email_if_failures:
                 send_email('J&ABot Error', error_synopsis, 'popcorncolonel' '@' 'gmail.com')
             for error in errors:
