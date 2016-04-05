@@ -112,9 +112,7 @@ def replace_top_sticky(sub, submission):
     submission.distinguish()
 
 def start_test_thread(email_if_failures=False):
-    """
-    :rtype: threading.Thread
-    """
+    # type: (bool) -> threading.Thread
     def run_tests():
         errors = run_jjkae_tests()
         if errors:

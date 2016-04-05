@@ -50,7 +50,7 @@ def main():
 
     default_timeout = 5  # don't spam the servers :D
 
-    jjkae_tools.start_test_thread()
+    jjkae_tools.start_test_thread(email_if_failures=True)
 
     foundlist = initialize_foundlist()
 

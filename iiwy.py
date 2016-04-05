@@ -125,7 +125,8 @@ def get_iiwy_info(depth=0):
         print(e)
         time.sleep(3)
         return get_iiwy_info(depth=depth + 1)
-    episode_num = name.split(':')[0].split('Episode')[1].strip()
+    import re
+    episode_num = re.search('\d+', name.split(':')[0].split('Episode')[1].strip())
     episode_num = int(episode_num)
     try:
         if 'If I Were You' not in name:
