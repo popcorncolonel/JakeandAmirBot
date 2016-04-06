@@ -1,10 +1,10 @@
 from __future__ import print_function
 
+import re
 import sys
+import praw
 import time
 import warnings
-
-import praw
 import requests
 
 import history
@@ -125,7 +125,6 @@ def get_iiwy_info(depth=0):
         print(e)
         time.sleep(3)
         return get_iiwy_info(depth=depth + 1)
-    import re
     episode_num = re.search('\d+', name.split(':')[0].split('Episode')[1].strip()).group()
     episode_num = int(episode_num)
     try:

@@ -142,16 +142,17 @@ def mod_actions(mod_info, force_submit_rewatch=False, testmode=False):
      else, post the next subreddit rewatch (pointed to by mod_info.next_episode) and sticky it.
     """
     new_day = jjkae_tools.get_day()
-    if testmode or force_submit_rewatch or new_day != mod_info.day:  # only happens on a new day at midnight
-        # post discussion of the month
-        if new_day in ['Saturday', 'Sunday'] and time_to_post_discussion():
-            # don't post it twice (once on sunday and once on saturday - just once on the weekend)
-            if new_day == 'Saturday':
-                post_monthly_discussion(mod_info, testmode)
-        # post rewatch episode (every day other than discussion days)
-        elif new_day in ['Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']:
-            post_new_rewatch(mod_info, testmode)
-            mod_info.next_episode += 1
+    if mod_info.next_episode > -1:
+        if testmode or force_submit_rewatch or new_day != mod_info.day:  # only happens on a new day at midnight
+            # post discussion of the month
+            if new_day in ['Saturday', 'Sunday'] and time_to_post_discussion():
+                # don't post it twice (once on sunday and once on saturday - just once on the weekend)
+                if new_day == 'Saturday':
+                    post_monthly_discussion(mod_info, testmode)
+            # post rewatch episode (every day other than discussion days)
+            elif new_day in ['Friday', 'Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday']:
+                post_new_rewatch(mod_info, testmode)
+                mod_info.next_episode += 1
 
     new_hour = jjkae_tools.get_hour()
     # Run tests every hour - if any of the tests fail, email me.

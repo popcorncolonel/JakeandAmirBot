@@ -27,8 +27,7 @@ def get_timeout(default_timeout=5):
 
 
 def mod_loop(mod_info, force_submit_rewatch=False):
-    if mod_info.next_episode > -1:
-        mod_actions(mod_info, force_submit_rewatch)
+    mod_actions(mod_info, force_submit_rewatch=force_submit_rewatch)
 
 def iiwy_loop(mod_info, force_submit_iiwy=False):
     iiwy.check_iiwy_and_post_if_new(mod_info, force_submit=force_submit_iiwy)
