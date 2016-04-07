@@ -75,13 +75,13 @@ def post_lnh(lnh_obj, mod_info):
     except praw.errors.AlreadySubmitted as e:
         print(e)
         lnh_obj.reddit_url = 'TODO: Get the real submitted object'
-        mod_info.past_history.add_iiwy(lnh_obj)
+        mod_info.past_history.add_lnh(lnh_obj)
         mod_info.past_history.write()
         return
     sub.set_flair(submission, flair_text='NEW LONELY & HORNY', flair_css_class='video')
     submission.approve()
 
-    print("NEW IIWY!!! WOOOOO!!!!")
+    print("NEW LNH!!! WOOOOO!!!!")
     print(lnh_obj.reddit_title)
 
     lnh_obj.reddit_url = submission.permalink
