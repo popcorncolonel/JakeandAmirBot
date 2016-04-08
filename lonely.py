@@ -129,11 +129,10 @@ def get_lnh_info():
 
     durations = (duration1,duration2)
 
-    reddit_title = 'Lonely & Horny Discussion Post: {t1} & {t2}'.format(
+    reddit_title = 'Lonely & Horny Discussion Post: "{t1}" and "{t2}"'.format(
                 t1=title1, dur1=duration1,
                 t2=title2, dur2=duration2)
     reddit_title = html_parser.unescape(reddit_title)
-    print(reddit_title)
 
 
     lnh_obj = LNH(titles=titles, urls=lnh_urls, reddit_title=reddit_title, monthstring=monthstring, durations=durations)
@@ -142,11 +141,14 @@ def get_lnh_info():
     lnh_obj.desc = desc
     return lnh_obj
 
+def append_to_foundlist(foundlist, lnh_obj):
+    for title in lnh_obj.titles:
+        foundlist.append(('LNH', title))
 
 def check_lnh_and_post_if_new(mod_info, force_submit=False):
     lnh_obj = get_lnh_info()
     if not force_submit:
-        if all([('LNH', title) not in mod_info.foundlist for title in lnh_obj.titles]):
+        if any([('LNH', title) in mod_info.foundlist for title in lnh_obj.titles]):
             return
     while True:
         try:
@@ -161,8 +163,7 @@ def check_lnh_and_post_if_new(mod_info, force_submit=False):
         except Exception as e:
             print("Error", e)
             break
-    for title in lnh_obj.titles:
-        mod_info.foundlist.append(('LNH', title))
+    append_to_foundlist(mod_info.foundlist, lnh_obj)
 
 
 def post_lnh(lnh_obj, mod_info):
@@ -182,7 +183,7 @@ def post_lnh(lnh_obj, mod_info):
         mod_info.past_history.add_lnh(lnh_obj)
         mod_info.past_history.write()
         return
-    sub.set_flair(submission, flair_text='NEW LONELY & HORNY', flair_css_class='video')
+    sub.set_flair(submission, flair_text='NEW L&H', flair_css_class='video')
     submission.approve()
 
     print("NEW LNH!!! WOOOOO!!!!")

@@ -42,10 +42,14 @@ def initialize_foundlist():
           "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
           "and duration", iiwy_obj.duration)
     foundlist = ["", iiwy_obj.number, iiwy_obj.duration]
+    lnh_obj = lonely.get_lnh_info()
+    print("Names of most recent LNH's are: \"", lnh_obj.titles, "\" with URLs ", lnh_obj.urls,
+          "and duration ", lnh_obj.durations, sep='')
+    lonely.append_to_foundlist(foundlist, lnh_obj)
     return foundlist
 
 def main():
-    global force_submit_iiwy, force_submit_rewatch
+    global force_submit_iiwy, force_submit_rewatch, force_submit_lnh
 
     default_timeout = 5  # don't spam the servers :D
 
@@ -70,8 +74,8 @@ def main():
         mod_loop(mod_info, force_submit_rewatch)
         force_submit_rewatch = False  # Only do it once
 
-        #lnh_loop(mod_info, force_submit_lnh)
-        #force_submit_lnh = False  # Only do it once
+        lnh_loop(mod_info, force_submit_lnh)
+        force_submit_lnh = False  # Only do it once
 
         timeout = get_timeout(default_timeout)
 
