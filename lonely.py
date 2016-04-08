@@ -41,13 +41,16 @@ class LNH:
     def __str__(self):
         return self.__repr__()
 
+
 def get_title(link_tag):
     return link_tag['title']
+
 
 def get_url(link_tag):
     url = link_tag['href']  # /ondemand/lonelyandhorny/<ID>
     url = 'https://vimeo.com' + url
     return url
+
 
 def get_duration(time_tag):
     duration = time_tag.contents[0]  # "08:46"
@@ -56,8 +59,39 @@ def get_duration(time_tag):
         duration = str(int(d[0])) + ":" + d[1]
     return duration
 
-def get_lnh_info(depth=0):
+desc_string = '''\
+New Lonely & Horny episodes!
+
+* [{t1} ({dur1})]({url1})
+* [{t2} ({dur2})]({url2})
+'''
+def get_lnh_desc_body(lnh_obj):
+    """
+
+    :rtype: str
+    :type lnh_obj: LNH
+    """
+    global desc_string
+    title1 = lnh_obj.titles[0]
+    duration1 = lnh_obj.durations[0]
+    url1 = lnh_obj.urls[0]
+
+    title2 = lnh_obj.titles[1]
+    duration2 = lnh_obj.durations[1]
+    url2 = lnh_obj.urls[1]
+    desc = desc_string.format(
+        t1=title1, dur1=duration1, url1=url1,
+        t2=title2, dur2=duration2, url2=url2)
+    return desc
+
+
+def get_lnh_info():
     # type: (int) -> LNH
+    """
+
+    :rtype: LNH
+    """
+    # Get most recent and second most recent, return a tuple. (not the first and second episodes)
     monthstring = history.this_monthstring()
 
     r = requests.get('https://vimeo.com/ondemand/lonelyandhorny', timeout=10)
@@ -66,51 +100,54 @@ def get_lnh_info(depth=0):
     # Parse most recent episode info
 
     if python_3:
-        soup = BeautifulSoup(''.join(r.text), "html.parser")
+        soup = BeautifulSoup(''.join(html_body), "html.parser")
     else:
-        soup = BeautifulSoup(''.join(r.text))
+        soup = BeautifulSoup(''.join(html_body))
     link_tags = soup.findAll('a', {'data-detail-url': re.compile('.*')})
     time_tags = soup.findAll('time')
 
     link_tag_1 = link_tags[-2]
     name1 = get_title(link_tag_1)  # "E=mc2"
-    url1 = get_url(link_tag_1) # https://vimeo.com/ondemand/lonelyandhorny/<ID>
+    url1 = get_url(link_tag_1)  # https://vimeo.com/ondemand/lonelyandhorny/<ID>
     duration1 = get_duration(time_tags[-2])
 
-    print(url1)
-    print(duration1)
-
     link_tag_2 = link_tags[-1]
+    name2 = get_title(link_tag_2)  # "Orion"
+    url2 = get_url(link_tag_2)  # https://vimeo.com/ondemand/lonelyandhorny/<ID>
+    duration2 = get_duration(time_tags[-1])
 
-
-    # TODO: Get most recent and second most recent, return a tuple. (not the first and second episodes)
-
-    reddit_title = 'title'
-    reddit_title = html_parser.unescape(reddit_title)
-    lnh_url = url1
-    lnh_url = html_parser.unescape(lnh_url)
-    lnh_urls = (lnh_url,)
+    url1 = html_parser.unescape(url1)
+    url2 = html_parser.unescape(url2)
+    lnh_urls = (url1, url2)
 
     title1 = name1
     title1 = html_parser.unescape(title1)
+    title2 = name2
+    title2 = html_parser.unescape(title2)
 
-    titles = (title1,)
+    titles = (title1, title2)
 
-    desc = 'i hope u like the show'
+    durations = (duration1,duration2)
 
-    durations = (duration1,)
+    reddit_title = 'Lonely & Horny Discussion Post: {t1} & {t2}'.format(
+                t1=title1, dur1=duration1,
+                t2=title2, dur2=duration2)
+    reddit_title = html_parser.unescape(reddit_title)
+    print(reddit_title)
 
-    lnh_obj = LNH(titles=titles, urls=lnh_urls, reddit_title=reddit_title, monthstring=monthstring, durations=durations,
-                  desc=desc)
+
+    lnh_obj = LNH(titles=titles, urls=lnh_urls, reddit_title=reddit_title, monthstring=monthstring, durations=durations)
+
+    desc = get_lnh_desc_body(lnh_obj)
+    lnh_obj.desc = desc
     return lnh_obj
 
 
 def check_lnh_and_post_if_new(mod_info, force_submit=False):
     lnh_obj = get_lnh_info()
     if not force_submit:
-        for title in lnh_obj.titles:
-            if ('LNH', title) in mod_info.foundlist:  # if episode found before
-                return
+        if all([('LNH', title) not in mod_info.foundlist for title in lnh_obj.titles]):
+            return
     while True:
         try:
             lnh_obj.post(mod_info)
