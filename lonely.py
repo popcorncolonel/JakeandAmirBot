@@ -23,13 +23,13 @@ else:
 
 
 class LNH:
-    def __init__(self, titles, urls, reddit_title, monthstring, duration, reddit_url=None, desc=None):
+    def __init__(self, titles, urls, reddit_title, monthstring, durations, reddit_url=None, desc=None):
         self.titles = titles
         self.urls = urls
         self.reddit_title = reddit_title
         self.monthstring = monthstring
         self.reddit_url = reddit_url
-        self.duration = duration
+        self.durations = durations
         self.desc = desc
 
     def post(self, mod_info):
@@ -41,6 +41,20 @@ class LNH:
     def __str__(self):
         return self.__repr__()
 
+def get_title(link_tag):
+    return link_tag['title']
+
+def get_url(link_tag):
+    url = link_tag['href']  # /ondemand/lonelyandhorny/<ID>
+    url = 'https://vimeo.com' + url
+    return url
+
+def get_duration(time_tag):
+    duration = time_tag.contents[0]  # "08:46"
+    if ':' in duration:
+        d = duration.split(':')
+        duration = str(int(d[0])) + ":" + d[1]
+    return duration
 
 def get_lnh_info(depth=0):
     # type: (int) -> LNH
@@ -55,36 +69,48 @@ def get_lnh_info(depth=0):
         soup = BeautifulSoup(''.join(r.text), "html.parser")
     else:
         soup = BeautifulSoup(''.join(r.text))
-    episode_part = soup.findAll('a', {'data-detail-url': re.compile('.*')})[0]
-    name = episode_part['title']  # "E=mc2"
-    url = episode_part['href']  # /ondemand/lonelyandhorny/<ID>
-    url = 'https://vimeo.com' + url
-    duration = soup.findAll('time')[0].contents[0]  # "08:46"
+    link_tags = soup.findAll('a', {'data-detail-url': re.compile('.*')})
+    time_tags = soup.findAll('time')
+
+    link_tag_1 = link_tags[-2]
+    name1 = get_title(link_tag_1)  # "E=mc2"
+    url1 = get_url(link_tag_1) # https://vimeo.com/ondemand/lonelyandhorny/<ID>
+    duration1 = get_duration(time_tags[-2])
+
+    print(url1)
+    print(duration1)
+
+    link_tag_2 = link_tags[-1]
+
 
     # TODO: Get most recent and second most recent, return a tuple. (not the first and second episodes)
 
     reddit_title = 'title'
     reddit_title = html_parser.unescape(reddit_title)
-    lnh_url = url
+    lnh_url = url1
     lnh_url = html_parser.unescape(lnh_url)
     lnh_urls = (lnh_url,)
 
-    title = name
-    title = html_parser.unescape(title)
+    title1 = name1
+    title1 = html_parser.unescape(title1)
 
-    titles = (title,)
+    titles = (title1,)
 
     desc = 'i hope u like the show'
 
-    lnh_obj = LNH(titles=titles, urls=lnh_urls, reddit_title=reddit_title, monthstring=monthstring, duration=duration, desc=desc)
+    durations = (duration1,)
+
+    lnh_obj = LNH(titles=titles, urls=lnh_urls, reddit_title=reddit_title, monthstring=monthstring, durations=durations,
+                  desc=desc)
     return lnh_obj
 
 
 def check_lnh_and_post_if_new(mod_info, force_submit=False):
     lnh_obj = get_lnh_info()
     if not force_submit:
-        if ('LNH', lnh_obj.titles) in mod_info.foundlist:  # if episode found before
-            return
+        for title in lnh_obj.titles:
+            if ('LNH', title) in mod_info.foundlist:  # if episode found before
+                return
     while True:
         try:
             lnh_obj.post(mod_info)
@@ -98,7 +124,8 @@ def check_lnh_and_post_if_new(mod_info, force_submit=False):
         except Exception as e:
             print("Error", e)
             break
-    mod_info.foundlist.append(('LNH', lnh_obj.titles))
+    for title in lnh_obj.titles:
+        mod_info.foundlist.append(('LNH', title))
 
 
 def post_lnh(lnh_obj, mod_info):
