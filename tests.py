@@ -30,8 +30,30 @@ class JjkaeTest(unittest.TestCase):
         self.assertIn(type(iiwy_obj.reddit_title), {unicode, str})
         self.assertIn(type(iiwy_obj.url), {unicode, str})
         self.assertIn(type(iiwy_obj.desc), {unicode, str})
+        self.assertIn(type(iiwy_obj.monthstring), {unicode, str})
         self.assertIs(type(iiwy_obj.sponsor_list), list)
         iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
+
+    def test_lnh(self):
+        import lonely
+        lnh_obj = lonely.get_lnh_info()
+        self.assertEqual(len(lnh_obj.titles), 2)
+        self.assertIn(type(lnh_obj.titles[0]), {unicode, str})
+        self.assertIn(type(lnh_obj.titles[1]), {unicode, str})
+
+        self.assertEqual(len(lnh_obj.durations), 2)
+        self.assertIn(type(lnh_obj.durations[0]), {unicode, str})
+        self.assertIn(type(lnh_obj.durations[1]), {unicode, str})
+
+        self.assertEqual(len(lnh_obj.urls), 2)
+        self.assertIn(type(lnh_obj.urls[0]), {unicode, str})
+        self.assertIn(type(lnh_obj.urls[1]), {unicode, str})
+
+        self.assertIn(type(lnh_obj.reddit_title), {unicode, str})
+        self.assertIn(type(lnh_obj.desc), {unicode, str})
+        self.assertIn(type(lnh_obj.monthstring), {unicode, str})
+
+        lonely.check_lnh_and_post_if_new(self.mod_info, testmode=True)
 
     def test__prints(self):
         import jjkae_tools

@@ -145,11 +145,15 @@ def append_to_foundlist(foundlist, lnh_obj):
     for title in lnh_obj.titles:
         foundlist.append(('LNH', title))
 
-def check_lnh_and_post_if_new(mod_info, force_submit=False):
+def check_lnh_and_post_if_new(mod_info, force_submit=False, testmode=False):
     lnh_obj = get_lnh_info()
     if not force_submit:
         if any([('LNH', title) in mod_info.foundlist for title in lnh_obj.titles]):
-            return
+            if not testmode:
+                return
+    append_to_foundlist(mod_info.foundlist, lnh_obj)
+    if testmode:
+        return
     while True:
         try:
             lnh_obj.post(mod_info)
@@ -163,7 +167,6 @@ def check_lnh_and_post_if_new(mod_info, force_submit=False):
         except Exception as e:
             print("Error", e)
             break
-    append_to_foundlist(mod_info.foundlist, lnh_obj)
 
 
 def post_lnh(lnh_obj, mod_info):
