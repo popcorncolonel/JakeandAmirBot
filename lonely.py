@@ -94,7 +94,17 @@ def get_lnh_info():
     # Get most recent and second most recent, return a tuple. (not the first and second episodes)
     monthstring = history.this_monthstring()
 
-    r = requests.get('https://vimeo.com/ondemand/lonelyandhorny', timeout=10)
+    r = None
+    while True:
+        try:
+            r = requests.get('https://vimeo.com/ondemand/lonelyandhorny', timeout=10)
+            break
+        except requests.exceptions.ReadTimeout:
+            print("Timeout - retrying")
+            pass
+        except Exception as e:
+            print("Caught exception: ", e, ". Trying again.", sep="")
+            pass
     html_body = r.text
 
     # Parse most recent episode info
