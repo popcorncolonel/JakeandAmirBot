@@ -26,11 +26,14 @@ class JjkaeTest(unittest.TestCase):
         import iiwy
         iiwy_obj = iiwy.get_iiwy_info()
         self.assertIs(type(iiwy_obj.number), int)
-        self.assertIn(type(iiwy_obj.title), {unicode, str})
-        self.assertIn(type(iiwy_obj.reddit_title), {unicode, str})
-        self.assertIn(type(iiwy_obj.url), {unicode, str})
-        self.assertIn(type(iiwy_obj.desc), {unicode, str})
-        self.assertIn(type(iiwy_obj.monthstring), {unicode, str})
+        iiwy_obj.title = iiwy_obj.title.encode('utf8')
+        iiwy_obj.desc = iiwy_obj.desc.encode('utf8')
+        iiwy_obj.url = iiwy_obj.url.encode('utf8')
+        self.assertEqual(iiwy_obj.title, str(iiwy_obj.title))
+        self.assertEqual(iiwy_obj.reddit_title, str(iiwy_obj.reddit_title))
+        self.assertEqual(iiwy_obj.url, str(iiwy_obj.url))
+        self.assertEqual(iiwy_obj.desc, str(iiwy_obj.desc))
+        self.assertEqual(iiwy_obj.monthstring, str(iiwy_obj.monthstring))
         self.assertIs(type(iiwy_obj.sponsor_list), list)
         iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
 
@@ -38,20 +41,26 @@ class JjkaeTest(unittest.TestCase):
         import lonely
         lnh_obj = lonely.get_lnh_info()
         self.assertEqual(len(lnh_obj.titles), 2)
-        self.assertIn(type(lnh_obj.titles[0]), {unicode, str})
-        self.assertIn(type(lnh_obj.titles[1]), {unicode, str})
+
+        lnh_obj.titles[0] = lnh_obj.titles[0].encode('utf8')
+        lnh_obj.titles[1] = lnh_obj.titles[1].encode('utf8')
+        lnh_obj.urls[0] = lnh_obj.urls[0].encode('utf8')
+        lnh_obj.urls[1] = lnh_obj.urls[1].encode('utf8')
+
+        self.assertIn(type(lnh_obj.titles[0]), {str})
+        self.assertIn(type(lnh_obj.titles[1]), {str})
 
         self.assertEqual(len(lnh_obj.durations), 2)
-        self.assertIn(type(lnh_obj.durations[0]), {unicode, str})
-        self.assertIn(type(lnh_obj.durations[1]), {unicode, str})
+        self.assertIn(type(lnh_obj.durations[0]), {str})
+        self.assertIn(type(lnh_obj.durations[1]), {str})
 
         self.assertEqual(len(lnh_obj.urls), 2)
-        self.assertIn(type(lnh_obj.urls[0]), {unicode, str})
-        self.assertIn(type(lnh_obj.urls[1]), {unicode, str})
+        self.assertIn(type(lnh_obj.urls[0]), {str})
+        self.assertIn(type(lnh_obj.urls[1]), {str})
 
-        self.assertIn(type(lnh_obj.reddit_title), {unicode, str})
-        self.assertIn(type(lnh_obj.desc), {unicode, str})
-        self.assertIn(type(lnh_obj.monthstring), {unicode, str})
+        self.assertIn(type(lnh_obj.reddit_title), {str})
+        self.assertIn(type(lnh_obj.desc), {str})
+        self.assertIn(type(lnh_obj.monthstring), {str})
 
         lonely.check_lnh_and_post_if_new(self.mod_info, testmode=True)
 
