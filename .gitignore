@@ -1,0 +1,4 @@
+.idea
+*.pyc
+reddit_password.*
+*password*
