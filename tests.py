@@ -46,6 +46,8 @@ class JjkaeTest(unittest.TestCase):
                           lnh_obj.titles[1].encode('utf8'))
         lnh_obj.urls = (lnh_obj.urls[0].encode('utf8'),
                         lnh_obj.urls[1].encode('utf8'))
+        lnh_obj.durations = (lnh_obj.durations[0].encode('utf8'),
+                        lnh_obj.durations[1].encode('utf8'))
 
         self.assertIn(type(lnh_obj.titles[0]), {str})
         self.assertIn(type(lnh_obj.titles[1]), {str})

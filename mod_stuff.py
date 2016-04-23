@@ -193,6 +193,7 @@ def post_new_rewatch(mod_info, testmode=False):
 
 
 def post_monthly_discussion(mod_info, testmode=False):
+    sub = mod_info.r.get_subreddit('jakeandamir')
     today_datetime = datetime.datetime.now()
     title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
     if testmode:
@@ -204,7 +205,7 @@ def post_monthly_discussion(mod_info, testmode=False):
                                     text=get_discussion_string(history.this_monthstring(), history.get_history()))
     submission.sticky(bottom=True)
     submission.distinguish()
-    mod_info.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
+    sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
     print("Successfully submitted sticky! Time to celebrate.")
     return submission
 
