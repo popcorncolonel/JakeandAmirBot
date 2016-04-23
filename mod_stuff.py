@@ -198,7 +198,7 @@ def post_monthly_discussion(mod_info, testmode=False):
     title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
     if testmode:
         text = get_discussion_string(history.this_monthstring(), history.get_history())
-        assert(type(text) in {str, unicode})
+        assert(type(text) is not None)
         return
 
     submission = jjkae_tools.submit(title, mod_info, 'jakeandamir',
