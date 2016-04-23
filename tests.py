@@ -26,9 +26,9 @@ class JjkaeTest(unittest.TestCase):
         import iiwy
         iiwy_obj = iiwy.get_iiwy_info()
         self.assertIs(type(iiwy_obj.number), int)
-        iiwy_obj.title = iiwy_obj.title.encode('utf8')
-        iiwy_obj.desc = iiwy_obj.desc.encode('utf8')
-        iiwy_obj.url = iiwy_obj.url.encode('utf8')
+        iiwy_obj.title = iiwy_obj.title.encode('utf-8')
+        iiwy_obj.desc = iiwy_obj.desc.encode('utf-8')
+        iiwy_obj.url = iiwy_obj.url.encode('utf-8')
         self.assertEqual(iiwy_obj.title, str(iiwy_obj.title))
         self.assertEqual(iiwy_obj.reddit_title, str(iiwy_obj.reddit_title))
         self.assertEqual(iiwy_obj.url, str(iiwy_obj.url))
@@ -42,12 +42,12 @@ class JjkaeTest(unittest.TestCase):
         lnh_obj = lonely.get_lnh_info()
         self.assertEqual(len(lnh_obj.titles), 2)
 
-        lnh_obj.titles = (lnh_obj.titles[0].encode('utf8'),
-                          lnh_obj.titles[1].encode('utf8'))
-        lnh_obj.urls = (lnh_obj.urls[0].encode('utf8'),
-                        lnh_obj.urls[1].encode('utf8'))
-        lnh_obj.durations = (lnh_obj.durations[0].encode('utf8'),
-                        lnh_obj.durations[1].encode('utf8'))
+        lnh_obj.titles = (lnh_obj.titles[0].encode('utf-8'),
+                          lnh_obj.titles[1].encode('utf-8'))
+        lnh_obj.urls = (lnh_obj.urls[0].encode('utf-8'),
+                        lnh_obj.urls[1].encode('utf-8'))
+        lnh_obj.durations = (lnh_obj.durations[0].encode('utf-8'),
+                        lnh_obj.durations[1].encode('utf-8'))
 
         self.assertEqual(str(lnh_obj.titles[0]), lnh_obj.titles[0])
         self.assertEqual(str(lnh_obj.titles[1]), lnh_obj.titles[1])
