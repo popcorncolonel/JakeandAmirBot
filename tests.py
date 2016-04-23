@@ -26,14 +26,14 @@ class JjkaeTest(unittest.TestCase):
         import iiwy
         iiwy_obj = iiwy.get_iiwy_info()
         self.assertIs(type(iiwy_obj.number), int)
-        iiwy_obj.title = iiwy_obj.title.encode('utf-8')
-        iiwy_obj.desc = iiwy_obj.desc.encode('utf-8')
-        iiwy_obj.url = iiwy_obj.url.encode('utf-8')
-        self.assertEqual(iiwy_obj.title, str(iiwy_obj.title))
-        self.assertEqual(iiwy_obj.reddit_title, str(iiwy_obj.reddit_title))
-        self.assertEqual(iiwy_obj.url, str(iiwy_obj.url))
-        self.assertEqual(iiwy_obj.desc, str(iiwy_obj.desc))
-        self.assertEqual(iiwy_obj.monthstring, str(iiwy_obj.monthstring))
+        iiwy_obj.title = iiwy_obj.title.encode('utf8')
+        iiwy_obj.desc = iiwy_obj.desc.encode('utf8')
+        iiwy_obj.url = iiwy_obj.url.encode('utf8')
+        self.assertEqual(len(iiwy_obj.title), len(str(iiwy_obj.title)))
+        self.assertEqual(len(iiwy_obj.reddit_title), len(str(iiwy_obj.reddit_title)))
+        self.assertEqual(len(iiwy_obj.url), len(str(iiwy_obj.url)))
+        self.assertEqual(len(iiwy_obj.desc), len(str(iiwy_obj.desc)))
+        self.assertEqual(len(iiwy_obj.monthstring), len(str(iiwy_obj.monthstring)))
         self.assertIs(type(iiwy_obj.sponsor_list), list)
         iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
 
@@ -42,27 +42,27 @@ class JjkaeTest(unittest.TestCase):
         lnh_obj = lonely.get_lnh_info()
         self.assertEqual(len(lnh_obj.titles), 2)
 
-        lnh_obj.titles = (lnh_obj.titles[0].encode('utf-8'),
-                          lnh_obj.titles[1].encode('utf-8'))
-        lnh_obj.urls = (lnh_obj.urls[0].encode('utf-8'),
-                        lnh_obj.urls[1].encode('utf-8'))
-        lnh_obj.durations = (lnh_obj.durations[0].encode('utf-8'),
-                        lnh_obj.durations[1].encode('utf-8'))
+        lnh_obj.titles = (lnh_obj.titles[0].encode('utf8'),
+                          lnh_obj.titles[1].encode('utf8'))
+        lnh_obj.urls = (lnh_obj.urls[0].encode('utf8'),
+                        lnh_obj.urls[1].encode('utf8'))
+        lnh_obj.durations = (lnh_obj.durations[0].encode('utf8'),
+                             lnh_obj.durations[1].encode('utf8'))
 
-        self.assertEqual(str(lnh_obj.titles[0]), lnh_obj.titles[0])
-        self.assertEqual(str(lnh_obj.titles[1]), lnh_obj.titles[1])
+        self.assertEqual(len(str(lnh_obj.titles[0])), len(lnh_obj.titles[0]))
+        self.assertEqual(len(str(lnh_obj.titles[1])), len(lnh_obj.titles[1]))
 
         self.assertEqual(len(lnh_obj.durations), 2)
-        self.assertEqual(str(lnh_obj.durations[0]), lnh_obj.durations[0])
-        self.assertEqual(str(lnh_obj.durations[1]), lnh_obj.durations[1])
+        self.assertEqual(len(str(lnh_obj.durations[0])), len(lnh_obj.durations[0]))
+        self.assertEqual(len(str(lnh_obj.durations[1])), len(lnh_obj.durations[1]))
 
         self.assertEqual(len(lnh_obj.urls), 2)
-        self.assertEqual(str(lnh_obj.urls[0]), lnh_obj.urls[0])
-        self.assertEqual(str(lnh_obj.urls[1]), lnh_obj.urls[1])
+        self.assertEqual(len(str(lnh_obj.urls[0])), len(lnh_obj.urls[0]))
+        self.assertEqual(len(str(lnh_obj.urls[1])), len(lnh_obj.urls[1]))
 
-        self.assertEqual(str(lnh_obj.reddit_title), lnh_obj.reddit_title)
-        self.assertEqual(str(lnh_obj.desc), lnh_obj.desc)
-        self.assertEqual(str(lnh_obj.monthstring), lnh_obj.monthstring)
+        self.assertEqual(len(str(lnh_obj.reddit_title)), len(lnh_obj.reddit_title))
+        self.assertEqual(len(str(lnh_obj.desc)), len(lnh_obj.desc))
+        self.assertEqual(len(str(lnh_obj.monthstring)), len(lnh_obj.monthstring))
 
         lonely.check_lnh_and_post_if_new(self.mod_info, testmode=True)
 
