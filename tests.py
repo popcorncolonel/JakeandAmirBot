@@ -42,10 +42,10 @@ class JjkaeTest(unittest.TestCase):
         lnh_obj = lonely.get_lnh_info()
         self.assertEqual(len(lnh_obj.titles), 2)
 
-        lnh_obj.titles[0] = lnh_obj.titles[0].encode('utf8')
-        lnh_obj.titles[1] = lnh_obj.titles[1].encode('utf8')
-        lnh_obj.urls[0] = lnh_obj.urls[0].encode('utf8')
-        lnh_obj.urls[1] = lnh_obj.urls[1].encode('utf8')
+        lnh_obj.titles = (lnh_obj.titles[0].encode('utf8'),
+                          lnh_obj.titles[1].encode('utf8'))
+        lnh_obj.urls = (lnh_obj.urls[0].encode('utf8'),
+                        lnh_obj.urls[1].encode('utf8'))
 
         self.assertIn(type(lnh_obj.titles[0]), {str})
         self.assertIn(type(lnh_obj.titles[1]), {str})
