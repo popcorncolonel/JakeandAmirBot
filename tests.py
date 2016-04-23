@@ -46,21 +46,23 @@ class JjkaeTest(unittest.TestCase):
                           lnh_obj.titles[1].encode('utf8'))
         lnh_obj.urls = (lnh_obj.urls[0].encode('utf8'),
                         lnh_obj.urls[1].encode('utf8'))
+        lnh_obj.durations = (lnh_obj.durations[0].encode('utf8'),
+                        lnh_obj.durations[1].encode('utf8'))
 
-        self.assertIn(type(lnh_obj.titles[0]), {str})
-        self.assertIn(type(lnh_obj.titles[1]), {str})
+        self.assertEqual(str(lnh_obj.titles[0]), lnh_obj.titles[0])
+        self.assertEqual(str(lnh_obj.titles[1]), lnh_obj.titles[1])
 
         self.assertEqual(len(lnh_obj.durations), 2)
-        self.assertIn(type(lnh_obj.durations[0]), {str})
-        self.assertIn(type(lnh_obj.durations[1]), {str})
+        self.assertEqual(str(lnh_obj.durations[0]), lnh_obj.durations[0])
+        self.assertEqual(str(lnh_obj.durations[1]), lnh_obj.durations[1])
 
         self.assertEqual(len(lnh_obj.urls), 2)
-        self.assertIn(type(lnh_obj.urls[0]), {str})
-        self.assertIn(type(lnh_obj.urls[1]), {str})
+        self.assertEqual(str(lnh_obj.urls[0]), lnh_obj.urls[0])
+        self.assertEqual(str(lnh_obj.urls[1]), lnh_obj.urls[1])
 
-        self.assertIn(type(lnh_obj.reddit_title), {str})
-        self.assertIn(type(lnh_obj.desc), {str})
-        self.assertIn(type(lnh_obj.monthstring), {str})
+        self.assertEqual(str(lnh_obj.reddit_title), lnh_obj.reddit_title)
+        self.assertEqual(str(lnh_obj.desc), lnh_obj.desc)
+        self.assertEqual(str(lnh_obj.monthstring), lnh_obj.monthstring)
 
         lonely.check_lnh_and_post_if_new(self.mod_info, testmode=True)
 
