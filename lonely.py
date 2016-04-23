@@ -8,11 +8,17 @@ import praw
 
 import history
 import requests
-import HTMLParser
 
-from jjkae_tools import replace_top_sticky
+from jjkae_tools import replace_top_sticky, send_email, is_python_3
 
-html_parser = HTMLParser.HTMLParser()
+html_parser = None
+if is_python_3():
+    import html
+    html_parser = html
+else:
+    import HTMLParser
+    html_parser = HTMLParser.HTMLParser()
+
 
 python_3 = False
 if sys.version_info >= (3, 0):
