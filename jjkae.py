@@ -19,7 +19,8 @@ def get_timeout(default_timeout=5):
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
         (23, 'Sunday'), (0, 'Monday'), (1, 'Monday'), (2, 'Monday'),  # IIWY episodes
-        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday')  # IIWY bonus episodes
+        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday'),  # IIWY bonus episodes
+        (9, 'Friday'), (10, 'Friday') # Lonely & Horny
     ]:
         return 1
     else:

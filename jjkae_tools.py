@@ -7,6 +7,9 @@ import requests
 import datetime
 import reddit_password
 
+def is_python_3():
+    return sys.version_info >= (3,0)
+
 def printinfo(mod_info):
     print(mod_info.i, end=' ')
     if mod_info.next_episode > -1:

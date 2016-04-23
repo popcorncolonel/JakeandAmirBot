@@ -35,11 +35,12 @@ class History:
             self.history_dict[monthstring] = dict()
         if 'LNH' not in self.history_dict[monthstring]:
             self.history_dict[monthstring]['LNH'] = []
-        self.history_dict[monthstring]['IIWY'].append({
-            "title": lnh.title,
-            "reddit_url": lnh.reddit_url,
-            "number": lnh.number
-        })
+        for title, duration in zip(lnh.titles, lnh.durations):
+            self.history_dict[monthstring]['LNH'].append({
+                "title": title,
+                "duration": duration,
+                "reddit_url": lnh.reddit_url
+            })
 
 
 def get_history():

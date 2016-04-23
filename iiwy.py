@@ -8,11 +8,17 @@ import warnings
 import requests
 
 import history
-import HTMLParser
 
-from jjkae_tools import replace_top_sticky
+from jjkae_tools import replace_top_sticky, send_email, is_python_3
 
-html_parser = HTMLParser.HTMLParser()
+html_parser = None
+if is_python_3():
+    import html
+    html_parser = html
+else:
+    import HTMLParser
+    html_parser = HTMLParser.HTMLParser()
+
 
 python_3 = False
 if sys.version_info >= (3, 0):
@@ -192,7 +198,16 @@ def get_comment_text(iiwy_obj):
     return comment
 
 
-def post_iiwy(iiwy_obj, mod_info, testmode=False):
+def post_iiwy(iiwy_obj, mod_info, testmode=False, depth=0):
+    """
+
+    :type testmode: bool
+    :type iiwy_obj: IIWY
+    :type mod_info: ModInfo
+    """
+    if depth > 3:
+        send_email(subject="IIWY SUBMISSION ERROR", body="IDK", to="popcorncolonel@gmail.com")
+        sys.exit() # should I exit or just keep going???
     subreddit = 'jakeandamir'
     sub = mod_info.r.get_subreddit(subreddit)
     mod_info.login()
@@ -209,6 +224,10 @@ def post_iiwy(iiwy_obj, mod_info, testmode=False):
         iiwy_obj.reddit_url = 'TODO: Get the real submitted object'
         mod_info.past_history.add_iiwy(iiwy_obj)
         mod_info.past_history.write()
+        return
+    except Exception as e:
+        print("Caught exception", e, "- recursing!")
+        post_iiwy(iiwy_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
     sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
     submission.approve()

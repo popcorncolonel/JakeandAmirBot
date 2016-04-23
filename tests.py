@@ -55,8 +55,13 @@ class JjkaeTest(unittest.TestCase):
 
         lonely.check_lnh_and_post_if_new(self.mod_info, testmode=True)
 
+        import history
+        hist_obj = history.get_history()
+        hist_obj.add_lnh(lnh_obj)
+
     def test__prints(self):
         import jjkae_tools
+        self.mod_info.foundlist = []
         for i in range(1, 153):
             self.mod_info.i = i
             jjkae_tools.printinfo(self.mod_info)
