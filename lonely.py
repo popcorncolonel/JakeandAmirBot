@@ -122,10 +122,14 @@ def get_lnh_info():
     link_tags = soup.findAll('a', {'data-detail-url': re.compile('.*')})
     time_tags = soup.findAll('time')
 
-    link_tag_1 = link_tags[-2]
-    name1 = get_title(link_tag_1)  # "E=mc2"
-    url1 = get_url(link_tag_1)  # https://vimeo.com/ondemand/lonelyandhorny/<ID>
-    duration1 = get_duration(time_tags[-2])
+    try:
+        link_tag_1 = link_tags[-2]
+        name1 = get_title(link_tag_1)  # "E=mc2"
+        url1 = get_url(link_tag_1)  # https://vimeo.com/ondemand/lonelyandhorny/<ID>
+        duration1 = get_duration(time_tags[-2])
+    except IndexError:
+        send_email('index error', str(link_tags) + str(time_tags), 'popcorncolonel@gmail.com')
+        return get_lnh_info()
 
     link_tag_2 = link_tags[-1]
     name2 = get_title(link_tag_2)  # "Orion"
