@@ -3,7 +3,7 @@ from __future__ import print_function
 import sys
 import time
 import iiwy
-import lonely
+#import lonely
 import datetime
 import jjkae_tools
 
@@ -12,15 +12,15 @@ from rewatch import episodes
 
 force_submit_rewatch = False  # This causes mod_actions to post the rewatch the first iteration (i==1).
 force_submit_iiwy = False
-force_submit_lnh = False
+#force_submit_lnh = False
 
 def get_timeout(default_timeout=5):
     hour = int(datetime.datetime.now().strftime('%H'))
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
         (23, 'Sunday'), (0, 'Monday'), (1, 'Monday'), (2, 'Monday'),  # IIWY episodes
-        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday'),  # IIWY bonus episodes
-        (9, 'Friday'), (10, 'Friday') # Lonely & Horny
+        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday')  # IIWY bonus episodes
+        #  (9, 'Friday'), (10, 'Friday') # Lonely & Horny
     ]:
         return 1
     else:
@@ -33,8 +33,8 @@ def mod_loop(mod_info, force_submit_rewatch=False):
 def iiwy_loop(mod_info, force_submit_iiwy=False):
     iiwy.check_iiwy_and_post_if_new(mod_info, force_submit=force_submit_iiwy)
 
-def lnh_loop(mod_info, force_submit_lnh=False):
-    lonely.check_lnh_and_post_if_new(mod_info, force_submit=force_submit_lnh)
+#def lnh_loop(mod_info, force_submit_lnh=False):
+#    lonely.check_lnh_and_post_if_new(mod_info, force_submit=force_submit_lnh)
 
 
 def initialize_foundlist():
@@ -43,10 +43,10 @@ def initialize_foundlist():
           "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
           "and duration", iiwy_obj.duration)
     foundlist = ["", iiwy_obj.number, iiwy_obj.duration]
-    lnh_obj = lonely.get_lnh_info()
-    print("Names of most recent LNH's are: \"", lnh_obj.titles, "\" with URLs ", lnh_obj.urls,
-          "and duration ", lnh_obj.durations, sep='')
-    lonely.append_to_foundlist(foundlist, lnh_obj)
+    #  lnh_obj = lonely.get_lnh_info()
+    #  print("Names of most recent LNH's are: \"", lnh_obj.titles, "\" with URLs ", lnh_obj.urls,
+    #        "and duration ", lnh_obj.durations, sep='')
+    #  lonely.append_to_foundlist(foundlist, lnh_obj)
     return foundlist
 
 def main():
@@ -75,8 +75,8 @@ def main():
         mod_loop(mod_info, force_submit_rewatch)
         force_submit_rewatch = False  # Only do it once
 
-        lnh_loop(mod_info, force_submit_lnh)
-        force_submit_lnh = False  # Only do it once
+        #  lnh_loop(mod_info, force_submit_lnh)
+        #  force_submit_lnh = False  # Only do it once
 
         timeout = get_timeout(default_timeout)
 
