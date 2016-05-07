@@ -35,32 +35,6 @@ class JjkaeTest(unittest.TestCase):
         self.assertIs(type(iiwy_obj.sponsor_list), list)
         iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
 
-    def test_lnh(self):
-        import lonely
-        lnh_obj = lonely.get_lnh_info()
-        self.assertEqual(len(lnh_obj.titles), 2)
-
-        self.assertIsNotNone(lnh_obj.titles[0])
-        self.assertIsNotNone(lnh_obj.titles[1])
-
-        self.assertEqual(len(lnh_obj.durations), 2)
-        self.assertIsNotNone(lnh_obj.durations[0])
-        self.assertIsNotNone(lnh_obj.durations[1])
-
-        self.assertEqual(len(lnh_obj.urls), 2)
-        self.assertIsNotNone(lnh_obj.urls[0])
-        self.assertIsNotNone(lnh_obj.urls[1])
-
-        self.assertIsNotNone(lnh_obj.reddit_title)
-        self.assertIsNotNone(lnh_obj.desc)
-        self.assertIsNotNone(lnh_obj.monthstring)
-
-        lonely.check_lnh_and_post_if_new(self.mod_info, testmode=True)
-
-        import history
-        hist_obj = history.get_history()
-        hist_obj.add_lnh(lnh_obj)
-
     def test__prints(self):
         import jjkae_tools
         self.mod_info.foundlist = []
