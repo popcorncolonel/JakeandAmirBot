@@ -115,7 +115,8 @@ def get_iiwy_info(depth=0):
             desctext = desc[0].strip()
             longtext = ''.join([str(s) for s in desc])
             desc = desctext
-            sponsors = longtext.split('brought to you by ')[1].strip()
+            sponsor_text = dict(soup.findAll('meta', {'property': 'og:description'})[0].attrs)['content']
+            sponsors = sponsor_text.split('brought to you by ')[1].strip()
             sponsorlist = get_sponsors(sponsors)
         except IndexError:
             desc = DEFAULT_STR
@@ -236,7 +237,7 @@ def post_iiwy(iiwy_obj, mod_info, testmode=False, depth=0):
     print(iiwy_obj.reddit_title)
     post_subreddit_comment(submission, iiwy_obj)
     iiwy_obj.reddit_url = submission.permalink
-    replace_top_sticky(sub, submission)
+    replace_top_sticky(sub, submission)  # Can't sticky link posts for now :/
 
     mod_info.past_history.add_iiwy(iiwy_obj)
     mod_info.past_history.write()
