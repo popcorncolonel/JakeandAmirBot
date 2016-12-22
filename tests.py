@@ -35,6 +35,17 @@ class JjkaeTest(unittest.TestCase):
         self.assertIs(type(iiwy_obj.sponsor_list), list)
         iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
 
+    def test_gtd(self):
+        import geoff
+        gtd_obj = geoff.get_gtd_info()
+        self.assertIs(type(gtd_obj.number), int)
+        self.assertIsNotNone(gtd_obj.title)
+        self.assertIsNotNone(gtd_obj.reddit_title)
+        self.assertIsNotNone(gtd_obj.url)
+        self.assertIsNotNone(gtd_obj.desc)
+        self.assertIsNotNone(gtd_obj.monthstring)
+        geoff.check_gtd_and_post_if_new(self.mod_info, testmode=True)
+
     def test__prints(self):
         import jjkae_tools
         self.mod_info.foundlist = []

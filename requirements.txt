@@ -1,2 +1,2 @@
-praw
+praw==3.4.0
 bs4

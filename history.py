@@ -29,6 +29,18 @@ class History:
             "duration": iiwy.duration
         })
 
+    def add_gtd(self, gtd):
+        monthstring = gtd.monthstring
+        if monthstring not in self.history_dict:
+            self.history_dict[monthstring] = dict()
+        if 'GTD' not in self.history_dict[monthstring]:
+            self.history_dict[monthstring]['GTD'] = []
+        self.history_dict[monthstring]['GTD'].append({
+            "title": gtd.title,
+            "reddit_url": gtd.reddit_url,
+            "number": gtd.number,
+        })
+
     def add_lnh(self, lnh):
         monthstring = lnh.monthstring
         if monthstring not in self.history_dict:

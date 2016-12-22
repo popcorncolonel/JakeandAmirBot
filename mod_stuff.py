@@ -12,12 +12,20 @@ from rewatch import episodes
 
 class ModInfo:
     def get_r(self):
-        r = praw.Reddit(user_agent='JakeandAmir program by /u/popcorncolonel')
+        r = praw.Reddit(
+            user_agent='JakeandAmir program by /u/popcorncolonel',
+        )
         # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
         r.config.decode_html_entities = True
         return r
 
     def __init__(self, next_episode, foundlist):
+        self.client_id = reddit_password.get_client_id()
+        self.client_secret = reddit_password.get_client_secret()
+        self.access_token = reddit_password.get_access_token()
+        self.scope = reddit_password.get_scope()
+        self.refresh_token = reddit_password.get_refresh_token()
+
         self.next_episode = next_episode
         self.day = jjkae_tools.get_day()
         self.hour = jjkae_tools.get_hour()
@@ -27,12 +35,6 @@ class ModInfo:
         self.foundlist = foundlist
         self.episodes = episodes
         self.past_history = history.get_history()
-
-        self.client_id = reddit_password.get_client_id()
-        self.client_secret = reddit_password.get_client_secret()
-        self.access_token = reddit_password.get_access_token()
-        self.scope = reddit_password.get_scope()
-        self.refresh_token = reddit_password.get_refresh_token()
 
     def login(self):
         #  For anyone reading this and trying to get this to run yourself: follow this tutorial: https://redd.it/3lotxj/

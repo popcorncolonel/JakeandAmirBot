@@ -3,6 +3,7 @@ from __future__ import print_function
 import sys
 import time
 import iiwy
+import geoff
 import datetime
 import jjkae_tools
 
@@ -11,6 +12,7 @@ from rewatch import episodes
 
 force_submit_rewatch = False  # This causes mod_actions to post the rewatch the first iteration (i==1).
 force_submit_iiwy = False
+force_submit_gtd = False
 
 def get_timeout(default_timeout=5):
     hour = int(datetime.datetime.now().strftime('%H'))
@@ -27,20 +29,27 @@ def get_timeout(default_timeout=5):
 def mod_loop(mod_info, force_submit_rewatch=False):
     mod_actions(mod_info, force_submit_rewatch=force_submit_rewatch)
 
+
 def iiwy_loop(mod_info, force_submit_iiwy=False):
     iiwy.check_iiwy_and_post_if_new(mod_info, force_submit=force_submit_iiwy)
 
 
+def gtd_loop(mod_info, force_submit_gtd=False):
+    geoff.check_gtd_and_post_if_new(mod_info, force_submit=force_submit_gtd)
+
+
 def initialize_foundlist():
     iiwy_obj = iiwy.get_iiwy_info()
+    gtd_obj = geoff.get_gtd_info()
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
           "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
           "and duration", iiwy_obj.duration)
-    foundlist = ["", iiwy_obj.number, iiwy_obj.duration]
+    foundlist = ["", iiwy_obj.number, iiwy_obj.duration, gtd_obj.reddit_title]
     return foundlist
 
+
 def main():
-    global force_submit_iiwy, force_submit_rewatch, force_submit_lnh
+    global force_submit_iiwy, force_submit_rewatch, force_submit_gtd
 
     default_timeout = 5  # don't spam the servers :D
 
@@ -61,6 +70,9 @@ def main():
     while True:
         iiwy_loop(mod_info, force_submit_iiwy)
         force_submit_iiwy = False  # Only do it once
+
+        gtd_loop(mod_info, force_submit_gtd)
+        force_submit_gtd = False  # Only do it once
 
         mod_loop(mod_info, force_submit_rewatch)
         force_submit_rewatch = False  # Only do it once
