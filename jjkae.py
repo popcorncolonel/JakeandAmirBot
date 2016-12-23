@@ -14,12 +14,13 @@ force_submit_rewatch = False  # This causes mod_actions to post the rewatch the 
 force_submit_iiwy = False
 force_submit_gtd = False
 
+
 def get_timeout(default_timeout=5):
     hour = int(datetime.datetime.now().strftime('%H'))
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
         (23, 'Sunday'), (0, 'Monday'), (1, 'Monday'), (2, 'Monday'),  # IIWY episodes
-        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday')  # IIWY bonus episodes
+        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday'),  # IIWY bonus episodes
     ]:
         return 1
     else:
@@ -71,11 +72,14 @@ def main():
         iiwy_loop(mod_info, force_submit_iiwy)
         force_submit_iiwy = False  # Only do it once
 
-        gtd_loop(mod_info, force_submit_gtd)
-        force_submit_gtd = False  # Only do it once
-
         mod_loop(mod_info, force_submit_rewatch)
         force_submit_rewatch = False  # Only do it once
+
+        if mod_info.i % 5 == 1:
+            # do it 20% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
+            # hitting the server 12 times a minute.
+            gtd_loop(mod_info, force_submit_gtd)
+            force_submit_gtd = False  # Only do it once
 
         timeout = get_timeout(default_timeout)
 
