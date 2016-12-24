@@ -2,160 +2,432 @@
     "Apr 2016": {
         "IIWY": [
             {
-                "duration": "56:33", 
-                "number": 208, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4cwx2t/if_i_were_you_bonus_episode_live_at_sxsw_with/", 
+                "duration": "56:33",
+                "number": 208,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4cwx2t/if_i_were_you_bonus_episode_live_at_sxsw_with/",
                 "title": "BONUS EPISODE - Live at SXSW with Rick Fox!"
-            }, 
+            },
             {
-                "duration": "56:32", 
-                "number": 209, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4d9wcl/episode_209_friend_group_wlauren_lapkus/", 
+                "duration": "56:32",
+                "number": 209,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4d9wcl/episode_209_friend_group_wlauren_lapkus/",
                 "title": "Friend Group (w/Lauren Lapkus!)"
-            }, 
+            },
             {
-                "duration": "51:52", 
-                "number": 210, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4dtelx/if_i_were_you_episode_210_lonely_and_horny_5152/", 
+                "duration": "51:52",
+                "number": 210,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4dtelx/if_i_were_you_episode_210_lonely_and_horny_5152/",
                 "title": "Lonely and Horny"
-            }, 
+            },
             {
-                "duration": "54:44", 
-                "number": 211, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4eedns/if_i_were_you_episode_211_phone_vs_wallet_5444/", 
+                "duration": "54:44",
+                "number": 211,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4eedns/if_i_were_you_episode_211_phone_vs_wallet_5444/",
                 "title": "Phone vs. Wallet"
+            },
+            {
+                "duration": "1:07:45",
+                "number": 213,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4gc7v4/if_i_were_you_episode_213_lactose_intolerant_10745/",
+                "title": "Lactose Intolerant"
             }
-        ], 
+        ],
         "LNH": [
             {
-                "duration": "10:32", 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4fyk7u/lonely_horny_discussion_post_french_and_pool_party/", 
+                "duration": "10:32",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4fyk7u/lonely_horny_discussion_post_french_and_pool_party/",
                 "title": "French"
-            }, 
+            },
             {
-                "duration": "9:38", 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4fyk7u/lonely_horny_discussion_post_french_and_pool_party/", 
+                "duration": "9:38",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4fyk7u/lonely_horny_discussion_post_french_and_pool_party/",
                 "title": "Pool Party"
             }
         ]
-    }, 
+    },
+    "Aug 2016": {
+        "IIWY": [
+            {
+                "duration": "1:21:08",
+                "number": 228,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4wohbp/if_i_were_you_episode_228_potato_live_from_dublin/",
+                "title": "Potato (live from Dublin w/Ben Schwartz!)"
+            },
+            {
+                "duration": "44:23",
+                "number": 229,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4xru4e/if_i_were_you_episode_229_trump_4423/",
+                "title": "Trump"
+            },
+            {
+                "duration": "49:23",
+                "number": 230,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4yz220/if_i_were_you_episode_230_pride_4923/",
+                "title": "Pride"
+            },
+            {
+                "duration": "52:03",
+                "number": 231,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/503e9m/if_i_were_you_episode_231_prostitution_5203/",
+                "title": "Prostitution"
+            }
+        ]
+    },
+    "Dec 2016": {
+        "IIWY": [
+            {
+                "duration": "59:51",
+                "number": 248,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5gk35r/if_i_were_you_episode_248_facial_wmike_karnell/",
+                "title": "Facial (w/Mike Karnell!)"
+            },
+            {
+                "duration": "1:02:06",
+                "number": 249,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5hushl/if_i_were_you_episode_249_snapchat_wgil_ozeri/",
+                "title": "Snapchat (w/Gil Ozeri!)"
+            },
+            {
+                "duration": "55:12",
+                "number": 250,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5j4ltc/if_i_were_you_episode_250_going_down_wjon_gabrus/",
+                "title": "Going Down (w/Jon Gabrus!)"
+            }
+        ]
+    },
     "Feb 2016": {
         "IIWY": [
             {
-                "duration": "55:06", 
-                "number": 196, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/43n63j/if_i_were_you_episode_196_don039t_do_that_5506/", 
+                "duration": "55:06",
+                "number": 196,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/43n63j/if_i_were_you_episode_196_don039t_do_that_5506/",
                 "title": "Don&#039;t Do That"
-            }, 
+            },
             {
-                "duration": "1:05:29", 
-                "number": 197, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/444dr7/if_i_were_you_episode_197_mormon_mama_w_laura/", 
+                "duration": "1:05:29",
+                "number": 197,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/444dr7/if_i_were_you_episode_197_mormon_mama_w_laura/",
                 "title": "Mormon Mama (w/ Laura Hurwitz!)"
-            }, 
+            },
             {
-                "duration": "1:00:13", 
-                "number": 198, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/44pxx8/if_i_were_you_episode_198_peyton_manning_10013/", 
+                "duration": "1:00:13",
+                "number": 198,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/44pxx8/if_i_were_you_episode_198_peyton_manning_10013/",
                 "title": "Peyton Manning"
-            }, 
+            },
             {
-                "duration": "50:13", 
-                "number": 199, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4576mf/if_i_were_you_episode_199_homework_wbrian_murphy/", 
+                "duration": "50:13",
+                "number": 199,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4576mf/if_i_were_you_episode_199_homework_wbrian_murphy/",
                 "title": "Homework (w/Brian Murphy!)"
-            }, 
+            },
             {
-                "duration": "1:04:30", 
-                "number": 200, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/45uwrz/if_i_were_you_episode_200_yes_dude_wben_schwartz/", 
+                "duration": "1:04:30",
+                "number": 200,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/45uwrz/if_i_were_you_episode_200_yes_dude_wben_schwartz/",
                 "title": "Yes Dude (w/Ben Schwartz!)"
-            }, 
+            },
             {
-                "duration": "55:12", 
-                "number": 201, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/46zsoo/if_i_were_you_episode_201_search_terms_wshane/", 
+                "duration": "55:12",
+                "number": 201,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/46zsoo/if_i_were_you_episode_201_search_terms_wshane/",
                 "title": "Search Terms (w/Shane Dawson!)"
-            }, 
+            },
             {
-                "duration": "45:27", 
-                "number": 202, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/47hc8o/if_i_were_you_episode_202_mixed_signals_4527/", 
+                "duration": "45:27",
+                "number": 202,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/47hc8o/if_i_were_you_episode_202_mixed_signals_4527/",
                 "title": "Mixed Signals"
-            }, 
+            },
             {
-                "duration": "1:15:57", 
-                "number": 203, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4895ab/if_i_were_you_episode_203_thick_skin_wdaren_and/", 
+                "duration": "1:15:57",
+                "number": 203,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4895ab/if_i_were_you_episode_203_thick_skin_wdaren_and/",
                 "title": "Thick Skin (w/Daren and Will!)"
             }
         ]
-    }, 
+    },
     "Jan 2016": {
         "IIWY": [
             {
-                "duration": "1:01:15", 
-                "number": 191, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/3zdczz/if_i_were_you_episode_191_the_emotionary_weden/", 
+                "duration": "1:01:15",
+                "number": 191,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/3zdczz/if_i_were_you_episode_191_the_emotionary_weden/",
                 "title": "The Emotionary (w/Eden Sher!)"
-            }, 
+            },
             {
-                "duration": "1:00:05", 
-                "number": 192, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/40f0j6/if_i_were_you_episode192_surge_dude_10005/", 
+                "duration": "1:00:05",
+                "number": 192,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/40f0j6/if_i_were_you_episode192_surge_dude_10005/",
                 "title": "Surge Dude"
-            }, 
+            },
             {
-                "duration": "1:02:27", 
-                "number": 193, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/41hfd6/if_i_were_you_episode193_game_boy_10227/", 
+                "duration": "1:02:27",
+                "number": 193,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/41hfd6/if_i_were_you_episode193_game_boy_10227/",
                 "title": "Game Boy"
-            }, 
+            },
             {
-                "duration": "49:04", 
-                "number": 194, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/42387j/if_i_were_you_episode_194_get_at_it_w_ijustine/", 
+                "duration": "49:04",
+                "number": 194,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/42387j/if_i_were_you_episode_194_get_at_it_w_ijustine/",
                 "title": "Get At It (w/ iJustine!)"
-            }, 
+            },
             {
-                "duration": "53:55", 
-                "number": 195, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/42k8wh/if_i_were_you_episode195_caviar_5355/", 
+                "duration": "53:55",
+                "number": 195,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/42k8wh/if_i_were_you_episode195_caviar_5355/",
                 "title": "Caviar"
             }
         ]
-    }, 
+    },
+    "Jul 2016": {
+        "IIWY": [
+            {
+                "duration": "53:37",
+                "number": 223,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4r5fqx/if_i_were_you_episode_223_sports_wmike_karnell/",
+                "title": "Sports (w/Mike Karnell!)"
+            },
+            {
+                "duration": "1:01:46",
+                "number": 224,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4s92u3/if_i_were_you_episode_224_role_play_live_in_la/",
+                "title": "Role Play (Live in LA!)"
+            },
+            {
+                "duration": "59:48",
+                "number": 225,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4tdvoi/if_i_were_you_episode_225_good_guy_5948/",
+                "title": "Good Guy"
+            },
+            {
+                "duration": "56:07",
+                "number": 226,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4ugsng/if_i_were_you_episode_226_hot_tutor_wramou_sarr/",
+                "title": "Hot Tutor (w/Ramou Sarr!)"
+            },
+            {
+                "duration": "1:04:45",
+                "number": 227,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4vjoa3/if_i_were_you_episode_227_pokemon_go_with_travis/",
+                "title": "Pokemon Go (with Travis McElroy!)"
+            }
+        ]
+    },
+    "Jun 2016": {
+        "IIWY": [
+            {
+                "duration": "53:37",
+                "number": 219,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4mr52g/if_i_were_you_episode_219_olive_oil_wbilly_and/",
+                "title": "Olive Oil (w/Billy and Adam!)"
+            },
+            {
+                "duration": "1:04:56",
+                "number": 220,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4nty18/if_i_were_you_episode_220_peeing_outside_10456/",
+                "title": "Peeing Outside"
+            },
+            {
+                "duration": "1:00:13",
+                "number": 221,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4oxjze/if_i_were_you_episode_221_video_games_wsam_reich/",
+                "title": "Video Games (w/Sam Reich!)"
+            },
+            {
+                "duration": "1:04:09",
+                "number": 222,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4q1g9s/if_i_were_you_episode_222_baton_wbo_burnham_10409/",
+                "title": "Baton (w/Bo Burnham!)"
+            }
+        ]
+    },
     "Mar 2016": {
         "IIWY": [
             {
-                "duration": "50:37", 
-                "number": 204, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/49b2a0/if_i_were_you_episode_204_sexy_gift_5037/", 
+                "duration": "50:37",
+                "number": 204,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/49b2a0/if_i_were_you_episode_204_sexy_gift_5037/",
                 "title": "Sexy Gift"
-            }, 
+            },
             {
-                "duration": "39:37", 
-                "number": 205, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/49tjn0/if_i_were_you_episode_205_special_announcement/", 
+                "duration": "39:37",
+                "number": 205,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/49tjn0/if_i_were_you_episode_205_special_announcement/",
                 "title": "Special Announcement"
-            }, 
+            },
             {
-                "duration": "1:01:44", 
-                "number": 206, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4ac16p/if_i_were_you_episode_206_chex_live_in_austin_w/", 
+                "duration": "1:01:44",
+                "number": 206,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4ac16p/if_i_were_you_episode_206_chex_live_in_austin_w/",
                 "title": "Chex (Live in Austin w/ Ben Schwartz!)"
-            }, 
+            },
             {
-                "duration": "59:13", 
-                "number": 207, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4baum4/if_i_were_you_episode_207_beehive_5913/", 
+                "duration": "59:13",
+                "number": 207,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4baum4/if_i_were_you_episode_207_beehive_5913/",
                 "title": "Beehive"
-            }, 
+            },
             {
-                "duration": "1:00:37", 
-                "number": 208, 
-                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4c90y3/if_i_were_you_episode_208_nerd_cave_wcaldwell_and/", 
+                "duration": "1:00:37",
+                "number": 208,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4c90y3/if_i_were_you_episode_208_nerd_cave_wcaldwell_and/",
                 "title": "Nerd Cave (w/Caldwell and Nathan!)"
+            }
+        ]
+    },
+    "May 2016": {
+        "IIWY": [
+            {
+                "duration": "1:00:43",
+                "number": 214,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4he58k/if_i_were_you_episode_214_sex_dream_wrahul_kohli/",
+                "title": "Sex Dream (w/Rahul Kohli!)"
+            },
+            {
+                "duration": "56:25",
+                "number": 215,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4iie2p/if_i_were_you_episode_215_prom_season_5625/",
+                "title": "Prom Season"
+            },
+            {
+                "duration": "46:36",
+                "number": 216,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4jj947/if_i_were_you_episode_216_cool_snack_4636/",
+                "title": "Cool Snack"
+            },
+            {
+                "duration": "1:00:23",
+                "number": 217,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4km5us/if_i_were_you_episode_217_lets_go_whoodie_allen/",
+                "title": "Let's Go! (w/Hoodie Allen!)"
+            },
+            {
+                "duration": "49:53",
+                "number": 218,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4ltmxw/if_i_were_you_episode_218_choking_4953/",
+                "title": "Choking"
+            }
+        ],
+        "LNH": [
+            {
+                "duration": "9:36",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4i56ty/lonely_horny_discussion_post_open_mic_and_orion/",
+                "title": "Open Mic"
+            },
+            {
+                "duration": "9:38",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/4i56ty/lonely_horny_discussion_post_open_mic_and_orion/",
+                "title": "Orion Part II"
+            }
+        ]
+    },
+    "Nov 2016": {
+        "IIWY": [
+            {
+                "duration": "55:24",
+                "number": 242,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5bke4d/if_i_were_you_episode_242_snoring_5524/",
+                "title": "Snoring"
+            },
+            {
+                "duration": "39:00",
+                "number": 243,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5c2xbc/if_i_were_you_episode_243_morning_after_trump_3900/",
+                "title": "Morning After Trump"
+            },
+            {
+                "duration": "43:08",
+                "number": 244,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5c63hj/if_i_were_you_episode_244_female_condom_4308/",
+                "title": "Female Condom"
+            },
+            {
+                "duration": "49:11",
+                "number": 245,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5cufsf/if_i_were_you_episode_245_weird_science_wdan_levy/",
+                "title": "Weird Science (w/Dan Levy!)"
+            },
+            {
+                "duration": "55:35",
+                "number": 246,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5e2c1y/if_i_were_you_episode_246_hot_bully_5535/",
+                "title": "Hot Bully"
+            },
+            {
+                "duration": "51:51",
+                "number": 247,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5f9uta/if_i_were_you_episode_247_unhinged_5151/",
+                "title": "Unhinged"
+            }
+        ]
+    },
+    "Oct 2016": {
+        "IIWY": [
+            {
+                "duration": "1:05:58",
+                "number": 236,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/55lzpb/if_i_were_you_episode_236_bad_laugh_wgrace_helbig/",
+                "title": "Bad Laugh (w/Grace Helbig!)"
+            },
+            {
+                "duration": "53:38",
+                "number": 237,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/56q687/if_i_were_you_episode_237_motrocycle_live_in/",
+                "title": "Motrocycle (Live in Toronto!)"
+            },
+            {
+                "duration": "44:47",
+                "number": 238,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/57vgne/if_i_were_you_episode_238_evolution_4447/",
+                "title": "Evolution"
+            },
+            {
+                "duration": "45:45",
+                "number": 239,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/58f6z5/if_i_were_you_episode_239_cousins_4545/",
+                "title": "Cousins"
+            },
+            {
+                "duration": "57:02",
+                "number": 240,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/592ng7/if_i_were_you_episode_240_cavity_live_in_chicago/",
+                "title": "Cavity (Live in Chicago!)"
+            },
+            {
+                "duration": "45:08",
+                "number": 241,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5aabfy/if_i_were_you_episode_241_cam_girls_4508/",
+                "title": "Cam Girls"
+            }
+        ]
+    },
+    "Sep 2016": {
+        "IIWY": [
+            {
+                "duration": "55:05",
+                "number": 232,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/517ny3/if_i_were_you_episode_232_bad_kiss_warielle/",
+                "title": "Bad Kiss (w/Arielle Vandenberg!)"
+            },
+            {
+                "duration": "58:14",
+                "number": 233,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/52cj58/if_i_were_you_episode_233_baby_names_wpat_cassels/",
+                "title": "Baby Names (w/Pat Cassels!)"
+            },
+            {
+                "duration": "49:15",
+                "number": 234,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/53fvhg/if_i_were_you_episode_234_bar_mitzvah_kiss_4915/",
+                "title": "Bar Mitzvah Kiss"
+            },
+            {
+                "duration": "58:41",
+                "number": 235,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/54iesb/if_i_were_you_episode_235_tobacco_wgeorge_basil/",
+                "title": "Tobacco (w/George Basil!)"
             }
         ]
     }

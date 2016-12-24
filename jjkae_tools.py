@@ -139,3 +139,6 @@ def run_jjkae_tests(verbosity=0):
     suite = unittest.TestLoader().loadTestsFromTestCase(JjkaeTest)
     results = unittest.TextTestRunner(verbosity=verbosity).run(suite)
     return results.errors
+
+if __name__ == '__main__':
+	run_jjkae_tests()

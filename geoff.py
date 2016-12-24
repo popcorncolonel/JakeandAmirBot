@@ -28,9 +28,10 @@ class GTD:
     def from_json_obj(cls, obj):
         snippet = obj['snippet']
         if 'Episode' in snippet['title']:
-            number = int(snippet['title'].split('Episode')[1].split()[0].strip())
-            title = snippet['title'].split('-')[-1].strip()
-            desc = snippet['description']
+            number = int(snippet['title'].split('Episode')[1].split()[0].strip()) # ex. 10
+            title = snippet['title'].split('-')[-1].strip() # ex. YoYo
+            desc = snippet['description'] # ex. Geoffrey is oddly good at something, which is fine. But that's not his job. \n\n Subscribe to this channel today to make us happy!
+
         else:
             raise ValueError('title is like {} rather than "GTD: Episode \\d\\d.'.format(snippet['title']))
         return cls(

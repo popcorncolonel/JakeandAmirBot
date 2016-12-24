@@ -81,6 +81,13 @@ def get_discussion_string(monthstring, past_history):
                                                             history_dict['title'],
                                                             history_dict['reddit_url'])
 
+        if 'GTD' in past_history[monthstring]:
+            added_text += "**Geoffrey the Dumbass episodes this month**:\n\n"
+            for history_dict in past_history[monthstring]['GTD']:
+                added_text += "* [Episode %d: %s](%s)\n" % (history_dict['number'],
+                                                            history_dict['title'],
+                                                            history_dict['reddit_url'])
+
     return discussion_string % added_text
 
 
