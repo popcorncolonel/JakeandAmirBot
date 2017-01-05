@@ -33,7 +33,8 @@ class GTD:
             desc = snippet['description'] # ex. Geoffrey is oddly good at something, which is fine. But that's not his job. \n\n Subscribe to this channel today to make us happy!
 
         else:
-            raise ValueError('title is like {} rather than "GTD: Episode \\d\\d.'.format(snippet['title']))
+            print('title is like {} rather than "GTD: Episode \\d\\d.'.format(snippet['title']))
+            return None
         return cls(
             number=number,
             title=title,
@@ -64,8 +65,9 @@ def get_gtd_info():
     )
     resp = requests.get(url)
     json_data = json.loads(resp.text)
-    most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass' in item['snippet']['title']]
+    most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass: Episode' in item['snippet']['title']]
     GTD_objs = [GTD.from_json_obj(item) for item in most_recent_vidz]
+    GTD_objs = [x for x in GTD_objs if x]
     if GTD_objs:
         return GTD_objs[0]
     else:
@@ -136,7 +138,9 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
     print(gtd_obj.reddit_title)
     post_subreddit_comment(submission, gtd_obj)
     gtd_obj.reddit_url = submission.permalink
-    replace_top_sticky(sub, submission)
+    sub.sticky(bottom=True)
+    sub.distinguish()
+    #replace_top_sticky(sub, submission)
 
     mod_info.past_history.add_gtd(gtd_obj)
     mod_info.past_history.write()

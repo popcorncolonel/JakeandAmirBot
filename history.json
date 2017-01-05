@@ -74,6 +74,13 @@
         ]
     },
     "Dec 2016": {
+        "GTD": [
+            {
+                "number": 11,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5kyjca/geoffrey_the_dumbass_episode_11_fitness_wjon/",
+                "title": "Fitness (w/Jon Gabrus!)"
+            }
+        ],
         "IIWY": [
             {
                 "duration": "59:51",
@@ -92,6 +99,12 @@
                 "number": 250,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5j4ltc/if_i_were_you_episode_250_going_down_wjon_gabrus/",
                 "title": "Going Down (w/Jon Gabrus!)"
+            },
+            {
+                "duration": "47:09",
+                "number": 251,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5kc4vb/if_i_were_you_episode_251_santa_clause_4709/",
+                "title": "Santa Clause"
             }
         ]
     },
@@ -178,6 +191,16 @@
                 "number": 195,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/42k8wh/if_i_were_you_episode195_caviar_5355/",
                 "title": "Caviar"
+            }
+        ]
+    },
+    "Jan 2017": {
+        "IIWY": [
+            {
+                "duration": "58:38",
+                "number": 252,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5ljh1v/if_i_were_you_episode_252_etemple_w_laura_hurwitz/",
+                "title": "eTemple (w_Laura Hurwitz!)"
             }
         ]
     },
