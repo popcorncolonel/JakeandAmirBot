@@ -15,7 +15,7 @@ import reddit_password
 
 
 class GTD:
-    def __init__(self, number, title, monthstring, reddit_title=None, url=None, reddit_url=None, desc=None):
+    def __init__(self, number, title, monthstring, ep_type='gtd', reddit_title=None, url=None, reddit_url=None, desc=None):
         self.number = number
         self.title = title
         self.monthstring = monthstring
@@ -23,6 +23,7 @@ class GTD:
         self.reddit_title = reddit_title
         self.url = url
         self.desc = desc
+        self.ep_type = ep_type
 
     @classmethod
     def from_json_obj(cls, obj):
@@ -35,17 +36,24 @@ class GTD:
         else:
             print('title is like {} rather than "GTD: Episode \\d\\d.'.format(snippet['title']))
             return None
+        ep_type = None
+        full_title = snippet['title']
+        if 'Geoffrey the Dumbass' in full_title:
+            ep_type = 'gtd'
+        elif 'Off Days' in full_title:
+            ep_type = 'offdays'
         return cls(
             number=number,
             title=title,
             desc=desc.replace('\\', ''),
             monthstring=history.this_monthstring(),
-            reddit_title=snippet['title'],
+            reddit_title=full_title,
             url='https://www.youtube.com/watch?v={}'.format(obj['id']['videoId']),
+            ep_type=ep_type,
         )
 
     def __repr__(self):
-        return "GTD object: " + self.title
+        return "{} object: ".format(self.ep_type) + self.title
 
     def __str__(self):
         return self.__repr__()
@@ -65,7 +73,7 @@ def get_gtd_info():
     )
     resp = requests.get(url)
     json_data = json.loads(resp.text)
-    most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass: Episode' in item['snippet']['title']]
+    most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass: Episode' in item['snippet']['title'] or 'Off Days: Episode' in item['snippet']['title']]
     GTD_objs = [GTD.from_json_obj(item) for item in most_recent_vidz]
     GTD_objs = [x for x in GTD_objs if x]
     if GTD_objs:
@@ -131,10 +139,13 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
         print("Caught exception", e, "- recursing!")
         post_gtd(gtd_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
-    sub.set_flair(submission, flair_text='NEW GEOFFREY THE DUMBASS', flair_css_class='images')
+    if gtd_obj.ep_type == 'gtd':
+        sub.set_flair(submission, flair_text='NEW GEOFFREY THE DUMBASS', flair_css_class='images')
+    elif gtd_obj.ep_type == 'offdays':
+        sub.set_flair(submission, flair_text='NEW OFF DAYS', flair_css_class='images')
     submission.approve()
 
-    print("NEW GTD!!! WOOOOO!!!!")
+    print("NEW GTD/OD!!! WOOOOO!!!!")
     print(gtd_obj.reddit_title)
     post_subreddit_comment(submission, gtd_obj)
     gtd_obj.reddit_url = submission.permalink
