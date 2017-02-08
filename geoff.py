@@ -149,9 +149,9 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
     print(gtd_obj.reddit_title)
     post_subreddit_comment(submission, gtd_obj)
     gtd_obj.reddit_url = submission.permalink
-    sub.sticky(bottom=True)
-    sub.distinguish()
-    #replace_top_sticky(sub, submission)
+    #submission.sticky(bottom=True)
+    replace_top_sticky(sub, submission)
+    submission.distinguish()
 
     mod_info.past_history.add_gtd(gtd_obj)
     mod_info.past_history.write()

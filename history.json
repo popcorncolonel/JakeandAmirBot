@@ -160,6 +160,16 @@
             }
         ]
     },
+    "Feb 2017": {
+        "IIWY": [
+            {
+                "duration": "58:53",
+                "number": 257,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5smijr/if_i_were_you_episode_257_netflix_and_chill_5853/",
+                "title": "Netflix and Chill"
+            }
+        ]
+    },
     "Jan 2016": {
         "IIWY": [
             {
@@ -195,6 +205,13 @@
         ]
     },
     "Jan 2017": {
+        "GTD": [
+            {
+                "number": 2,
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Nicknames"
+            }
+        ],
         "IIWY": [
             {
                 "duration": "55:38",
@@ -213,6 +230,12 @@
                 "number": 252,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5ljh1v/if_i_were_you_episode_252_etemple_w_laura_hurwitz/",
                 "title": "eTemple (w_Laura Hurwitz!)"
+            },
+            {
+                "duration": "50:09",
+                "number": 256,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5qyy2v/if_i_were_you_episode_256_jew_trip_5009/",
+                "title": "Jew Trip"
             }
         ]
     },

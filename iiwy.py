@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import re
 import sys
+import json
 import praw
 import time
 import warnings
@@ -73,54 +74,33 @@ def get_sponsors(sponsors):
 
 
 def to_reddit_url(link):
+    '''
+    Turns "google.com" into "[google](google.com)"
+    '''
     if '.com' in link or '.org' in link or '.net' in link:
         link = '[' + link.split('.com')[0].split('.org')[0].split('.net')[0] + '](http://' + link.lower() + ')'
     return link
 
 def get_iiwy_info(depth=0):
+    title = None
+    name = None
+    url = None
+    desc = None
+    sponsorlist = None
+    episode_num = None
+    filename = None
     try:
         r = None
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            r = requests.get('https://www.spreaker.com/user/ifiwereyou', timeout=10)
-        if python_3:
-            soup = BeautifulSoup(''.join(r.text), "html.parser")
-        else:
-            soup = BeautifulSoup(''.join(r.text))
-        episode_part = soup.findAll('h2', {'class': 'track_title'})[0]
-        episode_part = episode_part.findAll('a')[0]
-        name = episode_part.text
-        title = name
-        if ':' in title:  # "Episode 191: The Emotionary" -> "The Emotionary"
-            title = title.split(':')[1].strip()
-        url = episode_part['href']
-        duration = soup.findAll('div', {'class': 'trkl_ep_duration'})[0].contents[0].strip()
-        if len(duration) > 0:
-            minutes = int(duration.split(':')[0])
-            if minutes >= 60:
-                hours = str(minutes // 60)
-                minutes = '%02d' % (minutes % 60)
-                duration = hours + ':' + minutes + ':' + duration.split(':')[1]
-            name += ' [' + duration + ']'
-
-        try:
-            with warnings.catch_warnings():
-                warnings.simplefilter("ignore")
-                r = requests.get(url, timeout=10)
-            if python_3:
-                soup = BeautifulSoup(''.join(r.text), "html.parser")
-            else:
-                soup = BeautifulSoup(''.join(r.text))
-            desc = soup.findAll('div', {'class': 'track_description'})[0].contents
-            desctext = desc[0].strip()
-            longtext = ''.join([str(s) for s in desc])
-            desc = desctext
-            sponsor_text = dict(soup.findAll('meta', {'property': 'og:description'})[0].attrs)['content']
-            sponsors = sponsor_text.split('brought to you by ')[1].strip()
-            sponsorlist = get_sponsors(sponsors)
-        except IndexError:
-            desc = DEFAULT_STR
-            sponsorlist = []
+            # ART19 HAS A TERRIBLE API
+            r = requests.get(
+                'https://art19.com/episodes?series_id=92b3b85d-6ac4-49b1-88fa-44328c4a69e1&sort=created_at',
+                headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'},
+            )
+            j = json.loads(r.text)
+            most_recent_ep = j['data'][-1]['attributes']
+            most_recent_ep_id = j['data'][-1]['id']
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:
@@ -132,6 +112,31 @@ def get_iiwy_info(depth=0):
         print(e)
         time.sleep(3)
         return get_iiwy_info(depth=depth + 1)
+    name = most_recent_ep['title']  # name is the full title. `title` is like "The Emotionary"
+    if ':' in name:  # "Episode 191: The Emotionary" -> "The Emotionary"
+        title = name.split(':')[1].strip()
+    else:
+        title = name
+    url = 'https://art19.com/shows/if-i-were-you/episodes/{}'.format(most_recent_ep_id)
+    duration = None
+    ''' Art19 does not provide support for duration!!!
+    duration = soup.findAll('div', {'class': 'trkl_ep_duration'})[0].contents[0].strip()
+    if len(duration) > 0:
+        minutes = int(duration.split(':')[0])
+        if minutes >= 60:
+            hours = str(minutes // 60)
+            minutes = '%02d' % (minutes % 60)
+            duration = hours + ':' + minutes + ':' + duration.split(':')[1]
+        name += ' [' + duration + ']'
+    '''
+    reddit_title = name
+
+    sponsorlist = []
+    desc = most_recent_ep['description']
+    filename = most_recent_ep['file_name']  # lol why is this information included
+    if 'brought to you by ' in desc:
+        sponsors = sponsor_text.split('brought to you by ')[1].strip()
+        sponsorlist = get_sponsors(sponsors)
     episode_num = re.search('\d+', name.split(':')[0].split('Episode')[1].strip()).group()
     episode_num = int(episode_num)
     try:
@@ -150,7 +155,7 @@ def get_iiwy_info(depth=0):
     title = html_parser.unescape(title)
     desc = html_parser.unescape(desc)
     iiwy_obj = IIWY(number=episode_num, title=title, duration=duration,
-                    reddit_title=name, monthstring=history.this_monthstring(), url=url,
+                    reddit_title=reddit_title, monthstring=history.this_monthstring(), url=url,
                     sponsor_list=sponsorlist, desc=desc)
     return iiwy_obj
 
@@ -158,7 +163,7 @@ def get_iiwy_info(depth=0):
 def check_iiwy_and_post_if_new(mod_info, force_submit=False, testmode=False):
     iiwy_obj = get_iiwy_info()
     if not force_submit:
-        if iiwy_obj.number in mod_info.foundlist or iiwy_obj.duration in mod_info.foundlist:  # if episode found before
+        if iiwy_obj.number in mod_info.foundlist:  # if episode found before
             return
     while True:
         try:
@@ -174,7 +179,7 @@ def check_iiwy_and_post_if_new(mod_info, force_submit=False, testmode=False):
             print("Error", e)
             break
     mod_info.foundlist.append(iiwy_obj.number)
-    mod_info.foundlist.append(iiwy_obj.duration)
+    #mod_info.foundlist.append(iiwy_obj.duration)
 
 
 def get_comment_text(iiwy_obj):
@@ -260,4 +265,6 @@ def post_subreddit_comment(submission, iiwy_obj):
 
 
 if __name__ == '__main__':
-    print(get_iiwy_info())
+    iiwy_obj = (get_iiwy_info())
+    import pdb; pdb.set_trace()
+    print(iiwy_obj)

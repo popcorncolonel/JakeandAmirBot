@@ -45,7 +45,7 @@ def initialize_foundlist():
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
           "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
           "and duration", iiwy_obj.duration)
-    foundlist = ["", iiwy_obj.number, iiwy_obj.duration, gtd_obj.reddit_title]
+    foundlist = ["", iiwy_obj.number, gtd_obj.reddit_title]
     return foundlist
 
 

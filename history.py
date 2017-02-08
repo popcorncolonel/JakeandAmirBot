@@ -22,12 +22,19 @@ class History:
             self.history_dict[monthstring] = dict()
         if 'IIWY' not in self.history_dict[monthstring]:
             self.history_dict[monthstring]['IIWY'] = []
-        self.history_dict[monthstring]['IIWY'].append({
-            "title": iiwy.title,
-            "reddit_url": iiwy.reddit_url,
-            "number": iiwy.number,
-            "duration": iiwy.duration
-        })
+        if hasattr(iiwy, 'duration'):
+            self.history_dict[monthstring]['IIWY'].append({
+                "title": iiwy.title,
+                "reddit_url": iiwy.reddit_url,
+                "number": iiwy.number,
+                "duration": iiwy.duration,
+            })
+        else:
+            self.history_dict[monthstring]['IIWY'].append({
+                "title": iiwy.title,
+                "reddit_url": iiwy.reddit_url,
+                "number": iiwy.number,
+            })
 
     def add_gtd(self, gtd):
         monthstring = gtd.monthstring
