@@ -163,7 +163,7 @@ def mod_actions(mod_info, force_submit_rewatch=False, testmode=False):
     # Run tests every hour - if any of the tests fail, email me.
     if new_hour != mod_info.hour:
         jjkae_tools.start_test_thread(email_if_failures=True)
-        if int(new_hour) == 9:  # if it turns to be 9am, post the rewatch!
+        if int(new_hour) == 10:  # if it turns to be 9am, post the rewatch!
             # Post rewatch episode (every day other than discussion days)
             post_new_rewatch(mod_info, testmode)
             mod_info.next_episode += 1

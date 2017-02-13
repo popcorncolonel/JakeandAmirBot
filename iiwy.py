@@ -134,9 +134,11 @@ def get_iiwy_info(depth=0):
     sponsorlist = []
     desc = most_recent_ep['description']
     filename = most_recent_ep['file_name']  # lol why is this information included
+    ''' temporarily disabled...
     if 'brought to you by ' in desc:
-        sponsors = sponsor_text.split('brought to you by ')[1].strip()
+        sponsors = desc.split('brought to you by ')[1].strip()
         sponsorlist = get_sponsors(sponsors)
+    '''
     episode_num = re.search('\d+', name.split(':')[0].split('Episode')[1].strip()).group()
     episode_num = int(episode_num)
     try:
