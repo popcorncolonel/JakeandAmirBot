@@ -242,7 +242,7 @@ def post_iiwy(iiwy_obj, mod_info, testmode=False, depth=0):
     print(iiwy_obj.reddit_title)
     post_subreddit_comment(submission, iiwy_obj)
     iiwy_obj.reddit_url = submission.permalink
-    replace_top_sticky(sub, submission)  # Can't sticky link posts for now :/
+    replace_top_sticky(sub, submission)
 
     mod_info.past_history.add_iiwy(iiwy_obj)
     mod_info.past_history.write()
