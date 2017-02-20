@@ -166,6 +166,11 @@
                 "number": 5,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5t048t/off_days_episode_5_whos_it_gonna_be/",
                 "title": "Who's It Gonna Be?"
+            },
+            {
+                "number": 6,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5uf3cy/off_days_episode_6_baseball/",
+                "title": "Baseball"
             }
         ],
         "IIWY": [
@@ -174,6 +179,12 @@
                 "number": 257,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5smijr/if_i_were_you_episode_257_netflix_and_chill_5853/",
                 "title": "Netflix and Chill"
+            },
+            {
+                "duration": null,
+                "number": 259,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5v3437/episode_259_secret_diary_wgeoffrey_james/",
+                "title": "Secret Diary (w/Geoffrey James!)"
             }
         ]
     },

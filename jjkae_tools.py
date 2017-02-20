@@ -95,8 +95,8 @@ def get_hour():
 
 def replace_top_sticky(sub, submission):
     # old rewatch/discussion
-    #bottom_sticky = sub.get_sticky(bottom=True)
-    #bottom_sticky.unsticky()
+    bottom_sticky = sub.get_sticky(bottom=True)
+    bottom_sticky.unsticky()
     # old IIWY
     top_sticky = sub.get_sticky(bottom=False)
     top_sticky.unsticky()
