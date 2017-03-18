@@ -38,7 +38,6 @@ class JjkaeTest(unittest.TestCase):
     def test_gtd(self):
         import geoff
         gtd_obj = geoff.get_gtd_info()
-        self.assertIs(type(gtd_obj.number), int)
         self.assertIsNotNone(gtd_obj.title)
         self.assertIsNotNone(gtd_obj.reddit_title)
         self.assertIsNotNone(gtd_obj.url)

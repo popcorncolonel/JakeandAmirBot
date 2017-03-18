@@ -45,7 +45,8 @@ class History:
         self.history_dict[monthstring]['GTD'].append({
             "title": gtd.title,
             "reddit_url": gtd.reddit_url,
-            "number": gtd.number,
+            #"number": gtd.number,
+            "ep_type": gtd.ep_type,
         })
 
     def add_lnh(self, lnh):

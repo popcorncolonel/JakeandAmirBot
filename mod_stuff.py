@@ -82,11 +82,21 @@ def get_discussion_string(monthstring, past_history):
                                                             history_dict['reddit_url'])
 
         if 'GTD' in past_history[monthstring]:
-            added_text += "**Geoffrey the Dumbass episodes this month**:\n\n"
+            added_text += "\n**Headgum video episodes released this month**:\n\n"
             for history_dict in past_history[monthstring]['GTD']:
-                added_text += "* [Episode %d: %s](%s)\n" % (history_dict['number'],
-                                                            history_dict['title'],
-                                                            history_dict['reddit_url'])
+                if 'ep_type' in history_dict:
+                    ep_type = history_dict['ep_type']
+                    if ep_type == 'offdays':
+                        ep_type = 'Off Days'
+                    elif ep_type == 'gtd':
+                        ep_type = 'Geoffrey the Dumbass'
+                    else:
+                        ep_type = ''
+                    added_text += "* [%s: %s](%s)\n" % (ep_type,
+                                                        history_dict['title'],
+                                                        history_dict['reddit_url'])
+                added_text += "* [%s](%s)\n" % (history_dict['title'],
+                                                history_dict['reddit_url'])
 
     return discussion_string % added_text
 

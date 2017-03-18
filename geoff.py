@@ -28,20 +28,18 @@ class GTD:
     @classmethod
     def from_json_obj(cls, obj):
         snippet = obj['snippet']
-        if 'Episode' in snippet['title']:
-            number = int(snippet['title'].split('Episode')[1].split()[0].strip()) # ex. 10
-            title = snippet['title'].split('-')[-1].strip() # ex. YoYo
-            desc = snippet['description'] # ex. Geoffrey is oddly good at something, which is fine. But that's not his job. \n\n Subscribe to this channel today to make us happy!
+        number = None
+        title = snippet['title'].split(':')[-1].strip() # ex. YoYo
+        desc = snippet['description'] # ex. Geoffrey is oddly good at something, which is fine. But that's not his job. \n\n Subscribe to this channel today to make us happy!
 
-        else:
-            print('title is like {} rather than "GTD: Episode \\d\\d.'.format(snippet['title']))
-            return None
         ep_type = None
         full_title = snippet['title']
         if 'Geoffrey the Dumbass' in full_title:
             ep_type = 'gtd'
         elif 'Off Days' in full_title:
             ep_type = 'offdays'
+        if 'videoId' not in obj['id']:  # if, for exapmle, you're a playlist
+            return None
         return cls(
             number=number,
             title=title,
@@ -73,7 +71,7 @@ def get_gtd_info():
     )
     resp = requests.get(url)
     json_data = json.loads(resp.text)
-    most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass: Episode' in item['snippet']['title'] or 'Off Days: Episode' in item['snippet']['title']]
+    most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass' in item['snippet']['title'] or 'Off Days' in item['snippet']['title']]
     GTD_objs = [GTD.from_json_obj(item) for item in most_recent_vidz]
     GTD_objs = [x for x in GTD_objs if x]
     if GTD_objs:
@@ -83,6 +81,10 @@ def get_gtd_info():
 
 def check_gtd_and_post_if_new(mod_info, force_submit=False, testmode=False):
     gtd_obj = get_gtd_info()
+    if gtd_obj is None:
+        print("GOT NONE GTD_OBJ")
+        time.sleep(5)
+        return check_gtd_and_post_if_new(mod_info, force_submit, testmode)
     if not force_submit:
         if gtd_obj.reddit_title in mod_info.foundlist:  # if episode found before
             return
