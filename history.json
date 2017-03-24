@@ -393,6 +393,11 @@
                 "ep_type": "gtd",
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5zs6wa/geoffrey_the_dumbass_fig_newton_gingrich/",
                 "title": "Fig Newton Gingrich"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/612qlv/geoffrey_the_dumbass_mornin/",
+                "title": "Mornin'"
             }
         ],
         "IIWY": [
@@ -413,6 +418,12 @@
                 "number": 263,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5z2vgt/episode_263_outdoor_sex_wrhett_and_link/",
                 "title": "Outdoor Sex (w/Rhett and Link!)"
+            },
+            {
+                "duration": null,
+                "number": 264,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/60ef8f/episode_264_seal_the_deal/",
+                "title": "Seal the Deal"
             }
         ]
     },

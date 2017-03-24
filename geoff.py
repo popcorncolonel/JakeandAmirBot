@@ -62,7 +62,7 @@ def to_reddit_url(link):
         link = '[' + link.split('.com')[0].split('.org')[0].split('.net')[0] + '](http://' + link.lower() + ')'
     return link
 
-def get_gtd_info():
+def get_gtd_info(depth=0):
     headgum_channel_id = 'UCV58y_DbGkuYCNQC2OjJWOw'
     url_fmtstring = 'https://www.googleapis.com/youtube/v3/search?key={key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=5'
     url = url_fmtstring.format(
@@ -71,6 +71,13 @@ def get_gtd_info():
     )
     resp = requests.get(url)
     json_data = json.loads(resp.text)
+    if 'items' not in json_data:
+        if depth > 5:
+            send_email(subject="JSON error after 5 retries", body="json_data: {}".format(json_data), to="popcorncolonel@gmail.com")
+            return None
+        print("JSON ERROR?: {}".format(json_data))
+        sleep(5)
+        return get_gtd_info(depth=depth+1)
     most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass' in item['snippet']['title'] or 'Off Days' in item['snippet']['title']]
     GTD_objs = [GTD.from_json_obj(item) for item in most_recent_vidz]
     GTD_objs = [x for x in GTD_objs if x]
