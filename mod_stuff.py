@@ -206,7 +206,7 @@ def post_new_rewatch(mod_info, testmode=False):
     #submission.sticky(bottom=True)
     submission.distinguish()
     sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
-    jjkae_tools.send_rewatch_email(submission.permalink, mod_info.next_episode)
+    #jjkae_tools.send_rewatch_email(submission.permalink, mod_info.next_episode)
     print("Successfully submitted rewatch! Time to celebrate.")
     return submission
 
@@ -220,6 +220,7 @@ def post_monthly_discussion(mod_info, testmode=False):
         assert(type(text) is not None)
         return
 
+    send_email(subject=u'watch all the fricken rewatches in the past month man', body='reddit.com/u/jakeandamirbot', to='@'.join(['cmey63', 'gmail.com']))
     submission = jjkae_tools.submit(title, mod_info, 'jakeandamir',
                                     text=get_discussion_string(history.this_monthstring(), history.get_history()))
     submission.sticky(bottom=True)
