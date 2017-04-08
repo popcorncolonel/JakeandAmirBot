@@ -45,6 +45,23 @@
             }
         ]
     },
+    "Apr 2017": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/63tu80/geoffrey_the_dumbass_rand_pauls_drag_race/",
+                "title": "Rand Paul's Drag Race"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 268,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/63uzhq/episode_268_sex_diary/",
+                "title": "Sex Diary"
+            }
+        ]
+    },
     "Aug 2016": {
         "IIWY": [
             {
@@ -398,6 +415,11 @@
                 "ep_type": "gtd",
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/612qlv/geoffrey_the_dumbass_mornin/",
                 "title": "Mornin'"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/62evl6/off_days_jingle_part_2_whoodie_allen/",
+                "title": "Jingle Part 2 (w/Hoodie Allen!)"
             }
         ],
         "IIWY": [
@@ -424,6 +446,24 @@
                 "number": 264,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/60ef8f/episode_264_seal_the_deal/",
                 "title": "Seal the Deal"
+            },
+            {
+                "duration": null,
+                "number": 265,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/61q0r8/episode_265_vr_porn_live_in_melbourne/",
+                "title": "VR Porn (live in Melbourne!)"
+            },
+            {
+                "duration": null,
+                "number": 267,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/62fj7e/episode_267_danish/",
+                "title": "Danish"
+            },
+            {
+                "duration": null,
+                "number": 266,
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Danish"
             }
         ]
     },

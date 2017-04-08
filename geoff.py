@@ -76,7 +76,7 @@ def get_gtd_info(depth=0):
             send_email(subject="JSON error after 5 retries", body="json_data: {}".format(json_data), to="popcorncolonel@gmail.com")
             return None
         print("JSON ERROR?: {}".format(json_data))
-        sleep(5)
+        time.sleep(5)
         return get_gtd_info(depth=depth+1)
     most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass' in item['snippet']['title'] or 'Off Days' in item['snippet']['title']]
     GTD_objs = [GTD.from_json_obj(item) for item in most_recent_vidz]
