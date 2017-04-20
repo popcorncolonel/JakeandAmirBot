@@ -69,7 +69,7 @@ def get_gtd_info(depth=0):
         channel_id=headgum_channel_id,
         key=reddit_password.get_yt_api_key(),
     )
-    resp = requests.get(url)
+    resp = requests.get(url, timeout=15.)
     json_data = json.loads(resp.text)
     if 'items' not in json_data:
         if depth > 5:

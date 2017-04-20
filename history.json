@@ -51,6 +51,11 @@
                 "ep_type": "gtd",
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/63tu80/geoffrey_the_dumbass_rand_pauls_drag_race/",
                 "title": "Rand Paul's Drag Race"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/656djv/geoffrey_the_dumbass_tour_promo/",
+                "title": "Tour Promo"
             }
         ],
         "IIWY": [
@@ -59,6 +64,18 @@
                 "number": 268,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/63uzhq/episode_268_sex_diary/",
                 "title": "Sex Diary"
+            },
+            {
+                "duration": null,
+                "number": 269,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/64hg2w/episode_269_mom_on_blast/",
+                "title": "Mom on Blast"
+            },
+            {
+                "duration": null,
+                "number": 270,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/65texw/episode_270_nipples/",
+                "title": "Nipples"
             }
         ]
     },
