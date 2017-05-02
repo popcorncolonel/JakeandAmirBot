@@ -220,7 +220,7 @@ def post_monthly_discussion(mod_info, testmode=False):
         assert(type(text) is not None)
         return
 
-    jjkae_tools.send_email(subject=u'watch all the fricken rewatches in the past month man', body='reddit.com/u/jakeandamirbot', to='@'.join(['cmey63', 'gmail.com']))
+    jjkae_tools.send_email(subject=u'watch all the fricken rewatches in the past month you dingus', body='reddit.com/u/jakeandamirbot', to='@'.join(['cmey63', 'gmail.com']))
     submission = jjkae_tools.submit(title, mod_info, 'jakeandamir',
                                     text=get_discussion_string(history.this_monthstring(), history.get_history()))
     submission.sticky(bottom=True)

@@ -153,8 +153,8 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
     if depth > 3:
         send_email(subject="twinnovation SUBMISSION ERROR", body="IDK", to="popcorncolonel@gmail.com")
         sys.exit() # should I exit or just keep going???
-    subreddit = 'jakeandamir'
-    sub = mod_info.r.get_subreddit(subreddit)
+    subreddit = 'twinnovation'
+    #sub = mod_info.r.get_subreddit(subreddit)
     mod_info.login()
 
     if testmode:
@@ -163,7 +163,7 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
         return
 
     try:
-        submission = mod_info.r.submit('jakeandamir', twins_obj.reddit_title, url=twins_obj.url)
+        submission = mod_info.r.submit(subreddit, twins_obj.reddit_title, url=twins_obj.url)
     except praw.errors.AlreadySubmitted as e:
         print(e)
         twins_obj.reddit_url = 'TODO: Get the real submitted object'
@@ -174,14 +174,14 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
         print("Caught exception", e, "- recursing!")
         post_twins(twins_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
-    sub.set_flair(submission, flair_text='NEW TWINNOVATION', flair_css_class='images')
-    submission.approve()
+    #sub.set_flair(submission, flair_text='NEW TWINNOVATION', flair_css_class='images')
+    #submission.approve()
 
     print("NEW twinnovation!!! WOOOOO!!!!")
     print(twins_obj.reddit_title)
     post_subreddit_comment(submission, twins_obj)
     twins_obj.reddit_url = submission.permalink
-    replace_top_sticky(sub, submission)
+    #replace_top_sticky(sub, submission)
 
     mod_info.past_history.add_twins(twins_obj)
     mod_info.past_history.write()
@@ -194,7 +194,7 @@ def post_subreddit_comment(submission, twins_obj):
         try:
             comment_text = get_comment_text(twins_obj)
             comment = submission.add_comment(comment_text)
-            comment.approve()
+            #comment.approve()
             break
         except requests.exceptions.HTTPError:
             pass
