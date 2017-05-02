@@ -3,6 +3,7 @@ from __future__ import print_function
 import sys
 import time
 import iiwy
+import twins
 import geoff
 import datetime
 import jjkae_tools
@@ -11,6 +12,7 @@ from mod_stuff import mod_actions, ModInfo
 from rewatch import episodes
 
 force_submit_rewatch = False  # This causes mod_actions to post the rewatch the first iteration (i==1).
+force_submit_twins = False
 force_submit_iiwy = False
 force_submit_gtd = False
 
@@ -21,6 +23,7 @@ def get_timeout(default_timeout=5):
     if (hour, day) in [
         (23, 'Sunday'), (0, 'Monday'), (1, 'Monday'), (2, 'Monday'),  # IIWY episodes
         (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday'),  # IIWY bonus episodes
+        (23, 'Thursday'), (0, 'Friday'), (1, 'Friday'), (2, 'Friday'),  # twinnovation episodes
     ]:
         return 1
     else:
@@ -35,26 +38,30 @@ def iiwy_loop(mod_info, force_submit_iiwy=False):
     iiwy.check_iiwy_and_post_if_new(mod_info, force_submit=force_submit_iiwy)
 
 
+def twins_loop(mod_info, force_submit_twins=False):
+    twins.check_twins_and_post_if_new(mod_info, force_submit=force_submit_twins)
+
+
 def gtd_loop(mod_info, force_submit_gtd=False):
     geoff.check_gtd_and_post_if_new(mod_info, force_submit=force_submit_gtd)
 
 
 def initialize_foundlist():
     iiwy_obj = iiwy.get_iiwy_info()
+    twins_obj = twins.get_twins_info()
     gtd_obj = geoff.get_gtd_info()
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
           "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
           "and duration", iiwy_obj.duration)
-    foundlist = ["", iiwy_obj.number, gtd_obj.reddit_title]
+    print("Most recent Twinnovation is: {}".format(twins_obj.reddit_title))
+    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, gtd_obj.reddit_title]
     return foundlist
 
 
 def main():
-    global force_submit_iiwy, force_submit_rewatch, force_submit_gtd
+    global force_submit_iiwy, force_submit_twins, force_submit_rewatch, force_submit_gtd
 
     default_timeout = 5  # don't spam the servers :D
-
-    jjkae_tools.start_test_thread(email_if_failures=True)
 
     foundlist = initialize_foundlist()
 
@@ -68,11 +75,16 @@ def main():
         print('Previous episode:', episodes[mod_info.next_episode - 2])
         print('Next episode to be posted:', episodes[mod_info.next_episode - 1])
 
+    jjkae_tools.start_test_thread(email_if_failures=True)
+
     past_exception_string = None
     while True:
         try:
             iiwy_loop(mod_info, force_submit_iiwy)
             force_submit_iiwy = False  # Only do it once
+
+            twins_loop(mod_info, force_submit_twins)
+            force_submit_twins = False  # Only do it once
 
             mod_loop(mod_info, force_submit_rewatch)
             force_submit_rewatch = False  # Only do it once

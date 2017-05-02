@@ -22,6 +22,19 @@ class JjkaeTest(unittest.TestCase):
             json_data = json.load(json_file)
         self.assertNotEqual(len(json_data), 0)
 
+    def test_twins(self):
+        import twins
+        twins_obj = twins.get_twins_info()
+        self.assertIs(type(twins_obj.number), int)
+
+        self.assertIsNotNone(twins_obj.title)
+        self.assertIsNotNone(twins_obj.reddit_title)
+        self.assertIsNotNone(twins_obj.url)
+        self.assertIsNotNone(twins_obj.duration)
+        self.assertIsNotNone(twins_obj.desc)
+        self.assertIsNotNone(twins_obj.monthstring)
+        twins.check_twins_and_post_if_new(self.mod_info, testmode=True)
+
     def test_iiwy(self):
         import iiwy
         iiwy_obj = iiwy.get_iiwy_info()
