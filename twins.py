@@ -10,7 +10,7 @@ import requests
 
 import history
 
-from jjkae_tools import replace_top_sticky, send_email, is_python_3
+from jjkae_tools import replace_top_sticky, set_bottom_sticky, send_email, is_python_3
 from reddit_password import get_spreaker_oauth2
 
 html_parser = None
@@ -91,9 +91,9 @@ def get_twins_info(depth=0):
     url = most_recent_ep['site_url']
     duration_secs = most_recent_ep['duration'] // 1000
     if duration_secs < 3600:
-        duration = '{}:{}'.format(duration_secs // 60, duration_secs % 60)
+        duration = '{:02d}:{:02d}'.format(duration_secs // 60, duration_secs % 60)
     else:
-        duration = '{}:{}:{}'.format(duration_secs // 3600, (duration_secs % 3600) // 60, duration_secs % 60)
+        duration = '{}:{:02d}:{:02d}'.format(duration_secs // 3600, (duration_secs % 3600) // 60, duration_secs % 60)
     [episode_num, title] = title.split(' ', maxsplit=1)  # now `title` is like "Pants or Shorts Live at SXSW"
     episode_num = int(episode_num)
     name = 'Twinnovation Episode {episode_num}: {title} [{duration}]'.format(**locals())
@@ -154,7 +154,7 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
         send_email(subject="twinnovation SUBMISSION ERROR", body="IDK", to="popcorncolonel@gmail.com")
         sys.exit() # should I exit or just keep going???
     subreddit = 'twinnovation'
-    #sub = mod_info.r.get_subreddit(subreddit)
+    sub = mod_info.r.get_subreddit(subreddit)
     mod_info.login()
 
     if testmode:
@@ -174,14 +174,14 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
         print("Caught exception", e, "- recursing!")
         post_twins(twins_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
-    #sub.set_flair(submission, flair_text='NEW TWINNOVATION', flair_css_class='images')
-    #submission.approve()
+    sub.set_flair(submission, flair_text='NEW TWINNOVATION')
+    submission.approve()
 
     print("NEW twinnovation!!! WOOOOO!!!!")
     print(twins_obj.reddit_title)
     post_subreddit_comment(submission, twins_obj)
     twins_obj.reddit_url = submission.permalink
-    #replace_top_sticky(sub, submission)
+    set_bottom_sticky(submission)
 
     mod_info.past_history.add_twins(twins_obj)
     mod_info.past_history.write()

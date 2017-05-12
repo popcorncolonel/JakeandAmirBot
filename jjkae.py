@@ -75,6 +75,7 @@ def main():
         print('Previous episode:', episodes[mod_info.next_episode - 2])
         print('Next episode to be posted:', episodes[mod_info.next_episode - 1])
 
+    time.sleep(5)
     jjkae_tools.start_test_thread(email_if_failures=True)
 
     past_exception_string = None

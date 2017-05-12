@@ -93,6 +93,10 @@ def get_hour():
     hour = today_datetime.strftime('%H')
     return hour
 
+def set_bottom_sticky(submission):
+    submission.sticky(bottom=True)
+    submission.distinguish()
+
 def replace_top_sticky(sub, submission):
     # old rewatch/discussion
     bottom_sticky = sub.get_sticky(bottom=True)

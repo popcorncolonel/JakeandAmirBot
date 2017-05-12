@@ -547,6 +547,28 @@
             }
         ]
     },
+    "May 2017": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Weekend Plans"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Workplace Injury"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 273,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/69vy82/episode_273_shallow_boyfriend_live_in_denver/",
+                "title": "Shallow Boyfriend (Live in Denver!)"
+            }
+        ]
+    },
     "Nov 2016": {
         "IIWY": [
             {
