@@ -558,6 +558,16 @@
                 "ep_type": "offdays",
                 "reddit_url": "TODO: Get the real submitted object",
                 "title": "Workplace Injury"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6bx4al/geoffrey_the_dumbass_emojis/",
+                "title": "Emojis"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Yankee Doodle"
             }
         ],
         "IIWY": [
@@ -566,6 +576,18 @@
                 "number": 273,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/69vy82/episode_273_shallow_boyfriend_live_in_denver/",
                 "title": "Shallow Boyfriend (Live in Denver!)"
+            },
+            {
+                "duration": null,
+                "number": 274,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6b8874/episode_274_butts_and_butts/",
+                "title": "Butts and Butts"
+            },
+            {
+                "duration": null,
+                "number": 275,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6cl0qp/episode_275_hangover_routine/",
+                "title": "Hangover Routine"
             }
         ]
     },

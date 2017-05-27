@@ -95,8 +95,9 @@ def get_discussion_string(monthstring, past_history):
                     added_text += "* [%s: %s](%s)\n" % (ep_type,
                                                         history_dict['title'],
                                                         history_dict['reddit_url'])
-                added_text += "* [%s](%s)\n" % (history_dict['title'],
-                                                history_dict['reddit_url'])
+                else:
+                    added_text += "* [%s](%s)\n" % (history_dict['title'],
+                                                    history_dict['reddit_url'])
 
     return discussion_string % added_text
 
