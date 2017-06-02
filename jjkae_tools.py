@@ -93,7 +93,13 @@ def get_hour():
     hour = today_datetime.strftime('%H')
     return hour
 
-def set_bottom_sticky(submission):
+def set_bottom_sticky(sub, submission):
+    try:
+        top_sticky = sub.get_sticky(bottom=False)  # assuming there's only one sticky, it's bottom=False.
+        top_sticky.unsticky()
+    except Exception as e:
+        print("Caught exception while trying to unsticky:", e)
+
     submission.sticky(bottom=True)
     submission.distinguish()
 

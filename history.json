@@ -381,6 +381,23 @@
             }
         ]
     },
+    "Jun 2017": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6g1v6i/geoffrey_the_dumbass_new_interns/",
+                "title": "New Interns"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 277,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6fc46w/episode_277_instagram_girlfriend_wmike_karnell/",
+                "title": "Instagram Girlfriend (w/Mike Karnell and Dave Rosenberg!)"
+            }
+        ]
+    },
     "Mar 2016": {
         "IIWY": [
             {
@@ -588,6 +605,12 @@
                 "number": 275,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6cl0qp/episode_275_hangover_routine/",
                 "title": "Hangover Routine"
+            },
+            {
+                "duration": null,
+                "number": 276,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6dy4tt/episode_276_sweet_boys/",
+                "title": "Sweet Boys"
             }
         ]
     },
