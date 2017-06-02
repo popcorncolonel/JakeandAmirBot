@@ -181,7 +181,7 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
     print(twins_obj.reddit_title)
     post_subreddit_comment(submission, twins_obj)
     twins_obj.reddit_url = submission.permalink
-    set_bottom_sticky(submission)
+    set_bottom_sticky(sub, submission)
 
     mod_info.past_history.add_twins(twins_obj)
     mod_info.past_history.write()
