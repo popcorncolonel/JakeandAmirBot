@@ -99,7 +99,6 @@ def set_bottom_sticky(sub, submission):
         top_sticky.unsticky()
     except Exception as e:
         print("Caught exception while trying to unsticky:", e)
-
     submission.sticky(bottom=True)
     submission.distinguish()
 
