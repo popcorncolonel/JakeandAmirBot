@@ -387,6 +387,21 @@
                 "ep_type": "gtd",
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6g1v6i/geoffrey_the_dumbass_new_interns/",
                 "title": "New Interns"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Yankee Doodle"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Flash Mobs"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6iuuzz/off_days_snacks_2/",
+                "title": "Snacks 2"
             }
         ],
         "IIWY": [
@@ -395,6 +410,18 @@
                 "number": 277,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6fc46w/episode_277_instagram_girlfriend_wmike_karnell/",
                 "title": "Instagram Girlfriend (w/Mike Karnell and Dave Rosenberg!)"
+            },
+            {
+                "duration": null,
+                "number": 278,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6gpx2d/episode_278_street_fighter_sex/",
+                "title": "Street Fighter Sex"
+            },
+            {
+                "duration": null,
+                "number": 280,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6jiu3e/episode_280_broken_wiener_live_in_portland/",
+                "title": "Broken Wiener (live in Portland!)"
             }
         ]
     },

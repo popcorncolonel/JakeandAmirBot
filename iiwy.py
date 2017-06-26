@@ -134,6 +134,7 @@ def get_iiwy_info(depth=0):
 
     sponsorlist = []
     desc = most_recent_ep['description']
+    desc = re.sub('<.*?>', '', desc).replace('  ', ' ').replace('  ', ' ')
     filename = most_recent_ep['file_name']  # lol why is this information included
     ''' temporarily disabled...
     if 'brought to you by ' in desc:
