@@ -21,8 +21,9 @@ def get_timeout(default_timeout=5):
     hour = int(datetime.datetime.now().strftime('%H'))
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
-        (23, 'Sunday'), (0, 'Monday'), (1, 'Monday'), (2, 'Monday'),  # IIWY episodes
-        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday'),  # IIWY bonus episodes
+        (23, 'Sunday'), (0, 'Monday'), # IIWY episodes
+        (23, 'Wednesday'), (0, 'Thursday'), # IIWY bonus episodes
+        (12, 'Thursday'), (13, 'Thursday'), (14, 'Thursday'), (15, 'Thursday'), # HG vids
         (23, 'Thursday'), (0, 'Friday'), (1, 'Friday'), (2, 'Friday'),  # twinnovation episodes
     ]:
         return 1
@@ -87,11 +88,12 @@ def main():
             twins_loop(mod_info, force_submit_twins)
             force_submit_twins = False  # Only do it once
 
-            mod_loop(mod_info, force_submit_rewatch)
-            force_submit_rewatch = False  # Only do it once
+            # Don't do the rewatch or the monthly discussion
+            #mod_loop(mod_info, force_submit_rewatch)
+            #force_submit_rewatch = False  # Only do it once
 
-            if mod_info.i % 5 == 1:
-                # do it 20% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
+            if mod_info.i % 2 == 1:
+                # do it 50% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
                 # hitting the server 12 times a minute.
                 gtd_loop(mod_info, force_submit_gtd)
                 force_submit_gtd = False  # Only do it once
