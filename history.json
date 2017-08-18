@@ -124,6 +124,23 @@
             }
         ]
     },
+    "Aug 2017": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Gordon"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 286,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6s3n95/episode_286_lightning_round_3_wgeoffrey_james/",
+                "title": "Lightning Round 3 (w/Geoffrey James + Interns!)"
+            }
+        ]
+    },
     "Dec 2016": {
         "GTD": [
             {
@@ -353,6 +370,68 @@
             }
         ]
     },
+    "Jul 2017": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6lmre8/geoffrey_the_dumbass_noir/",
+                "title": "Noir"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Slip n' Slide"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6oh9w9/geoffrey_the_dumbass_aladdin_audition/",
+                "title": "Aladdin Audition"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Brooklyn (w/Twinnovation!)"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 281,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6kxno9/episode_281_sex_party_wgaby_and_allison/",
+                "title": "Sex Party (w/Gaby and Allison!)"
+            },
+            {
+                "duration": null,
+                "number": 282,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6mc2d4/episode_282_is_it_cheating_if/",
+                "title": "Is It Cheating If..."
+            },
+            {
+                "duration": null,
+                "number": 283,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6nqrce/episode_283_prank_wars_wstreeter_seidell/",
+                "title": "Prank Wars (w/Streeter Seidell!)"
+            },
+            {
+                "duration": null,
+                "number": 284,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6p6095/episode_284_jakes_moms_cookies/",
+                "title": "Jakes Moms Cookies"
+            },
+            {
+                "duration": null,
+                "number": 285,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6qm0c3/episode_285_sexiled_roommate_wgabrielle_elyse/",
+                "title": "Sexiled Roommate (w/Gabrielle Elyse!)"
+            },
+            {
+                "duration": null,
+                "number": 8,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6qqvrf/episode_8_tinder/",
+                "title": "Tinder"
+            }
+        ]
+    },
     "Jun 2016": {
         "IIWY": [
             {
@@ -402,6 +481,11 @@
                 "ep_type": "offdays",
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6iuuzz/off_days_snacks_2/",
                 "title": "Snacks 2"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6k9cew/geoffrey_the_dumbass_finance/",
+                "title": "Finance"
             }
         ],
         "IIWY": [

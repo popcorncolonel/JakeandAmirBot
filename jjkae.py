@@ -23,7 +23,7 @@ def get_timeout(default_timeout=5):
     if (hour, day) in [
         (23, 'Sunday'), (0, 'Monday'), # IIWY episodes
         (23, 'Wednesday'), (0, 'Thursday'), # IIWY bonus episodes
-        (12, 'Thursday'), (13, 'Thursday'), (14, 'Thursday'), (15, 'Thursday'), # HG vids
+        (10, 'Thursday'), (11, 'Thursday'), (12, 'Thursday'), (13, 'Thursday'), (14, 'Thursday'), (15, 'Thursday'), # HG vids
         (23, 'Thursday'), (0, 'Friday'), (1, 'Friday'), (2, 'Friday'),  # twinnovation episodes
     ]:
         return 1
@@ -82,6 +82,8 @@ def main():
     past_exception_string = None
     while True:
         try:
+            timeout = get_timeout(default_timeout)
+
             iiwy_loop(mod_info, force_submit_iiwy)
             force_submit_iiwy = False  # Only do it once
 
@@ -92,13 +94,16 @@ def main():
             #mod_loop(mod_info, force_submit_rewatch)
             #force_submit_rewatch = False  # Only do it once
 
-            if mod_info.i % 2 == 1:
-                # do it 50% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
-                # hitting the server 12 times a minute.
+            day = datetime.datetime.now().strftime('%A')
+            if day == 'Thursday' and timeout == 1: # if we're in the zone of checking a lot for GTD
                 gtd_loop(mod_info, force_submit_gtd)
                 force_submit_gtd = False  # Only do it once
-
-            timeout = get_timeout(default_timeout)
+            else:
+                if mod_info.i % 2 == 1:
+                    # do it 50% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
+                    # hitting the server 12 times a minute.
+                    gtd_loop(mod_info, force_submit_gtd)
+                    force_submit_gtd = False  # Only do it once
 
             if timeout != 0:
                 time.sleep(timeout)

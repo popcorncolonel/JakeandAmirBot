@@ -194,7 +194,7 @@ def post_subreddit_comment(submission, twins_obj):
         try:
             comment_text = get_comment_text(twins_obj)
             comment = submission.add_comment(comment_text)
-            #comment.approve()
+            comment.approve()
             break
         except requests.exceptions.HTTPError:
             pass
