@@ -67,9 +67,9 @@ def submit(title, mod_info, subreddit, text=None, url=None):
         try:
             mod_info.login()
             if text:
-                return mod_info.r.submit(subreddit, title, text=text, resubmit=True)
+                return subreddit.submit(title, text=text, resubmit=True)
             elif url:
-                return mod_info.r.submit(subreddit, title, url=url)
+                return subreddit.submit(title, url=url)
             else:
                 raise ValueError('No self-text or url specified')
         except requests.exceptions.HTTPError as e:
@@ -95,33 +95,36 @@ def get_hour():
 
 def set_bottom_sticky(sub, submission):
     try:
-        top_sticky = sub.get_sticky(bottom=False)  # assuming there's only one sticky, it's bottom=False.
-        top_sticky.unsticky()
+        top_sticky = sub.sticky(number=1)
+        top_sticky.mod.sticky(state=False)
     except Exception as e:
         print("Caught exception while trying to unsticky:", e)
-    submission.sticky(bottom=True)
-    submission.distinguish()
+        send_email('J&ABot Error', e, 'popcorncolonel' '@' 'gmail.com')
+    submission.mod.sticky(bottom=True)
+    submission.mod.distinguish()
 
 def replace_top_sticky(sub, submission):
     # old rewatch/discussion
-    bottom_sticky = sub.get_sticky(bottom=True)
-    bottom_sticky.unsticky()
+    bottom_sticky = sub.sticky(number=2)
+    bottom_sticky.mod.sticky(state=False)
     # old IIWY
-    top_sticky = sub.get_sticky(bottom=False)
-    top_sticky.unsticky()
+    top_sticky = sub.sticky(number=1)
+    top_sticky.mod.sticky(state=False)
 
     # new IIWY
     try:
-        submission.sticky(bottom=False)
+        submission.mod.sticky(bottom=False)
     except Exception as e:
         print("Caught exception while trying to sticky:", e)
-    # old rewatch/discussion
+        send_email('J&ABot Error', e, 'popcorncolonel' '@' 'gmail.com')
+    # new GTD/Offdays
     try:
-        bottom_sticky.sticky(bottom=True)
+        bottom_sticky.mod.sticky(bottom=True)
     except Exception as e:
         print("Caught exception while trying to sticky:", e)
+        send_email('J&ABot Error', e, 'popcorncolonel' '@' 'gmail.com')
 
-    submission.distinguish()
+    submission.mod.distinguish()
 
 def start_test_thread(email_if_failures=False):
     # type: (bool) -> threading.Thread

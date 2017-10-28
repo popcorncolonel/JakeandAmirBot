@@ -4,6 +4,7 @@ import re
 import sys
 import json
 import praw
+import prawcore
 import time
 import warnings
 import requests
@@ -176,7 +177,7 @@ def check_iiwy_and_post_if_new(mod_info, force_submit=False, testmode=False):
         except requests.exceptions.HTTPError:
             print("HTTP error while trying to submit - retrying to resubmit")
             pass
-        except praw.errors.AlreadySubmitted:
+        except prawcore.exceptions.AlreadySubmitted:
             print('Already submitted.')
             break
         except Exception as e:
@@ -219,7 +220,7 @@ def post_iiwy(iiwy_obj, mod_info, testmode=False, depth=0):
         send_email(subject="IIWY SUBMISSION ERROR", body="IDK", to="popcorncolonel@gmail.com")
         sys.exit() # should I exit or just keep going???
     subreddit = 'jakeandamir'
-    sub = mod_info.r.get_subreddit(subreddit)
+    sub = mod_info.r.subreddit(subreddit)
     mod_info.login()
 
     if testmode:
@@ -228,8 +229,8 @@ def post_iiwy(iiwy_obj, mod_info, testmode=False, depth=0):
         return
 
     try:
-        submission = mod_info.r.submit('jakeandamir', iiwy_obj.reddit_title, url=iiwy_obj.url)
-    except praw.errors.AlreadySubmitted as e:
+        submission = subreddit.submit(iiwy_obj.reddit_title, url=iiwy_obj.url, flair_text='NEW IIWY', flair_id="images")
+    except prawcore.exceptions.AlreadySubmitted as e:
         print(e)
         iiwy_obj.reddit_url = 'TODO: Get the real submitted object'
         mod_info.past_history.add_iiwy(iiwy_obj)
@@ -239,8 +240,7 @@ def post_iiwy(iiwy_obj, mod_info, testmode=False, depth=0):
         print("Caught exception", e, "- recursing!")
         post_iiwy(iiwy_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
-    sub.set_flair(submission, flair_text='NEW IIWY', flair_css_class='images')
-    submission.approve()
+    submission.mod.approve()
 
     print("NEW IIWY!!! WOOOOO!!!!")
     print(iiwy_obj.reddit_title)
@@ -259,7 +259,7 @@ def post_subreddit_comment(submission, iiwy_obj):
         try:
             comment_text = get_comment_text(iiwy_obj)
             comment = submission.add_comment(comment_text)
-            comment.approve()
+            comment.mod.approve()
             break
         except requests.exceptions.HTTPError:
             pass

@@ -14,6 +14,8 @@ class ModInfo:
     def get_r(self):
         r = praw.Reddit(
             user_agent='JakeandAmir program by /u/popcorncolonel',
+            client_id=self.client_id,
+            client_secret=self.client_secret,
         )
         # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
         r.config.decode_html_entities = True
@@ -39,6 +41,7 @@ class ModInfo:
     def login(self):
         #  For anyone reading this and trying to get this to run yourself: follow this tutorial: https://redd.it/3lotxj/
         #  and implement the client_id, refresh_token stuff yourself. You don't need username and password anymore.
+        '''
         self.r.set_oauth_app_info(client_id=self.client_id,
                                   client_secret=self.client_secret,
                                   redirect_uri='http://127.0.0.1:65010/authorize_callback')
@@ -47,6 +50,8 @@ class ModInfo:
                        u'refresh_token': self.refresh_token}
         self.r.refresh_access_information(access_info['refresh_token'])
         self.r.set_access_credentials(**access_info)
+        '''
+        pass
 
 
 discussion_string = '''\
@@ -196,16 +201,16 @@ def get_submission_text(mod_info, episode):
         return (title, get_rewatch_string(episode))
 
 def post_new_rewatch(mod_info, testmode=False):
-    sub = mod_info.r.get_subreddit('jakeandamir')
+    sub = mod_info.r.subreddit('jakeandamir')
     episode = episodes[mod_info.next_episode - 1]  # next_episode is indexed by 1
     (title, text) = get_submission_text(mod_info, episode)
     if testmode:
         print("testmode - successfully parsed ep", episode.title)
         print("testmode:", title)
         return
-    submission = jjkae_tools.submit(title, mod_info, 'jakeandamir', text=text)
-    #submission.sticky(bottom=True)
-    submission.distinguish()
+    submission = jjkae_tools.submit(title, mod_info, sub, text=text)
+    #submission.mod.sticky(number=1)
+    submission.mod.distinguish()
     sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
     #jjkae_tools.send_rewatch_email(submission.permalink, mod_info.next_episode)
     print("Successfully submitted rewatch! Time to celebrate.")
@@ -213,7 +218,7 @@ def post_new_rewatch(mod_info, testmode=False):
 
 
 def post_monthly_discussion(mod_info, testmode=False):
-    sub = mod_info.r.get_subreddit('jakeandamir')
+    sub = mod_info.r.subreddit('jakeandamir')
     today_datetime = datetime.datetime.now()
     title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
     if testmode:
@@ -222,10 +227,10 @@ def post_monthly_discussion(mod_info, testmode=False):
         return
 
     jjkae_tools.send_email(subject=u'watch all the fricken rewatches in the past month friend :)', body='reddit.com/u/jakeandamirbot', to='@'.join(['cmey63', 'gmail.com']))
-    submission = jjkae_tools.submit(title, mod_info, 'jakeandamir',
+    submission = jjkae_tools.submit(title, mod_info, sub,
                                     text=get_discussion_string(history.this_monthstring(), history.get_history()))
-    submission.sticky(bottom=True)
-    submission.distinguish()
+    submission.mod.sticky(bottom=True)
+    submission.mod.distinguish()
     sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
     print("Successfully submitted sticky! Time to celebrate.")
     return submission

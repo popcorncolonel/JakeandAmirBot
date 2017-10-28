@@ -30,7 +30,7 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(twins_obj.title)
         self.assertIsNotNone(twins_obj.reddit_title)
         self.assertIsNotNone(twins_obj.url)
-        self.assertIsNotNone(twins_obj.duration)
+        #self.assertIsNotNone(twins_obj.duration)
         self.assertIsNotNone(twins_obj.desc)
         self.assertIsNotNone(twins_obj.monthstring)
         twins.check_twins_and_post_if_new(self.mod_info, testmode=True)

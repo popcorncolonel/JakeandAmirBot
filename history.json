@@ -130,6 +130,16 @@
                 "ep_type": "offdays",
                 "reddit_url": "TODO: Get the real submitted object",
                 "title": "Gordon"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Childhood"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Leather Goods"
             }
         ],
         "IIWY": [
@@ -138,6 +148,18 @@
                 "number": 286,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6s3n95/episode_286_lightning_round_3_wgeoffrey_james/",
                 "title": "Lightning Round 3 (w/Geoffrey James + Interns!)"
+            },
+            {
+                "duration": null,
+                "number": 288,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6v0y2k/episode_288_butt_plug_live_in_montreal/",
+                "title": "Butt Plug (Live in Montreal!)"
+            },
+            {
+                "duration": null,
+                "number": 289,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6wh1nw/episode_289_engaged/",
+                "title": "Engaged"
             }
         ]
     },
@@ -805,6 +827,51 @@
             }
         ]
     },
+    "Oct 2017": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/74gy51/off_days_acronyms/",
+                "title": "Acronyms"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/75xy53/off_days_martys_wake/",
+                "title": "Marty's Wake"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/77fcj3/off_days_thun_thun_nun/",
+                "title": "Thun Thun Nun"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 295,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/73qeq0/episode_295_dog_lover_whoodie_allen/",
+                "title": "Dog Lover (w/Hoodie Allen!)"
+            },
+            {
+                "duration": null,
+                "number": 296,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/756n9e/episode_296_friends/",
+                "title": "F\u2022R\u2022I\u2022E\u2022N\u2022D\u2022S"
+            },
+            {
+                "duration": null,
+                "number": 297,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/76opi4/episode_297_lightning_round_4_wgeoffrey_james/",
+                "title": "Lightning Round 4 (w/Geoffrey James!)"
+            },
+            {
+                "duration": null,
+                "number": 298,
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Smoking Ferns (w/Megan Batoon!)"
+            }
+        ]
+    },
     "Sep 2016": {
         "IIWY": [
             {
@@ -830,6 +897,62 @@
                 "number": 235,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/54iesb/if_i_were_you_episode_235_tobacco_wgeorge_basil/",
                 "title": "Tobacco (w/George Basil!)"
+            }
+        ]
+    },
+    "Sep 2017": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "TODO: Get the real submitted object",
+                "title": "Leather Goods Part 2 - Man Georges"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/703nz0/geoffrey_the_dumbass_leather_goods_part_3/",
+                "title": "Leather Goods Part 3"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/71k9qe/off_days_guy_talk/",
+                "title": "Guy Talk"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/7312f8/geoffrey_the_dumbass_doppelganger_whoodie_allen/",
+                "title": "Doppelganger (w/Hoodie Allen!)"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 290,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6xy9jk/episode_290_worst_best_man/",
+                "title": "Worst Best Man"
+            },
+            {
+                "duration": null,
+                "number": 291,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6zczr0/episode_291_porno_game_shows/",
+                "title": "Porno Game Shows"
+            },
+            {
+                "duration": null,
+                "number": 292,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/700mv1/episode_292_yoga_privates_wphil_and_mike/",
+                "title": "Yoga Privates (w/Phil and Mike!)"
+            },
+            {
+                "duration": null,
+                "number": 293,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/70skl4/episode_293_step_sibling_sex_wgeoffrey_james/",
+                "title": "Step Sibling Sex (w/Geoffrey James!)"
+            },
+            {
+                "duration": null,
+                "number": 294,
+                "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/72a2vu/episode_294_drunk_texting/",
+                "title": "Drunk Texting"
             }
         ]
     }

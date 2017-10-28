@@ -4,6 +4,7 @@ import re
 import sys
 import json
 import praw
+import prawcore
 import time
 import warnings
 import requests
@@ -63,41 +64,45 @@ def get_twins_info(depth=0):
         r = None
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
+            # ART19 HAS A TERRIBLE API
             r = requests.get(
-                'https://api.spreaker.com/v2/shows/1484314/episodes?oauth2_access_token={}'.format(get_spreaker_oauth2()),
+                'https://art19.com/episodes?series_id=12607e8b-3762-447c-a247-88675b4fa5eb&sort=created_at',
+                headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'},
                 timeout=15.0,
             )
             j = json.loads(r.text)
-            most_recent_ep = j['response']['items'][0]
-            most_recent_ep_spreaker_id = j['response']['items'][0]['site_url'].split('/')[-1]
-            r = requests.get(
-                'https://api.spreaker.com/v2/episodes/{}?oauth2_access_token={}'.format(most_recent_ep_spreaker_id, get_spreaker_oauth2()),
-                timeout=15.0,
-            )
-            episode_obj = json.loads(r.text)
-            desc = episode_obj['response']['episode']['description']
+            most_recent_ep = j['data'][-1]['attributes']
+            most_recent_ep_id = j['data'][-1]['id']
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:
-        print("encountered spreaker Timeout. recursing.")
+        print("encountered request Timeout. recursing.")
         time.sleep(3)
         return get_twins_info()
     except Exception as e:
-        print("encountered spreaker error =(")
+        print("encountered request error =(")
         print(e)
         time.sleep(3)
         return get_twins_info(depth=depth + 1)
     title = most_recent_ep['title']  # full title including number. `title` is like "86: Pants or Shorts Live at SXSW"
-    url = most_recent_ep['site_url']
+    url = 'https://art19.com/shows/twinnovation/episodes/{}'.format(most_recent_ep_id)
+    """
     duration_secs = most_recent_ep['duration'] // 1000
     if duration_secs < 3600:
         duration = '{:02d}:{:02d}'.format(duration_secs // 60, duration_secs % 60)
     else:
         duration = '{}:{:02d}:{:02d}'.format(duration_secs // 3600, (duration_secs % 3600) // 60, duration_secs % 60)
+    """
+    duration = None
     [episode_num, title] = title.split(' ', maxsplit=1)  # now `title` is like "Pants or Shorts Live at SXSW"
     episode_num = int(episode_num)
-    name = 'Twinnovation Episode {episode_num}: {title} [{duration}]'.format(**locals())
+    if duration is not None:
+        name = 'Twinnovation Episode {episode_num}: {title} [{duration}]'.format(**locals())
+    else:
+        name = 'Twinnovation Episode {episode_num}: {title}'.format(**locals())
     reddit_title = name
+    desc = most_recent_ep['description']
+    desc = re.sub('<.*?>', '\n', desc).replace('  ', ' ').replace('  ', ' ')
 
     desc = desc.replace('"', "'").strip()
     name = html_parser.unescape(name)
@@ -127,7 +132,7 @@ def check_twins_and_post_if_new(mod_info, force_submit=False, testmode=False):
         except requests.exceptions.HTTPError:
             print("HTTP error while trying to submit - retrying to resubmit")
             pass
-        except praw.errors.AlreadySubmitted:
+        except prawcore.exceptions.AlreadySubmitted:
             print('Already submitted.')
             break
         except Exception as e:
@@ -154,7 +159,7 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
         send_email(subject="twinnovation SUBMISSION ERROR", body="IDK", to="popcorncolonel@gmail.com")
         sys.exit() # should I exit or just keep going???
     subreddit = 'twinnovation'
-    sub = mod_info.r.get_subreddit(subreddit)
+    sub = mod_info.r.subreddit(subreddit)
     mod_info.login()
 
     if testmode:
@@ -163,8 +168,8 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
         return
 
     try:
-        submission = mod_info.r.submit(subreddit, twins_obj.reddit_title, url=twins_obj.url)
-    except praw.errors.AlreadySubmitted as e:
+        submission = subreddit.submit(twins_obj.reddit_title, url=twins_obj.url)
+    except prawcore.exceptions.AlreadySubmitted as e:
         print(e)
         twins_obj.reddit_url = 'TODO: Get the real submitted object'
         mod_info.past_history.add_twins(twins_obj)
@@ -175,7 +180,7 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
         post_twins(twins_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
     sub.set_flair(submission, flair_text='NEW TWINNOVATION')
-    submission.approve()
+    submission.mod.approve()
 
     print("NEW twinnovation!!! WOOOOO!!!!")
     print(twins_obj.reddit_title)
@@ -194,7 +199,7 @@ def post_subreddit_comment(submission, twins_obj):
         try:
             comment_text = get_comment_text(twins_obj)
             comment = submission.add_comment(comment_text)
-            comment.approve()
+            comment.mod.approve()
             break
         except requests.exceptions.HTTPError:
             pass

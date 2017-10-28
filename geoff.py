@@ -3,6 +3,7 @@ from __future__ import print_function
 import re
 import sys
 import praw
+import prawcore
 import time
 import warnings
 import requests
@@ -108,7 +109,7 @@ def check_gtd_and_post_if_new(mod_info, force_submit=False, testmode=False):
         except requests.exceptions.HTTPError:
             print("HTTP error while trying to submit - retrying to resubmit")
             pass
-        except praw.errors.AlreadySubmitted:
+        except prawcore.exceptions.AlreadySubmitted:
             print('Already submitted.')
             break
         except Exception as e:
@@ -134,7 +135,7 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
         send_email(subject="GTD SUBMISSION ERROR", body="IDK", to="popcorncolonel@gmail.com")
         return
     subreddit = 'jakeandamir'
-    sub = mod_info.r.get_subreddit(subreddit)
+    sub = mod_info.r.subreddit(subreddit)
     mod_info.login()
 
     if testmode:
@@ -143,8 +144,11 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
         return
 
     try:
-        submission = mod_info.r.submit('jakeandamir', gtd_obj.reddit_title, url=gtd_obj.url)
-    except praw.errors.AlreadySubmitted as e:
+        if gtd_obj.ep_type == 'gtd':
+            submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW GEOFFREY THE DUMBASS', flair_id='images')
+        elif gtd_obj.ep_type == 'offdays':
+            submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW OFF DAYS', flair_id='images')
+    except prawcore.exceptions.AlreadySubmitted as e:
         print(e)
         gtd_obj.reddit_url = 'TODO: Get the real submitted object'
         mod_info.past_history.add_gtd(gtd_obj)
@@ -154,19 +158,15 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
         print("Caught exception", e, "- recursing!")
         post_gtd(gtd_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
-    if gtd_obj.ep_type == 'gtd':
-        sub.set_flair(submission, flair_text='NEW GEOFFREY THE DUMBASS', flair_css_class='images')
-    elif gtd_obj.ep_type == 'offdays':
-        sub.set_flair(submission, flair_text='NEW OFF DAYS', flair_css_class='images')
-    submission.approve()
+    submission.mod.approve()
 
     print("NEW GTD/OD!!! WOOOOO!!!!")
     print(gtd_obj.reddit_title)
     post_subreddit_comment(submission, gtd_obj)
     gtd_obj.reddit_url = submission.permalink
-    submission.sticky(bottom=True)
+    submission.mod.sticky(bottom=True)
     #replace_top_sticky(sub, submission)
-    submission.distinguish()
+    submission.mod.distinguish()
 
     mod_info.past_history.add_gtd(gtd_obj)
     mod_info.past_history.write()
@@ -175,15 +175,20 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
 
 
 def post_subreddit_comment(submission, gtd_comment):
+    depth = 0
     while True:
+        if depth > 3:
+            return
         try:
             comment_text = get_comment_text(gtd_comment)
             comment = submission.add_comment(comment_text)
-            comment.approve()
+            comment.mod.approve()
             break
         except requests.exceptions.HTTPError:
+            depth += 1
             pass
         except Exception as e:
+            depth += 1
             print(e)
             pass
 
