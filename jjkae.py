@@ -17,7 +17,7 @@ force_submit_iiwy = False
 force_submit_gtd = False
 
 
-def get_timeout(default_timeout=5):
+def get_timeout(default_timeout):
     hour = int(datetime.datetime.now().strftime('%H'))
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
@@ -62,7 +62,7 @@ def initialize_foundlist():
 def main():
     global force_submit_iiwy, force_submit_twins, force_submit_rewatch, force_submit_gtd
 
-    default_timeout = 5  # don't spam the servers :D
+    default_timeout = 10  # don't spam the servers :D
 
     foundlist = initialize_foundlist()
 

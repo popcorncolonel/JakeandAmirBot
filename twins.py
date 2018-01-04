@@ -132,7 +132,7 @@ def check_twins_and_post_if_new(mod_info, force_submit=False, testmode=False):
         except requests.exceptions.HTTPError:
             print("HTTP error while trying to submit - retrying to resubmit")
             pass
-        except prawcore.exceptions.AlreadySubmitted:
+        except prawcore.exceptions.ServerError:
             print('Already submitted.')
             break
         except Exception as e:
@@ -168,18 +168,19 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
         return
 
     try:
-        submission = subreddit.submit(twins_obj.reddit_title, url=twins_obj.url)
-    except prawcore.exceptions.AlreadySubmitted as e:
+        submission = sub.submit(twins_obj.reddit_title, url=twins_obj.url)
+    except prawcore.exceptions.ServerError as e:
+        print("Already submitted?")
         print(e)
         twins_obj.reddit_url = 'TODO: Get the real submitted object'
-        mod_info.past_history.add_twins(twins_obj)
+        mod_info.past_history.add_twins_obj(twins_obj)
         mod_info.past_history.write()
         return
     except Exception as e:
         print("Caught exception", e, "- recursing!")
         post_twins(twins_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
-    sub.set_flair(submission, flair_text='NEW TWINNOVATION')
+    #sub.set_flair(submission, flair_text='NEW TWINNOVATION')
     submission.mod.approve()
 
     print("NEW twinnovation!!! WOOOOO!!!!")
@@ -188,7 +189,7 @@ def post_twins(twins_obj, mod_info, testmode=False, depth=0):
     twins_obj.reddit_url = submission.permalink
     set_bottom_sticky(sub, submission)
 
-    mod_info.past_history.add_twins(twins_obj)
+    mod_info.past_history.add_twins_obj(twins_obj)
     mod_info.past_history.write()
     print("Successfully submitted link! Time to celebrate.")
     return submission
@@ -198,7 +199,7 @@ def post_subreddit_comment(submission, twins_obj):
     while True:
         try:
             comment_text = get_comment_text(twins_obj)
-            comment = submission.add_comment(comment_text)
+            comment = submission.reply(comment_text)
             comment.mod.approve()
             break
         except requests.exceptions.HTTPError:

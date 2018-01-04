@@ -16,6 +16,7 @@ class ModInfo:
             user_agent='JakeandAmir program by /u/popcorncolonel',
             client_id=self.client_id,
             client_secret=self.client_secret,
+            refresh_token=self.refresh_token,
         )
         # This makes titles that contain HTML stuff (like '&amp;') be the actual character (like '&') in unicode.
         r.config.decode_html_entities = True
@@ -211,7 +212,7 @@ def post_new_rewatch(mod_info, testmode=False):
     submission = jjkae_tools.submit(title, mod_info, sub, text=text)
     #submission.mod.sticky(number=1)
     submission.mod.distinguish()
-    sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
+    #sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
     #jjkae_tools.send_rewatch_email(submission.permalink, mod_info.next_episode)
     print("Successfully submitted rewatch! Time to celebrate.")
     return submission
@@ -231,7 +232,7 @@ def post_monthly_discussion(mod_info, testmode=False):
                                     text=get_discussion_string(history.this_monthstring(), history.get_history()))
     submission.mod.sticky(bottom=True)
     submission.mod.distinguish()
-    sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
+    #sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
     print("Successfully submitted sticky! Time to celebrate.")
     return submission
 

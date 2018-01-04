@@ -198,6 +198,88 @@
             }
         ]
     },
+    "Dec 2017": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/7i7uc0/off_days_daylight_savings/",
+                "title": "Daylight Savings"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/7jswml/geoffrey_the_dumbass_brainstorm/",
+                "title": "Brainstorm"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/7larli/off_days_silent_night/",
+                "title": "Silent Night"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/7mnt40/geoffrey_the_dumbass_improbable_burger/",
+                "title": "Improbable Burger"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 304,
+                "reddit_url": "/r/jakeandamir/comments/7heunw/episode_304_why_wont_you_date_me_wnicole_byer/",
+                "title": "Why Won't You Date Me (w/Nicole Byer!)"
+            },
+            {
+                "duration": null,
+                "number": 305,
+                "reddit_url": "/r/jakeandamir/comments/7j0a9p/episode_305_masturbating_on_a_unicycle_wtim_and/",
+                "title": "Masturbating on a Unicycle (w/Tim and Tom from Complete Guide to Everything!)"
+            },
+            {
+                "duration": null,
+                "number": 306,
+                "reddit_url": "/r/jakeandamir/comments/7kjdrz/episode_306_dicklish_tick/",
+                "title": "Dicklish Tick"
+            },
+            {
+                "duration": null,
+                "number": 307,
+                "reddit_url": "/r/jakeandamir/comments/7lzhn5/episode_307_doodie_calls_wdoug_mand_and_jack/",
+                "title": "Doodie Calls (w/Doug Mand and Jack Dolgen!)"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": 123,
+                "reddit_url": "/r/Twinnovation/comments/7gsrbq/twinnovation_episode_123_iq/",
+                "title": "IQ"
+            },
+            {
+                "duration": null,
+                "number": 124,
+                "reddit_url": "/r/Twinnovation/comments/7icnau/twinnovation_episode_124_this_is_basically_a/",
+                "title": "This is Basically a Facebook Group for Twins?"
+            },
+            {
+                "duration": null,
+                "number": 125,
+                "reddit_url": "/r/Twinnovation/comments/7jxkjv/twinnovation_episode_125_the_sole_itself/",
+                "title": "The Sole Itself"
+            },
+            {
+                "duration": null,
+                "number": 126,
+                "reddit_url": "/r/Twinnovation/comments/7lf95b/twinnovation_episode_126_toys_for_thots/",
+                "title": "Toys for Thots"
+            },
+            {
+                "duration": null,
+                "number": 127,
+                "reddit_url": "/r/Twinnovation/comments/7ms76k/twinnovation_episode_127_thumpin_on_the_perineum/",
+                "title": "Thumpin' on the Perineum"
+            }
+        ]
+    },
     "Feb 2016": {
         "IIWY": [
             {
@@ -355,6 +437,16 @@
                 "number": 256,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/5qyy2v/if_i_were_you_episode_256_jew_trip_5009/",
                 "title": "Jew Trip"
+            }
+        ]
+    },
+    "Jan 2018": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 308,
+                "reddit_url": "/r/jakeandamir/comments/7ndiea/episode_308_new_years_lightning_round/",
+                "title": "New Years Lightning Round!"
             }
         ]
     },
@@ -787,6 +879,82 @@
             }
         ]
     },
+    "Nov 2017": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/7a84u2/geoffrey_the_dumbass_jostbusters/",
+                "title": "Jostbusters"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/7bum8r/off_days_sex/",
+                "title": "Sex"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/7f0xv5/geoffrey_the_dumbass_jorts_tutorial/",
+                "title": "Jorts Tutorial"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/7gnro7/geoffrey_the_dumbass_never_forget/",
+                "title": "Never Forget"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 300,
+                "reddit_url": "/r/jakeandamir/comments/7b33mv/episode_300_a_celebration_wben_schwartz/",
+                "title": "A Celebration (w/Ben Schwartz!)"
+            },
+            {
+                "duration": null,
+                "number": 301,
+                "reddit_url": "/r/jakeandamir/comments/7cksdt/episode_301_baby_voice_wrob_huebel/",
+                "title": "Baby Voice (w/Rob Huebel!)"
+            },
+            {
+                "duration": null,
+                "number": 302,
+                "reddit_url": "/r/jakeandamir/comments/7e6f5o/episode_302_bachelor_party/",
+                "title": "Bachelor Party"
+            },
+            {
+                "duration": null,
+                "number": 303,
+                "reddit_url": "/r/jakeandamir/comments/7fssj1/episode_303_wild_goose_chase/",
+                "title": "Wild Goose Chase"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": 119,
+                "reddit_url": "/r/Twinnovation/comments/7ah0vu/twinnovation_episode_119_hearing/",
+                "title": "Hearing"
+            },
+            {
+                "duration": null,
+                "number": 120,
+                "reddit_url": "/r/Twinnovation/comments/7bz4fb/twinnovation_episode_120_welcome_to_flavor_town/",
+                "title": "Welcome to Flavor Town"
+            },
+            {
+                "duration": null,
+                "number": 121,
+                "reddit_url": "/r/Twinnovation/comments/7dihnw/twinnovation_episode_121_bring_on_the_moonshine/",
+                "title": "Bring On The Moonshine"
+            },
+            {
+                "duration": null,
+                "number": 122,
+                "reddit_url": "/r/Twinnovation/comments/7f5595/twinnovation_episode_122_the_raw_straw/",
+                "title": "The Raw Straw"
+            }
+        ]
+    },
     "Oct 2016": {
         "IIWY": [
             {
@@ -869,6 +1037,12 @@
                 "number": 298,
                 "reddit_url": "TODO: Get the real submitted object",
                 "title": "Smoking Ferns (w/Megan Batoon!)"
+            },
+            {
+                "duration": null,
+                "number": 299,
+                "reddit_url": "/r/jakeandamir/comments/79n2g2/episode_299_two_cats_wbrian_murphy/",
+                "title": "Two Cats (w/Brian Murphy!)"
             }
         ]
     },

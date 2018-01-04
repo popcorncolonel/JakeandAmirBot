@@ -109,7 +109,7 @@ def check_gtd_and_post_if_new(mod_info, force_submit=False, testmode=False):
         except requests.exceptions.HTTPError:
             print("HTTP error while trying to submit - retrying to resubmit")
             pass
-        except prawcore.exceptions.AlreadySubmitted:
+        except prawcore.exceptions.ServerError:
             print('Already submitted.')
             break
         except Exception as e:
@@ -145,10 +145,13 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
 
     try:
         if gtd_obj.ep_type == 'gtd':
-            submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW GEOFFREY THE DUMBASS', flair_id='images')
+            #submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW GEOFFREY THE DUMBASS', flair_id='images')
+            submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url)
         elif gtd_obj.ep_type == 'offdays':
-            submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW OFF DAYS', flair_id='images')
-    except prawcore.exceptions.AlreadySubmitted as e:
+            #submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW OFF DAYS', flair_id='images')
+            submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url)
+    except prawcore.exceptions.ServerError as e:
+        print("Already submitted?")
         print(e)
         gtd_obj.reddit_url = 'TODO: Get the real submitted object'
         mod_info.past_history.add_gtd(gtd_obj)
@@ -181,7 +184,7 @@ def post_subreddit_comment(submission, gtd_comment):
             return
         try:
             comment_text = get_comment_text(gtd_comment)
-            comment = submission.add_comment(comment_text)
+            comment = submission.reply(comment_text)
             comment.mod.approve()
             break
         except requests.exceptions.HTTPError:
