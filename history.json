@@ -371,6 +371,82 @@
             }
         ]
     },
+    "Feb 2018": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/7uk611/geoffrey_the_dumbass_aioli/",
+                "title": "Aioli"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/7w69su/off_days_cryptofever/",
+                "title": "Crypto-Fever"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/7xrr2e/geoffrey_the_dumbass_wikipedia/",
+                "title": "Wikipedia"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/7zgf7d/off_days_luge/",
+                "title": "Luge"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 313,
+                "reddit_url": "/r/jakeandamir/comments/7vclxx/episode_313_poopgate_whayley_marie_norman/",
+                "title": "Poopgate (w/Hayley Marie Norman!)"
+            },
+            {
+                "duration": null,
+                "number": 314,
+                "reddit_url": "/r/jakeandamir/comments/7wyggg/episode_314_dungeons_and_dragons_wmurph_and_emily/",
+                "title": "Dungeons and Dragons (w/Murph and Emily!)"
+            },
+            {
+                "duration": null,
+                "number": 315,
+                "reddit_url": "/r/jakeandamir/comments/7ykdsx/episode_315_wedding_planner/",
+                "title": "Wedding Planner"
+            },
+            {
+                "duration": null,
+                "number": 316,
+                "reddit_url": "/r/jakeandamir/comments/80afjs/episode_316_brotherly_sex_wdave_rosenberg/",
+                "title": "Brotherly Sex (w/Dave Rosenberg!)"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": 132,
+                "reddit_url": "/r/Twinnovation/comments/7upusj/twinnovation_episode_132_fluttr/",
+                "title": "Fluttr "
+            },
+            {
+                "duration": null,
+                "number": 133,
+                "reddit_url": "/r/Twinnovation/comments/7wbchs/twinnovation_episode_133_flipadelphia/",
+                "title": "Flipadelphia"
+            },
+            {
+                "duration": null,
+                "number": 134,
+                "reddit_url": "/r/Twinnovation/comments/7xwhrl/twinnovation_episode_134_pocketshot/",
+                "title": "PocketShot"
+            },
+            {
+                "duration": null,
+                "number": 135,
+                "reddit_url": "/r/Twinnovation/comments/7zlk96/twinnovation_episode_135_match_set/",
+                "title": "Match Set"
+            }
+        ]
+    },
     "Jan 2016": {
         "IIWY": [
             {
@@ -441,12 +517,80 @@
         ]
     },
     "Jan 2018": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/7o4c8x/geoffrey_the_dumbass_pissed_off/",
+                "title": "Pissed Off"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/7rb4bj/off_days_new_years/",
+                "title": "New Year's"
+            }
+        ],
         "IIWY": [
             {
                 "duration": null,
                 "number": 308,
                 "reddit_url": "/r/jakeandamir/comments/7ndiea/episode_308_new_years_lightning_round/",
                 "title": "New Years Lightning Round!"
+            },
+            {
+                "duration": null,
+                "number": 309,
+                "reddit_url": "/r/jakeandamir/comments/7ow833/episode_309_two_jakes_wjake_weisman/",
+                "title": "Two Jakes (w/Jake Weisman!)"
+            },
+            {
+                "duration": null,
+                "number": 310,
+                "reddit_url": "/r/jakeandamir/comments/7qhm40/episode_310_unsolicited_advice/",
+                "title": "Unsolicited Advice"
+            },
+            {
+                "duration": null,
+                "number": 311,
+                "reddit_url": "/r/jakeandamir/comments/7s3kk0/episode_311_hidden_dildos/",
+                "title": "Hidden Dildos"
+            },
+            {
+                "duration": null,
+                "number": 312,
+                "reddit_url": "/r/jakeandamir/comments/7tqje9/episode_312_bad_voice/",
+                "title": "Bad Voice"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": 128,
+                "reddit_url": "/r/Twinnovation/comments/7o9dd9/twinnovation_episode_128_trickle_down_nachonomics/",
+                "title": "Trickle Down Nachonomics"
+            },
+            {
+                "duration": null,
+                "number": 129,
+                "reddit_url": "/r/Twinnovation/comments/7pubyh/twinnovation_episode_129_quivr/",
+                "title": "Quivr"
+            },
+            {
+                "duration": null,
+                "number": 130,
+                "reddit_url": "/r/Twinnovation/comments/7rg0q5/twinnovation_episode_130_next_top_joey/",
+                "title": "Next Top Joey"
+            },
+            {
+                "duration": null,
+                "number": 131,
+                "reddit_url": "/r/Twinnovation/comments/7t2k8o/twinnovation_episode_131_permanail/",
+                "title": "Permanail"
+            },
+            {
+                "duration": null,
+                "number": 131,
+                "reddit_url": "/r/Twinnovation/comments/7t2kb3/twinnovation_episode_131_permanail/",
+                "title": "PermaNail"
             }
         ]
     },
@@ -740,6 +884,36 @@
                 "number": 266,
                 "reddit_url": "TODO: Get the real submitted object",
                 "title": "Danish"
+            }
+        ]
+    },
+    "Mar 2018": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/816sg3/geoffrey_the_dumbass_bartender/",
+                "title": "Bartender"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/8346n5/geoffrey_the_dumbass_holistic/",
+                "title": "Holistic"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 317,
+                "reddit_url": "/r/jakeandamir/comments/823o1m/episode_317_secret_honeymoon_wgeoffrey_and_davey/",
+                "title": "Secret Honeymoon (w/Geoffrey and Davey!)"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": 137,
+                "reddit_url": "/r/Twinnovation/comments/8346lu/twinnovation_episode_137_bwounce/",
+                "title": "Bwounce"
             }
         ]
     },
