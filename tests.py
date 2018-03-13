@@ -22,6 +22,30 @@ class JjkaeTest(unittest.TestCase):
             json_data = json.load(json_file)
         self.assertNotEqual(len(json_data), 0)
 
+    def test_abbc(self):
+        import abbc
+        abbc_obj = abbc.get_abbc_info()
+
+        self.assertIsNotNone(abbc_obj.title)
+        self.assertIsNotNone(abbc_obj.reddit_title)
+        self.assertIsNotNone(abbc_obj.url)
+        #self.assertIsNotNone(abbc_obj.duration)
+        self.assertIsNotNone(abbc_obj.desc)
+        self.assertIsNotNone(abbc_obj.monthstring)
+        abbc.check_abbc_and_post_if_new(self.mod_info, testmode=True)
+
+    def test_nadd(self):
+        import nadd
+        nadd_obj = nadd.get_nadd_info()
+
+        self.assertIsNotNone(nadd_obj.title)
+        self.assertIsNotNone(nadd_obj.reddit_title)
+        self.assertIsNotNone(nadd_obj.url)
+        #self.assertIsNotNone(nadd_obj.duration)
+        self.assertIsNotNone(nadd_obj.desc)
+        self.assertIsNotNone(nadd_obj.monthstring)
+        nadd.check_nadd_and_post_if_new(self.mod_info, testmode=True)
+
     def test_twins(self):
         import twins
         twins_obj = twins.get_twins_info()
