@@ -183,13 +183,13 @@ def post_nadd(nadd_obj, mod_info, testmode=False, depth=0):
         print("Caught exception", e, "- recursing!")
         post_nadd(nadd_obj, mod_info, testmode=testmode or False, depth=depth+1)
         return
-    #submission.mod.approve()
+    submission.mod.approve()
 
     print("NEW NaddPod!!! WOOOOO!!!!")
     print(nadd_obj.reddit_title)
     post_subreddit_comment(submission, nadd_obj)
     nadd_obj.reddit_url = submission.permalink
-    #set_bottom_sticky(sub, submission)
+    set_bottom_sticky(sub, submission)
 
     mod_info.past_history.add_nadd_obj(nadd_obj)
     mod_info.past_history.write()
@@ -202,7 +202,7 @@ def post_subreddit_comment(submission, nadd_obj):
         try:
             comment_text = get_comment_text(nadd_obj)
             comment = submission.reply(comment_text)
-            #comment.mod.approve()
+            comment.mod.approve()
             break
         except requests.exceptions.HTTPError:
             pass
