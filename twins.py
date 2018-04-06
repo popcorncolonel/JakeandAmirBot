@@ -94,8 +94,17 @@ def get_twins_info(depth=0):
         duration = '{}:{:02d}:{:02d}'.format(duration_secs // 3600, (duration_secs % 3600) // 60, duration_secs % 60)
     """
     duration = None
-    [episode_num, title] = title.split(' ', maxsplit=1)  # now `title` is like "Pants or Shorts Live at SXSW"
+    #[episode_num, title] = title.split(' ', maxsplit=1)  # now `title` is like "Pants or Shorts Live at SXSW"
+    i = 0
+    episode_num = ''
+    while True:  # we do it this weird convoluted way because episode 141's title was "141Centi-tube" rather than "141 Centi-tube"... thanks NIC
+        if title[i].isdigit():
+            episode_num = episode_num + title[i]
+        else:
+            break
+        i += 1
     episode_num = int(episode_num)
+    title = title[i:].strip()
     if duration is not None:
         name = 'Twinnovation Episode {episode_num}: {title} [{duration}]'.format(**locals())
     else:

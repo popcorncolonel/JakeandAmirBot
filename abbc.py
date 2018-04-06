@@ -1,4 +1,4 @@
-# 'abbc' as in 'eight bit book club', it's pronounced 'ayte'
+# 'abbc' as in 'eight bit book club', it's pronounced 'ayte' get it?
 from __future__ import print_function
 
 import re

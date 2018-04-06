@@ -96,6 +96,46 @@
             }
         ]
     },
+    "Apr 2018": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/8a0xog/off_days_not_illegal/",
+                "title": "Not Illegal"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 322,
+                "reddit_url": "/r/jakeandamir/comments/88wokm/episode_322_hall_pass_wbilly_scafuri/",
+                "title": "Hall Pass (w/Billy Scafuri!)"
+            }
+        ],
+        "abbc": [
+            {
+                "duration": null,
+                "reddit_url": "/r/8bitbookclub/comments/88x2gi/8_bit_book_club_sonic_adventure_gamebook_metal/",
+                "title": "Sonic Adventure Gamebook: Metal City Mayhem (Part IV)"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 9,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/89xlrm/episode_9_the_green_knight_and_the_bounty_hunter/",
+                "title": "The Green Knight and the Bounty Hunter (The Ezry Chronicles with Adam Conover)"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": 141,
+                "reddit_url": "/r/Twinnovation/comments/8a90e4/twinnovation_episode_141_centitube/",
+                "title": "Centi-tube"
+            }
+        ]
+    },
     "Aug 2016": {
         "IIWY": [
             {
@@ -898,6 +938,11 @@
                 "ep_type": "gtd",
                 "reddit_url": "/r/jakeandamir/comments/8346n5/geoffrey_the_dumbass_holistic/",
                 "title": "Holistic"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/882fu5/geoffrey_the_dumbass_dogs/",
+                "title": "Dogs"
             }
         ],
         "IIWY": [
@@ -912,6 +957,68 @@
                 "number": 318,
                 "reddit_url": "/r/jakeandamir/comments/83s6vd/episode_318_is_college_worth_it_with_miel_and_demi/",
                 "title": "Is College Worth It? (with Miel and Demi!)"
+            },
+            {
+                "duration": null,
+                "number": 319,
+                "reddit_url": "/r/jakeandamir/comments/84kbcd/episode_319_6way_kiss_live_in_austin/",
+                "title": "6-Way Kiss (Live in Austin!)"
+            },
+            {
+                "duration": null,
+                "number": 320,
+                "reddit_url": "/r/jakeandamir/comments/85gqn1/episode_320_prostitute_tips/",
+                "title": "Prostitute Tips"
+            },
+            {
+                "duration": null,
+                "number": 321,
+                "reddit_url": "/r/jakeandamir/comments/876a5s/episode_321_bad_german_boy_wthomas_middleditch/",
+                "title": "Bad German Boy (w/Thomas Middleditch live in Calgary!)"
+            }
+        ],
+        "abbc": [
+            {
+                "duration": null,
+                "reddit_url": "/r/8bitbookclub/comments/85fbco/8_bit_book_club_mega_man_2_the_novel_part_2/",
+                "title": "Mega Man 2: The Novel (Part 2) "
+            },
+            {
+                "duration": null,
+                "reddit_url": "/r/8bitbookclub/comments/873f3p/8_bit_book_club_announcement_upcoming_hiatus/",
+                "title": "ANNOUNCEMENT: UPCOMING HIATUS "
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 6,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/84k8lg/episode_6_the_ambush/",
+                "title": "The Ambush"
+            },
+            {
+                "duration": null,
+                "number": 6,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/84k9e1/episode_6_ambushed_the_moonstone_saga/",
+                "title": "Ambushed (The Moonstone Saga)"
+            },
+            {
+                "duration": null,
+                "number": 7,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/869a7w/episode_7_frog_kings_revenge/",
+                "title": "Frog King's Revenge "
+            },
+            {
+                "duration": null,
+                "number": 7,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/869akz/episode_7_frog_kings_revenge_the_moonstone_saga/",
+                "title": "Frog King's Revenge (The Moonstone Saga)"
+            },
+            {
+                "duration": null,
+                "number": 8,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/87yq81/episode_8_the_moonstone_massacre_the_moonstone/",
+                "title": "The Moonstone Massacre (The Moonstone Saga) "
             }
         ],
         "twinnovation": [
@@ -920,6 +1027,24 @@
                 "number": 137,
                 "reddit_url": "/r/Twinnovation/comments/8346lu/twinnovation_episode_137_bwounce/",
                 "title": "Bwounce"
+            },
+            {
+                "duration": null,
+                "number": 138,
+                "reddit_url": "/r/Twinnovation/comments/84spf0/twinnovation_episode_138_live_from_sxsw_ft_jon/",
+                "title": "Live from SXSW ft. Jon Gabrus"
+            },
+            {
+                "duration": null,
+                "number": 139,
+                "reddit_url": "/r/Twinnovation/comments/86hutb/twinnovation_episode_139_no_step_the_season_3/",
+                "title": "No Step (The Season 3 Premiere)"
+            },
+            {
+                "duration": null,
+                "number": 140,
+                "reddit_url": "/r/Twinnovation/comments/887n1h/twinnovation_episode_140_the_number_sleuth_pencil/",
+                "title": "The Number Sleuth Pencil "
             }
         ]
     },
