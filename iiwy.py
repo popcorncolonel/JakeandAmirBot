@@ -142,7 +142,8 @@ def get_iiwy_info(depth=0):
         sponsors = desc.split('brought to you by ')[1].strip()
         sponsorlist = get_sponsors(sponsors)
     '''
-    episode_num = re.search('\d+', name.split(':')[0].split('Episode')[1].strip()).group()
+    # Episode 69: Lmao -> 69
+    episode_num = re.search('\d+', name.split(':')[0].split()[1].strip()).group()
     episode_num = int(episode_num)
     try:
         if 'If I Were You' not in name:
@@ -152,7 +153,7 @@ def get_iiwy_info(depth=0):
     except Exception as e:
         print("encountered iiwy error :((((")
         print(e)
-        time.sleep(3)
+        time.sleep(1)
 
     sponsorlist = list(map(to_reddit_url, sponsorlist))
     desc = desc.replace('"', "'").strip()

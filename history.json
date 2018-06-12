@@ -102,6 +102,21 @@
                 "ep_type": "offdays",
                 "reddit_url": "/r/jakeandamir/comments/8a0xog/off_days_not_illegal/",
                 "title": "Not Illegal"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/8brabq/off_days_fued/",
+                "title": "Fued"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/8brn1g/off_days_feud/",
+                "title": "Feud"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/8f3s3b/geoffrey_the_dumbass_viral_shirts/",
+                "title": "Viral Shirts"
             }
         ],
         "IIWY": [
@@ -110,6 +125,36 @@
                 "number": 322,
                 "reddit_url": "/r/jakeandamir/comments/88wokm/episode_322_hall_pass_wbilly_scafuri/",
                 "title": "Hall Pass (w/Billy Scafuri!)"
+            },
+            {
+                "duration": null,
+                "number": 323,
+                "reddit_url": "/r/jakeandamir/comments/8avjln/episode_323_pee_sex_live_in_nyc_wscott_rogowsky/",
+                "title": "Pee Sex (Live in NYC w/Scott Rogowsky!)"
+            },
+            {
+                "duration": null,
+                "number": 324,
+                "reddit_url": "/r/jakeandamir/comments/8ckt9y/episode_324_sexy_flashlight_wdoughboys_nick_wiger/",
+                "title": "Sexy Flashlight (w/Doughboys Nick Wiger + Mike Mitchell!)"
+            },
+            {
+                "duration": null,
+                "number": 325,
+                "reddit_url": "/r/jakeandamir/comments/8e9arj/episode_325_jew_snacks_and_life_hacks/",
+                "title": "Jew Snacks and Life Hacks"
+            },
+            {
+                "duration": null,
+                "number": 326,
+                "reddit_url": "/r/jakeandamir/comments/8f0b1y/episode_326_strip_clubs_wthomas_middleditch_live/",
+                "title": "Strip Clubs (w/Thomas Middleditch live in Vancouver!)"
+            },
+            {
+                "duration": null,
+                "number": 327,
+                "reddit_url": "/r/jakeandamir/comments/8fwjjh/episode_327_ex_girlfriends_birthday/",
+                "title": "Ex Girlfriend's Birthday"
             }
         ],
         "abbc": [
@@ -125,6 +170,24 @@
                 "number": 9,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/89xlrm/episode_9_the_green_knight_and_the_bounty_hunter/",
                 "title": "The Green Knight and the Bounty Hunter (The Ezry Chronicles with Adam Conover)"
+            },
+            {
+                "duration": null,
+                "number": 10,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/8bp2nm/episode_10_nemesis_the_ezry_chronicles_with_adam/",
+                "title": "Nemesis (The Ezry Chronicles with Adam Conover) "
+            },
+            {
+                "duration": null,
+                "number": 11,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/8dci6o/episode_11_creator_of_nightmares_the_ezry/",
+                "title": "Creator of Nightmares (The Ezry Chronicles with Adam Conover)"
+            },
+            {
+                "duration": null,
+                "number": 12,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/8f401m/episode_12_the_watchman_the_road_to_galaderon/",
+                "title": "The Watchman (The Road to Galaderon with Nathan Yaffe)"
             }
         ],
         "twinnovation": [
@@ -133,6 +196,24 @@
                 "number": 141,
                 "reddit_url": "/r/Twinnovation/comments/8a90e4/twinnovation_episode_141_centitube/",
                 "title": "Centi-tube"
+            },
+            {
+                "duration": null,
+                "number": 142,
+                "reddit_url": "/r/Twinnovation/comments/8bwdfr/twinnovation_episode_142_hung_live_from_new_york/",
+                "title": "Hung! (Live From New York City)"
+            },
+            {
+                "duration": null,
+                "number": 143,
+                "reddit_url": "/r/Twinnovation/comments/8dkrjj/twinnovation_episode_143_venmo_mikekarnell_drink/",
+                "title": "Venmo @Mike-Karnell Drink Money For His Bachelor Party"
+            },
+            {
+                "duration": null,
+                "number": 144,
+                "reddit_url": "/r/Twinnovation/comments/8f8td6/twinnovation_episode_144_mikeless_in_weho/",
+                "title": "Mikeless in WEHO"
             }
         ]
     },
@@ -807,6 +888,51 @@
             }
         ]
     },
+    "Jun 2018": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/8pbhbx/off_days_avicii_died/",
+                "title": "Avicii Died"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 333,
+                "reddit_url": "/r/jakeandamir/comments/8oedlu/episode_333_memory_lane_wben_schwartz/",
+                "title": "Memory Lane (w/Ben Schwartz!)"
+            },
+            {
+                "duration": null,
+                "number": 334,
+                "reddit_url": "/r/jakeandamir/comments/8q6wib/episode_334_hot_roommate_wmeg_batoon/",
+                "title": "Hot Roommate (w/Meg Batoon!)"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 18,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/8p81x5/episode_18_strike_true_the_galaderon_saga/",
+                "title": "Strike True (The Galaderon Saga) "
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": 149,
+                "reddit_url": "/r/Twinnovation/comments/8nows5/twinnovation_episode_149_birdnoculars/",
+                "title": "Birdnoculars"
+            },
+            {
+                "duration": null,
+                "number": 150,
+                "reddit_url": "/r/Twinnovation/comments/8pgumn/twinnovation_episode_150_storytime_iceland/",
+                "title": "Storytime: Iceland"
+            }
+        ]
+    },
     "Mar 2016": {
         "IIWY": [
             {
@@ -1141,6 +1267,108 @@
                 "number": 276,
                 "reddit_url": "https://www.reddit.com/r/jakeandamir/comments/6dy4tt/episode_276_sweet_boys/",
                 "title": "Sweet Boys"
+            }
+        ]
+    },
+    "May 2018": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/8ig0td/geoffrey_the_dumbass_no_sleep/",
+                "title": "No Sleep"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/8k5md8/geoffrey_the_dumbass_dance_2_w_megan_batoon/",
+                "title": "Dance 2 (w/ Megan Batoon!)"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/8ltsx9/off_days_broadway/",
+                "title": "Broadway"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/8njkw7/geoffrey_the_dumbass_tori_kelly_commercial/",
+                "title": "Tori Kelly Commercial"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 328,
+                "reddit_url": "/r/jakeandamir/comments/8hkpsc/episode_328_birthday_sex/",
+                "title": "Birthday Sex"
+            },
+            {
+                "duration": null,
+                "number": 329,
+                "reddit_url": "/r/jakeandamir/comments/8j9g1b/episode_329_instagram_jealousy/",
+                "title": "Instagram Jealousy"
+            },
+            {
+                "duration": null,
+                "number": 330,
+                "reddit_url": "/r/jakeandamir/comments/8kyp15/episode_330_vaping_wsugar_pine_7/",
+                "title": "Vaping (w/Sugar Pine 7!)"
+            },
+            {
+                "duration": null,
+                "number": 332,
+                "reddit_url": "/r/jakeandamir/comments/8mo3ky/episode_332_jakes_lasik/",
+                "title": "Jake's Lasik"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 13,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/8gogy7/episode_13_the_city_in_the_clouds_the_galaderon/",
+                "title": "The City in the Clouds (The Galaderon Saga) "
+            },
+            {
+                "duration": null,
+                "number": 14,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/8ibn6c/episode_14_trial_by_combat_the_galaderon_saga/",
+                "title": "Trial by Combat (The Galaderon Saga) "
+            },
+            {
+                "duration": null,
+                "number": 15,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/8k2fll/episode_15_a_bastard_no_more_the_galaderon_saga/",
+                "title": "A Bastard No More (The Galaderon Saga) "
+            },
+            {
+                "duration": null,
+                "number": 17,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/8ngdle/episode_17_jailbreak_the_galaderon_saga/",
+                "title": "Jailbreak (The Galaderon Saga) "
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": 145,
+                "reddit_url": "/r/Twinnovation/comments/8gwfrn/twinnovation_episode_145_poopsicle/",
+                "title": "Poopsicle"
+            },
+            {
+                "duration": null,
+                "number": 146,
+                "reddit_url": "/r/Twinnovation/comments/8ikxlh/twinnovation_episode_146_decimaul/",
+                "title": "DeciMaul"
+            },
+            {
+                "duration": null,
+                "number": 147,
+                "reddit_url": "/r/Twinnovation/comments/8kf0f1/twinnovation_episode_147_escape_your_past/",
+                "title": "Escape Your Past"
+            },
+            {
+                "duration": null,
+                "number": 148,
+                "reddit_url": "/r/Twinnovation/comments/8lprjj/twinnovation_episode_148_stickem_pickies/",
+                "title": "Stickem Pickies"
             }
         ]
     },

@@ -31,7 +31,7 @@ def get_timeout(default_timeout):
         (23, 'Thursday'), (0, 'Friday'), (1, 'Friday'), (2, 'Friday'),  # twinnovation episodes
         (15, 'Friday'), (16, 'Friday'), (17, 'Friday'),  # 8bit book club episodes
     ]:
-        return 1
+        return 5
     else:
         return default_timeout
 
@@ -79,7 +79,7 @@ def initialize_foundlist():
 def main():
     global force_submit_iiwy, force_submit_twins, force_submit_nadd, force_submit_abbc, force_submit_rewatch, force_submit_gtd
 
-    default_timeout = 10  # don't spam the servers :D
+    default_timeout = 20  # don't spam the servers :D
 
     foundlist = initialize_foundlist()
 
