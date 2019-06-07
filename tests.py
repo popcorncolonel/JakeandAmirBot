@@ -49,7 +49,7 @@ class JjkaeTest(unittest.TestCase):
     def test_twins(self):
         import twins
         twins_obj = twins.get_twins_info()
-        self.assertIs(type(twins_obj.number), int)
+        #self.assertIs(type(twins_obj.number), int)
 
         self.assertIsNotNone(twins_obj.title)
         self.assertIsNotNone(twins_obj.reddit_title)

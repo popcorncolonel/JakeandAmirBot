@@ -97,23 +97,30 @@ def get_twins_info(depth=0):
     #[episode_num, title] = title.split(' ', maxsplit=1)  # now `title` is like "Pants or Shorts Live at SXSW"
     i = 0
     episode_num = ''
-    while True:  # we do it this weird convoluted way because episode 141's title was "141Centi-tube" rather than "141 Centi-tube"... thanks NIC
+    while i < len(title) and True:  # we do it this weird convoluted way because episode 141's title was "141Centi-tube" rather than "141 Centi-tube"... thanks NIC
         if title[i].isdigit():
             episode_num = episode_num + title[i]
         else:
             break
         i += 1
-    episode_num = int(episode_num)
+    if episode_num is not '':
+        episode_num = int(episode_num)
+    else:
+        episode_num = None
     title = title[i:].strip()
     if duration is not None:
         name = 'Twinnovation Episode {episode_num}: {title} [{duration}]'.format(**locals())
-    else:
+    elif episode_num is not None:
         name = 'Twinnovation Episode {episode_num}: {title}'.format(**locals())
+    else:
+        name = 'Twinnovation: {title}'.format(**locals())
     reddit_title = name
     desc = most_recent_ep['description']
-    desc = re.sub('<.*?>', '\n', desc).replace('  ', ' ').replace('  ', ' ')
-
-    desc = desc.replace('"', "'").strip()
+    if desc:
+        desc = re.sub('<.*?>', '\n', desc).replace('  ', ' ').replace('  ', ' ')
+        desc = desc.replace('"', "'").strip()
+    else:
+        desc = ''
     name = html_parser.unescape(name)
     title = html_parser.unescape(title)
     desc = html_parser.unescape(desc)

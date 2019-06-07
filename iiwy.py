@@ -115,6 +115,8 @@ def get_iiwy_info(depth=0):
         time.sleep(3)
         return get_iiwy_info(depth=depth + 1)
     name = most_recent_ep['title']  # name is the full title. `title` is like "The Emotionary"
+    if 'Episode' not in name:
+        name = 'Episode ' + name
     if ':' in name:  # "Episode 191: The Emotionary" -> "The Emotionary"
         title = name.split(':')[1].strip()
     else:
@@ -135,6 +137,8 @@ def get_iiwy_info(depth=0):
 
     sponsorlist = []
     desc = most_recent_ep['description']
+    if desc is None:
+        desc = ''
     desc = re.sub('<.*?>', '', desc).replace('  ', ' ').replace('  ', ' ')
     filename = most_recent_ep['file_name']  # lol why is this information included
     ''' temporarily disabled...
@@ -143,8 +147,10 @@ def get_iiwy_info(depth=0):
         sponsorlist = get_sponsors(sponsors)
     '''
     # Episode 69: Lmao -> 69
-    episode_num = re.search('\d+', name.split(':')[0].split()[1].strip()).group()
-    episode_num = int(episode_num)
+    search = re.search('\d+', name.split(':')[0].split()[-1].strip())
+    if search is not None:
+        episode_num = search.group()
+        episode_num = int(episode_num)
     try:
         if 'If I Were You' not in name:
             name = "If I Were You " + name
