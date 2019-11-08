@@ -99,8 +99,6 @@ def main():
     past_exception_string = None
     while True:
         try:
-            timeout = get_timeout(default_timeout)
-
             iiwy_loop(mod_info, force_submit_iiwy)
             force_submit_iiwy = False  # Only do it once
 
@@ -110,24 +108,20 @@ def main():
             nadd_loop(mod_info, force_submit_nadd)
             force_submit_nadd = False  # Only do it once
 
-            abbc_loop(mod_info, force_submit_abbc)
-            force_submit_abbc = False  # Only do it once
+            #abbc_loop(mod_info, force_submit_abbc)
+            #force_submit_abbc = False  # Only do it once
 
             # Don't do the rewatch or the monthly discussion
             #mod_loop(mod_info, force_submit_rewatch)
             #force_submit_rewatch = False  # Only do it once
 
-            day = datetime.datetime.now().strftime('%A')
-            if day == 'Thursday' and timeout == 1: # if we're in the zone of checking a lot for GTD
+            # Do it 25% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
+            # hitting the server 12 times a minute.
+            if mod_info.i % 4 == 1:
                 gtd_loop(mod_info, force_submit_gtd)
                 force_submit_gtd = False  # Only do it once
-            else:
-                if mod_info.i % 2 == 1:
-                    # do it 50% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
-                    # hitting the server 12 times a minute.
-                    gtd_loop(mod_info, force_submit_gtd)
-                    force_submit_gtd = False  # Only do it once
 
+            timeout = get_timeout(default_timeout)
             if timeout != 0:
                 time.sleep(timeout)
 
