@@ -857,6 +857,104 @@
             }
         ]
     },
+    "Dec 2019": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/e6k0wh/geoffrey_the_dumbass_pictionary/",
+                "title": "Pictionary"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/ecw14z/off_days_shush/",
+                "title": "Shush"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 411,
+                "reddit_url": "/r/jakeandamir/comments/e5c7ey/episode_411_sick_lightning_round/",
+                "title": "Sick Lightning Round"
+            },
+            {
+                "duration": null,
+                "number": 412,
+                "reddit_url": "/r/jakeandamir/comments/e86r8x/episode_412_pissing_in_a_sink/",
+                "title": "Pissing in a Sink"
+            },
+            {
+                "duration": null,
+                "number": 413,
+                "reddit_url": "/r/jakeandamir/comments/ebb4z4/episode_413_christmas_tree/",
+                "title": "Christmas Tree"
+            },
+            {
+                "duration": null,
+                "number": 414,
+                "reddit_url": "/r/jakeandamir/comments/eefvc1/episode_414_amir_on_naddpod/",
+                "title": "Amir on NADDPod"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/e6dz4i/not_another_dd_podcast_naddpod_live_in_manchester/",
+                "title": "NADDPOD Live in Manchester (Raiders of the Lost Croak)"
+            },
+            {
+                "duration": null,
+                "number": "Baggin' it with Balnor",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/e9jmpk/episode_baggin_it_with_balnor_unicorn_meat_jvs/",
+                "title": "Unicorn Meat, JV's Wedding, and Hot Sex Tips  (w/ Hardwon, Moonshine, and Beverly)"
+            },
+            {
+                "duration": null,
+                "number": "Frostwind's Mandatory Celebration of Maximum Luminosity",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ecq795/episode_frostwinds_mandatory_celebration_of/",
+                "title": "A Somber Festival (Holiday Special w/ Amir Blumenfeld)"
+            },
+            {
+                "duration": null,
+                "number": "Campaign Quiz Show",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/efsrz8/episode_campaign_quiz_show_the_scoop_zone_trivia/",
+                "title": "The Scoop Zone Trivia Challenge"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/egreiz/not_another_dd_podcast_bonus_campaign_trinyvale/",
+                "title": "BONUS CAMPAIGN - Trinyvale Ep. 12 - Rana'For Reunion"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/e6tys3/twinnovation_blow_hole/",
+                "title": "Blow Hole"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/e9zges/twinnovation_the_one_with_the_claw_glove/",
+                "title": "The One with the Claw Glove"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/ed5dea/twinnovation_tomatuno_pt_1/",
+                "title": "Tomatuno Pt. 1"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/eg6n9v/twinnovation_slit_pit/",
+                "title": "Slit Pit"
+            }
+        ]
+    },
     "Feb 2016": {
         "IIWY": [
             {
@@ -2927,6 +3025,21 @@
                 "ep_type": "offdays",
                 "reddit_url": "/r/jakeandamir/comments/dt0kqm/off_days_john_george39s_apps/",
                 "title": "John George&#39;s Apps"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/dwgmix/geoffrey_the_dumbass_living_will/",
+                "title": "Living Will"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/dzmbsg/geoffrey_the_dumbass_medical_history/",
+                "title": "Medical History"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/e30qrt/off_days_bully/",
+                "title": "Bully"
             }
         ],
         "IIWY": [
@@ -2935,6 +3048,24 @@
                 "number": 407,
                 "reddit_url": "/r/jakeandamir/comments/drcy1a/episode_407_the_best_coffee/",
                 "title": "The Best Coffee"
+            },
+            {
+                "duration": null,
+                "number": 408,
+                "reddit_url": "/r/jakeandamir/comments/dun75o/episode_408_cool_scar/",
+                "title": "Cool Scar"
+            },
+            {
+                "duration": null,
+                "number": 409,
+                "reddit_url": "/r/jakeandamir/comments/dxytjx/episode_409_secret_santa_wthomas_middleditch/",
+                "title": "Secret Santa (w/Thomas Middleditch!)"
+            },
+            {
+                "duration": null,
+                "number": 410,
+                "reddit_url": "/r/jakeandamir/comments/e1b32b/episode_410_airdrop_flirting/",
+                "title": "Airdrop Flirting"
             }
         ],
         "nadd": [
@@ -2943,6 +3074,30 @@
                 "number": 11,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/drrmlp/episode_11_arduous_awakening/",
                 "title": "Arduous Awakening "
+            },
+            {
+                "duration": null,
+                "number": 82,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/dtbtmz/episode_82_ring_of_violence_the_hellfire/",
+                "title": "Ring of Violence (The Hellfire Chronicles)"
+            },
+            {
+                "duration": null,
+                "number": 83,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/dw6a5e/episode_83_the_devil_you_know_the_hellfire/",
+                "title": "The Devil You Know (The Hellfire Chronicles)"
+            },
+            {
+                "duration": null,
+                "number": 84,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/dzv2ac/episode_84_treachery_the_hellfire_chronicles/",
+                "title": "Treachery (The Hellfire Chronicles)"
+            },
+            {
+                "duration": null,
+                "number": "Donkey Kong One-Shot",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/e2tjkx/episode_donkey_kong_oneshot_a_bananksgiving/",
+                "title": "A Bananksgiving Special "
             }
         ],
         "twinnovation": [
@@ -2951,6 +3106,30 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/dpz6kc/twinnovation_cuffing_season/",
                 "title": "Cuffing Season?"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/dtah6n/twinnovation_the_rickster/",
+                "title": "The Rickster"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/dwml57/twinnovation_scootskis/",
+                "title": "Scootskis"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/dzw7wv/twinnovation_the_quacker/",
+                "title": "The Quacker"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/e3a01n/twinnovation_twinnovation/",
+                "title": "Twinnovation+"
             }
         ]
     },

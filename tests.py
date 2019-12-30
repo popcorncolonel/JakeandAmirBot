@@ -80,6 +80,7 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(gtd_obj.url)
         self.assertIsNotNone(gtd_obj.desc)
         self.assertIsNotNone(gtd_obj.monthstring)
+        self.assertIsNotNone(gtd_obj.ep_type)
         geoff.check_gtd_and_post_if_new(self.mod_info, testmode=True)
 
     def test__prints(self):
@@ -98,3 +99,5 @@ class JjkaeTest(unittest.TestCase):
         post_monthly_discussion(mod_info, testmode=True)
 
         print("Tested mod actions")
+
+

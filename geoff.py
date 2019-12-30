@@ -39,6 +39,8 @@ class GTD:
             ep_type = 'gtd'
         elif 'Off Days' in full_title:
             ep_type = 'offdays'
+        elif 'Day in the Strife' in full_title:
+            ep_type = 'dayinthestrife'
         if 'videoId' not in obj['id']:  # if, for exapmle, you're a playlist
             return None
         return cls(
@@ -85,7 +87,11 @@ def get_gtd_info(depth=0):
         print("JSON ERROR?: {}".format(json_data))
         time.sleep(5)
         return get_gtd_info(depth=depth+1)
-    most_recent_vidz = [item for item in json_data['items'] if 'Geoffrey the Dumbass' in item['snippet']['title'] or 'Off Days' in item['snippet']['title']]
+    most_recent_vidz = [item for item in json_data['items'] if (
+        'Day in the Strife' in item['snippet']['title'] or
+        'Off Days' in item['snippet']['title'] or 
+        'Geoffrey the Dumbass' in item['snippet']['title']
+    )]
     GTD_objs = [GTD.from_json_obj(item) for item in most_recent_vidz]
     GTD_objs = [x for x in GTD_objs if x]
     if GTD_objs:
@@ -144,11 +150,8 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
         return
 
     try:
-        if gtd_obj.ep_type == 'gtd':
+        if gtd_obj.ep_type in ['gtd', 'offdays', 'dayinthestrife']:
             #submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW GEOFFREY THE DUMBASS', flair_id='images')
-            submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url)
-        elif gtd_obj.ep_type == 'offdays':
-            #submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW OFF DAYS', flair_id='images')
             submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url)
     except prawcore.exceptions.ServerError as e:
         print("Already submitted?")
