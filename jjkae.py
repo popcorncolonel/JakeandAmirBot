@@ -6,6 +6,7 @@ import iiwy
 import twins
 import abbc
 import nadd
+import revue
 import geoff
 import datetime
 import jjkae_tools
@@ -16,6 +17,7 @@ from rewatch import episodes
 force_submit_rewatch = False  # This causes mod_actions to post the rewatch the first iteration (i==1).
 force_submit_abbc = False
 force_submit_nadd = False
+force_submit_revue = False
 force_submit_twins = False
 force_submit_iiwy = False
 force_submit_gtd = False
@@ -26,7 +28,8 @@ def get_timeout(default_timeout):
     day = datetime.datetime.now().strftime('%A')
     if (hour, day) in [
         (23, 'Sunday'), (0, 'Monday'), # IIWY episodes
-        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday'), (3, 'Thursday'), # IIWY bonus episodes, NaddPod
+        (23, 'Monday'), (0, 'Tuesday'), (1, 'Tuesday'), (2, 'Tuesday'), (3, 'Tuesday'), # ReviewRevue, I guess
+        (23, 'Wednesday'), (0, 'Thursday'), (1, 'Thursday'), (2, 'Thursday'), (3, 'Thursday'), # NaddPod
         (10, 'Thursday'), (11, 'Thursday'), (12, 'Thursday'), (13, 'Thursday'), (14, 'Thursday'), (15, 'Thursday'), # HG vids
         (23, 'Thursday'), (0, 'Friday'), (1, 'Friday'), (2, 'Friday'),  # twinnovation episodes
         (15, 'Friday'), (16, 'Friday'), (17, 'Friday'),  # 8bit book club episodes
@@ -52,6 +55,10 @@ def nadd_loop(mod_info, force_submit_nadd=False):
     nadd.check_nadd_and_post_if_new(mod_info, force_submit=force_submit_nadd)
 
 
+def revue_loop(mod_info, force_submit_revue=False):
+    revue.check_revue_and_post_if_new(mod_info, force_submit=force_submit_revue)
+
+
 def abbc_loop(mod_info, force_submit_abbc=False):
     abbc.check_abbc_and_post_if_new(mod_info, force_submit=force_submit_abbc)
 
@@ -64,6 +71,7 @@ def initialize_foundlist():
     iiwy_obj = iiwy.get_iiwy_info()
     twins_obj = twins.get_twins_info()
     nadd_obj = nadd.get_nadd_info()
+    revue_obj = revue.get_revue_info()
     abbc_obj = abbc.get_abbc_info()
     gtd_obj = geoff.get_gtd_info()
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
@@ -71,13 +79,14 @@ def initialize_foundlist():
           "and duration", iiwy_obj.duration)
     print("Most recent Twinnovation is: {}".format(twins_obj.reddit_title))
     print("Most recent NaddPod is: {}".format(nadd_obj.reddit_title))
+    print("Most recent Review Revue is: {}".format(revue_obj.reddit_title))
     print("Most recent 8 bit book club is: {}".format(abbc_obj.reddit_title))
-    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, abbc_obj.reddit_title, gtd_obj.reddit_title]
+    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, revue_obj.reddit_title, abbc_obj.reddit_title, gtd_obj.reddit_title]
     return foundlist
 
 
 def main():
-    global force_submit_iiwy, force_submit_twins, force_submit_nadd, force_submit_abbc, force_submit_rewatch, force_submit_gtd
+    global force_submit_iiwy, force_submit_twins, force_submit_nadd, force_submit_revue, force_submit_abbc, force_submit_rewatch, force_submit_gtd
 
     default_timeout = 20  # don't spam the servers :D
 
@@ -107,6 +116,9 @@ def main():
 
             nadd_loop(mod_info, force_submit_nadd)
             force_submit_nadd = False  # Only do it once
+
+            revue_loop(mod_info, force_submit_revue)
+            force_submit_revue = False  # Only do it once
 
             #abbc_loop(mod_info, force_submit_abbc)
             #force_submit_abbc = False  # Only do it once

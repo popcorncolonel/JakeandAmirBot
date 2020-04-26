@@ -308,6 +308,85 @@
             }
         ]
     },
+    "Apr 2020": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/ftoweb/geoffrey_the_dumbass_quarantine/",
+                "title": "Quarantine"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/fxv09c/geoffrey_the_dumbass_quarantine_2/",
+                "title": "Quarantine 2"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/g2hovd/geoffrey_the_dumbass_quarantine_brainstorm/",
+                "title": "Quarantine Brainstorm"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 430,
+                "reddit_url": "/r/jakeandamir/comments/g0dkgf/episode_430_dance_party/",
+                "title": "Dance Party"
+            },
+            {
+                "duration": null,
+                "number": 431,
+                "reddit_url": "/r/jakeandamir/comments/g4lsxi/episode_431_scam_girls/",
+                "title": "Scam Girls"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 96,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/fxqexg/episode_96_the_glittering_lady_the_chosen_saga/",
+                "title": "The Glittering Lady (The Chosen Saga)"
+            },
+            {
+                "duration": null,
+                "number": 97,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/g29ula/episode_97_titans_of_the_realm_the_chosen_saga/",
+                "title": "Titans of the Realm (The Chosen Saga)"
+            },
+            {
+                "duration": null,
+                "number": 98,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/g6veg3/episode_98_patient_zero_the_chosen_saga/",
+                "title": "Patient Zero (The Chosen Saga) "
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/fu6jaa/twinnovation_the_deluminator/",
+                "title": "The Deluminator"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/fy7v8x/twinnovation_artside/",
+                "title": "Artside"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/g2uk4v/twinnovation_zoomans/",
+                "title": "Zoomans"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/g71ina/twinnovation_banddave/",
+                "title": "Band-Dave"
+            }
+        ]
+    },
     "Aug 2016": {
         "IIWY": [
             {
@@ -894,6 +973,12 @@
                 "number": 414,
                 "reddit_url": "/r/jakeandamir/comments/eefvc1/episode_414_amir_on_naddpod/",
                 "title": "Amir on NADDPod"
+            },
+            {
+                "duration": null,
+                "number": 415,
+                "reddit_url": "/r/jakeandamir/comments/ehfm2x/episode_415_hosting_and_ghosting/",
+                "title": "Hosting and Ghosting"
             }
         ],
         "nadd": [
@@ -926,6 +1011,12 @@
                 "number": null,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/egreiz/not_another_dd_podcast_bonus_campaign_trinyvale/",
                 "title": "BONUS CAMPAIGN - Trinyvale Ep. 12 - Rana'For Reunion"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ei9p0g/not_another_dd_podcast_bonus_campaign_trinyvale/",
+                "title": "BONUS CAMPAIGN - Trinyvale Ep. 13 - Jungle Judgement"
             }
         ],
         "twinnovation": [
@@ -1218,6 +1309,92 @@
             }
         ]
     },
+    "Feb 2020": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 420,
+                "reddit_url": "/r/jakeandamir/comments/ey2g0q/episode_420_road_hand_wana_nicolich/",
+                "title": "Road Hand (w/Ana Nicolich!)"
+            },
+            {
+                "duration": null,
+                "number": 421,
+                "reddit_url": "/r/jakeandamir/comments/f1lrm5/episode_421_thick_chicken_wgeoff_and_reilly/",
+                "title": "Thick Chicken (w/Geoff and Reilly!)"
+            },
+            {
+                "duration": null,
+                "number": 422,
+                "reddit_url": "/r/jakeandamir/comments/f5234c/episode_422_worms_wrose_mciver/",
+                "title": "Worms (w/Rose McIver!)"
+            },
+            {
+                "duration": null,
+                "number": 423,
+                "reddit_url": "/r/jakeandamir/comments/f8nkn5/episode_423_motion_sickness/",
+                "title": "Motion Sickness"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/fa8j3m/episode_bonus_patreon_sample/",
+                "title": "Episode Bonus Patreon Sample"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ezohfn/not_another_dd_podcast_can_they_kill_it_the_band/",
+                "title": "Can They Kill It? (The Band of Boobs vs. The Astral DADnought)"
+            },
+            {
+                "duration": null,
+                "number": 90,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/f37k8d/episode_90_those_left_behind_the_chosen_saga/",
+                "title": "Those Left Behind (The Chosen Saga)"
+            },
+            {
+                "duration": null,
+                "number": 91,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/f72iik/episode_91_secrets_secrets_the_chosen_saga/",
+                "title": "Secrets, Secrets (The Chosen Saga)"
+            },
+            {
+                "duration": null,
+                "number": 92,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/fa8rd1/episode_92_the_wraith_on_the_pale_horse_the/",
+                "title": "The Wraith on the Pale Horse (The Chosen Saga)"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/f05m3g/twinnovation_mr_and_mrs_spoon/",
+                "title": "Mr. and Mrs. Spoon"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/f3n833/twinnovation_squeeze_pleasers/",
+                "title": "Squeeze Pleasers"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/f766io/twinnovation_family_feast/",
+                "title": "Family Feast"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/faphjh/twinnovation_the_decave/",
+                "title": "The Decave"
+            }
+        ]
+    },
     "Jan 2016": {
         "IIWY": [
             {
@@ -1483,6 +1660,120 @@
                 "number": 184,
                 "reddit_url": "/r/Twinnovation/comments/alyjdn/twinnovation_episode_184_end_of_the_world_tour/",
                 "title": "- End Of The World Tour feat. The Podfather"
+            }
+        ]
+    },
+    "Jan 2020": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/ej0srg/geoffrey_the_dumbass_roarin39_20s/",
+                "title": "Roarin&#39; 20s"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/epm2ud/off_days_games_wfinn_wolfhard/",
+                "title": "Games (w/Finn Wolfhard!)"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/esvxqg/off_days_mean_tweets/",
+                "title": "Mean Tweets"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/ev84ox/geoffrey_the_dumbass_review_revue/",
+                "title": "Review Revue"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 416,
+                "reddit_url": "/r/jakeandamir/comments/el6cga/episode_416_foot_for_thought/",
+                "title": "Foot For Thought"
+            },
+            {
+                "duration": null,
+                "number": 417,
+                "reddit_url": "/r/jakeandamir/comments/eo0hnt/episode_417_hostel_love/",
+                "title": "Hostel Love"
+            },
+            {
+                "duration": null,
+                "number": 418,
+                "reddit_url": "/r/jakeandamir/comments/er9fcq/episode_418_addiction/",
+                "title": "Addiction"
+            },
+            {
+                "duration": null,
+                "number": 419,
+                "reddit_url": "/r/jakeandamir/comments/euktvb/episode_419_stinky_penis/",
+                "title": "Stinky Penis"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 85,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/eiwcok/episode_85_rogue_gods_the_hellfire_chronicles/",
+                "title": "Rogue Gods (The Hellfire Chronicles)"
+            },
+            {
+                "duration": null,
+                "number": 86,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/emn2vw/episode_86_hell_breaks_loose_the_hellfire/",
+                "title": "Hell Breaks Loose (The Hellfire Chronicles)"
+            },
+            {
+                "duration": null,
+                "number": 87,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/eqes2m/episode_87_split_the_party_the_hellfire_chronicles/",
+                "title": "Split the Party (The Hellfire Chronicles)"
+            },
+            {
+                "duration": null,
+                "number": 88,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/esofk0/episode_88_faithless_the_hellfire_chronicles/",
+                "title": "Faithless (The Hellfire Chronicles)"
+            },
+            {
+                "duration": null,
+                "number": 89,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ew2tkj/episode_89_apocalypse_the_hellfire_chronicles/",
+                "title": "Apocalypse (The Hellfire Chronicles)"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/ekgw8f/twinnovation_titanic_2_the_titanicing/",
+                "title": "Titanic 2: The Titanicing"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/enzidt/twinnovation_the_umbo/",
+                "title": "The Umbo"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/epw73g/twinnovation_milk_me/",
+                "title": "Milk Me"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/etgxn3/twinnovation_the_shock_jock/",
+                "title": "The Shock Jock"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/ewj74c/twinnovation_putting_the_fun_in_funeral/",
+                "title": "Putting the Fun in Funeral"
             }
         ]
     },
@@ -2467,6 +2758,92 @@
                 "number": 192,
                 "reddit_url": "/r/Twinnovation/comments/b6zzf1/twinnovation_episode_192_bobby_touch\u00e9/",
                 "title": "- Bobby Touch\u00e9"
+            }
+        ]
+    },
+    "Mar 2020": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 424,
+                "reddit_url": "/r/jakeandamir/comments/fc6qez/episode_424_dead_eyes_wconnor_ratliff/",
+                "title": "Dead Eyes (w/Connor Ratliff!)"
+            },
+            {
+                "duration": null,
+                "number": 425,
+                "reddit_url": "/r/jakeandamir/comments/ffr4yc/episode_425_coronavirus/",
+                "title": "CoronaVirus"
+            },
+            {
+                "duration": null,
+                "number": 426,
+                "reddit_url": "/r/jakeandamir/comments/fjhijn/episode_426_corona_calls_wgeoff_marty_ben_schwartz/",
+                "title": "Corona Calls (w/Geoff, Marty, & Ben Schwartz!)"
+            },
+            {
+                "duration": null,
+                "number": 427,
+                "reddit_url": "/r/jakeandamir/comments/fnfs8y/episode_427_quarantine_chat/",
+                "title": "Quarantine Chat"
+            },
+            {
+                "duration": null,
+                "number": 428,
+                "reddit_url": "/r/jakeandamir/comments/frmooj/episode_428_masks_and_bananas_wjeff_and_pat/",
+                "title": "Masks and Bananas (w/Jeff and Pat!)"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 93,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/fe90sy/episode_93_heavy_is_the_head_the_chosen_saga/",
+                "title": "Heavy is the Head (The Chosen Saga) "
+            },
+            {
+                "duration": null,
+                "number": 94,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/fhcvqe/episode_94_the_astral_worm_the_chosen_saga/",
+                "title": "The Astral Worm (The Chosen Saga) "
+            },
+            {
+                "duration": null,
+                "number": "Baggin' it with Balnor",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/fl5tz0/episode_baggin_it_with_balnor_the_green_teen/",
+                "title": "The Green Teen Quarantine (w/ Hardwon, Moonshine, and Beverly)"
+            },
+            {
+                "duration": null,
+                "number": 95,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/fpvip7/episode_95_divine_heart_the_chosen_saga/",
+                "title": "Divine Heart (The Chosen Saga) "
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/fe8img/twinnovation_the_noe_chill_pill/",
+                "title": "The NOE Chill Pill"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/fhtp9e/twinnovation_squirters/",
+                "title": "Squirters"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/flokbz/twinnovation_quarantwins/",
+                "title": "Quarantwins"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/fpq90v/twinnovation_ring_has_rung/",
+                "title": "Ring Has Rung"
             }
         ]
     },

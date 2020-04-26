@@ -41,10 +41,20 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(nadd_obj.title)
         self.assertIsNotNone(nadd_obj.reddit_title)
         self.assertIsNotNone(nadd_obj.url)
-        #self.assertIsNotNone(nadd_obj.duration)
         self.assertIsNotNone(nadd_obj.desc)
         self.assertIsNotNone(nadd_obj.monthstring)
         nadd.check_nadd_and_post_if_new(self.mod_info, testmode=True)
+
+    def test_revue(self):
+        import revue
+        revue_obj = revue.get_revue_info()
+
+        self.assertIsNotNone(revue_obj.title)
+        self.assertIsNotNone(revue_obj.reddit_title)
+        self.assertIsNotNone(revue_obj.url)
+        self.assertIsNotNone(revue_obj.desc)
+        self.assertIsNotNone(revue_obj.monthstring)
+        revue.check_revue_and_post_if_new(self.mod_info, testmode=True)
 
     def test_twins(self):
         import twins
