@@ -66,13 +66,13 @@ def get_twins_info(depth=0):
             warnings.simplefilter("ignore")
             # ART19 HAS A TERRIBLE API
             r = requests.get(
-                'https://art19.com/episodes?series_id=12607e8b-3762-447c-a247-88675b4fa5eb&sort=created_at',
+                'https://art19.com/episodes?series_id=12607e8b-3762-447c-a247-88675b4fa5eb&sort=-created_at&page[number]=1&page[size]=10',
                 headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'},
                 timeout=15.0,
             )
             j = json.loads(r.text)
-            most_recent_ep = j['data'][-1]['attributes']
-            most_recent_ep_id = j['data'][-1]['id']
+            most_recent_ep = j['data'][0]['attributes']
+            most_recent_ep_id = j['data'][0]['id']
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:

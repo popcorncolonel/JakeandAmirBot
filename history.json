@@ -324,6 +324,11 @@
                 "ep_type": "gtd",
                 "reddit_url": "/r/jakeandamir/comments/g2hovd/geoffrey_the_dumbass_quarantine_brainstorm/",
                 "title": "Quarantine Brainstorm"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/gayg2r/off_days_snacks_4/",
+                "title": "Snacks 4"
             }
         ],
         "IIWY": [
@@ -338,6 +343,12 @@
                 "number": 431,
                 "reddit_url": "/r/jakeandamir/comments/g4lsxi/episode_431_scam_girls/",
                 "title": "Scam Girls"
+            },
+            {
+                "duration": null,
+                "number": 432,
+                "reddit_url": "/r/jakeandamir/comments/g8vxae/episode_432_suck_my_stamp/",
+                "title": "Suck My Stamp"
             }
         ],
         "nadd": [
@@ -358,6 +369,12 @@
                 "number": 98,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/g6veg3/episode_98_patient_zero_the_chosen_saga/",
                 "title": "Patient Zero (The Chosen Saga) "
+            },
+            {
+                "duration": null,
+                "number": 99,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/gb6lb2/episode_99_one_big_bed_the_chosen_saga/",
+                "title": "One Big Bed (The Chosen Saga)"
             }
         ],
         "twinnovation": [
@@ -3151,6 +3168,77 @@
                 "number": 201,
                 "reddit_url": "/r/Twinnovation/comments/bv5yn8/twinnovation_episode_201_sexy_szn/",
                 "title": "Sexy SZN"
+            }
+        ]
+    },
+    "May 2020": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/go62jf/off_days_tiktok/",
+                "title": "TikTok"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 433,
+                "reddit_url": "/r/jakeandamir/comments/gd79mj/episode_433_zoom_flash/",
+                "title": "Zoom Flash"
+            },
+            {
+                "duration": null,
+                "number": 434,
+                "reddit_url": "/r/jakeandamir/comments/ghiuzs/episode_434_animal_crossing/",
+                "title": "Animal Crossing"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": "ANNOUNCEMENT",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/gfftmy/episode_announcement_episode_100_twitch_listening/",
+                "title": "Episode 100 Twitch Listening Party "
+            },
+            {
+                "duration": null,
+                "number": 100,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ggxfoe/episode_100_heart_of_the_world_the_chosen_saga/",
+                "title": "Heart of the World (The Chosen Saga) "
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/gdtknm/review_revue_petting_zoos/",
+                "title": "Petting Zoos"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/gi6uia/review_revue_escape_rooms/",
+                "title": "Escape Rooms"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/go62hw/review_revue_hot_topic/",
+                "title": "Hot Topic"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/gbb53c/twinnovation_prom_20/",
+                "title": "Prom 2.0"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/gflyi5/twinnovation_x_ae_a12/",
+                "title": "X AE A-12"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/go62g1/twinnovation_mycycle/",
+                "title": "MY-Cycle"
             }
         ]
     },

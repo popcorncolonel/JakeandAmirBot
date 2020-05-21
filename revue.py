@@ -67,13 +67,13 @@ def get_revue_info(depth=0):
             '''
             revue_id = '629ca490-23d2-48dd-9bd1-c173ef8a58ec'
             r = requests.get(
-                'https://art19.com/episodes?series_id={}&sort=created_at'.format(revue_id),
+                'https://art19.com/episodes?series_id={}&sort=-created_at&page[number]=1&page[size]=10'.format(revue_id),
                 headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'},
                 timeout=15.0,
             )
             j = json.loads(r.text)
-            most_recent_ep = j['data'][-1]['attributes']
-            most_recent_ep_id = j['data'][-1]['id']
+            most_recent_ep = j['data'][0]['attributes']
+            most_recent_ep_id = j['data'][0]['id']
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:

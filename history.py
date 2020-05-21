@@ -63,7 +63,6 @@ class History:
         self.history_dict[monthstring]['revue'].append({
             "title": revue_obj.title,
             "reddit_url": revue_obj.reddit_url,
-            "number": revue_obj.number,
         })
 
     def add_twins_obj(self, twins_obj):
