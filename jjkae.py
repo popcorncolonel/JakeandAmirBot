@@ -127,9 +127,9 @@ def main():
             #mod_loop(mod_info, force_submit_rewatch)
             #force_submit_rewatch = False  # Only do it once
 
-            # Do it 25% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
+            # Do it 10% of the time. This is because Youtube pretty heavily rate limits requests, so we can't be
             # hitting the server 12 times a minute.
-            if mod_info.i % 4 == 1:
+            if mod_info.i % 10 == 1:
                 gtd_loop(mod_info, force_submit_gtd)
                 force_submit_gtd = False  # Only do it once
 

@@ -3177,6 +3177,11 @@
                 "ep_type": "offdays",
                 "reddit_url": "/r/jakeandamir/comments/go62jf/off_days_tiktok/",
                 "title": "TikTok"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/gobh1h/off_days_snacks_4/",
+                "title": "Snacks 4"
             }
         ],
         "IIWY": [
@@ -3191,6 +3196,12 @@
                 "number": 434,
                 "reddit_url": "/r/jakeandamir/comments/ghiuzs/episode_434_animal_crossing/",
                 "title": "Animal Crossing"
+            },
+            {
+                "duration": null,
+                "number": 436,
+                "reddit_url": "/r/jakeandamir/comments/gq5md4/episode_436_brotherly_love/",
+                "title": "Brotherly Love"
             }
         ],
         "nadd": [
@@ -3205,6 +3216,18 @@
                 "number": 100,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/ggxfoe/episode_100_heart_of_the_world_the_chosen_saga/",
                 "title": "Heart of the World (The Chosen Saga) "
+            },
+            {
+                "duration": null,
+                "number": 14,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/gox93x/episode_14_periphera_peril/",
+                "title": "Periphera Peril "
+            },
+            {
+                "duration": null,
+                "number": 15,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/gso2jh/episode_15_shard_showdown/",
+                "title": "Shard Showdown "
             }
         ],
         "revue": [
@@ -3219,6 +3242,10 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/go62hw/review_revue_hot_topic/",
                 "title": "Hot Topic"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/gqstfh/review_revue_lids/",
+                "title": "Lids"
             }
         ],
         "twinnovation": [
@@ -3239,6 +3266,18 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/go62g1/twinnovation_mycycle/",
                 "title": "MY-Cycle"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/gockc5/twinnovation_the_woken/",
+                "title": "The WOKEN"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/gsljx1/twinnovation_crumb_gutter/",
+                "title": "Crumb Gutter"
             }
         ]
     },
