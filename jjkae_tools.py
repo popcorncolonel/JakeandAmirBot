@@ -12,11 +12,6 @@ def is_python_3():
 
 def printinfo(mod_info):
     print(mod_info.i, end=' ')
-    if mod_info.next_episode > -1:
-        if mod_info.i % 25 == 13:
-            print('- previous episode: #%d (%s)' % (mod_info.next_episode-1, mod_info.episodes[mod_info.next_episode-2].title), end=' ')
-        if mod_info.i % 25 == 14:
-            print('- next episode: #%d (%s)' % (mod_info.next_episode, mod_info.episodes[mod_info.next_episode-1].title), end=' ')
     if mod_info.i % 25 == 1:
         print('- ', end='')
         print(mod_info.foundlist, end=' ')
@@ -41,12 +36,12 @@ def send_email(subject, body, to, bcc_list=None):
     except Exception as e:
         print("TRIED TO SEND EMAIL. It didn't work.", e)
 
-def send_rewatch_email(permalink, next_episode):
+def send_rewatch_email(permalink, title):
     """
-    List of emails to notify for the subreddit discussion
+    List of emails to notify for the subreddit rewatch
     """
-    email_list = []
-    send_email(subject=u'Jake and Amir Subreddit Rewatch #{0}'.format(next_episode),
+    email_list = ['popcorncolonel@gmail.com']
+    send_email(subject=u'Jake and Amir Subreddit Rewatch: {}'.format(title),
                body=permalink,
                to='cmey63@gmail.com',
                bcc_list=email_list)
@@ -67,7 +62,7 @@ def submit(title, mod_info, subreddit, text=None, url=None):
         try:
             mod_info.login()
             if text:
-                return subreddit.submit(title, text=text, resubmit=True)
+                return subreddit.submit(title, selftext=text, resubmit=True)
             elif url:
                 return subreddit.submit(title, url=url)
             else:
@@ -94,17 +89,19 @@ def get_hour():
     return hour
 
 def set_bottom_sticky(sub, submission):
+    """
     try:
         top_sticky = sub.sticky(number=1)
         top_sticky.mod.sticky(state=False)
     except Exception as e:
         print("Caught exception while trying to unsticky:", e)
         send_email('J&ABot Error', e, 'popcorncolonel' '@' 'gmail.com')
+    """
     submission.mod.sticky(bottom=True)
     submission.mod.distinguish()
 
 def replace_top_sticky(sub, submission):
-    # old rewatch/discussion
+    # old rewatch
     bottom_sticky = sub.sticky(number=2)
     bottom_sticky.mod.sticky(state=False)
     # old IIWY
@@ -154,3 +151,4 @@ def run_jjkae_tests(verbosity=0):
 
 if __name__ == '__main__':
 	run_jjkae_tests()
+

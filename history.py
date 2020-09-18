@@ -65,6 +65,18 @@ class History:
             "reddit_url": revue_obj.reddit_url,
         })
 
+    def add_headgum_obj(self, headgum_obj):
+        monthstring = headgum_obj.monthstring
+        if monthstring not in self.history_dict:
+            self.history_dict[monthstring] = dict()
+        if 'headgum' not in self.history_dict[monthstring]:
+            self.history_dict[monthstring]['headgum'] = []
+        self.history_dict[monthstring]['headgum'].append({
+            "title": headgum_obj.title,
+            "reddit_url": headgum_obj.reddit_url,
+            "episode_num": headgum_obj.episode_num,
+        })
+
     def add_twins_obj(self, twins_obj):
         monthstring = twins_obj.monthstring
         if monthstring not in self.history_dict:

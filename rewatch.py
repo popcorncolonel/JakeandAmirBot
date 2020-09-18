@@ -1,3 +1,5 @@
+import random
+
 with open('episodes.txt', 'r') as f:
     episodes = list(f)[1:]
 episodes = [x.split('|')[1:-1] for x in episodes]
@@ -27,8 +29,7 @@ episodes = [transform(episode) for episode in episodes]
 
 # https://gdata.youtube.com/feeds/api/videos?q=jake+and+amir+notified&max-results=2&v=2&alt=json
 if __name__ == '__main__':
-    for episode in episodes:
-        print(episode)
-        print()
-        if 'jakeandamir' in episode.url:
-            print(episode)
+    episode = random.choice(episodes)
+    print(episode)
+    print(episode.__dict__)
+

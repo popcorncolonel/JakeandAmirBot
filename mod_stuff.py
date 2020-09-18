@@ -5,6 +5,7 @@ import history
 import datetime
 import calendar
 import reddit_password
+import random
 
 import jjkae_tools
 from rewatch import episodes
@@ -22,14 +23,13 @@ class ModInfo:
         r.config.decode_html_entities = True
         return r
 
-    def __init__(self, next_episode, foundlist):
+    def __init__(self, foundlist):
         self.client_id = reddit_password.get_client_id()
         self.client_secret = reddit_password.get_client_secret()
         self.access_token = reddit_password.get_access_token()
         self.scope = reddit_password.get_scope()
         self.refresh_token = reddit_password.get_refresh_token()
 
-        self.next_episode = next_episode
         self.day = jjkae_tools.get_day()
         self.hour = jjkae_tools.get_hour()
 
@@ -55,59 +55,6 @@ class ModInfo:
         pass
 
 
-discussion_string = '''\
-Monthly discussion posts will be posted on the last weekend of every month, and subreddit rewatch episodes will be posted on the other days!
-
-%s
-
-Suggested topics:
-
-* Favorite: episode, quote, or podcast.
-* Least favorite: episode, quote, or podcast.
-* What did you think of the latest episode or podcast?
-* Any ideas or suggestions for the subreddit?
-* General observations or musings.
-
-These are just suggestions, so feel free to talk about anything that you want and discuss with others!
-'''
-def get_discussion_string(monthstring, past_history):
-    # type: (str, History) -> str
-    global discussion_string
-    # Example podcast list:
-    '''
-    * [Episode 191: The Emotionary (w/Eden Sher!)](https://www.reddit.com/r/jakeandamir/comments/3zdczz/if_i_were_you_episode_191_the_emotionary_weden/)
-    * [Episode 192: Surge Dude](https://www.reddit.com/r/jakeandamir/comments/40f0j6/if_i_were_you_episode192_surge_dude_10005/)
-    '''
-    added_text = ""
-    if monthstring in past_history:
-        if 'IIWY' in past_history[monthstring]:
-            added_text += "**Podcasts released this month**:\n\n"
-            for history_dict in past_history[monthstring]['IIWY']:
-                added_text += "* [Episode %d: %s](%s)\n" % (history_dict['number'],
-                                                            history_dict['title'],
-                                                            history_dict['reddit_url'])
-
-        if 'GTD' in past_history[monthstring]:
-            added_text += "\n**Headgum video episodes released this month**:\n\n"
-            for history_dict in past_history[monthstring]['GTD']:
-                if 'ep_type' in history_dict:
-                    ep_type = history_dict['ep_type']
-                    if ep_type == 'offdays':
-                        ep_type = 'Off Days'
-                    elif ep_type == 'gtd':
-                        ep_type = 'Geoffrey the Dumbass'
-                    else:
-                        ep_type = ''
-                    added_text += "* [%s: %s](%s)\n" % (ep_type,
-                                                        history_dict['title'],
-                                                        history_dict['reddit_url'])
-                else:
-                    added_text += "* [%s](%s)\n" % (history_dict['title'],
-                                                    history_dict['reddit_url'])
-
-    return discussion_string % added_text
-
-
 def get_multipart_string(episode):
     # type: Episode -> str
     s = '''\
@@ -124,18 +71,6 @@ Today's episodes are a multi-part series! The episodes in this series are:\n\n''
     if episode.bonus_footage:
         s += '\n\n**Bonus footage**: %s' % episode.bonus_footage
 
-    s += '''
-
----
-
-Some suggested points of discussion:
-
-* Have you watched this series before? If so, did you pick up on anything you hadn't noticed before?
-* If you haven't seen it before, what did you think?
-* Favorite episode from the series?
-* Favorite quotes from the episodes?
-* General/misc observations
-'''
     return s
 
 
@@ -148,92 +83,55 @@ Today's episode is **[{episode.title}]({episode.url})** ({episode.duration}), or
 
     if episode.bonus_footage:
         s += '\n\n**Bonus footage**: %s\n\n' % episode.bonus_footage
-    s += '''
-
----
-
-Some suggested points of discussion:
-
-* Have you watched this episode before? If so, did you pick up on anything you hadn't noticed before?
-* If you haven't seen it before, what did you think?
-* Favorite quotes from the episode?
-* General/misc observations
-'''
     return s.format(date_str=today_datetime.strftime('%d'), episode=episode)
 
 
 def mod_actions(mod_info, force_submit_rewatch=False, testmode=False):
     """
-    If it just turned the last weekend of the month EST, post the monthly discussion.
-     else, post the next subreddit rewatch (pointed to by mod_info.next_episode) and sticky it.
+    Post the next subreddit rewatch (random.choice(episodes)) and sticky it.
     """
     new_day = jjkae_tools.get_day()
-    if mod_info.next_episode > -1:
-        if testmode or force_submit_rewatch or new_day != mod_info.day:  # only happens on a new day at midnight
-            # Post discussion of the month
-            if new_day in ['Saturday', 'Sunday'] and time_to_post_discussion():
-                # Don't post it twice! (once on sunday and once on saturday - just once on the weekend)
-                if new_day == 'Saturday':
-                    post_monthly_discussion(mod_info, testmode)
-
     new_hour = jjkae_tools.get_hour()
     # Run tests every hour - if any of the tests fail, email me.
-    if new_hour != mod_info.hour:
-        jjkae_tools.start_test_thread(email_if_failures=True)
-        if int(new_hour) == 9:  # if it turns to be 9am, post the rewatch!
-            # Post rewatch episode (every day other than discussion days)
+    rewatch_days = {'Monday', 'Friday'}
+    if force_submit_rewatch or testmode or new_hour != mod_info.hour:
+        if force_submit_rewatch or testmode or (new_day in rewatch_days and int(new_hour) == 8):  # if it turns to be 8am, post the rewatch!
             post_new_rewatch(mod_info, testmode)
-            mod_info.next_episode += 1
     mod_info.day = new_day
     mod_info.hour = new_hour
 
 def get_submission_text(mod_info, episode):
     """
-    :rtype: tuple(str:title, str:submission_body)
+    :rtype: tuple(str:title, str:submission_body, str:episode_title)
     """
+    episode_title = episode.title
     if ',,' in episode.title:  # multipart episode
         episode_title = episode.title.split(',,')[0].split('Part')[0].split('Pt.')[0].split('pt.')[0].split('Ep.')[
             0].strip()
-        title = 'Subreddit Rewatch #%d: %s (Series) (%s - %s)' % (
-            mod_info.next_episode, episode_title, episode.date_str.split(',,')[0], episode.date_str.split(',,')[-1])
-        return (title, get_multipart_string(episode))
+        title = 'Subreddit Rewatch: %s (Series) (%s - %s)' % (
+            episode_title, episode.date_str.split(',,')[0], episode.date_str.split(',,')[-1])
+        return (title, get_multipart_string(episode), episode_title)
     else:
-        title = 'Subreddit Rewatch #%d: %s (%s)' % (mod_info.next_episode, episode.title, episode.date_str)
-        return (title, get_rewatch_string(episode))
+        title = 'Subreddit Rewatch: %s (%s)' % (episode.title, episode.date_str)
+        return (title, get_rewatch_string(episode), episode_title)
 
 def post_new_rewatch(mod_info, testmode=False):
     sub = mod_info.r.subreddit('jakeandamir')
-    episode = episodes[mod_info.next_episode - 1]  # next_episode is indexed by 1
-    (title, text) = get_submission_text(mod_info, episode)
+    episode = random.choice(episodes)
+    (title, text, episode_title) = get_submission_text(mod_info, episode)
     if testmode:
-        print("testmode - successfully parsed ep", episode.title)
+        print("testmode - successfully parsed rewatch ep", episode.title)
         print("testmode:", title)
+        print("testmode:", episode_title)
         return
     submission = jjkae_tools.submit(title, mod_info, sub, text=text)
-    #submission.mod.sticky(number=1)
-    submission.mod.distinguish()
+    jjkae_tools.set_bottom_sticky(sub, submission)
     #sub.set_flair(submission, flair_text='REWATCH', flair_css_class='modpost')
-    #jjkae_tools.send_rewatch_email(submission.permalink, mod_info.next_episode)
+    for flair_dict in submission.flair.choices():
+        if flair_dict['flair_text'] == 'REWATCH':
+            submission.flair.select(flair_dict['flair_template_id'])
+    jjkae_tools.send_rewatch_email("https://reddit.com{}".format(submission.permalink), episode_title)
     print("Successfully submitted rewatch! Time to celebrate.")
-    return submission
-
-
-def post_monthly_discussion(mod_info, testmode=False):
-    sub = mod_info.r.subreddit('jakeandamir')
-    today_datetime = datetime.datetime.now()
-    title = 'Monthly Jake and Amir Discussion (%s)' % today_datetime.strftime('%B %Y')
-    if testmode:
-        text = get_discussion_string(history.this_monthstring(), history.get_history())
-        assert(type(text) is not None)
-        return
-
-    jjkae_tools.send_email(subject=u'watch all the fricken rewatches in the past month friend :)', body='reddit.com/u/jakeandamirbot', to='@'.join(['cmey63', 'gmail.com']))
-    submission = jjkae_tools.submit(title, mod_info, sub,
-                                    text=get_discussion_string(history.this_monthstring(), history.get_history()))
-    submission.mod.sticky(bottom=True)
-    submission.mod.distinguish()
-    #sub.set_flair(submission, flair_text='DISCUSSION POST', flair_css_class='video')
-    print("Successfully submitted sticky! Time to celebrate.")
     return submission
 
 
@@ -243,15 +141,4 @@ def get_ep_num(name):
         if jjkae_tools.isnum(word.strip(":")):
             return int(word.strip(":"))
 
-
-def time_to_post_discussion():
-    dt = datetime.datetime.now()
-    """ Returns true on the last weekend of the month """
-    day_of_month = int(dt.strftime('%d'))
-    month, year = int(dt.strftime('%m')), int(dt.strftime('%Y'))
-    num_days_in_mo = calendar.monthrange(year, month)[1]
-    if day_of_month >= num_days_in_mo - 7 and day_of_month != num_days_in_mo:
-        return True
-    else:
-        return False
 

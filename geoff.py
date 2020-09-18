@@ -67,7 +67,7 @@ def to_reddit_url(link):
 
 def get_gtd_info(depth=0):
     headgum_channel_id = 'UCV58y_DbGkuYCNQC2OjJWOw'
-    url_fmtstring = 'https://www.googleapis.com/youtube/v3/search?key={key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=5&safeSearch=none'
+    url_fmtstring = 'https://www.googleapis.com/youtube/v3/search?key={key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=15&safeSearch=none'
     url = url_fmtstring.format(
         channel_id=headgum_channel_id,
         key=reddit_password.get_yt_api_key(),

@@ -4,8 +4,7 @@ from mod_stuff import ModInfo
 
 class JjkaeTest(unittest.TestCase):
     foundlist = []
-    next_episode = 100
-    mod_info = ModInfo(next_episode=next_episode, foundlist=foundlist)
+    mod_info = ModInfo(foundlist=foundlist)
 
     def __init__(self, *args, **kwargs):
         super(JjkaeTest, self).__init__(*args, **kwargs)
@@ -56,6 +55,18 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(revue_obj.monthstring)
         revue.check_revue_and_post_if_new(self.mod_info, testmode=True)
 
+    def test_headgum(self):
+        import headgum
+        headgum_obj = headgum.get_headgum_info()
+
+        self.assertIsNotNone(headgum_obj.title)
+        self.assertIsNotNone(headgum_obj.reddit_title)
+        self.assertIsNotNone(headgum_obj.url)
+        self.assertIsNotNone(headgum_obj.desc)
+        self.assertIsNotNone(headgum_obj.monthstring)
+        self.assertIsNotNone(headgum_obj.episode_num)
+        headgum.check_headgum_and_post_if_new(self.mod_info, testmode=True)
+
     def test_twins(self):
         import twins
         twins_obj = twins.get_twins_info()
@@ -102,11 +113,10 @@ class JjkaeTest(unittest.TestCase):
         self.mod_info.i = 1
 
     def test_mod_stuff(self):
-        from mod_stuff import ModInfo, mod_actions, post_monthly_discussion
+        from mod_stuff import ModInfo, mod_actions
 
-        mod_info = ModInfo(next_episode=15, foundlist=[])
-        mod_actions(mod_info, testmode=True)
-        post_monthly_discussion(mod_info, testmode=True)
+        mod_info = ModInfo(foundlist=[])
+        mod_actions(mod_info, testmode=True, force_submit_rewatch=False)
 
         print("Tested mod actions")
 
