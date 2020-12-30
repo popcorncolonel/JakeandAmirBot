@@ -1182,6 +1182,158 @@
             }
         ]
     },
+    "Dec 2020": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 465,
+                "reddit_url": "/r/jakeandamir/comments/k8cabz/episode_465_physical_therapy_w_mystery_guest/",
+                "title": "Physical Therapy (w/ Mystery Guest!)"
+            },
+            {
+                "duration": null,
+                "number": 466,
+                "reddit_url": "/r/jakeandamir/comments/kctvrx/episode_466_dreidel_dreidel_dreidel/",
+                "title": "Dreidel, Dreidel, Dreidel"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/khai78/episode_staying_warm/",
+                "title": "Episode Staying Warm"
+            },
+            {
+                "duration": null,
+                "number": 467,
+                "reddit_url": "/r/jakeandamir/comments/khmpyp/episode_467_staying_warm/",
+                "title": "Staying Warm"
+            },
+            {
+                "duration": null,
+                "number": 468,
+                "reddit_url": "/r/jakeandamir/comments/kljp0g/episode_468_liquid_nice/",
+                "title": "Liquid Nice"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 27,
+                "reddit_url": "/r/jakeandamir/comments/k6hfcm/the_headgum_podcast_episode_27_grateful_or_naw/",
+                "title": "Grateful or Naw"
+            },
+            {
+                "episode_num": 28,
+                "reddit_url": "/r/jakeandamir/comments/kb7er4/the_headgum_podcast_episode_28_and_johnnys_gonna/",
+                "title": "And Johnny's Gonna Do His Thing"
+            },
+            {
+                "episode_num": 29,
+                "reddit_url": "/r/jakeandamir/comments/kfhose/the_headgum_podcast_episode_29_what_the_hell_is/",
+                "title": "What the Hell is Even That"
+            },
+            {
+                "episode_num": 30,
+                "reddit_url": "/r/jakeandamir/comments/kjw4io/the_headgum_podcast_episode_30_actually_vaccinated/",
+                "title": "Actually Vaccinated"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 7,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/k6f38j/episode_7_trial_by_scale/",
+                "title": "Trial by Scale"
+            },
+            {
+                "duration": null,
+                "number": 8,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/kayxyb/episode_8_until_we_meet_again/",
+                "title": "Until We Meet Again "
+            },
+            {
+                "duration": null,
+                "number": "Donkey Kong One-Shot",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/kfakub/episode_donkey_kong_oneshot_a_coconight_holiday/",
+                "title": "A Coco-Night Holiday Special "
+            },
+            {
+                "duration": null,
+                "number": 2,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/kjbhkm/episode_2_oops_all_mayhem_w_dm_zac_oyama/",
+                "title": "Oops All Mayhem (w/ DM Zac Oyama)"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/k4hdxg/review_revue_ballrooms/",
+                "title": "Ballrooms"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/k90xw5/review_revue_egg_nog/",
+                "title": "Egg Nog"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/kdib23/review_revue_holiday_ice_rinks/",
+                "title": "Holiday Ice Rinks"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/kfhoho/review_revue_bonus_friday_car_antlers/",
+                "title": "BONUS FRIDAY: Car Antlers"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/ki1r3t/review_revue_mall_santas/",
+                "title": "Mall Santas"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/ki8ly1/review_revue_mall_santas_w_finn_wolfhard_billy/",
+                "title": "Mall Santas (w/ Finn Wolfhard & Billy Bryk!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/ki8py7/review_revue_mall_santas_w_finn_wolfhard_and/",
+                "title": "Mall Santas (w/ Finn Wolfhard and Billy Bryk!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/kjw49j/review_revue_best_of_2020_part_1/",
+                "title": "Best of 2020 (Part 1)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/kmatph/review_revue_best_of_2020_part_2/",
+                "title": "Best of 2020 (Part 2)"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/k6e8m1/twinnovation_glimpse/",
+                "title": "GLIMPSE"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/kaf4es/twinnovation_anazon/",
+                "title": "Anazon"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/kft0qs/twinnovation_bowl_bud/",
+                "title": "Bowl Bud"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/kjtgk7/twinnovation_catch_snatch/",
+                "title": "Catch & Snatch"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/kkjv1u/twinnovation_mustard_glasses/",
+                "title": "Mustard Glasses"
+            }
+        ]
+    },
     "Feb 2016": {
         "IIWY": [
             {
@@ -4000,6 +4152,138 @@
             }
         ]
     },
+    "Nov 2020": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 460,
+                "reddit_url": "/r/jakeandamir/comments/jmiwyi/episode_460_morning_before_election/",
+                "title": "Morning Before Election"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/jo9nx7/episode_morning_after_the_morning_after/",
+                "title": "Episode Morning After the Morning After"
+            },
+            {
+                "duration": null,
+                "number": 461,
+                "reddit_url": "/r/jakeandamir/comments/jrd8lr/episode_461_morning_after_joe/",
+                "title": "Morning After JOE"
+            },
+            {
+                "duration": null,
+                "number": 462,
+                "reddit_url": "/r/jakeandamir/comments/jv2ezx/episode_462_screen_time/",
+                "title": "Screen Time"
+            },
+            {
+                "duration": null,
+                "number": 463,
+                "reddit_url": "/r/jakeandamir/comments/jzchze/episode_463_ticklish/",
+                "title": "Ticklish"
+            },
+            {
+                "duration": null,
+                "number": 464,
+                "reddit_url": "/r/jakeandamir/comments/k3qulw/episode_464_rat_car/",
+                "title": "Rat Car"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 23,
+                "reddit_url": "/r/jakeandamir/comments/jp1voj/the_headgum_podcast_episode_23_gourd_aisles/",
+                "title": "Gourd Aisles"
+            },
+            {
+                "episode_num": 24,
+                "reddit_url": "/r/jakeandamir/comments/jtdwhv/the_headgum_podcast_episode_24_danny_sellers_style/",
+                "title": "Danny Sellers Style"
+            },
+            {
+                "episode_num": 25,
+                "reddit_url": "/r/jakeandamir/comments/jxlsf1/the_headgum_podcast_episode_25_raphael_saysitall/",
+                "title": "Raphael Says-It-All"
+            },
+            {
+                "episode_num": 26,
+                "reddit_url": "/r/jakeandamir/comments/k1xroa/the_headgum_podcast_episode_26_in_high_school_sir/",
+                "title": "In HIGH SCHOOL, Sir?!"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/jn6gd3/not_another_dd_podcast_election_day_mixed_bag/",
+                "title": "Election Day Mixed Bag Mixtape - D&D Court I-III"
+            },
+            {
+                "duration": null,
+                "number": 4,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/jp0bfu/episode_4_ghosts_of_thornkirk/",
+                "title": "Ghosts of Thornkirk "
+            },
+            {
+                "duration": null,
+                "number": 5,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/jtx7v0/episode_5_the_baroness/",
+                "title": "The Baroness "
+            },
+            {
+                "duration": null,
+                "number": 6,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/jxj9nc/episode_6_the_rooks_gambit/",
+                "title": "The Rook's Gambit "
+            },
+            {
+                "duration": null,
+                "number": 1,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/k1b6p2/episode_1_the_obelisk_at_bonbihr_mountains_w_dm/",
+                "title": "The Obelisk at Bonbihr Mountains (w/ DM Zac Oyama)"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/jn736i/review_revue_corn_mazes/",
+                "title": "Corn Mazes"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/jrhpti/review_revue_live_laugh_love_artwork_w_lauren/",
+                "title": "Live, Laugh, Love Artwork (w/ Lauren Lapkus!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/jvptou/review_revue_wigs/",
+                "title": "Wigs"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/k01k47/review_revue_turkey_trots/",
+                "title": "Turkey Trots"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/joyv6f/twinnovation_hallowmayne_2020/",
+                "title": "HALLOWMAYNE 2020"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/jxiyj3/twinnovation_carcast/",
+                "title": "CarCast"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/k1vcth/twinnovation_typeits/",
+                "title": "Type-its"
+            }
+        ]
+    },
     "Oct 2016": {
         "IIWY": [
             {
@@ -4308,6 +4592,152 @@
             }
         ]
     },
+    "Oct 2020": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 455,
+                "reddit_url": "/r/jakeandamir/comments/j5cud0/episode_455_rubiks_cube/",
+                "title": "Rubik's Cube"
+            },
+            {
+                "duration": null,
+                "number": 456,
+                "reddit_url": "/r/jakeandamir/comments/j75uzd/episode_456_vote/",
+                "title": "VOTE"
+            },
+            {
+                "duration": null,
+                "number": 457,
+                "reddit_url": "/r/jakeandamir/comments/j9lsmo/episode_457_eames_toilet_wgeoffrey_james/",
+                "title": "Eames Toilet (w/Geoffrey James!)"
+            },
+            {
+                "duration": null,
+                "number": 458,
+                "reddit_url": "/r/jakeandamir/comments/jdvw6n/episode_458_flight_attendant/",
+                "title": "Flight Attendant"
+            },
+            {
+                "duration": null,
+                "number": 459,
+                "reddit_url": "/r/jakeandamir/comments/ji9mlu/episode_459_night_terrors/",
+                "title": "Night Terrors"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 19,
+                "reddit_url": "/r/jakeandamir/comments/j7uyjb/the_headgum_podcast_episode_19_geoffardy/",
+                "title": "Geoffardy"
+            },
+            {
+                "episode_num": 20,
+                "reddit_url": "/r/jakeandamir/comments/jc5vjs/the_headgum_podcast_episode_20_johnnys_debut/",
+                "title": "JOHNNY's Debut"
+            },
+            {
+                "episode_num": 21,
+                "reddit_url": "/r/jakeandamir/comments/jgivhs/the_headgum_podcast_episode_21_club_monshi_is/",
+                "title": "Club Monshi is Open (w/ Georges Saba!)"
+            },
+            {
+                "episode_num": 22,
+                "reddit_url": "/r/jakeandamir/comments/jks4fl/the_headgum_podcast_episode_22_halloween/",
+                "title": "Halloween Spooktacular"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 0,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/j7njyq/episode_0_welcome_to_eldermourne/",
+                "title": "Welcome to Eldermourne "
+            },
+            {
+                "duration": null,
+                "number": 1,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/jc6c8d/episode_1_the_reaping_season/",
+                "title": "The Reaping Season"
+            },
+            {
+                "duration": null,
+                "number": 2,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/jgiipy/episode_2_jabs_and_hooks/",
+                "title": "Jabs and Hooks"
+            },
+            {
+                "duration": null,
+                "number": 3,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/jksc1h/episode_3_broken_heart_banshee/",
+                "title": "Broken Heart Banshee "
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/j6156p/review_revue_delis_w_jon_gabrus/",
+                "title": "Delis (w/ Jon Gabrus!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/ja922m/review_revue_arcades/",
+                "title": "Arcades"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/jel3nt/review_revue_laser_pointers_w_ravi_patel/",
+                "title": "Laser Pointers (w/ Ravi Patel!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/jgiva9/review_revue_bonus_friday_car_air_fresheners/",
+                "title": "BONUS FRIDAY: Car Air Fresheners"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/jix1al/review_revue_3d_printers/",
+                "title": "3D Printers"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/jl1bqd/review_revue_bonus_friday_spirit_halloweens/",
+                "title": "BONUS FRIDAY: Spirit Halloweens"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/j5va7k/twinnovation_half_stupid_or_half_smart/",
+                "title": "Half Stupid or Half Smart?"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/j7s7nj/twinnovation_welcome_to_headcum/",
+                "title": "Welcome to HeadCum"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/jc2u6f/twinnovation_twinnovations_last_episode_thank_you/",
+                "title": "Twinnovation's Last Episode. Thank You Herbs! \ud83c\udf3f"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/jgfofk/twinnovation_were_baaaack/",
+                "title": "We're Baaaack! \ud83c\udf00"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/jkpuwg/twinnovation_queen_szn/",
+                "title": "Queen Szn"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/jlosto/twinnovation_the_thirt33n_davecyphers_volume_11/",
+                "title": "The Thir$t33n Dave-Cyphers (Volume 1.1) Hats \ud83c\udfa9Off2Me"
+            }
+        ]
+    },
     "Sep 2016": {
         "IIWY": [
             {
@@ -4608,6 +5038,24 @@
                 "number": 452,
                 "reddit_url": "/r/jakeandamir/comments/iscpnu/episode_452_hawaii_time/",
                 "title": "Hawaii Time"
+            },
+            {
+                "duration": null,
+                "number": 453,
+                "reddit_url": "/r/jakeandamir/comments/iwvjt6/episode_453_telling_time_wfinn_wolfhard_and_billy/",
+                "title": "Telling Time (w/Finn Wolfhard and Billy Bryk!)"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/iyqlte/episode_bonus_thursday_the_headgum_podcast/",
+                "title": "The Headgum Podcast"
+            },
+            {
+                "duration": null,
+                "number": 454,
+                "reddit_url": "/r/jakeandamir/comments/j16bo9/episode_454_naked_neighbors_whey_riddle_riddle/",
+                "title": "Naked Neighbors (w/Hey Riddle Riddle!)"
             }
         ],
         "headgum": [
@@ -4625,6 +5073,11 @@
                 "episode_num": 17,
                 "reddit_url": "/r/jakeandamir/comments/iv4oo9/the_headgum_podcast_episode_17_brownlees_druthers/",
                 "title": "Brownlee's Druthers"
+            },
+            {
+                "episode_num": 18,
+                "reddit_url": "/r/jakeandamir/comments/izdfo9/the_headgum_podcast_episode_18_harleyse/",
+                "title": "Harleyse"
             }
         ],
         "nadd": [
@@ -4639,6 +5092,18 @@
                 "number": 5,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/ir1l6w/episode_5_into_the_kelp_forest_w_zac_oyama/",
                 "title": "Into the Kelp Forest (w/ Zac Oyama)"
+            },
+            {
+                "duration": null,
+                "number": 6,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ivglkp/episode_6_merfolk_melee_w_zac_oyama/",
+                "title": "Merfolk Melee  (w/ Zac Oyama)"
+            },
+            {
+                "duration": null,
+                "number": 7,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/izxx7m/episode_7_carl_w_zac_oyama/",
+                "title": "Carl (w/ Zac Oyama)"
             }
         ],
         "revue": [
@@ -4653,6 +5118,18 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/it4fwo/review_revue_sandals_beach_resorts_w_jeff_probst/",
                 "title": "Sandals Beach Resorts (w/ Jeff Probst!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/ixj78d/review_revue_beginner_magic_kits_w_melanie/",
+                "title": "Beginner Magic Kits (w/ Melanie Bracewell!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/izfjov/review_revue_bonus_friday_bumper_stickers/",
+                "title": "BONUS FRIDAY: Bumper Stickers"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/j1uy83/review_revue_margaritavilles_w_georges_saba/",
+                "title": "Margaritavilles (w/ Georges Saba!)"
             }
         ],
         "twinnovation": [
@@ -4673,6 +5150,12 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/iqjd42/twinnovation_jeff_makes_quidditch_great_again/",
                 "title": "Jeff Makes Quidditch Great Again"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/izickd/twinnovation_a_hole_fillers/",
+                "title": "A+ Hole Fillers"
             }
         ]
     }
