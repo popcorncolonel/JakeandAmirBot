@@ -1261,6 +1261,12 @@
                 "number": 2,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/kjbhkm/episode_2_oops_all_mayhem_w_dm_zac_oyama/",
                 "title": "Oops All Mayhem (w/ DM Zac Oyama)"
+            },
+            {
+                "duration": null,
+                "number": 0,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/knjxgo/episode_0_oops_all_new_characters_w_lou_wilson/",
+                "title": "Oops, All New Characters! (w/ Lou Wilson)"
             }
         ],
         "revue": [
@@ -2062,6 +2068,23 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/ewj74c/twinnovation_putting_the_fun_in_funeral/",
                 "title": "Putting the Fun in Funeral"
+            }
+        ]
+    },
+    "Jan 2021": {
+        "headgum": [
+            {
+                "episode_num": 31,
+                "reddit_url": "/r/jakeandamir/comments/ko8aw6/the_headgum_podcast_episode_31_garcia_or_crimea/",
+                "title": "Garcia or Crimea"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/ko5dav/twinnovation_soul_day/",
+                "title": "Soul Day"
             }
         ]
     },
