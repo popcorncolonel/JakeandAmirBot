@@ -108,11 +108,11 @@ def get_submission_text(mod_info, episode):
     if ',,' in episode.title:  # multipart episode
         episode_title = episode.title.split(',,')[0].split('Part')[0].split('Pt.')[0].split('pt.')[0].split('Ep.')[
             0].strip()
-        title = 'Subreddit Rewatch: %s (Series) (%s - %s)' % (
+        title = 'Jake and Amir: %s (Series) (%s - %s)' % (
             episode_title, episode.date_str.split(',,')[0], episode.date_str.split(',,')[-1])
         return (title, get_multipart_string(episode), episode_title)
     else:
-        title = 'Subreddit Rewatch: %s (%s)' % (episode.title, episode.date_str)
+        title = 'Jake and Amir: %s (%s)' % (episode.title, episode.date_str)
         return (title, get_rewatch_string(episode), episode_title)
 
 def post_new_rewatch(mod_info, testmode=False):
