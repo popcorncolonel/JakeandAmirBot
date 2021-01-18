@@ -22,16 +22,17 @@ def send_email(subject, body, to, bcc_list=None):
         bcc_list = []
     try:
         params = {
-                'api_user': reddit_password.get_sendgrid_username(),
-                'api_key': reddit_password.get_sendgrid_password(),
                 'to[]':to, # this also works as a list :-) https://stackoverflow.com/questions/23384230/how-to-post-multiple-value-with-same-key-in-python-requests
                 'bcc[]':bcc_list,
                 'subject': subject,
                 'text': body,
                 'from':'ericbailey94' + '@' + 'gmail.com', #for antispam
         }
+        headers = {'Authorization': "Bearer {}".format(reddit_password.get_sendgrid_api_key())}
+        print(params)
+        print(headers)
         url = 'https://api.sendgrid.com/api/mail.send.json'
-        r = requests.post(url, params=params)
+        r = requests.post(url, params=params, headers=headers)
         print(r.text)
     except Exception as e:
         print("TRIED TO SEND EMAIL. It didn't work.", e)
@@ -153,5 +154,5 @@ def run_jjkae_tests(verbosity=0):
     return results.errors
 
 if __name__ == '__main__':
-	run_jjkae_tests()
+    run_jjkae_tests()
 

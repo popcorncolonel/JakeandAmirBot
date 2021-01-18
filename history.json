@@ -2072,11 +2072,61 @@
         ]
     },
     "Jan 2021": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 469,
+                "reddit_url": "/r/jakeandamir/comments/kq2uiz/episode_469_happy_new_year/",
+                "title": "Happy New Year"
+            },
+            {
+                "duration": null,
+                "number": 470,
+                "reddit_url": "/r/jakeandamir/comments/kuxuis/episode_470_sex_in_the_dark_wcaleb_hearon_and/",
+                "title": "Sex in the Dark (w/Caleb Hearon and Shelby Wolstein!)"
+            },
+            {
+                "duration": null,
+                "number": 471,
+                "reddit_url": "/r/jakeandamir/comments/kzp0zo/episode_471_chef_jake/",
+                "title": "Chef Jake"
+            }
+        ],
         "headgum": [
             {
                 "episode_num": 31,
                 "reddit_url": "/r/jakeandamir/comments/ko8aw6/the_headgum_podcast_episode_31_garcia_or_crimea/",
                 "title": "Garcia or Crimea"
+            },
+            {
+                "episode_num": 32,
+                "reddit_url": "/r/jakeandamir/comments/ksytrs/the_headgum_podcast_episode_32_not_occasionally/",
+                "title": "Not Occasionally"
+            },
+            {
+                "episode_num": 33,
+                "reddit_url": "/r/jakeandamir/comments/kxqsrz/the_headgum_podcast_episode_33_call_hurdaddy/",
+                "title": "Call Hurdaddy"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 9,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/kswy9r/episode_9_hexblood_w_lou_wilson/",
+                "title": "Hexblood (w/ Lou Wilson)"
+            },
+            {
+                "duration": null,
+                "number": 10,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/kxlasm/episode_10_the_would_be_king_w_lou_wilson/",
+                "title": "The Would Be King (w/ Lou Wilson)"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/kvo3ui/review_revue_barhopping_bicycle_tours/",
+                "title": "Bar-Hopping Bicycle Tours"
             }
         ],
         "twinnovation": [
@@ -2085,6 +2135,18 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/ko5dav/twinnovation_soul_day/",
                 "title": "Soul Day"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/ksvl1k/twinnovation_bidont/",
+                "title": "Bidon't"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/kxnh82/twinnovation_kitty_clip/",
+                "title": "Kitty Clip"
             }
         ]
     },
