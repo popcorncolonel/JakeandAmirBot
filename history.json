@@ -2107,6 +2107,11 @@
                 "episode_num": 33,
                 "reddit_url": "/r/jakeandamir/comments/kxqsrz/the_headgum_podcast_episode_33_call_hurdaddy/",
                 "title": "Call Hurdaddy"
+            },
+            {
+                "episode_num": 34,
+                "reddit_url": "/r/jakeandamir/comments/l2jvis/the_headgum_podcast_episode_34_mike_or_ike/",
+                "title": "Mike or Ike"
             }
         ],
         "nadd": [
@@ -2121,12 +2126,22 @@
                 "number": 10,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/kxlasm/episode_10_the_would_be_king_w_lou_wilson/",
                 "title": "The Would Be King (w/ Lou Wilson)"
+            },
+            {
+                "duration": null,
+                "number": 11,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/l2f559/episode_11_killshot_w_lou_wilson/",
+                "title": "Killshot (w/ Lou Wilson)"
             }
         ],
         "revue": [
             {
                 "reddit_url": "/r/ReviewRevue/comments/kvo3ui/review_revue_barhopping_bicycle_tours/",
                 "title": "Bar-Hopping Bicycle Tours"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/l0g2kp/review_revue_lifethreatening_hikes_w_caleb_hearon/",
+                "title": "Life-Threatening Hikes (w/ Caleb Hearon & Shelby Wolstein!)"
             }
         ],
         "twinnovation": [
@@ -2147,6 +2162,12 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/kxnh82/twinnovation_kitty_clip/",
                 "title": "Kitty Clip"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/l2h89p/twinnovation_moontube/",
+                "title": "MoonTube"
             }
         ]
     },
