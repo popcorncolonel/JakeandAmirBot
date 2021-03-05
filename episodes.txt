@@ -70,7 +70,7 @@
 |Dec 11, 2007|Jake.|http://vimeo.com/429352||1:08||
 |Dec 12, 2007|My Boy|http://www.vimeo.com/431325||1:24|[Behind-the-Scenes (editing)](http://www.facebook.com/photo.php?v=511570521867)|
 |Dec 18, 2007|Gifts|http://vimeo.com/442420||1:04||
-|Dec 21, 2007|Jake and Amir on Yahoo's "The 9"|http://www.collegehumor.com/video/3148463/jake-and-amir-on-yahoos-the-9||0:46||
+|Dec 21, 2007|Jake and Amir on Yahoo's "The 9"|https://www.youtube.com/watch?v=dYAWmZGqlac||0:46||
 |Dec 25, 2007|Christmas|http://vimeo.com/451921||0:53||
 |Jan 02, 2008|New Years Resolution|http://vimeo.com/467118||1:04||
 |Jan 03, 2008|Phone Call|http://vimeo.com/468788||1:29|[Outtakes](http://www.facebook.com/photo.php?v=6856114964)|
@@ -179,7 +179,7 @@
 |Feb 20, 2009|New Guy|https://www.youtube.com/watch?v=BG3I4T_Lq0U||1:48||
 |Feb 24, 2009|New Office [Jake's New Job 5]|https://www.youtube.com/watch?v=vKoTE68cOBo||1:58||
 |Feb 26, 2009|Mike and Amanda|https://www.youtube.com/watch?v=czkp5oQ5GKc||1:32||
-|Mar 02, 2009|Jake and Amir Interview The Lonely Island|http://www.collegehumor.com/video:1902246||4:10||
+|Mar 02, 2009|Jake and Amir Interview The Lonely Island|https://www.youtube.com/watch?v=OUxwb9i4qwU||4:10||
 |Mar 03, 2009|Realizations|https://www.youtube.com/watch?v=uKJ3WrGPavc||1:33||
 |Mar 06, 2009|Ultimatum|https://www.youtube.com/watch?v=cEW7toPzRHo||2:22||
 |Mar 10, 2009|Decision|https://www.youtube.com/watch?v=xvkQfoXKHFk||1:39||
@@ -246,7 +246,7 @@
 |Oct 21, 2009|50,000 Facebook Fans Thank You Video|http://www.facebook.com/photo.php?v=155621744964||0:45||
 |Oct 19, 2009,,Oct 21, 2009|Puppet,,Puppet Part 2|https://www.youtube.com/watch?v=o70DG4Eaqvw,,https://www.youtube.com/watch?v=vCTC0jPA91A||1:28,,2:01||
 |Oct 27, 2009|Guitar Shopping|https://www.youtube.com/watch?v=5M0R5iYvd3s||2:17|[Outtakes](http://www.facebook.com/photo.php?v=165655359964)|
-|Oct 26, 2009,,Oct 27, 2009,,Oct 28, 2009,,Oct 29, 2009,,Nov 02, 2009|Fiesta Movement Presents J&A Road Trip Part 1,,Fiesta Movement Presents J&A Road Trip Part 2,,Fiesta Movement Presents J&A Road Trip Part 3,,Fiesta Movement Presents J&A Road Trip Part 4,,Fiesta Movement Presents J&A Road Trip Part 5|http://www.collegehumor.com/video/5726909/fiesta-movement-presents-ja-road-trip-1,,http://www.collegehumor.com/video/5731924/fiesta-movement-presents-ja-road-trip-2,,http://www.collegehumor.com/video/5733454/fiesta-movement-presents-ja-road-trip-3,,http://www.collegehumor.com/video/5734988/fiesta-movement-presents-ja-road-trip-4,,http://www.collegehumor.com/video/5736852/fiesta-movement-presents-ja-road-trip-5||1:17,,1:46,,2:27,,3:09,,2:34|[Behind-the-Scenes](http://www.youtube.com/watch?v=UfpeZjttD24)|
+|Oct 26, 2009,,Oct 27, 2009,,Oct 28, 2009,,Oct 29, 2009,,Nov 02, 2009|Fiesta Movement Presents J&A Road Trip Part 1,,Fiesta Movement Presents J&A Road Trip Part 2,,Fiesta Movement Presents J&A Road Trip Part 3,,Fiesta Movement Presents J&A Road Trip Part 4,,Fiesta Movement Presents J&A Road Trip Part 5|https://www.youtube.com/watch?v=eLJ8nLXnO9w,,https://www.youtube.com/watch?v=bIdEdaiESF4,,https://www.youtube.com/watch?v=o7rEah5fxVk,,https://www.youtube.com/watch?v=hHllfgvzwAQ,,https://www.youtube.com/watch?v=b9hRYoC9l1M||1:17,,1:46,,2:27,,3:09,,2:34|[Behind-the-Scenes](http://www.youtube.com/watch?v=UfpeZjttD24)|
 |Oct 29, 2009|Health Insurance|https://www.youtube.com/watch?v=I2qymh1IN6E||1:40||
 |Nov 03, 2009|Roulette|https://www.youtube.com/watch?v=lHwPXbSRoYc||1:52||
 |Nov 05, 2009|Love Letter|https://www.youtube.com/watch?v=N_Mt_G060Yc||1:59||
@@ -259,7 +259,7 @@
 |Dec 16, 2009,,Dec 17, 2009|Couples Therapist (starring Ben Schwartz),,Couples Therapist 2 (starring Ben Schwartz)|https://www.youtube.com/watch?v=rcX0Ve9abHo,,https://www.youtube.com/watch?v=_GXTlAVuok0||2:05,,2:23|[Outtakes](http://www.facebook.com/photo.php?v=248868644964)|
 |Dec 22, 2009|Santa|https://www.youtube.com/watch?v=b9vHfNxcX0Q||1:54||
 |Dec 29, 2009|Water|https://www.youtube.com/watch?v=LDKnEkKGny0||1:34||
-|Dec 31, 2009|Amir's Haircut|http://www.collegehumor.com/video/5854026/jake-and-amir-amirs-haircut||1:51||
+|Dec 31, 2009|Amir's Haircut|https://www.youtube.com/watch?v=QvOFSIMBZ2g||1:51||
 |Jan 05, 2010|Resolutions|https://www.youtube.com/watch?v=n950bbzQKtA||1:21|[Outtakes](http://www.facebook.com/photo.php?v=237079339964)|
 |Jan 07, 2010|Vending Machine|https://www.youtube.com/watch?v=zk_vH4FdP7M||1:55||
 |Jan 12, 2010,,Jan 14, 2010|Dave,,Dave Part 2 (David)|https://www.youtube.com/watch?v=FA1-o0K3pg0,,https://www.youtube.com/watch?v=rWg4ljeZTU8||2:05,,1:49||
@@ -267,7 +267,7 @@
 |Jan 26, 2010,,Jan 28, 2010|New Office,,New Office Part 2|https://www.youtube.com/watch?v=AD32XSbZz7E,,https://www.youtube.com/watch?v=UWDFXCrRg7I||2:19,,2:09||
 |Feb 01, 2010|Football Game|https://www.youtube.com/watch?v=sP4RRuf8zBM||1:59||
 |Feb 04, 2010|Chris Cooley|https://www.youtube.com/watch?v=T1BkZRIsUf8||1:45||
-|Feb 09, 2010|Thanks for Donating|http://www.collegehumor.com/video/5922939/jake-and-amir-thanks-for-donating||2:33||
+|Feb 09, 2010|Thanks for Donating|https://www.youtube.com/watch?v=CokTb6xN7S8||2:33||
 |Feb 09, 2010|Video Brainstorm|https://www.youtube.com/watch?v=FlZ8oiXv0y8||1:54|[Outtakes](http://www.facebook.com/photo.php?v=307515059964)|
 |Feb 11, 2010|Blowing Up|https://www.youtube.com/watch?v=hRaQob4d7v0||2:24||
 |Feb 17, 2010|Video Chat|https://www.youtube.com/watch?v=mu_R6xahNt8||2:42||
@@ -347,7 +347,7 @@
 |Nov 30, 2010|Auto Tune The News|https://www.youtube.com/watch?v=8OK8wVLUoIY||2:55|["Poke Me" Song](https://www.youtube.com/watch?v=UIV8G2UCyGc)|
 |Dec 02, 2010|Celebration|https://www.youtube.com/watch?v=FkCBS9Coqxc||1:31|[Outtakes & BTS](http://www.facebook.com/photo.php?v=475530619964)|
 |Dec 07, 2010|Rock Paper Scissors|https://www.youtube.com/watch?v=ean7ZR6XmG4||2:01||
-|Dec 09, 2010|Bake Sale|http://www.collegehumor.com/video/6362611/jake-and-amir-bake-sale||3:51||
+|Dec 09, 2010|Bake Sale|https://www.youtube.com/watch?v=xN342JUNzHs||3:51||
 |Dec 14, 2010|Wikileaks|https://www.youtube.com/watch?v=JgNAvp6HXtg||2:19||
 |Dec 16, 2010|Darren|https://www.youtube.com/watch?v=e7sFNhFhdYc||1:59||
 |Dec 21, 2010|Jake's Cousin|https://www.youtube.com/watch?v=9Y43GUmipdg||1:22||
@@ -386,7 +386,7 @@
 |Apr 04, 2011|Group Hug (BACARDI)|http://www.youtube.com/watch?v=bhs2netIX_I||1:36||
 |Apr 05, 2011|Videos|https://www.youtube.com/watch?v=1isDbw8Cufg||2:07||
 |Apr 07, 2011|Set Me Up|https://www.youtube.com/watch?v=BZtiWgvXLhE||2:16||
-|Apr 11, 2011|LOLaid Japan|http://www.collegehumor.com/video/6469196/jake-and-amr-lolaid||2:03||
+|Apr 11, 2011|LOLaid Japan|https://www.youtube.com/watch?v=K3vn1D2qYD8||2:03||
 |Apr 12, 2011|Rick Fox 2|https://www.youtube.com/watch?v=ET_FBFPjYGs||1:58|[Outtakes](http://www.facebook.com/photo.php?v=10150170380769965)|
 |Apr 14, 2011|High School|https://www.youtube.com/watch?v=Q_YgACBh_fY||2:24||
 |Apr 19, 2011|Business Ideas|https://www.youtube.com/watch?v=WSnLU68auVI||2:48|[Outtakes & BTS](http://www.facebook.com/photo.php?v=10150164671709965)|
@@ -436,16 +436,16 @@
 |Sep 06, 2011|Suitcase|https://www.youtube.com/watch?v=MEzQAxs6I3g||1:50||
 |Sep 08, 2011|Scrapbook|https://www.youtube.com/watch?v=s1lYb0pTL1M||1:58||
 |Sep 13, 2011|Notified|https://www.youtube.com/watch?v=VhzxA2N_ELA||2:33||
-|Sep 15, 2011|Trouble|http://www.collegehumor.com/video/6608973||1:59||
-|Sep 20, 2011|Economic Crisis 2|http://www.collegehumor.com/video/6612047||3:29||
-|Sep 22, 2011|Nuggets|http://www.collegehumor.com/video/6612635||1:51||
-|Sep 27, 2011|Important Meeting|http://www.collegehumor.com/video/6616261||1:43||
-|Sep 29, 2011|Hospital|http://www.collegehumor.com/video/6617395||2:18||
-|Oct 04, 2011|Rap Teacher Part 2 (with Hoodie Allen)|http://www.collegehumor.com/video/6621129||2:21|[Outtakes](http://www.facebook.com/photo.php?v=10150613740864965)|
-|Oct 06, 2011|Blender|http://www.collegehumor.com/video/6622410||2:34||
+|Sep 15, 2011|Trouble|https://www.youtube.com/watch?v=47JZow5QyZM||1:59||
+|Sep 20, 2011|Economic Crisis 2|https://www.youtube.com/watch?v=ITUKsQsEwgQ||3:29||
+|Sep 22, 2011|Nuggets|https://www.youtube.com/watch?v=PtnqgKCaydM||1:51||
+|Sep 27, 2011|Important Meeting|https://www.youtube.com/watch?v=m1dzzIzlF94||1:43||
+|Sep 29, 2011|Hospital|https://www.youtube.com/watch?v=S9p8YZonU2k||2:18||
+|Oct 04, 2011|Rap Teacher Part 2 (with Hoodie Allen)|https://www.youtube.com/watch?v=kOgnCPPBA2w||2:21|[Outtakes](https://www.youtube.com/watch?v=dtqKl17NQeY)|
+|Oct 06, 2011|Blender|https://www.youtube.com/watch?v=JPJtNBSgiyY||2:34||
 |Oct 11, 2011|Fired|https://youtu.be/ZbUpdRDXq7E||28:32||
-|Oct 13, 2011|Fired Commercial|http://www.collegehumor.com/video/6626754||3:07|[Outtakes](http://www.facebook.com/photo.php?v=10150340935059965)|
-|Oct 18, 2011|Rick Fox 3|http://www.collegehumor.com/video/6629871||2:35||
+|Oct 13, 2011|Fired Commercial|https://www.youtube.com/watch?v=Z_xe3eagOz8||3:07|[Outtakes](https://www.youtube.com/watch?v=ZhLinEAikHA)|
+|Oct 18, 2011|Rick Fox 3|https://www.youtube.com/watch?v=7dihPq9SaPY||2:35||
 |Oct 20, 2011|Charity|https://www.youtube.com/watch?v=3_t4savN-ZE||2:25||
 |Oct 25, 2011|Earrings|https://www.youtube.com/watch?v=r2dnEAcPgEI||2:27||
 |Oct 27, 2011|Halloween Costumes|https://www.youtube.com/watch?v=-s2aGZEt1CE||1:40||

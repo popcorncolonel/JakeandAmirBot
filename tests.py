@@ -120,4 +120,9 @@ class JjkaeTest(unittest.TestCase):
 
         print("Tested mod actions")
 
+if __name__ == '__main__':
+    suite = unittest.TestLoader().loadTestsFromTestCase(JjkaeTest)
+    results = unittest.TextTestRunner(verbosity=0).run(suite)
+    print(results.errors)
+
 

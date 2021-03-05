@@ -1708,6 +1708,12 @@
                 "number": 475,
                 "reddit_url": "/r/jakeandamir/comments/lk8hry/episode_475_growth_spurt/",
                 "title": "Growth Spurt"
+            },
+            {
+                "duration": null,
+                "number": 476,
+                "reddit_url": "/r/jakeandamir/comments/lpjclf/episode_476_pok\u00e9mon_cards/",
+                "title": "Pok\u00e9mon Cards"
             }
         ],
         "headgum": [
@@ -1720,6 +1726,16 @@
                 "episode_num": 37,
                 "reddit_url": "/r/jakeandamir/comments/li7bhc/the_headgum_podcast_episode_37_the_headgum/",
                 "title": "The Headgum Vaccine (w/ John George!)"
+            },
+            {
+                "episode_num": 38,
+                "reddit_url": "/r/jakeandamir/comments/lnbdwh/the_headgum_podcast_episode_38_geoffs_new_fetish/",
+                "title": "Geoff's New Fetish"
+            },
+            {
+                "episode_num": 39,
+                "reddit_url": "/r/jakeandamir/comments/lstqff/the_headgum_podcast_episode_39_bombard_wolfhard_w/",
+                "title": "Bombard Wolfhard (w/ Finn & Billy!)"
             }
         ],
         "nadd": [
@@ -1734,6 +1750,18 @@
                 "number": 13,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/li2mb3/episode_13_cindersworn_w_lou_wilson/",
                 "title": "Cindersworn (w/ Lou Wilson)"
+            },
+            {
+                "duration": null,
+                "number": 14,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ln70ln/episode_14_the_petty_king_of_outerborough_w_lou/",
+                "title": "The Petty King of Outerborough (w/ Lou Wilson)"
+            },
+            {
+                "duration": null,
+                "number": 4,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/lsdzhr/episode_4_the_roots_of_some_evil_w_dm_zac_oyama/",
+                "title": "The Roots of Some Evil (w/ DM Zac Oyama)"
             }
         ],
         "revue": [
@@ -1748,6 +1776,10 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/lkzy50/review_revue_hollywood_star_tours/",
                 "title": "Hollywood Star Tours"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/lqdwf8/review_revue_vests/",
+                "title": "Vests"
             }
         ],
         "twinnovation": [
@@ -1762,6 +1794,18 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/li43qr/twinnovation_toilo_vs_tublet/",
                 "title": "Toilo Vs Tublet"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/ln7b2l/twinnovation_sock_em_2_me/",
+                "title": "Sock 'Em 2 Me"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/lssa3v/twinnovation_stereotherapy/",
+                "title": "Stereotherapy"
             }
         ]
     },
@@ -3579,6 +3623,50 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/fpq90v/twinnovation_ring_has_rung/",
                 "title": "Ring Has Rung"
+            }
+        ]
+    },
+    "Mar 2021": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 477,
+                "reddit_url": "/r/jakeandamir/comments/lv36s0/episode_477_live_show_lightning_round/",
+                "title": "Live Show Lightning Round"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 39,
+                "reddit_url": "/r/jakeandamir/comments/lvcs53/the_headgum_podcast_episode_39_bombard_wolfhard_w/",
+                "title": "Bombard Wolfhard (w/ Finn Wolfhard & Billy Bryk!)"
+            },
+            {
+                "episode_num": 40,
+                "reddit_url": "/r/jakeandamir/comments/ly7wc9/the_headgum_podcast_episode_40_branded_content/",
+                "title": "Branded Content Pitches"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 15,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ly483q/episode_15_portrait_of_a_blade/",
+                "title": "Portrait of a Blade "
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/lvxpyz/review_revue_the_eiffel_tower/",
+                "title": "The Eiffel Tower"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/ly4h44/twinnovation_bat_snatchers/",
+                "title": "Bat Snatchers"
             }
         ]
     },

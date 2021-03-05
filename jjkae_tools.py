@@ -43,7 +43,6 @@ def send_rewatch_email(permalink, title):
     """
     email_list = [
         'popcorncolonel' '@' 'gmail.com',
-        'jenna.n.friedman' '@' 'gmail.com',
         'cmey63' '@' 'gmail.com',
     ]
     send_email(subject=u'Jake and Amir Subreddit Rewatch: {}'.format(title),
