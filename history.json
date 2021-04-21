@@ -404,6 +404,99 @@
             }
         ]
     },
+    "Apr 2021": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 482,
+                "reddit_url": "/r/jakeandamir/comments/mkekgl/episode_482_easy_poetry/",
+                "title": "Easy Poetry"
+            },
+            {
+                "duration": null,
+                "number": 483,
+                "reddit_url": "/r/jakeandamir/comments/mp8g18/episode_483_orion_dating_app/",
+                "title": "Orion Dating App"
+            },
+            {
+                "duration": null,
+                "number": 484,
+                "reddit_url": "/r/jakeandamir/comments/mtt26b/episode_484_antisocial_distance_wavital_ash/",
+                "title": "Antisocial Distance (w/Avital Ash!)"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 44,
+                "reddit_url": "/r/jakeandamir/comments/mifpag/the_headgum_podcast_episode_44_the_audit_pt_2_w/",
+                "title": "The Audit Pt. 2 (w/ Melanie Bracewell!)"
+            },
+            {
+                "episode_num": 45,
+                "reddit_url": "/r/jakeandamir/comments/mncf76/the_headgum_podcast_episode_45_the_audit_pt_3_w/",
+                "title": "The Audit Pt. 3 (w/ Reilly Anspaugh & Georges Saba!)"
+            },
+            {
+                "episode_num": 46,
+                "reddit_url": "/r/jakeandamir/comments/mryjj2/the_headgum_podcast_episode_46_the_final_audit/",
+                "title": "The Final Audit"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 18,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/mif8ii/episode_18_temple_of_the_guardians/",
+                "title": "Temple of the Guardians "
+            },
+            {
+                "duration": null,
+                "number": 19,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/mnaki4/episode_19_blade_witch/",
+                "title": "Blade Witch "
+            },
+            {
+                "duration": null,
+                "number": 20,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/mrxlwp/episode_20_olwen_the_sullen/",
+                "title": "Olwen the Sullen "
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/ml6lne/review_revue_the_container_store/",
+                "title": "The Container Store"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/mpzwns/review_revue_baby_gates/",
+                "title": "Baby Gates"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/mulhv8/review_revue_sur_la_table_w_irene_walton/",
+                "title": "Sur La Table (w/ Irene Walton!)"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/mid0u9/twinnovation_cake_in_a_cup/",
+                "title": "Cake in a Cup"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/mn935f/twinnovation_dye_tie/",
+                "title": "Dye Tie"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/mrvd87/twinnovation_kneemenots/",
+                "title": "Knee-Me-Nots"
+            }
+        ]
+    },
     "Aug 2016": {
         "IIWY": [
             {
@@ -3633,6 +3726,30 @@
                 "number": 477,
                 "reddit_url": "/r/jakeandamir/comments/lv36s0/episode_477_live_show_lightning_round/",
                 "title": "Live Show Lightning Round"
+            },
+            {
+                "duration": null,
+                "number": 478,
+                "reddit_url": "/r/jakeandamir/comments/m0a3ip/episode_478_exes_in_texas_wkelcey_ayer/",
+                "title": "Exes in Texas (w/Kelcey Ayer!)"
+            },
+            {
+                "duration": null,
+                "number": 479,
+                "reddit_url": "/r/jakeandamir/comments/m5ei6d/episode_479_scare_me_wjosh_ruben/",
+                "title": "Scare Me (w/Josh Ruben!)"
+            },
+            {
+                "duration": null,
+                "number": 480,
+                "reddit_url": "/r/jakeandamir/comments/magzx2/episode_480_erotic_fiction/",
+                "title": "Erotic Fiction"
+            },
+            {
+                "duration": null,
+                "number": 481,
+                "reddit_url": "/r/jakeandamir/comments/mfjd5y/episode_481_moonshine_passover/",
+                "title": "Moonshine Passover"
             }
         ],
         "headgum": [
@@ -3645,6 +3762,21 @@
                 "episode_num": 40,
                 "reddit_url": "/r/jakeandamir/comments/ly7wc9/the_headgum_podcast_episode_40_branded_content/",
                 "title": "Branded Content Pitches"
+            },
+            {
+                "episode_num": 41,
+                "reddit_url": "/r/jakeandamir/comments/m3dqzx/the_headgum_podcast_episode_41_the_price_is_wright/",
+                "title": "The Price is Wright"
+            },
+            {
+                "episode_num": 42,
+                "reddit_url": "/r/jakeandamir/comments/m8cbbf/the_headgum_podcast_episode_42_keeping_phone/",
+                "title": "Keeping Phone Records (w/ Caleb Hearon & Shelby Wolstein!)"
+            },
+            {
+                "episode_num": 43,
+                "reddit_url": "/r/jakeandamir/comments/mdjmq0/the_headgum_podcast_episode_43_the_audit_pt_1_w/",
+                "title": "The Audit Pt. 1 (w/ Zach Dunn!)"
             }
         ],
         "nadd": [
@@ -3653,12 +3785,50 @@
                 "number": 15,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/ly483q/episode_15_portrait_of_a_blade/",
                 "title": "Portrait of a Blade "
+            },
+            {
+                "duration": null,
+                "number": 16,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/m3bkjw/episode_16_curses_cliffhangers/",
+                "title": "Curses & Cliffhangers "
+            },
+            {
+                "duration": null,
+                "number": 17,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/m89hwc/episode_17_monsters_of_the_mountain/",
+                "title": "Monsters of the Mountain  "
+            },
+            {
+                "duration": null,
+                "number": 5,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/md4fqx/episode_5_the_godwalker_w_dm_zac_oyama/",
+                "title": "The Godwalker (w/ DM Zac Oyama)"
             }
         ],
         "revue": [
             {
                 "reddit_url": "/r/ReviewRevue/comments/lvxpyz/review_revue_the_eiffel_tower/",
                 "title": "The Eiffel Tower"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/m12miq/review_revue_wineries_w_kylie_brakeman/",
+                "title": "Wineries (w/ Kylie Brakeman!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/m63xjr/review_revue_natural_deodorant/",
+                "title": "Natural Deodorant"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/m8car4/review_revue_bonus_friday_bumper_stickers_2/",
+                "title": "BONUS FRIDAY: Bumper Stickers 2"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/mb9nym/review_revue_licorice/",
+                "title": "Licorice"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/mgauph/review_revue_dave_busters_w_lamorne_morris_billy/",
+                "title": "Dave & Busters (w/ Lamorne Morris & Billy Magnussen!)"
             }
         ],
         "twinnovation": [
@@ -3667,6 +3837,30 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/ly4h44/twinnovation_bat_snatchers/",
                 "title": "Bat Snatchers"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/m3btrq/twinnovation_wood_foot/",
+                "title": "Wood Foot"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/m5c7rq/twinnovation_remember_the_13th/",
+                "title": "REMEMBER THE 13TH"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/m90ykq/twinnovation_ogamis/",
+                "title": "Ogamis"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/mdg7vd/twinnovation_scrump/",
+                "title": "Scrump"
             }
         ]
     },
