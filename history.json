@@ -423,6 +423,12 @@
                 "number": 484,
                 "reddit_url": "/r/jakeandamir/comments/mtt26b/episode_484_antisocial_distance_wavital_ash/",
                 "title": "Antisocial Distance (w/Avital Ash!)"
+            },
+            {
+                "duration": null,
+                "number": 485,
+                "reddit_url": "/r/jakeandamir/comments/myqvux/episode_485_road_trip/",
+                "title": "Road Trip"
             }
         ],
         "headgum": [
@@ -440,6 +446,21 @@
                 "episode_num": 46,
                 "reddit_url": "/r/jakeandamir/comments/mryjj2/the_headgum_podcast_episode_46_the_final_audit/",
                 "title": "The Final Audit"
+            },
+            {
+                "episode_num": 47,
+                "reddit_url": "/r/jakeandamir/comments/mwsbfm/the_headgum_podcast_episode_47_the_headgoscars/",
+                "title": "The HeadgOscars"
+            },
+            {
+                "episode_num": 47,
+                "reddit_url": "/r/jakeandamir/comments/mwsbpa/the_headgum_podcast_episode_47_the_headgoscars_w/",
+                "title": "The HeadgOscars (w/ Billy Scafuri!)"
+            },
+            {
+                "episode_num": 48,
+                "reddit_url": "/r/jakeandamir/comments/n1mqnb/the_headgum_podcast_episode_48_couples_counseling/",
+                "title": "Couples Counseling (w/ Avital Ash!)"
             }
         ],
         "nadd": [
@@ -460,6 +481,18 @@
                 "number": 20,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/mrxlwp/episode_20_olwen_the_sullen/",
                 "title": "Olwen the Sullen "
+            },
+            {
+                "duration": null,
+                "number": "Trinyvale - One Shot",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/mwof30/episode_trinyvale_one_shot_proposal_impossible/",
+                "title": "PROPOSAL IMPOSSIBLE "
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/n1kps3/not_another_dd_podcast_dd_court_flammable_brooms/",
+                "title": "D&D Court - Flammable Brooms, Chokeslamming Dragons, and Grandma the Bard "
             }
         ],
         "revue": [
@@ -474,6 +507,14 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/mulhv8/review_revue_sur_la_table_w_irene_walton/",
                 "title": "Sur La Table (w/ Irene Walton!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/mzjdiw/review_revue_childrens_hairdressers/",
+                "title": "Children's Hairdressers"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/n1p549/review_revue_bonus_friday_used_car_dealerships/",
+                "title": "BONUS FRIDAY: Used Car Dealerships"
             }
         ],
         "twinnovation": [
@@ -494,6 +535,12 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/mrvd87/twinnovation_kneemenots/",
                 "title": "Knee-Me-Nots"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/mwmtld/twinnovation_fat_daddies/",
+                "title": "Fat Daddies"
             }
         ]
     },
