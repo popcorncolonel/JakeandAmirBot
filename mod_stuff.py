@@ -95,7 +95,7 @@ def mod_actions(mod_info, force_submit_rewatch=False, testmode=False):
     # Run tests every hour - if any of the tests fail, email me.
     rewatch_days = {'Monday', 'Friday'}
     if force_submit_rewatch or testmode or new_hour != mod_info.hour:
-        if force_submit_rewatch or testmode or (new_day in rewatch_days and int(new_hour) == 8):  # if it turns to be 8am, post the rewatch!
+        if force_submit_rewatch or testmode or (new_day in rewatch_days and int(new_hour) == 7):  # if it turns to be 7am, post the rewatch!
             post_new_rewatch(mod_info, testmode)
     mod_info.day = new_day
     mod_info.hour = new_hour

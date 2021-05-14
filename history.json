@@ -4334,6 +4334,68 @@
             }
         ]
     },
+    "May 2021": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 486,
+                "reddit_url": "/r/jakeandamir/comments/n3q1m4/episode_486_horses_ass_wjasper_william_cartwright/",
+                "title": "Horse's Ass (w/Jasper William Cartwright!)"
+            },
+            {
+                "duration": null,
+                "number": 487,
+                "reddit_url": "/r/jakeandamir/comments/n8z32d/episode_487_naptime/",
+                "title": "Naptime"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 49,
+                "reddit_url": "/r/jakeandamir/comments/n6tccm/the_headgum_podcast_episode_49_downtown/",
+                "title": "Downtown"
+            },
+            {
+                "episode_num": 50,
+                "reddit_url": "/r/jakeandamir/comments/nc39k0/the_headgum_podcast_episode_50_cheugy_w_lauren/",
+                "title": "Cheugy (w/ Lauren Lapkus!)"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 21,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/n6ncjr/episode_21_the_crux/",
+                "title": "The Crux "
+            },
+            {
+                "duration": null,
+                "number": 22,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/nc1cad/episode_22_ghost_dragon/",
+                "title": "Ghost Dragon"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/n9rspm/review_revue_nair/",
+                "title": "Nair"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/n6psu4/twinnovation_sexercise/",
+                "title": "Sexercise"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/nbztz5/twinnovation_the_panini/",
+                "title": "The Panini"
+            }
+        ]
+    },
     "Nov 2016": {
         "IIWY": [
             {
