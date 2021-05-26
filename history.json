@@ -4347,6 +4347,18 @@
                 "number": 487,
                 "reddit_url": "/r/jakeandamir/comments/n8z32d/episode_487_naptime/",
                 "title": "Naptime"
+            },
+            {
+                "duration": null,
+                "number": 488,
+                "reddit_url": "/r/jakeandamir/comments/ne7psz/episode_488_playstation/",
+                "title": "Playstation"
+            },
+            {
+                "duration": null,
+                "number": 489,
+                "reddit_url": "/r/jakeandamir/comments/nk7w7p/episode_489_cereal_mascots/",
+                "title": "Cereal Mascots"
             }
         ],
         "headgum": [
@@ -4359,6 +4371,11 @@
                 "episode_num": 50,
                 "reddit_url": "/r/jakeandamir/comments/nc39k0/the_headgum_podcast_episode_50_cheugy_w_lauren/",
                 "title": "Cheugy (w/ Lauren Lapkus!)"
+            },
+            {
+                "episode_num": 51,
+                "reddit_url": "/r/jakeandamir/comments/nhn59c/the_headgum_podcast_episode_51_no_vaccine_for/",
+                "title": "No Vaccine for Teens"
             }
         ],
         "nadd": [
@@ -4373,12 +4390,30 @@
                 "number": 22,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/nc1cad/episode_22_ghost_dragon/",
                 "title": "Ghost Dragon"
+            },
+            {
+                "duration": null,
+                "number": 23,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/nhlgso/episode_23_scrappers/",
+                "title": "Scrappers "
             }
         ],
         "revue": [
             {
                 "reddit_url": "/r/ReviewRevue/comments/n9rspm/review_revue_nair/",
                 "title": "Nair"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/nf4q7d/review_revue_monopoly/",
+                "title": "Monopoly"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/nhn4wp/review_revue_bonus_friday_car_decals/",
+                "title": "BONUS FRIDAY: Car Decals"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/nkkbk7/review_revue_rolling_backpacks/",
+                "title": "Rolling Backpacks"
             }
         ],
         "twinnovation": [
@@ -4393,6 +4428,12 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/nbztz5/twinnovation_the_panini/",
                 "title": "The Panini"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/nhjinr/twinnovation_eaves/",
+                "title": "Eaves"
             }
         ]
     },
