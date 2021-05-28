@@ -4376,6 +4376,11 @@
                 "episode_num": 51,
                 "reddit_url": "/r/jakeandamir/comments/nhn59c/the_headgum_podcast_episode_51_no_vaccine_for/",
                 "title": "No Vaccine for Teens"
+            },
+            {
+                "episode_num": 52,
+                "reddit_url": "/r/jakeandamir/comments/nmsrwm/the_headgum_podcast_episode_52_on_the_road/",
+                "title": "On the Road"
             }
         ],
         "nadd": [
@@ -4396,6 +4401,12 @@
                 "number": 23,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/nhlgso/episode_23_scrappers/",
                 "title": "Scrappers "
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/nmoorg/not_another_dd_podcast_dd_court_death_save_coin/",
+                "title": "D&D Court - Death Save Coin, Chill Ragers, & Heating Warforged "
             }
         ],
         "revue": [
@@ -4434,6 +4445,12 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/nhjinr/twinnovation_eaves/",
                 "title": "Eaves"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/nmp8i0/twinnovation_ketchdown/",
+                "title": "Ketchdown"
             }
         ]
     },
