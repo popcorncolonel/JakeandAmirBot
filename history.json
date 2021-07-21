@@ -2888,6 +2888,97 @@
             }
         ]
     },
+    "Jul 2021": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 495,
+                "reddit_url": "/r/jakeandamir/comments/oe21ef/episode_495_too_many_dates/",
+                "title": "Too Many Dates"
+            },
+            {
+                "duration": null,
+                "number": 496,
+                "reddit_url": "/r/jakeandamir/comments/oikbqp/episode_496_impressions/",
+                "title": "Impressions"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/okmnw6/episode_bonus_thursday_testing_testing/",
+                "title": "Testing Testing"
+            },
+            {
+                "duration": null,
+                "number": 497,
+                "reddit_url": "/r/jakeandamir/comments/onopfr/episode_497_la_trip/",
+                "title": "LA Trip"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 57,
+                "reddit_url": "/r/jakeandamir/comments/oc9g2b/the_headgum_podcast_episode_57_penis15/",
+                "title": "PENIS15"
+            },
+            {
+                "episode_num": 58,
+                "reddit_url": "/r/jakeandamir/comments/ogqyml/the_headgum_podcast_episode_58_dane/",
+                "title": "Dane"
+            },
+            {
+                "episode_num": 59,
+                "reddit_url": "/r/jakeandamir/comments/olccbl/the_headgum_podcast_episode_59_spill_the_tea_w/",
+                "title": "Spill the Tea (w/ Zach Kornfeld!)"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 27,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/oc9fvn/episode_27_broken_bonds/",
+                "title": "Broken Bonds "
+            },
+            {
+                "duration": null,
+                "number": 28,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ogncgq/episode_28_lockdown/",
+                "title": "Lockdown"
+            },
+            {
+                "duration": null,
+                "number": 29,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ol831c/episode_29_sirenloch/",
+                "title": "Sirenloch "
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/oc9fzi/review_revue_bonus_friday_jamba_juice/",
+                "title": "BONUS FRIDAY: Jamba Juice"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/oeqgqi/review_revue_sunscreen/",
+                "title": "Sunscreen"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/ojaziy/review_revue_legoland/",
+                "title": "LEGOLAND"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/onxn60/review_revue_kraft_american_singles/",
+                "title": "Kraft American Singles"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/olspg2/twinnovation_covid_breath/",
+                "title": "Covid Breath"
+            }
+        ]
+    },
     "Jun 2016": {
         "IIWY": [
             {
@@ -3284,6 +3375,141 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/hg0lrl/twinnovation_were_back/",
                 "title": "We're Back!"
+            }
+        ]
+    },
+    "Jun 2021": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/o7usvu/off_days_snacks_4/",
+                "title": "Snacks 4"
+            }
+        ],
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 491,
+                "reddit_url": "/r/jakeandamir/comments/nu4vlk/episode_491_the_pearl_thief/",
+                "title": "The Pearl Thief"
+            },
+            {
+                "duration": null,
+                "number": 492,
+                "reddit_url": "/r/jakeandamir/comments/nzgrzw/episode_492_misunderstood/",
+                "title": "Misunderstood"
+            },
+            {
+                "duration": null,
+                "number": 493,
+                "reddit_url": "/r/jakeandamir/comments/o4o6kz/episode_493_cuddle_vs_huddle/",
+                "title": "Cuddle vs. Huddle"
+            },
+            {
+                "duration": null,
+                "number": 494,
+                "reddit_url": "/r/jakeandamir/comments/o9e6mn/episode_494_accent_coach/",
+                "title": "Accent Coach"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 53,
+                "reddit_url": "/r/jakeandamir/comments/nrzoqd/the_headgum_podcast_episode_53_jat/",
+                "title": "Jat"
+            },
+            {
+                "episode_num": 54,
+                "reddit_url": "/r/jakeandamir/comments/nxajwd/the_headgum_podcast_episode_54_geoffrey_the/",
+                "title": "Geoffrey the Dumbass Watches Geoffrey the Dumbass"
+            },
+            {
+                "episode_num": 55,
+                "reddit_url": "/r/jakeandamir/comments/o2jv71/the_headgum_podcast_episode_55_celebrities_dwight/",
+                "title": "Celebrities Dwight (w/ David Young!)"
+            },
+            {
+                "episode_num": 56,
+                "reddit_url": "/r/jakeandamir/comments/o7j78p/the_headgum_podcast_episode_56_taking_callers_w/",
+                "title": "Taking Callers (w/ Billy Bryk!)"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 24,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ntzdk7/episode_24_awakened/",
+                "title": "Awakened "
+            },
+            {
+                "duration": null,
+                "number": 25,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ny0qct/episode_25_flesh_and_blood/",
+                "title": "Flesh and Blood"
+            },
+            {
+                "duration": null,
+                "number": 26,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/o2n03h/episode_26_too_late/",
+                "title": "Too Late "
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/o79nte/not_another_dd_podcast_dd_court_witch_bolts_meta/",
+                "title": "D&D Court - Witch Bolts, Meta Gamers, and the Return of Blasting Gramma"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/npoqq3/review_revue_hotel_spas/",
+                "title": "Hotel Spas"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/nv0ti8/review_revue_breath_mints_w_ben_schwartz/",
+                "title": "Breath Mints (w/ Ben Schwartz!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/o090la/review_revue_moleskin_notebook/",
+                "title": "Moleskin Notebook"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/o0hzv7/review_revue_moleskin_notebooks/",
+                "title": "Moleskin Notebooks"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/o0icoy/review_revue_moleskine_notebooks/",
+                "title": "Moleskine Notebooks"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/o5hpf3/review_revue_jacks/",
+                "title": "Jacks"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/nx6rxn/twinnovation_autotude/",
+                "title": "Autotude"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/o2i33c/twinnovation_butt_brush/",
+                "title": "Butt Brush"
+            },
+            {
+                "duration": null,
+                "number": 300,
+                "reddit_url": "/r/Twinnovation/comments/o9bd2w/twinnovation_episode_300_th_episode_special/",
+                "title": "th Episode Special: FarmBar"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/o9bdxe/twinnovation_special_300th_episode_farmbar/",
+                "title": "SPECIAL 300th EPISODE: FarmBar"
             }
         ]
     },
@@ -4335,6 +4561,18 @@
         ]
     },
     "May 2021": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/nn77m5/off_days_snacks_4/",
+                "title": "Snacks 4"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/noomi4/geoffrey_the_dumbass_quarantine_2/",
+                "title": "Quarantine 2"
+            }
+        ],
         "IIWY": [
             {
                 "duration": null,
@@ -4359,6 +4597,12 @@
                 "number": 489,
                 "reddit_url": "/r/jakeandamir/comments/nk7w7p/episode_489_cereal_mascots/",
                 "title": "Cereal Mascots"
+            },
+            {
+                "duration": null,
+                "number": 490,
+                "reddit_url": "/r/jakeandamir/comments/nosxlj/episode_490_game_night/",
+                "title": "Game Night"
             }
         ],
         "headgum": [
