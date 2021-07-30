@@ -2913,6 +2913,12 @@
                 "number": 497,
                 "reddit_url": "/r/jakeandamir/comments/onopfr/episode_497_la_trip/",
                 "title": "LA Trip"
+            },
+            {
+                "duration": null,
+                "number": 498,
+                "reddit_url": "/r/jakeandamir/comments/ors9s5/episode_498_icarly_wmax_and_ivan/",
+                "title": "iCarly (w/Max and Ivan!)"
             }
         ],
         "headgum": [
@@ -2930,6 +2936,16 @@
                 "episode_num": 59,
                 "reddit_url": "/r/jakeandamir/comments/olccbl/the_headgum_podcast_episode_59_spill_the_tea_w/",
                 "title": "Spill the Tea (w/ Zach Kornfeld!)"
+            },
+            {
+                "episode_num": 60,
+                "reddit_url": "/r/jakeandamir/comments/opxr9k/the_headgum_podcast_episode_60_nitpick_british/",
+                "title": "Nitpick British Twits"
+            },
+            {
+                "episode_num": 61,
+                "reddit_url": "/r/jakeandamir/comments/ougdoe/the_headgum_podcast_episode_61_johnny_is_the/",
+                "title": "Johnny is the Segment"
             }
         ],
         "nadd": [
@@ -2950,6 +2966,18 @@
                 "number": 29,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/ol831c/episode_29_sirenloch/",
                 "title": "Sirenloch "
+            },
+            {
+                "duration": null,
+                "number": "Bahumia Two-Shot",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/opufnr/episode_bahumia_twoshot_treasured_heroes_w_dm/",
+                "title": "Treasured Heroes (w/ DM Jasper William Cartwright)"
+            },
+            {
+                "duration": null,
+                "number": "Bahumia Two-Shot",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ougzee/episode_bahumia_twoshot_potcedonias_reckoning_w/",
+                "title": "Potcedonia's Reckoning (w/ DM Jasper William Cartwright)"
             }
         ],
         "revue": [
@@ -2968,6 +2996,14 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/onxn60/review_revue_kraft_american_singles/",
                 "title": "Kraft American Singles"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/opxqy4/review_revue_bonus_friday_rest_stops/",
+                "title": "BONUS FRIDAY: Rest Stops"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/osihyv/review_revue_directors_chairs/",
+                "title": "Director's Chairs"
             }
         ],
         "twinnovation": [
@@ -2976,6 +3012,12 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/olspg2/twinnovation_covid_breath/",
                 "title": "Covid Breath"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/opue6z/twinnovation_spectacles_testicles_tits_clts/",
+                "title": "Spectacles, Testicles, Tits, & Cl*ts"
             }
         ]
     },

@@ -362,9 +362,9 @@
 |Feb 03, 2011|Beeper|https://www.youtube.com/watch?v=4JoaVN0aOx4||3:08||
 |Feb 08, 2011|Bucket List|https://www.youtube.com/watch?v=s-ZAYxALgb8||3:31|[Outtakes](http://www.facebook.com/photo.php?v=500928264964)|
 |Feb 09, 2011|Mission (BACARDI)|http://www.youtube.com/watch?v=JfcbzdWMqGY||1:32||
-|Feb 09, 2011|Togetherness begins... (BACARDI)|http://www.youtube.com/watch?v=VdSmyu4ULCE||1:55||
+|Feb 09, 2011|Togetherness begins... (BACARDI)|https://www.youtube.com/watch?v=oWRvgIHIm1Y||1:55||
 |Feb 09, 2011|Elevators (BACARDI)|http://www.youtube.com/watch?v=HHmLHhUnbK0||1:45||
-|Feb 09, 2011|Work Less (BACARDI)|http://www.youtube.com/watch?v=fEW9sEKPVjg| [vimeo](http://vimeo.com/20609413)|1:39||
+|Feb 09, 2011|Work Less (BACARDI)|https://www.youtube.com/watch?v=VVgcaTT17j8| [vimeo](http://vimeo.com/20609413)|1:39||
 |Feb 10, 2011|Soda|https://www.youtube.com/watch?v=iG5sPQAnALI||1:46||
 |Feb 15, 2011|New Voice|https://www.youtube.com/watch?v=hs_fjkfDT_w||2:20||
 |Feb 17, 2011|Triathlon|https://www.youtube.com/watch?v=INVdbXTuPVI||2:24||
@@ -379,20 +379,20 @@
 |Mar 30, 2011|Powder|https://www.youtube.com/watch?v=-6UzVU0lUJM||1:47||
 |Mar 31, 2011|Tutors|https://www.youtube.com/watch?v=5B19Qv8gFgc||2:19||
 |Apr 04, 2011|Charades (BACARDI)|http://www.youtube.com/watch?v=JwI8NpyiovE||1:09||
-|Apr 04, 2011|Group Hug (BACARDI)|http://www.youtube.com/watch?v=bhs2netIX_I||1:36||
+|Apr 04, 2011|Group Hug (BACARDI)|https://www.youtube.com/watch?v=IFm_BFKFjGc||1:36||
 |Apr 05, 2011|Videos|https://www.youtube.com/watch?v=1isDbw8Cufg||2:07||
 |Apr 07, 2011|Set Me Up|https://www.youtube.com/watch?v=BZtiWgvXLhE||2:16||
 |Apr 11, 2011|LOLaid Japan|https://www.youtube.com/watch?v=K3vn1D2qYD8||2:03||
-|Apr 12, 2011|Rick Fox 2|https://www.youtube.com/watch?v=ET_FBFPjYGs||1:58|[Outtakes](http://www.facebook.com/photo.php?v=10150170380769965)|
+|Apr 12, 2011|Rick Fox 2|https://www.youtube.com/watch?v=ET_FBFPjYGs||1:58|[Outtakes](https://www.youtube.com/watch?v=aVZp9per1iU)|
 |Apr 14, 2011|High School|https://www.youtube.com/watch?v=Q_YgACBh_fY||2:24||
-|Apr 19, 2011|Business Ideas|https://www.youtube.com/watch?v=WSnLU68auVI||2:48|[Outtakes & BTS](http://www.facebook.com/photo.php?v=10150164671709965)|
-|Apr 21, 2011|Fedora|https://www.youtube.com/watch?v=_U16yPQHTCY||1:49|[Outtakes](http://www.facebook.com/photo.php?v=10150166193119965)|
+|Apr 19, 2011|Business Ideas|https://www.youtube.com/watch?v=WSnLU68auVI||2:48|[Outtakes & BTS](https://www.youtube.com/watch?v=BOen5-ylINc&t=9s)|
+|Apr 21, 2011|Fedora|https://www.youtube.com/watch?v=_U16yPQHTCY||1:49|[Outtakes](https://www.youtube.com/watch?v=nf94wFUWaY0)|
 |Apr 26, 2011|Fashion Blog|https://www.youtube.com/watch?v=j0VOuvQljdE||2:26||
 |Apr 28, 2011|Knives|https://www.youtube.com/watch?v=BNSgBlksGgg||1:58||
-|May 03, 2011|Facebook Privacy|https://www.youtube.com/watch?v=-DN1TIDZPH4||2:23|[Outtakes](http://www.facebook.com/photo.php?v=10150178996924965)|
-|May 04, 2011|Obstacle Course (BACARDI)|http://www.youtube.com/watch?v=NWGTo2EtkHg||1:43||
-|May 04, 2011|Office Bowl (BACARDI)|http://www.youtube.com/watch?v=ffWdfPlfx2I||1:15||
-|May 04, 2011|Unknown Co-worker (BACARDI)|http://www.youtube.com/watch?v=AhvTvKCx1es||1:32||
+|May 03, 2011|Facebook Privacy|https://www.youtube.com/watch?v=-DN1TIDZPH4||2:23|[Outtakes](https://www.youtube.com/watch?v=_xnRm-5gaEs)|
+|May 04, 2011|Obstacle Course (BACARDI)|https://www.youtube.com/watch?v=P-kGCuFm8ko||1:43||
+|May 04, 2011|Office Bowl (BACARDI)|https://www.youtube.com/watch?v=b-4jC_P25ac||1:15||
+|May 04, 2011|Unknown Co-worker (BACARDI)|https://www.youtube.com/watch?v=8kyv_RdidF0||1:32||
 |May 05, 2011|Doobs|https://www.youtube.com/watch?v=W5w3gLkfqfc||1:48||
 |May 10, 2011|Boot Camp|https://www.youtube.com/watch?v=Vw8MlJ7xvmQ||2:22||
 |May 12, 2011|Karate|https://www.youtube.com/watch?v=xnCtl14XCzI||1:38||
