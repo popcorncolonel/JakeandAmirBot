@@ -969,6 +969,43 @@
             }
         ]
     },
+    "Aug 2021": {
+        "IIWY": [
+            {
+                "duration": null,
+                "number": 499,
+                "reddit_url": "/r/jakeandamir/comments/ow8934/episode_499_olympics/",
+                "title": "Olympics"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/oybsi0/episode_testing_testing_psychopath_test/",
+                "title": "Psychopath Test"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 62,
+                "reddit_url": "/r/jakeandamir/comments/oz17lo/the_headgum_podcast_episode_62_worst_episode_yet/",
+                "title": "Worst Episode Yet (w/ Shelby Wolstein!)"
+            }
+        ],
+        "nadd": [
+            {
+                "duration": null,
+                "number": 30,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/oz4aap/episode_30_endoterra/",
+                "title": "Endoterra "
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/owyrup/review_revue_wetherspoons_w_max_ivan/",
+                "title": "Wetherspoons (w/ Max & Ivan!)"
+            }
+        ]
+    },
     "Dec 2016": {
         "GTD": [
             {
