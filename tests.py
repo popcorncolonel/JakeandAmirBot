@@ -104,6 +104,18 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(gtd_obj.ep_type)
         geoff.check_gtd_and_post_if_new(self.mod_info, testmode=True)
 
+    def test_jna(self):
+        import jakeandamir
+        jna_obj = jakeandamir.get_jna_info()
+        self.assertIsNotNone(jna_obj.title)
+        self.assertIsNotNone(jna_obj.reddit_title)
+        self.assertIsNotNone(jna_obj.url)
+        self.assertIsNotNone(jna_obj.desc)
+        self.assertIsNotNone(jna_obj.monthstring)
+        self.assertIsNotNone(jna_obj.duration)
+        self.assertIsNotNone(jna_obj.upload_date)
+        jakeandamir.check_jna_and_post_if_new(self.mod_info, testmode=True)
+
     def test__prints(self):
         import jjkae_tools
         self.mod_info.foundlist = []

@@ -9,6 +9,7 @@ import nadd
 import revue
 import headgum
 import geoff
+import jakeandamir
 import datetime
 import jjkae_tools
 
@@ -23,6 +24,7 @@ force_submit_headgum = False
 force_submit_twins = False
 force_submit_iiwy = False
 force_submit_gtd = False
+force_submit_jna = False
 
 
 def get_timeout(default_timeout):
@@ -73,6 +75,10 @@ def gtd_loop(mod_info, force_submit_gtd=False):
     geoff.check_gtd_and_post_if_new(mod_info, force_submit=force_submit_gtd)
 
 
+def jna_loop(mod_info, force_submit_jna=False):
+    jakeandamir.check_jna_and_post_if_new(mod_info, force_submit=force_submit_jna)
+
+
 def initialize_foundlist():
     iiwy_obj = iiwy.get_iiwy_info()
     twins_obj = twins.get_twins_info()
@@ -81,6 +87,7 @@ def initialize_foundlist():
     headgum_obj = headgum.get_headgum_info()
     abbc_obj = abbc.get_abbc_info()
     gtd_obj = geoff.get_gtd_info()
+    jna_obj = jakeandamir.get_jna_info()
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
           "and description", iiwy_obj.desc, "and sponsors", iiwy_obj.sponsor_list,
           "and duration", iiwy_obj.duration)
@@ -89,12 +96,13 @@ def initialize_foundlist():
     print("Most recent Review Revue is: {}".format(revue_obj.reddit_title))
     print("Most recent Headgum Pod is: {}".format(headgum_obj.reddit_title))
     print("Most recent 8 bit book club is: {}".format(abbc_obj.reddit_title))
-    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, revue_obj.reddit_title, headgum_obj.reddit_title, abbc_obj.reddit_title, gtd_obj.reddit_title]
+    print("Most recent Jake and Amir is: {}".format(jna_obj.reddit_title))
+    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, revue_obj.reddit_title, headgum_obj.reddit_title, abbc_obj.reddit_title, gtd_obj.reddit_title, jna_obj.reddit_title]
     return foundlist
 
 
 def main():
-    global force_submit_iiwy, force_submit_twins, force_submit_nadd, force_submit_revue, force_submit_headgum, force_submit_abbc, force_submit_rewatch, force_submit_gtd
+    global force_submit_iiwy, force_submit_twins, force_submit_nadd, force_submit_revue, force_submit_headgum, force_submit_abbc, force_submit_rewatch, force_submit_gtd, force_submit_jna
 
     default_timeout = 20  # don't spam the servers :D
 
@@ -134,6 +142,9 @@ def main():
             if mod_info.i % 10 == 1:
                 gtd_loop(mod_info, force_submit_gtd)
                 force_submit_gtd = False  # Only do it once
+
+                jna_loop(mod_info, force_submit_jna)
+                force_submit_jna = False  # Only do it once
 
             timeout = get_timeout(default_timeout)
             if timeout != 0:

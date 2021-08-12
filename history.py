@@ -157,3 +157,11 @@ def this_monthstring():
     today_datetime = datetime.datetime.now()
     month, year = today_datetime.strftime('%b'), today_datetime.strftime('%Y')
     return month + " " + year
+
+
+def this_daystring():
+    today_datetime = datetime.datetime.now()
+    day, month, year = today_datetime.strftime('%d'), today_datetime.strftime('%b'), today_datetime.strftime('%Y')
+    return "{} {}, {}".format(month, day, year)
+
+

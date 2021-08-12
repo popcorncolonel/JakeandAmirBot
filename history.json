@@ -982,6 +982,12 @@
                 "number": null,
                 "reddit_url": "/r/jakeandamir/comments/oybsi0/episode_testing_testing_psychopath_test/",
                 "title": "Psychopath Test"
+            },
+            {
+                "duration": null,
+                "number": 500,
+                "reddit_url": "/r/jakeandamir/comments/p1ca8f/episode_500_memory_lane/",
+                "title": "Memory Lane"
             }
         ],
         "headgum": [
@@ -1003,6 +1009,10 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/owyrup/review_revue_wetherspoons_w_max_ivan/",
                 "title": "Wetherspoons (w/ Max & Ivan!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/p1kra2/review_revue_seltzers/",
+                "title": "Seltzers "
             }
         ]
     },

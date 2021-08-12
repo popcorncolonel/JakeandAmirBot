@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import sys
+import json
 import time
 import unittest
 import requests
@@ -153,6 +154,31 @@ def run_jjkae_tests(verbosity=0):
     results = unittest.TextTestRunner(verbosity=verbosity).run(suite)
     return results.errors
 
+
+def get_duration(video_id):
+    url_fmtstring = 'https://www.googleapis.com/youtube/v3/videos?id={video_id}&key={key}&part=contentDetails&safeSearch=none'
+    url = url_fmtstring.format(
+        video_id=video_id,
+        key=reddit_password.get_yt_api_key(),
+    )
+    resp = requests.get(
+        url,
+        timeout=15.,
+        headers={
+            'Cache-Control': 'max-age=0, no-cache',
+        }
+    )
+    json_data = json.loads(resp.text)
+    duration = None
+    if 'items' in json_data and len(json_data['items']) > 0:
+        content_details_duration = json_data['items'][0]['contentDetails']['duration']  # 'PT4M10S'
+        minutes = int(content_details_duration[2:].split('M')[0])
+        seconds = int(content_details_duration[-3:-1])
+        duration = "{}:{}".format(minutes, seconds)
+    return duration
+
+
 if __name__ == '__main__':
     run_jjkae_tests()
+
 
