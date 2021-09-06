@@ -16,24 +16,6 @@ class History:
         with open("history.json", "w") as json_file:
             json.dump(self.history_dict, json_file, sort_keys=True, indent=4)
 
-    def add_abbc_obj(self, abbc_obj):
-        monthstring = abbc_obj.monthstring
-        if monthstring not in self.history_dict:
-            self.history_dict[monthstring] = dict()
-        if 'abbc' not in self.history_dict[monthstring]:
-            self.history_dict[monthstring]['abbc'] = []
-        if hasattr(abbc_obj, 'duration'):
-            self.history_dict[monthstring]['abbc'].append({
-                "title": abbc_obj.title,
-                "reddit_url": abbc_obj.reddit_url,
-                "duration": abbc_obj.duration,
-            })
-        else:
-            self.history_dict[monthstring]['abbc'].append({
-                "title": abbc_obj.title,
-                "reddit_url": abbc_obj.reddit_url,
-            })
-
     def add_nadd_obj(self, nadd_obj):
         monthstring = nadd_obj.monthstring
         if monthstring not in self.history_dict:
