@@ -46,6 +46,7 @@ def send_rewatch_email(permalink, title):
         'popcorncolonel' '@' 'gmail.com',
         'cmey63' '@' 'gmail.com',
         'gabedouda' '@' 'gmail.com',
+        'dylandforbes' '@' 'gmail.com',
     ]
     send_email(subject=u'Jake and Amir Subreddit Rewatch: {}'.format(title),
                body=permalink,
@@ -173,8 +174,8 @@ def get_duration(video_id):
     if 'items' in json_data and len(json_data['items']) > 0:
         content_details_duration = json_data['items'][0]['contentDetails']['duration']  # 'PT4M10S'
         minutes = int(content_details_duration[2:].split('M')[0])
-        seconds = int(content_details_duration[-3:-1])
-        duration = "{}:{}".format(minutes, seconds)
+        seconds = int(content_details_duration[-3:-1].split('S')[0].split('M')[-1])
+        duration = "{}:{:02d}".format(minutes, seconds)
     return duration
 
 

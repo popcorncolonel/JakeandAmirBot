@@ -970,6 +970,13 @@
         ]
     },
     "Aug 2021": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/p6hwd8/off_days_snacks_4/",
+                "title": "Snacks 4"
+            }
+        ],
         "IIWY": [
             {
                 "duration": null,
@@ -988,6 +995,42 @@
                 "number": 500,
                 "reddit_url": "/r/jakeandamir/comments/p1ca8f/episode_500_memory_lane/",
                 "title": "Memory Lane"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/p2tvij/episode_testing_testing_fatherhood/",
+                "title": "Fatherhood"
+            },
+            {
+                "duration": null,
+                "number": 501,
+                "reddit_url": "/r/jakeandamir/comments/p5a135/episode_501_ya_boy/",
+                "title": "Ya Boy!"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/p79fpk/episode_testing_testing_usa/",
+                "title": "USA"
+            },
+            {
+                "duration": null,
+                "number": 502,
+                "reddit_url": "/r/jakeandamir/comments/p9tjgr/episode_502_worst_pizza_ever/",
+                "title": "Worst Pizza Ever"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/pbtv24/episode_testing_testing_game_of_throneskobe/",
+                "title": "Game of Thrones/Kobe!"
+            },
+            {
+                "duration": null,
+                "number": 503,
+                "reddit_url": "/r/jakeandamir/comments/pea3h0/episode_503_the_greatest_height/",
+                "title": "The Greatest Height"
             }
         ],
         "headgum": [
@@ -995,6 +1038,21 @@
                 "episode_num": 62,
                 "reddit_url": "/r/jakeandamir/comments/oz17lo/the_headgum_podcast_episode_62_worst_episode_yet/",
                 "title": "Worst Episode Yet (w/ Shelby Wolstein!)"
+            },
+            {
+                "episode_num": 63,
+                "reddit_url": "/r/jakeandamir/comments/p3j0z7/the_headgum_podcast_episode_63_2nd_annual_state/",
+                "title": "2nd Annual State of the Gum"
+            },
+            {
+                "episode_num": 64,
+                "reddit_url": "/r/jakeandamir/comments/p7xphw/the_headgum_podcast_episode_64_impartial_or/",
+                "title": "Impartial or Simp-Marshall (w/ Ben Marshall!)"
+            },
+            {
+                "episode_num": 65,
+                "reddit_url": "/r/jakeandamir/comments/pciy7x/the_headgum_podcast_episode_65_laughably/",
+                "title": "Laughably Flappable (w/ Billy Scafuri!)"
             }
         ],
         "nadd": [
@@ -1003,6 +1061,24 @@
                 "number": 30,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/oz4aap/episode_30_endoterra/",
                 "title": "Endoterra "
+            },
+            {
+                "duration": null,
+                "number": 31,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/p3fd1h/episode_31_disciples_of_the_scythe/",
+                "title": "Disciples of the Scythe "
+            },
+            {
+                "duration": null,
+                "number": "D&D Court",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/p7ln6k/episode_dd_court_the_players_judge_w_lou_wilson/",
+                "title": "The Player's Judge (w/ Lou Wilson & Zac Oyama)"
+            },
+            {
+                "duration": null,
+                "number": 32,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/pchzji/episode_32_people_on_the_inside/",
+                "title": "People on the Inside "
             }
         ],
         "revue": [
@@ -1013,6 +1089,42 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/p1kra2/review_revue_seltzers/",
                 "title": "Seltzers "
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/p5zd4w/review_revue_piggy_banks/",
+                "title": "Piggy Banks"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/p7xoxm/review_revue_bonus_friday_dangerous_equipment/",
+                "title": "BONUS FRIDAY: Dangerous Equipment"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/paj58i/review_revue_yankee_candles/",
+                "title": "Yankee Candles"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/pf1dnk/review_revue_space_bags/",
+                "title": "Space Bags"
+            }
+        ],
+        "twinnovation": [
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/p3fvon/twinnovation_rotisserme/",
+                "title": "RotisserMe"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/p7vghj/twinnovation_youyear/",
+                "title": "YouYear"
+            },
+            {
+                "duration": null,
+                "number": null,
+                "reddit_url": "/r/Twinnovation/comments/pe2iln/twinnovation_bedbots/",
+                "title": "BedBots"
             }
         ]
     },
@@ -6147,6 +6259,15 @@
                 "number": null,
                 "reddit_url": "/r/Twinnovation/comments/izickd/twinnovation_a_hole_fillers/",
                 "title": "A+ Hole Fillers"
+            }
+        ]
+    },
+    "Sep 2021": {
+        "headgum": [
+            {
+                "episode_num": 66,
+                "reddit_url": "/r/jakeandamir/comments/ph4v6x/the_headgum_podcast_episode_66_geoff_has_covid/",
+                "title": "Geoff Has Covid"
             }
         ]
     }
