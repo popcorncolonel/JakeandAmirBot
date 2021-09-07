@@ -8,6 +8,7 @@ import prawcore
 import time
 import warnings
 import requests
+import feedparser
 
 import history
 
@@ -33,12 +34,11 @@ DEFAULT_STR = ''
 
 
 class NADD:
-    def __init__(self, title, duration, monthstring,
+    def __init__(self, title, monthstring,
                  number=None, reddit_title=None, url=None, reddit_url=None, desc=None):
-        self.number = number
         self.title = title
-        self.duration = duration
         self.monthstring = monthstring
+        self.number = number
         self.reddit_url = reddit_url
         self.reddit_title = reddit_title
         self.url = url
@@ -65,15 +65,9 @@ def get_nadd_info(depth=0):
         r = None
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            naddpod_id = 'ef988f11-5f99-486e-8e7f-cf789aafa720'
-            r = requests.get(
-                'https://art19.com/episodes?series_id={}&sort=-created_at&page[number]=1&page[size]=10'.format(naddpod_id),
-                headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'},
-                timeout=15.0,
-            )
-            j = json.loads(r.text)
-            most_recent_ep = j['data'][0]['attributes']
-            most_recent_ep_id = j['data'][0]['id']
+            rss_loc = 'https://www.omnycontent.com/d/playlist/77bedd50-a734-42aa-9c08-ad86013ca0f9/4dbfc420-53a4-40c6-bbc7-ad8d012bc602/6ede3615-a245-4eae-9087-ad8d012bc631/podcast.rss'
+            rss = feedparser.parse(rss_loc)
+            episode = rss.entries[0]
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:
@@ -85,16 +79,8 @@ def get_nadd_info(depth=0):
         print(e)
         time.sleep(3)
         return get_nadd_info(depth=depth + 1)
-    orig_title = most_recent_ep['title']  # full title including number. `title` is like "Ep. 5: Dark Ritual (The Moonstone Saga)"
-    url = 'https://art19.com/shows/not-another-d-and-d-podcast/episodes/{}'.format(most_recent_ep_id)
-    """
-    duration_secs = most_recent_ep['duration'] // 1000
-    if duration_secs < 3600:
-        duration = '{:02d}:{:02d}'.format(duration_secs // 60, duration_secs % 60)
-    else:
-        duration = '{}:{:02d}:{:02d}'.format(duration_secs // 3600, (duration_secs % 3600) // 60, duration_secs % 60)
-    """
-    duration = None
+    orig_title = episode.title  # full title including number. `title` is like "Eldermourne - Ep. 32: People on the Inside"
+    url = episode.links[-1].href
     episode_num = None
     title = orig_title
     if ': ' in orig_title:
@@ -102,14 +88,12 @@ def get_nadd_info(depth=0):
         episode_num_string = episode_num.split(' ')[-1]  # Ep. 5 -> 5, 'BONUS EPISODE' -> 'EPISODE'
         if episode_num_string.isdigit():
             episode_num = int(episode_num_string)
-    if duration is not None:
-        name = 'Episode {episode_num}: {title} [{duration}]'.format(**locals())
-    elif episode_num is not None:
+    if episode_num is not None:
         name = 'Episode {episode_num}: {title}'.format(**locals())
     else:
         name = 'Not Another D&D Podcast: {orig_title}'.format(**locals())
     reddit_title = name
-    desc = most_recent_ep['description']
+    desc = episode.content[-1].value
     desc = re.sub('<.*?>', '\n', desc).replace('  ', ' ').replace('  ', ' ')  # replace <br> with \n, prevent weird space formatting i guess?
 
     desc = desc.replace('"', "'").strip()
@@ -119,7 +103,6 @@ def get_nadd_info(depth=0):
     nadd_obj = NADD(
         number=episode_num,
         title=title,
-        duration=duration,
         reddit_title=reddit_title,
         monthstring=history.this_monthstring(),
         url=url,

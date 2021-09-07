@@ -8,6 +8,7 @@ import prawcore
 import time
 import warnings
 import requests
+import feedparser
 
 import history
 
@@ -33,13 +34,11 @@ DEFAULT_STR = ''
 
 
 class IIWY:
-    def __init__(self, number, title, duration, monthstring, sponsor_list, reddit_title=None, url=None, reddit_url=None,
+    def __init__(self, number, title, monthstring, reddit_title=None, url=None, reddit_url=None,
                  desc=None):
         self.number = number
         self.title = title
-        self.duration = duration
         self.monthstring = monthstring
-        self.sponsor_list = sponsor_list
         self.reddit_url = reddit_url
         self.reddit_title = reddit_title
         self.url = url
@@ -51,27 +50,6 @@ class IIWY:
     def __str__(self):
         return self.__repr__()
 
-
-
-def get_sponsors(sponsors):
-    sponsorlist = []
-    if ',' in sponsors:  # Squarespace.com, MeUndies.com, and DollarShaveClub.com!
-        csvs = sponsors.split(',')
-        if len(csvs) == 3:
-            sponsorlist.append(csvs[0].strip())
-            sponsorlist.append(csvs[1].strip())
-            sponsorlist.append(csvs[2].split('and')[1].strip().rstrip('.').rstrip('!'))
-        elif len(csvs) == 4:
-            sponsorlist.append(csvs[0].strip())
-            sponsorlist.append(csvs[1].strip())
-            sponsorlist.append(csvs[2].strip())
-            sponsorlist.append(csvs[3].split('and')[1].strip().rstrip('.').rstrip('!'))
-    elif ' and ' in sponsors:  # Squarespace.com and DollarShaveClub.com
-        sponsorlist.append(sponsors.split(' and ')[0].strip())
-        sponsorlist.append(sponsors.split(' and ')[1].strip().rstrip('.').rstrip('!'))
-    else:  # MeUndies.com
-        sponsorlist.append(sponsors.strip().rstrip('.').rstrip('!'))
-    return sponsorlist
 
 
 def to_reddit_url(link):
@@ -87,22 +65,14 @@ def get_iiwy_info(depth=0):
     name = None
     url = None
     desc = None
-    sponsorlist = None
     episode_num = None
-    filename = None
     try:
         r = None
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            # ART19 HAS A TERRIBLE API
-            r = requests.get(
-                'https://art19.com/episodes?series_id=92b3b85d-6ac4-49b1-88fa-44328c4a69e1&sort=-created_at&page[number]=1&page[size]=10',
-                headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'},
-                timeout=15.0,
-            )
-            j = json.loads(r.text)
-            most_recent_ep = j['data'][0]['attributes']
-            most_recent_ep_id = j['data'][0]['id']
+            rss_loc = 'https://www.omnycontent.com/d/playlist/77bedd50-a734-42aa-9c08-ad86013ca0f9/1c4b3626-f520-4ce1-b3a4-ad8e00138f76/45e167c5-a3df-46b4-bd69-ad8e00138f7f/podcast.rss'
+            rss = feedparser.parse(rss_loc)
+            episode = rss.entries[0]
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:
@@ -114,38 +84,20 @@ def get_iiwy_info(depth=0):
         print(e)
         time.sleep(3)
         return get_iiwy_info(depth=depth + 1)
-    name = most_recent_ep['title']  # name is the full title. `title` is like "The Emotionary"
+    name = episode.title  # name is the full title. `title` is like "501: First Date"
     if 'Episode' not in name:
         name = 'Episode ' + name
     if ':' in name:  # "Episode 191: The Emotionary" -> "The Emotionary"
         title = name.split(':')[1].strip()
     else:
         title = name
-    url = 'https://art19.com/shows/if-i-were-you/episodes/{}'.format(most_recent_ep_id)
-    duration = None
-    ''' Art19 does not provide support for duration!!!
-    duration = soup.findAll('div', {'class': 'trkl_ep_duration'})[0].contents[0].strip()
-    if len(duration) > 0:
-        minutes = int(duration.split(':')[0])
-        if minutes >= 60:
-            hours = str(minutes // 60)
-            minutes = '%02d' % (minutes % 60)
-            duration = hours + ':' + minutes + ':' + duration.split(':')[1]
-        name += ' [' + duration + ']'
-    '''
+    url = episode.links[-1].href
     reddit_title = name
 
-    sponsorlist = []
-    desc = most_recent_ep['description']
+    desc = episode.content[-1].value
     if desc is None:
         desc = ''
     desc = re.sub('<.*?>', '', desc).replace('  ', ' ').replace('  ', ' ')
-    filename = most_recent_ep['file_name']  # lol why is this information included
-    ''' temporarily disabled...
-    if 'brought to you by ' in desc:
-        sponsors = desc.split('brought to you by ')[1].strip()
-        sponsorlist = get_sponsors(sponsors)
-    '''
     # Episode 69: Lmao -> 69
     search = re.search('\d+', name.split(':')[0].split()[-1].strip())
     if search is not None:
@@ -161,14 +113,13 @@ def get_iiwy_info(depth=0):
         print(e)
         time.sleep(1)
 
-    sponsorlist = list(map(to_reddit_url, sponsorlist))
     desc = desc.replace('"', "'").strip()
     name = html_parser.unescape(name)
     title = html_parser.unescape(title)
     desc = html_parser.unescape(desc)
-    iiwy_obj = IIWY(number=episode_num, title=title, duration=duration,
+    iiwy_obj = IIWY(number=episode_num, title=title, 
                     reddit_title=reddit_title, monthstring=history.this_monthstring(), url=url,
-                    sponsor_list=sponsorlist, desc=desc)
+                    desc=desc)
     return iiwy_obj
 
 
@@ -188,28 +139,11 @@ def check_iiwy_and_post_if_new(mod_info, force_submit=False, testmode=False):
             print("Error", e)
             break
     mod_info.foundlist.append(iiwy_obj.number)
-    #mod_info.foundlist.append(iiwy_obj.duration)
 
 
 def get_comment_text(iiwy_obj):
     comment = ''
     comment += '"' + iiwy_obj.desc + '"\n\n---\n\n###Links\n\n [If I Were You Bingo](http://iiwybingo.appspot.com)\n\n [Source Code](https://github.com/popcorncolonel/JakeandAmirBot)'
-    if iiwy_obj.sponsor_list != []:
-        n_sponsors = len(iiwy_obj.sponsor_list)
-        comment += '\n\n This episode\'s sponsors: '
-        if n_sponsors == 1:
-            comment += iiwy_obj.sponsor_list[0]
-        elif n_sponsors == 2:
-            comment += iiwy_obj.sponsor_list[0] + ' and ' + iiwy_obj.sponsor_list[1]
-        elif n_sponsors == 3:
-            comment += (iiwy_obj.sponsor_list[0] + ', ' +
-                        iiwy_obj.sponsor_list[1] + ', and ' +
-                        iiwy_obj.sponsor_list[2])
-        elif n_sponsors == 4:
-            comment += (iiwy_obj.sponsor_list[0] + ', ' +
-                        iiwy_obj.sponsor_list[1] + ', ' +
-                        iiwy_obj.sponsor_list[2] + ', and ' +
-                        iiwy_obj.sponsor_list[3])
     return comment
 
 

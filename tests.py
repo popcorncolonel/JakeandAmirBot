@@ -63,7 +63,6 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(twins_obj.title)
         self.assertIsNotNone(twins_obj.reddit_title)
         self.assertIsNotNone(twins_obj.url)
-        #self.assertIsNotNone(twins_obj.duration)
         self.assertIsNotNone(twins_obj.desc)
         self.assertIsNotNone(twins_obj.monthstring)
         twins.check_twins_and_post_if_new(self.mod_info, testmode=True)
@@ -78,7 +77,6 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(iiwy_obj.url)
         self.assertIsNotNone(iiwy_obj.desc)
         self.assertIsNotNone(iiwy_obj.monthstring)
-        self.assertIs(type(iiwy_obj.sponsor_list), list)
         iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
 
     def test_gtd(self):
@@ -100,7 +98,6 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(jna_obj.url)
         self.assertIsNotNone(jna_obj.desc)
         self.assertIsNotNone(jna_obj.monthstring)
-        self.assertIsNotNone(jna_obj.duration)
         self.assertIsNotNone(jna_obj.upload_date)
         jakeandamir.check_jna_and_post_if_new(self.mod_info, testmode=True)
 

@@ -8,6 +8,7 @@ import prawcore
 import time
 import warnings
 import requests
+import feedparser
 
 import history
 
@@ -34,11 +35,9 @@ DEFAULT_STR = ''
 
 
 class Twinnovation:
-    def __init__(self, number, title, duration, monthstring, reddit_title=None, url=None, reddit_url=None,
+    def __init__(self, title, monthstring, reddit_title=None, url=None, reddit_url=None,
                  desc=None):
-        self.number = number
         self.title = title
-        self.duration = duration
         self.monthstring = monthstring
         self.reddit_url = reddit_url
         self.reddit_title = reddit_title
@@ -58,21 +57,13 @@ def get_twins_info(depth=0):
     name = None
     url = None
     desc = None
-    episode_num = None
-    filename = None
     try:
         r = None
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            # ART19 HAS A TERRIBLE API
-            r = requests.get(
-                'https://art19.com/episodes?series_id=12607e8b-3762-447c-a247-88675b4fa5eb&sort=-created_at&page[number]=1&page[size]=10',
-                headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'},
-                timeout=15.0,
-            )
-            j = json.loads(r.text)
-            most_recent_ep = j['data'][0]['attributes']
-            most_recent_ep_id = j['data'][0]['id']
+            rss_loc = 'https://www.omnycontent.com/d/playlist/77bedd50-a734-42aa-9c08-ad86013ca0f9/84780e98-6153-463b-8eb3-ad89011a5bb1/01b0f31c-ca89-47e5-b4d6-ad89011a5bba/podcast.rss'
+            rss = feedparser.parse(rss_loc)
+            episode = rss.entries[0]
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:
@@ -84,38 +75,13 @@ def get_twins_info(depth=0):
         print(e)
         time.sleep(3)
         return get_twins_info(depth=depth + 1)
-    title = most_recent_ep['title']  # full title including number. `title` is like "86: Pants or Shorts Live at SXSW"
-    url = 'https://art19.com/shows/twinnovation/episodes/{}'.format(most_recent_ep_id)
-    """
-    duration_secs = most_recent_ep['duration'] // 1000
-    if duration_secs < 3600:
-        duration = '{:02d}:{:02d}'.format(duration_secs // 60, duration_secs % 60)
-    else:
-        duration = '{}:{:02d}:{:02d}'.format(duration_secs // 3600, (duration_secs % 3600) // 60, duration_secs % 60)
-    """
-    duration = None
-    #[episode_num, title] = title.split(' ', maxsplit=1)  # now `title` is like "Pants or Shorts Live at SXSW"
-    i = 0
-    episode_num = ''
-    while i < len(title) and True:  # we do it this weird convoluted way because episode 141's title was "141Centi-tube" rather than "141 Centi-tube"... thanks NIC
-        if title[i].isdigit():
-            episode_num = episode_num + title[i]
-        else:
-            break
-        i += 1
-    if episode_num is not '':
-        episode_num = int(episode_num)
-    else:
-        episode_num = None
-    title = title[i:].strip()
-    if duration is not None:
-        name = 'Twinnovation Episode {episode_num}: {title} [{duration}]'.format(**locals())
-    elif episode_num is not None:
-        name = 'Twinnovation Episode {episode_num}: {title}'.format(**locals())
-    else:
-        name = 'Twinnovation: {title}'.format(**locals())
+    title = episode.title  # full title. `title` is like "Pants or Shorts Live at SXSW"
+    url = episode.links[-1].href
+    name = 'Twinnovation: {title}'.format(**locals())
     reddit_title = name
-    desc = most_recent_ep['description']
+    desc = episode.content[-1].value
+    if desc is None:
+        desc = ''
     if desc:
         desc = re.sub('<.*?>', '\n', desc).replace('  ', ' ').replace('  ', ' ')
         desc = desc.replace('"', "'").strip()
@@ -125,9 +91,7 @@ def get_twins_info(depth=0):
     title = html_parser.unescape(title)
     desc = html_parser.unescape(desc)
     twins_obj = Twinnovation(
-        number=episode_num,
         title=title,
-        duration=duration,
         reddit_title=reddit_title,
         monthstring=history.this_monthstring(),
         url=url,
@@ -155,7 +119,6 @@ def check_twins_and_post_if_new(mod_info, force_submit=False, testmode=False):
             print("Error", e)
             break
     mod_info.foundlist.append(twins_obj.reddit_title)
-    #mod_info.foundlist.append(twins_obj.duration)
 
 
 def get_comment_text(twins_obj):

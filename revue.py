@@ -8,6 +8,7 @@ import prawcore
 import time
 import warnings
 import requests
+import feedparser
 
 import history
 
@@ -56,24 +57,11 @@ def get_revue_info(depth=0):
     desc = None
     filename = None
     try:
-        r = None
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            '''
-            Note to self for the future on how to get this:
-            shoot a little GET request over to https://art19.com/series?q=review-revue.
-            Doing it in Python is the easiest, you can just do the one-liner:
-            requests.get('https://art19.com/series?q=review-revue',headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'})
-            '''
-            revue_id = '629ca490-23d2-48dd-9bd1-c173ef8a58ec'
-            r = requests.get(
-                'https://art19.com/episodes?series_id={}&sort=-created_at&page[number]=1&page[size]=10'.format(revue_id),
-                headers={'Accept': 'application/vnd.api+json', 'Authorization': 'token="test-token", credential="test-credential"'},
-                timeout=15.0,
-            )
-            j = json.loads(r.text)
-            most_recent_ep = j['data'][0]['attributes']
-            most_recent_ep_id = j['data'][0]['id']
+            rss_loc = 'https://www.omnycontent.com/d/playlist/77bedd50-a734-42aa-9c08-ad86013ca0f9/1bdbfc2f-7f68-43f0-863a-ad8d012bc79e/e4b4b7ed-31e1-471a-b430-ad8d012bc7a8/podcast.rss'
+            rss = feedparser.parse(rss_loc)
+            episode = rss.entries[0]
     except (KeyboardInterrupt, SystemExit):
         raise
     except requests.exceptions.Timeout:
@@ -85,11 +73,11 @@ def get_revue_info(depth=0):
         print(e)
         time.sleep(3)
         return get_revue_info(depth=depth + 1)
-    title = most_recent_ep['title']  # Full title, that's it. `title` is like "Beginner Guitars"
-    url = 'https://art19.com/shows/review-revue/episodes/{}'.format(most_recent_ep_id)
+    title = episode.title  # Full title, that's it. `title` is like "Beginner Guitars"
+    url = episode.links[-1].href
     name = 'Review Revue: {title}'.format(**locals())
     reddit_title = name
-    desc = most_recent_ep['description']
+    desc = episode.content[-1].value
     desc = re.sub('<.*?>', '\n', desc).replace('  ', ' ').replace('  ', ' ')  # replace <br> with \n, prevent weird space formatting i guess?
 
     desc = desc.replace('"', "'").strip()

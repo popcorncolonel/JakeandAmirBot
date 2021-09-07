@@ -22,19 +22,11 @@ class History:
             self.history_dict[monthstring] = dict()
         if 'nadd' not in self.history_dict[monthstring]:
             self.history_dict[monthstring]['nadd'] = []
-        if hasattr(nadd_obj, 'duration'):
-            self.history_dict[monthstring]['nadd'].append({
-                "title": nadd_obj.title,
-                "reddit_url": nadd_obj.reddit_url,
-                "number": nadd_obj.number,
-                "duration": nadd_obj.duration,
-            })
-        else:
-            self.history_dict[monthstring]['nadd'].append({
-                "title": nadd_obj.title,
-                "reddit_url": nadd_obj.reddit_url,
-                "number": nadd_obj.number,
-            })
+        self.history_dict[monthstring]['nadd'].append({
+            "title": nadd_obj.title,
+            "reddit_url": nadd_obj.reddit_url,
+            "number": nadd_obj.number,
+        })
 
     def add_revue_obj(self, revue_obj):
         monthstring = revue_obj.monthstring
@@ -65,19 +57,11 @@ class History:
             self.history_dict[monthstring] = dict()
         if 'twinnovation' not in self.history_dict[monthstring]:
             self.history_dict[monthstring]['twinnovation'] = []
-        if hasattr(twins_obj, 'duration'):
-            self.history_dict[monthstring]['twinnovation'].append({
-                "title": twins_obj.title,
-                "reddit_url": twins_obj.reddit_url,
-                "number": twins_obj.number,
-                "duration": twins_obj.duration,
-            })
-        else:
-            self.history_dict[monthstring]['twinnovation'].append({
-                "title": twins_obj.title,
-                "reddit_url": twins_obj.reddit_url,
-                "number": twins_obj.number,
-            })
+        self.history_dict[monthstring]['twinnovation'].append({
+            "title": twins_obj.title,
+            "reddit_url": twins_obj.reddit_url,
+            "number": twins_obj.number,
+        })
 
     def add_iiwy(self, iiwy):
         monthstring = iiwy.monthstring
@@ -85,19 +69,11 @@ class History:
             self.history_dict[monthstring] = dict()
         if 'IIWY' not in self.history_dict[monthstring]:
             self.history_dict[monthstring]['IIWY'] = []
-        if hasattr(iiwy, 'duration'):
-            self.history_dict[monthstring]['IIWY'].append({
-                "title": iiwy.title,
-                "reddit_url": iiwy.reddit_url,
-                "number": iiwy.number,
-                "duration": iiwy.duration,
-            })
-        else:
-            self.history_dict[monthstring]['IIWY'].append({
-                "title": iiwy.title,
-                "reddit_url": iiwy.reddit_url,
-                "number": iiwy.number,
-            })
+        self.history_dict[monthstring]['IIWY'].append({
+            "title": iiwy.title,
+            "reddit_url": iiwy.reddit_url,
+            "number": iiwy.number,
+        })
 
     def add_gtd(self, gtd):
         monthstring = gtd.monthstring
