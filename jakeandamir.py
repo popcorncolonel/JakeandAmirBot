@@ -143,7 +143,7 @@ def post_jna(jna_obj, mod_info, testmode=False, depth=0):
         return
 
     try:
-        submission = sub.submit(jna_obj.reddit_title, url=jna_obj.url, flair_text='NEW J&A', flair_id='images', resubmit=True)
+        submission = sub.submit(jna_obj.reddit_title, url=jna_obj.url, resubmit=True)
     except prawcore.exceptions.ServerError as e:
         print("Already submitted?")
         print(e)

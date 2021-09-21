@@ -6263,12 +6263,66 @@
         ]
     },
     "Sep 2021": {
+        "IIWY": [
+            {
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/pkut77/episode_testing_testing_personality/",
+                "title": "Personality"
+            },
+            {
+                "number": 505,
+                "reddit_url": "/r/jakeandamir/comments/pncfsq/episode_505_bad_haircut/",
+                "title": "Bad Haircut"
+            },
+            {
+                "number": 506,
+                "reddit_url": "/r/jakeandamir/comments/prrpwe/episode_506_toilet_porn/",
+                "title": "Toilet Porn"
+            }
+        ],
         "headgum": [
             {
                 "episode_num": 66,
                 "reddit_url": "/r/jakeandamir/comments/ph4v6x/the_headgum_podcast_episode_66_geoff_has_covid/",
                 "title": "Geoff Has Covid"
+            },
+            {
+                "episode_num": 67,
+                "reddit_url": "/r/jakeandamir/comments/plgnvy/the_headgum_podcast_episode_67_end_the_episode_w/",
+                "title": "END THE EPISODE (w/ Marcos Gonzalez!)"
+            },
+            {
+                "episode_num": 68,
+                "reddit_url": "/r/jakeandamir/comments/ppy91l/the_headgum_podcast_episode_68_the_trader_joes/",
+                "title": "The Trader Joes Snacks Dinner-Steaks-Dal Croissantlet Tourna-Mint Chip Ice Cream of Hangry Victors"
             }
-        ]
+        ],
+        "nadd": [
+            {
+                "number": 33,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/plbj1x/episode_33_people_on_the_outside/",
+                "title": "People on the Outside"
+            },
+            {
+                "number": 34,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/pptz5x/episode_34_wyvern_knight/",
+                "title": "Wyvern Knight"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/pjqeyf/review_revue_dog_treats/",
+                "title": "Dog Treats"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/pnxrhg/review_revue_sharpies/",
+                "title": "Sharpies"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/pse6sx/review_revue_podcast_reviews_100th_episode/",
+                "title": "Podcast Reviews (100th Episode!)"
+            }
+        ],
+        "twinnovation": []
     }
 }

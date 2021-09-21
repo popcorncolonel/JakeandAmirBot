@@ -75,6 +75,17 @@ class History:
             "number": iiwy.number,
         })
 
+    def add_jna(self, jna):
+        monthstring = jna.monthstring
+        if monthstring not in self.history_dict:
+            self.history_dict[monthstring] = dict()
+        if 'JNA' not in self.history_dict[monthstring]:
+            self.history_dict[monthstring]['JNA'] = []
+        self.history_dict[monthstring]['JNA'].append({
+            "title": jna.title,
+            "reddit_url": jna.reddit_url,
+        })
+
     def add_gtd(self, gtd):
         monthstring = gtd.monthstring
         if monthstring not in self.history_dict:

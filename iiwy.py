@@ -126,7 +126,7 @@ def get_iiwy_info(depth=0):
 def check_iiwy_and_post_if_new(mod_info, force_submit=False, testmode=False):
     iiwy_obj = get_iiwy_info()
     if not force_submit:
-        if iiwy_obj.number in mod_info.foundlist:  # if episode found before
+        if iiwy_obj.number in mod_info.foundlist or iiwy_obj.title in mod_info.foundlist:  # if episode found before
             return
     while True:
         try:
@@ -138,7 +138,11 @@ def check_iiwy_and_post_if_new(mod_info, force_submit=False, testmode=False):
         except Exception as e:
             print("Error", e)
             break
-    mod_info.foundlist.append(iiwy_obj.number)
+    if iiwy_obj.number:
+        mod_info.foundlist.append(iiwy_obj.number)
+    else:
+        # Episodes like Testing Testing don't have a number.
+        mod_info.foundlist.append(iiwy_obj.title)
 
 
 def get_comment_text(iiwy_obj):
