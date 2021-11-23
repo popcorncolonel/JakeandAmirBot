@@ -108,7 +108,7 @@ def get_rewatch_post_time():
     todays_date = today_datetime.strftime('%Y-%m-%d')
     random.seed(todays_date)
     minutes_after_4pm = random.randint(0, 60 * 4)
-    hour = (4 + minutes_after_4pm // 60)
+    hour = (16 + minutes_after_4pm // 60)
     minute = minutes_after_4pm % 60
     return (hour, minute)
 
@@ -198,11 +198,7 @@ def get_duration(video_id):
 
 
 if __name__ == '__main__':
-    print(get_rewatch_post_time())
-    print(get_rewatch_post_time())
-    print(get_rewatch_post_time())
-    print(get_rewatch_post_time())
-    print(get_rewatch_post_time())
+    print(get_hour())
     print(get_rewatch_post_time())
     #run_jjkae_tests()
 
