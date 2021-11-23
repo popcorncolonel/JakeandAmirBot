@@ -32,6 +32,7 @@ class ModInfo:
 
         self.day = jjkae_tools.get_day()
         self.hour = jjkae_tools.get_hour()
+        self.minute = jjkae_tools.get_minute()
 
         self.r = self.get_r()
         self.i = 1  # How many cycles the program has run for
@@ -92,13 +93,19 @@ def mod_actions(mod_info, force_submit_rewatch=False, testmode=False):
     """
     new_day = jjkae_tools.get_day()
     new_hour = jjkae_tools.get_hour()
+    new_minute = jjkae_tools.get_minute()
     # Run tests every hour - if any of the tests fail, email me.
+    (post_hour, post_minute) = jjkae_tools.get_rewatch_post_time() 
     rewatch_days = {'Monday', 'Friday'}
-    if force_submit_rewatch or testmode or new_hour != mod_info.hour:
-        if force_submit_rewatch or testmode or (new_day in rewatch_days and int(new_hour) == 7):  # if it turns to be 7am, post the rewatch!
-            post_new_rewatch(mod_info, testmode)
+    force_post_new_rewatch = (force_submit_rewatch or testmode)
+    is_new_minute = new_minute != mod_info.minute
+    is_post_time = (new_hour == post_hour) and (new_minute == post_minute)
+    is_post_day = (new_day in rewatch_days)
+    if force_post_new_rewatch or (is_new_minute and is_post_day and is_post_time):
+        post_new_rewatch(mod_info, testmode)
     mod_info.day = new_day
     mod_info.hour = new_hour
+    mod_info.minute = new_minute
 
 def get_submission_text(mod_info, episode):
     """

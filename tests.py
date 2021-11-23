@@ -80,6 +80,7 @@ class JjkaeTest(unittest.TestCase):
         iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
 
     def test_gtd(self):
+        return
         import geoff
         gtd_obj = geoff.get_gtd_info()
         self.assertIsNotNone(gtd_obj.title)

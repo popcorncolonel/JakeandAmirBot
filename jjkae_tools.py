@@ -3,6 +3,7 @@ from __future__ import print_function
 import sys
 import json
 import time
+import random
 import unittest
 import requests
 import datetime
@@ -92,7 +93,24 @@ def get_day():
 def get_hour():
     today_datetime = datetime.datetime.now()
     hour = today_datetime.strftime('%H')
-    return hour
+    return int(hour)
+
+def get_minute():
+    today_datetime = datetime.datetime.now()
+    minute = today_datetime.strftime('%M')
+    return int(minute)
+
+def get_rewatch_post_time():
+    # Hashes today's date (i.e. `2021-11-03`), feed into random() as a seed
+    # Then randomly selects a minute between 4pm and 8pm (spanning 3 time zones for 3 possible blazes)
+    # Returns (hour, minute) tuple
+    today_datetime = datetime.datetime.now()
+    todays_date = today_datetime.strftime('%Y-%m-%d')
+    random.seed(todays_date)
+    minutes_after_4pm = random.randint(0, 60 * 4)
+    hour = (4 + minutes_after_4pm // 60)
+    minute = minutes_after_4pm % 60
+    return (hour, minute)
 
 def set_bottom_sticky(sub, submission):
     """
@@ -180,6 +198,12 @@ def get_duration(video_id):
 
 
 if __name__ == '__main__':
-    run_jjkae_tests()
+    print(get_rewatch_post_time())
+    print(get_rewatch_post_time())
+    print(get_rewatch_post_time())
+    print(get_rewatch_post_time())
+    print(get_rewatch_post_time())
+    print(get_rewatch_post_time())
+    #run_jjkae_tests()
 
 

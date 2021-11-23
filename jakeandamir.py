@@ -161,8 +161,7 @@ def post_jna(jna_obj, mod_info, testmode=False, depth=0):
     print(jna_obj.reddit_title)
     post_subreddit_comment(submission, jna_obj)
     jna_obj.reddit_url = submission.permalink
-    submission.mod.sticky(bottom=True)
-    #replace_top_sticky(sub, submission)
+    #submission.mod.sticky(bottom=True)
     submission.mod.distinguish()
 
     mod_info.past_history.add_jna(jna_obj)
