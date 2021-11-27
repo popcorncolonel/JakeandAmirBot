@@ -2,6 +2,7 @@ from __future__ import print_function
 
 import re
 import sys
+import html
 import praw
 import prawcore
 import time
@@ -31,8 +32,11 @@ class JNA:
     def from_json_obj(cls, obj):
         snippet = obj['snippet']
         title = snippet['title'].split(':')[-1].strip() # ex. Podcast Ideas
+        title = html.unescape(title)
         desc = snippet['description'] # ex. We're back! ...to the drawing board. \n Watch outtakes to this episode at http://www.patreon.com/JA -- plus reaction videos, podcasts, animated sketches and more!
+        desc = html.unescape(desc)
         full_title = snippet['title']
+        full_title = html.unescape(full_title)
         upload_datetime = datetime.datetime.strptime(snippet['publishedAt'], "%Y-%m-%dT%H:%M:%SZ")
 
         if 'videoId' not in obj['id']:  # if, for exapmle, you're a playlist

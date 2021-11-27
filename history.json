@@ -5431,6 +5431,11 @@
                 "episode_num": 77,
                 "reddit_url": "/r/jakeandamir/comments/qxc9h5/the_headgum_podcast_episode_77_bouba_kiki/",
                 "title": "Bouba Kiki"
+            },
+            {
+                "episode_num": 78,
+                "reddit_url": "/r/jakeandamir/comments/r2j2u3/the_headgum_podcast_episode_78_wise_w_billy_bryk/",
+                "title": "Wise (w/ Billy Bryk!)"
             }
         ],
         "nadd": [
@@ -5448,6 +5453,11 @@
                 "number": 41,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/qymh6b/episode_41_cerenysus/",
                 "title": "Cerenysus"
+            },
+            {
+                "number": "Mixed Bag Classic",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/r1k0y4/episode_mixed_bag_classic_tub_brisket_character/",
+                "title": "Tub Brisket Character Workshop"
             }
         ],
         "revue": [
@@ -5466,6 +5476,10 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/r097jy/review_revue_centerpieces/",
                 "title": "Centerpieces"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/r2uukx/review_revue_car_antlers_2/",
+                "title": "Car Antlers 2"
             }
         ],
         "twinnovation": []
