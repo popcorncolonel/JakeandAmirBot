@@ -65,8 +65,7 @@ def headgum_loop(mod_info, force_submit_headgum=False):
 
 
 def gtd_loop(mod_info, force_submit_gtd=False):
-    #geoff.check_gtd_and_post_if_new(mod_info, force_submit=force_submit_gtd)
-    pass
+    geoff.check_gtd_and_post_if_new(mod_info, force_submit=force_submit_gtd)
 
 
 def jna_loop(mod_info, force_submit_jna=False):
@@ -79,7 +78,7 @@ def initialize_foundlist():
     nadd_obj = nadd.get_nadd_info()
     revue_obj = revue.get_revue_info()
     headgum_obj = headgum.get_headgum_info()
-    #gtd_obj = geoff.get_gtd_info()
+    gtd_obj = geoff.get_gtd_info()
     jna_obj = jakeandamir.get_jna_info()
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
           "and description", iiwy_obj.desc)
@@ -88,8 +87,7 @@ def initialize_foundlist():
     print("Most recent Review Revue is: {}".format(revue_obj.reddit_title))
     print("Most recent Headgum Pod is: {}".format(headgum_obj.reddit_title))
     print("Most recent Jake and Amir is: {}".format(jna_obj.reddit_title))
-    #foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, revue_obj.reddit_title, headgum_obj.reddit_title, gtd_obj.reddit_title, jna_obj.reddit_title]
-    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, revue_obj.reddit_title, headgum_obj.reddit_title, jna_obj.reddit_title]
+    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, revue_obj.reddit_title, headgum_obj.reddit_title, gtd_obj.reddit_title, jna_obj.reddit_title]
     return foundlist
 
 

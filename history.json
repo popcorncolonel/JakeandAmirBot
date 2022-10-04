@@ -555,6 +555,16 @@
                 "number": 535,
                 "reddit_url": "/r/jakeandamir/comments/u13x11/episode_535_baby_names/",
                 "title": "Baby Names"
+            },
+            {
+                "number": 536,
+                "reddit_url": "/r/jakeandamir/comments/u66z5u/episode_536_private_chef/",
+                "title": "Private Chef"
+            },
+            {
+                "number": 537,
+                "reddit_url": "/r/jakeandamir/comments/ubf26w/episode_537_ballad_of_hurwitz_and_blumenfeld/",
+                "title": "Ballad Of Hurwitz And Blumenfeld"
             }
         ],
         "JNA": [
@@ -573,6 +583,21 @@
                 "episode_num": 97,
                 "reddit_url": "/r/jakeandamir/comments/tyzqzj/the_headgum_podcast_episode_97_dating_in_la_w/",
                 "title": "Dating in LA (w/ Billy Scafuri!)"
+            },
+            {
+                "episode_num": 98,
+                "reddit_url": "/r/jakeandamir/comments/u432c3/the_headgum_podcast_episode_98_breyers_miggs_w/",
+                "title": "Breyers Miggs (w/ Shelby Wolstein!)"
+            },
+            {
+                "episode_num": 99,
+                "reddit_url": "/r/jakeandamir/comments/u99d1r/the_headgum_podcast_episode_99_the_nice_episode_w/",
+                "title": "The Nice Episode (w/ Caleb & Shelby!)"
+            },
+            {
+                "episode_num": 100,
+                "reddit_url": "/r/jakeandamir/comments/uegzf0/the_headgum_podcast_episode_100_the_100th_episode/",
+                "title": "The 100th Episode"
             }
         ],
         "nadd": [
@@ -585,6 +610,21 @@
                 "number": 7,
                 "reddit_url": "/r/NotAnotherDnDPodcast/comments/tyx8rv/episode_7_ma_goblins_mob_goblin_the_mothership/",
                 "title": "Ma Goblin's Mob Goblin (The Mothership Saga)"
+            },
+            {
+                "number": 8,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/u3zp9t/episode_8_beneath_the_surface_the_mothership_saga/",
+                "title": "Beneath the Surface (The Mothership Saga)"
+            },
+            {
+                "number": 9,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/u9zt83/episode_9_lightkeepers_the_mothership_saga/",
+                "title": "Lightkeepers (The Mothership Saga)"
+            },
+            {
+                "number": "D&D Court",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/uefe7o/episode_dd_court_the_angeled_egg_w_aabria_iyengar/",
+                "title": "The Angeled Egg (w/ Aabria Iyengar)"
             }
         ],
         "revue": [
@@ -595,6 +635,14 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/u1upeb/review_revue_sephora/",
                 "title": "Sephora"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/u6yv8y/review_revue_ziploc_bags/",
+                "title": "Ziploc Bags"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/uch22s/review_revue_perfumeries/",
+                "title": "Perfumeries"
             }
         ],
         "twinnovation": []
@@ -1182,6 +1230,135 @@
                 "title": "BedBots"
             }
         ]
+    },
+    "Aug 2022": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/wefjc7/geoffrey_the_dumbass_children39s_books/",
+                "title": "Children&#39;s Books"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/wpy4vx/geoffrey_the_dumbass_wine/",
+                "title": "Wine"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/x1n2cb/off_days_tennis/",
+                "title": "Tennis"
+            }
+        ],
+        "IIWY": [
+            {
+                "number": 551,
+                "reddit_url": "/r/jakeandamir/comments/wdatau/episode_551_god_mode/",
+                "title": "God Mode"
+            },
+            {
+                "number": 552,
+                "reddit_url": "/r/jakeandamir/comments/wj251c/episode_552_corked_wjosh_ruben/",
+                "title": "Corked (w/Josh Ruben!)"
+            },
+            {
+                "number": 553,
+                "reddit_url": "/r/jakeandamir/comments/wosv30/episode_553_naval_massage_wchris_redd/",
+                "title": "Naval Massage (w/Chris Redd!)"
+            },
+            {
+                "number": 554,
+                "reddit_url": "/r/jakeandamir/comments/wunigu/episode_554_wisdom/",
+                "title": "Wisdom"
+            },
+            {
+                "number": 555,
+                "reddit_url": "/r/jakeandamir/comments/x0j1hp/episode_555_egg_tweet/",
+                "title": "Egg Tweet"
+            },
+            {
+                "number": null,
+                "reddit_url": "/r/jakeandamir/comments/x1d6vg/episode_introducing_the_pit_wall_pilot/",
+                "title": "The Pit Wall [Pilot]"
+            }
+        ],
+        "JNA": [
+            {
+                "reddit_url": "/r/jakeandamir/comments/wmm8qa/jake_and_amir_march_madness_pt_8/",
+                "title": "March Madness Pt. 8"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 114,
+                "reddit_url": "/r/jakeandamir/comments/wgpj4s/the_headgum_podcast_episode_114_hairless_cats/",
+                "title": "Hairless Cats"
+            },
+            {
+                "episode_num": 115,
+                "reddit_url": "/r/jakeandamir/comments/wmfkkk/the_headgum_podcast_episode_115_boys_ep/",
+                "title": "Boys Ep"
+            },
+            {
+                "episode_num": 116,
+                "reddit_url": "/r/jakeandamir/comments/ws863e/the_headgum_podcast_episode_116_joels_goals/",
+                "title": "Joel's Goals"
+            },
+            {
+                "episode_num": 117,
+                "reddit_url": "/r/jakeandamir/comments/wy36lj/the_headgum_podcast_episode_117_seared_citrus/",
+                "title": "Seared Citrus Scallion Soy Salmon with Sides"
+            },
+            {
+                "episode_num": null,
+                "reddit_url": "/r/jakeandamir/comments/x0j1mm/the_headgum_podcast_episode_none_introducing_the/",
+                "title": "Introducing: The Pit Wall [Pilot]"
+            }
+        ],
+        "nadd": [
+            {
+                "number": "The Tortle Tank",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/wgn1en/episode_the_tortle_tank_homebrew_review_w_jasper/",
+                "title": "Homebrew Review! (w/ Jasper William Cartwright)"
+            },
+            {
+                "number": 17,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/wmb7jz/episode_17_the_green_lord_the_dragon_elf/",
+                "title": "The Green Lord (The Dragon Elf Chronicles)"
+            },
+            {
+                "number": "D&D Court",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ws2izw/episode_dd_court_the_pooping_cleric/",
+                "title": "The Pooping Cleric"
+            },
+            {
+                "number": 18,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/wxznzl/episode_18_shroomrot_the_dragon_elf_chronicles/",
+                "title": "Shroomrot (The Dragon Elf Chronicles)"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/weh9kx/review_revue_watertoys_w_daniel_rashid/",
+                "title": "Watertoys (w/ Daniel Rashid!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/wjx5i6/review_revue_bowling_alleys/",
+                "title": "Bowling Alleys"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/wpnher/review_revue_ricola/",
+                "title": "Ricola"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/wvi4qm/review_revue_really_hot_sauce/",
+                "title": "REALLY Hot Sauce"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/x1cg9b/review_revue_plain_white_tees/",
+                "title": "Plain White Tees"
+            }
+        ],
+        "twinnovation": []
     },
     "Dec 2016": {
         "GTD": [
@@ -3508,6 +3685,105 @@
             }
         ]
     },
+    "Jul 2022": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/vs1a9y/geoffrey_the_dumbass_opeds/",
+                "title": "Op-Eds"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/w2weor/off_days_interrupting/",
+                "title": "Interrupting"
+            }
+        ],
+        "IIWY": [
+            {
+                "number": 547,
+                "reddit_url": "/r/jakeandamir/comments/vr1hqo/episode_547_walmart_texas/",
+                "title": "Walmart, Texas"
+            },
+            {
+                "number": 548,
+                "reddit_url": "/r/jakeandamir/comments/vwc8dh/episode_548_fate_on_shuffle/",
+                "title": "Fate on Shuffle"
+            },
+            {
+                "number": 549,
+                "reddit_url": "/r/jakeandamir/comments/w1svzi/episode_549_dueling_vacations/",
+                "title": "Dueling Vacations"
+            },
+            {
+                "number": 550,
+                "reddit_url": "/r/jakeandamir/comments/w7i0jl/episode_550_amber_alert/",
+                "title": "Amber Alert"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 109,
+                "reddit_url": "/r/jakeandamir/comments/vp0psg/the_headgum_podcast_episode_109_paris_sucks/",
+                "title": "Paris Sucks"
+            },
+            {
+                "episode_num": 111,
+                "reddit_url": "/r/jakeandamir/comments/vzj4o4/the_headgum_podcast_episode_111_laurel_or_yandy/",
+                "title": "Laurel or Yandy"
+            },
+            {
+                "episode_num": 112,
+                "reddit_url": "/r/jakeandamir/comments/w54uxv/the_headgum_podcast_episode_112_gash_cab/",
+                "title": "Gash Cab"
+            },
+            {
+                "episode_num": 113,
+                "reddit_url": "/r/jakeandamir/comments/wayw09/the_headgum_podcast_episode_113_the_price_alt/",
+                "title": "The Price Alt Right"
+            }
+        ],
+        "nadd": [
+            {
+                "number": "8-Bit Book Club",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/vto5wi/episode_8bit_book_club_the_super_mario_bros_super/",
+                "title": "The Super Mario Bros. Super Show! (w/ Zac Oyama)"
+            },
+            {
+                "number": 15,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/vzi5dt/episode_15_princess_shiverblight_the_dragon_elf/",
+                "title": "Princess Shiverblight (The Dragon Elf Chronicles)"
+            },
+            {
+                "number": "D&D Court",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/w52o53/episode_dd_court_toxic_tables_confusing_crits_and/",
+                "title": "Toxic Tables, Confusing Crits and the Tragic Tale of John the Horse"
+            },
+            {
+                "number": 16,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/wb08sf/episode_16_the_terrible_fate_of_sir_calder_the/",
+                "title": "The Terrible Fate of Sir Calder (The Dragon Elf Chronicles)"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/vrsnz2/review_revue_custom_framers/",
+                "title": "Custom Framers"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/vx5h2l/review_revue_edible_arrangements/",
+                "title": "Edible Arrangements"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/w2nrqs/review_revue_florists/",
+                "title": "Florists"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/w8nj04/review_revue_paste/",
+                "title": "Paste"
+            }
+        ],
+        "twinnovation": []
+    },
     "Jun 2016": {
         "IIWY": [
             {
@@ -4041,6 +4317,116 @@
                 "title": "SPECIAL 300th EPISODE: FarmBar"
             }
         ]
+    },
+    "Jun 2022": {
+        "GTD": [
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/v6ztxy/geoffrey_the_dumbass_growth/",
+                "title": "Growth"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/vhgwzo/geoffrey_the_dumbass_shark_tooth/",
+                "title": "Shark Tooth"
+            }
+        ],
+        "IIWY": [
+            {
+                "number": 543,
+                "reddit_url": "/r/jakeandamir/comments/v5ww2y/episode_543_parking_ticket/",
+                "title": "Parking Ticket"
+            },
+            {
+                "number": 544,
+                "reddit_url": "/r/jakeandamir/comments/vb65c4/episode_544_summer_lightning_round/",
+                "title": "Summer Lightning Round"
+            },
+            {
+                "number": 545,
+                "reddit_url": "/r/jakeandamir/comments/vgfcju/episode_545_whimsy_wgeoffrey_james/",
+                "title": "WHIMSY (w/Geoffrey James!)"
+            },
+            {
+                "number": 546,
+                "reddit_url": "/r/jakeandamir/comments/vlpezs/episode_546_tv_dinner/",
+                "title": "TV Dinner"
+            }
+        ],
+        "JNA": [
+            {
+                "reddit_url": "/r/jakeandamir/comments/vl4f5f/jake_and_amir_march_madness_pt_8/",
+                "title": "March Madness Pt. 8"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 105,
+                "reddit_url": "/r/jakeandamir/comments/v3ufir/the_headgum_podcast_episode_105_rubbing_ebbles/",
+                "title": "Rubbing Ebbles"
+            },
+            {
+                "episode_num": 106,
+                "reddit_url": "/r/jakeandamir/comments/v9dbb7/the_headgum_podcast_episode_106_stranger_thongs/",
+                "title": "Stranger Thongs"
+            },
+            {
+                "episode_num": 107,
+                "reddit_url": "/r/jakeandamir/comments/ve7x1r/the_headgum_podcast_episode_107_inking_deals/",
+                "title": "Inking Deals"
+            },
+            {
+                "episode_num": 108,
+                "reddit_url": "/r/jakeandamir/comments/vjj7ab/the_headgum_podcast_episode_108_johnnys_apartment/",
+                "title": "Johnny's Apartment"
+            }
+        ],
+        "nadd": [
+            {
+                "number": 12,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/v3rqyq/episode_12_go_go_team_tection_the_mothership_saga/",
+                "title": "Go! Go! Team Tection (The Mothership Saga)"
+            },
+            {
+                "number": "8-Bit Book Club",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/v8wvkt/episode_8bit_book_club_animorphs_the_invasion/",
+                "title": "Animorphs - The Invasion"
+            },
+            {
+                "number": 13,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/vdu4qc/episode_13_alexandrite_the_mothership_saga/",
+                "title": "Alexandrite (The Mothership Saga)"
+            },
+            {
+                "number": "D&D Court",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/vj8kz1/episode_dd_court_a_problem_player_named_flaming/",
+                "title": "A Problem Player Named Flaming Hot Cheeto (w/ Ally Beardsley)"
+            },
+            {
+                "number": 14,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/voktpx/episode_14_unfinished_business_the_mothership_saga/",
+                "title": "Unfinished Business (The Mothership Saga)"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/v6pklx/review_revue_cat_cafes/",
+                "title": "Cat Cafes"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/vbxmkd/review_revue_guitar_center/",
+                "title": "Guitar Center"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/vh8bum/review_revue_reading_lights/",
+                "title": "Reading Lights"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/vmhlt2/review_revue_foreman_grills/",
+                "title": "Foreman Grills"
+            }
+        ],
+        "twinnovation": []
     },
     "Mar 2016": {
         "IIWY": [
@@ -5324,6 +5710,102 @@
             }
         ]
     },
+    "May 2022": {
+        "IIWY": [
+            {
+                "number": 538,
+                "reddit_url": "/r/jakeandamir/comments/ugjs8r/episode_538_chess_lessons/",
+                "title": "Chess Lessons"
+            },
+            {
+                "number": 539,
+                "reddit_url": "/r/jakeandamir/comments/ulldoc/episode_539_slapping/",
+                "title": "Slapping"
+            },
+            {
+                "number": 540,
+                "reddit_url": "/r/jakeandamir/comments/uqpwhk/episode_iiwy_540_nostalgia/",
+                "title": "Episode IIWY_540_Nostalgia"
+            },
+            {
+                "number": 541,
+                "reddit_url": "/r/jakeandamir/comments/uvueka/episode_541_porn_ultimatum/",
+                "title": "Porn Ultimatum"
+            },
+            {
+                "number": 542,
+                "reddit_url": "/r/jakeandamir/comments/v0ueeh/episode_542_tiny_dab/",
+                "title": "Tiny Dab"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 101,
+                "reddit_url": "/r/jakeandamir/comments/ujigjj/the_headgum_podcast_episode_101_relentless_ass/",
+                "title": "Relentless Ass Pics (w/ Cecily & Lucy!)"
+            },
+            {
+                "episode_num": 102,
+                "reddit_url": "/r/jakeandamir/comments/uomqe8/the_headgum_podcast_episode_102_inflation_w/",
+                "title": "Inflation (w/ Georges Saba!)"
+            },
+            {
+                "episode_num": 103,
+                "reddit_url": "/r/jakeandamir/comments/utob1j/the_headgum_podcast_episode_103_fck_it/",
+                "title": "F*ck It"
+            },
+            {
+                "episode_num": 104,
+                "reddit_url": "/r/jakeandamir/comments/uyt8xe/the_headgum_podcast_episode_104_rehired/",
+                "title": "Rehired"
+            }
+        ],
+        "nadd": [
+            {
+                "number": 10,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ujhido/episode_10_to_the_airship_the_mothership_saga/",
+                "title": "To the Airship! (The Mothership Saga)"
+            },
+            {
+                "number": "8-Bit Book Club",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/uo2k9f/episode_8bit_book_club_choose_your_own_dd/",
+                "title": "Choose Your Own D&D Adventure"
+            },
+            {
+                "number": 11,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/ut4ls7/episode_11_beatrix_the_mothership_saga/",
+                "title": "Beatrix (The Mothership Saga)"
+            },
+            {
+                "number": "D&D Court",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/uyorwf/episode_dd_court_super_hot_npcs/",
+                "title": "Super Hot NPCs"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/uhbfqj/review_revue_salsa_classes_w_ed_jones/",
+                "title": "Salsa Classes (w/ Ed Jones!)"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/umcrqm/review_revue_sleepytime_tea/",
+                "title": "Sleepytime Tea"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/urgpyi/review_revue_days_inn/",
+                "title": "Days Inn"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/uwkxt6/review_revue_sunnyd/",
+                "title": "SunnyD"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/v1ljdm/review_revue_museum_of_sex/",
+                "title": "Museum of Sex"
+            }
+        ],
+        "twinnovation": []
+    },
     "Nov 2016": {
         "IIWY": [
             {
@@ -6491,6 +6973,21 @@
         ],
         "twinnovation": []
     },
+    "Oct 2022": {
+        "IIWY": [
+            {
+                "number": 560,
+                "reddit_url": "/r/jakeandamir/comments/xud68u/episode_560_mile_high_club/",
+                "title": "Mile High Club"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/xv8mkc/review_revue_scrub_daddy/",
+                "title": "Scrub Daddy"
+            }
+        ]
+    },
     "Sep 2016": {
         "IIWY": [
             {
@@ -6994,6 +7491,115 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/px1iu6/review_revue_date_spots/",
                 "title": "Date Spots"
+            }
+        ],
+        "twinnovation": []
+    },
+    "Sep 2022": {
+        "GTD": [
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/xdbela/off_days_mean_tweets_2/",
+                "title": "Mean Tweets 2"
+            },
+            {
+                "ep_type": "offdays",
+                "reddit_url": "/r/jakeandamir/comments/xpkr4m/off_days_heat_wave/",
+                "title": "Heat Wave"
+            }
+        ],
+        "IIWY": [
+            {
+                "number": 556,
+                "reddit_url": "/r/jakeandamir/comments/x6akc0/episode_556_so_random_wemily_and_sammy/",
+                "title": "So Random  (w/Emily and Sammy!)"
+            },
+            {
+                "number": 557,
+                "reddit_url": "/r/jakeandamir/comments/xc6v2e/episode_557_swashbuckler/",
+                "title": "Swashbuckler"
+            },
+            {
+                "number": 558,
+                "reddit_url": "/r/jakeandamir/comments/xi5lvm/episode_558_gamer_love/",
+                "title": "Gamer Love"
+            },
+            {
+                "number": 559,
+                "reddit_url": "/r/jakeandamir/comments/xocwu5/episode_559_bad_art/",
+                "title": "Bad Art"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 118,
+                "reddit_url": "/r/jakeandamir/comments/x3vpwk/the_headgum_podcast_episode_118_september_gladness/",
+                "title": "September Gladness"
+            },
+            {
+                "episode_num": 119,
+                "reddit_url": "/r/jakeandamir/comments/x9rcqz/the_headgum_podcast_episode_119_sharty_michael/",
+                "title": "Sharty Michael"
+            },
+            {
+                "episode_num": 120,
+                "reddit_url": "/r/jakeandamir/comments/xfw89q/the_headgum_podcast_episode_120_hen_or_other/",
+                "title": "Hen, or Other"
+            },
+            {
+                "episode_num": 121,
+                "reddit_url": "/r/jakeandamir/comments/xls9q1/the_headgum_podcast_episode_121_green_flags/",
+                "title": "Green Flags"
+            },
+            {
+                "episode_num": 122,
+                "reddit_url": "/r/jakeandamir/comments/xrvlvz/the_headgum_podcast_episode_122_veal/",
+                "title": "Veal"
+            }
+        ],
+        "nadd": [
+            {
+                "number": "Tortle Tank",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/x3lffj/episode_tortle_tank_character_tarot_redirected/",
+                "title": "Character Tarot, Redirected Spells and the Great Inspiration Bake-Off"
+            },
+            {
+                "number": 19,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/x9ryhq/episode_19_hunters_of_the_void_the_dragon_elf/",
+                "title": "Hunters of the Void (The Dragon Elf Chronicles)"
+            },
+            {
+                "number": "D&D Court",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/xfj846/episode_dd_court_the_spelljammer_rebellion/",
+                "title": "The Spelljammer Rebellion"
+            },
+            {
+                "number": 20,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/xlvb90/episode_20_the_sapphire_scale_the_dragon_elf/",
+                "title": "The Sapphire Scale (The Dragon Elf Chronicles)"
+            },
+            {
+                "number": "Tortle Tank",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/xrgzdr/episode_tortle_tank_fighting_birds_mediocre_gods/",
+                "title": "Fighting Birds, Mediocre Gods, and The Hyper Light Cannon"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/x74nr8/review_revue_pediatricians/",
+                "title": "Pediatricians"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/xd0pd2/review_revue_kinetic_sand/",
+                "title": "Kinetic Sand"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/xj1sl3/review_revue_karaoke_machines/",
+                "title": "Karaoke Machines"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/xp9j2o/review_revue_erewhon/",
+                "title": "Erewhon"
             }
         ],
         "twinnovation": []
