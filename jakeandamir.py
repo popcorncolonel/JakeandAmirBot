@@ -65,6 +65,7 @@ def to_reddit_url(link):
 
 def get_jna_info(depth=0):
     jna_channel_id = 'UCNNxmRzlheZAeZuMYakh6vQ'
+    jna_channel_id = 'UCV58y_DbGkuYCNQC2OjJWOw'
     url_fmtstring = 'https://www.googleapis.com/youtube/v3/search?key={key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=15&safeSearch=none'
     url = url_fmtstring.format(
         channel_id=jna_channel_id,

@@ -41,6 +41,8 @@ class GTD:
             ep_type = 'offdays'
         elif 'Day in the Strife' in full_title:
             ep_type = 'dayinthestrife'
+        elif 'Jake and Amir:' in full_title:
+            ep_type = 'jna'
         if 'videoId' not in obj['id']:  # if, for exapmle, you're a playlist
             return None
         return cls(
@@ -54,7 +56,7 @@ class GTD:
         )
 
     def __repr__(self):
-        return "{} object: ".format(self.ep_type) + self.title
+        return "{} object: ".format(self.ep_type) + self.title + '|' + self.reddit_title + '|' + self.url
 
     def __str__(self):
         return self.__repr__()
@@ -88,6 +90,7 @@ def get_gtd_info(depth=0):
         time.sleep(5)
         return get_gtd_info(depth=depth+1)
     most_recent_vidz = [item for item in json_data['items'] if (
+        'Jake and Amir:' in item['snippet']['title'] or
         'Day in the Strife' in item['snippet']['title'] or
         'Off Days' in item['snippet']['title'] or 
         'Geoffrey the Dumbass' in item['snippet']['title']
@@ -150,7 +153,7 @@ def post_gtd(gtd_obj, mod_info, testmode=False, depth=0):
         return
 
     try:
-        if gtd_obj.ep_type in ['gtd', 'offdays', 'dayinthestrife']:
+        if gtd_obj.ep_type in ['gtd', 'offdays', 'dayinthestrife', 'jna']:
             #submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url, flair_text='NEW GEOFFREY THE DUMBASS', flair_id='images')
             submission = sub.submit(gtd_obj.reddit_title, url=gtd_obj.url)
     except prawcore.exceptions.ServerError as e:
@@ -202,4 +205,5 @@ def post_subreddit_comment(submission, gtd_comment):
 if __name__ == '__main__':
     gtd = get_gtd_info()
     print(gtd)
-    get_comment_text(gtd)
+    print(gtd.reddit_title)
+    print(get_comment_text(gtd))

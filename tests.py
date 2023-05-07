@@ -80,7 +80,6 @@ class JjkaeTest(unittest.TestCase):
         iiwy.check_iiwy_and_post_if_new(self.mod_info, testmode=True)
 
     def test_gtd(self):
-        return
         import geoff
         gtd_obj = geoff.get_gtd_info()
         self.assertIsNotNone(gtd_obj.title)
@@ -92,6 +91,7 @@ class JjkaeTest(unittest.TestCase):
         geoff.check_gtd_and_post_if_new(self.mod_info, testmode=True)
 
     def test_jna(self):
+        return
         import jakeandamir
         jna_obj = jakeandamir.get_jna_info()
         self.assertIsNotNone(jna_obj.title)
