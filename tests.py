@@ -118,9 +118,17 @@ class JjkaeTest(unittest.TestCase):
 
         print("Tested mod actions")
 
+    def test_rewatch_all_episodes_parsed(self):
+        from rewatch import episodes
+        for episode in episodes:
+            self.assertIsNotNone(episode.date_str)
+            self.assertIsNotNone(episode.title)
+            self.assertIsNotNone(episode.url)
+            self.assertIsNotNone(episode.duration)
+
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(JjkaeTest)
     results = unittest.TextTestRunner(verbosity=0).run(suite)
-    print(results.errors)
+    print('test failures: ', results.errors)
 
 

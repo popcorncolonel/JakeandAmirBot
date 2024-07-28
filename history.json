@@ -4772,6 +4772,36 @@
                 "ep_type": "offdays",
                 "reddit_url": "/r/jakeandamir/comments/1e4sg7e/off_days_the_environment/",
                 "title": "The Environment"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/1ecienw/geoffrey_the_dumbass_cohabitation_agreement/",
+                "title": "Cohabitation Agreement"
+            },
+            {
+                "ep_type": "jna",
+                "reddit_url": "/r/jakeandamir/comments/1ecirlw/jake_and_amir_food_delivery/",
+                "title": "Food Delivery"
+            },
+            {
+                "ep_type": "jna",
+                "reddit_url": "/r/jakeandamir/comments/1ecivun/jake_and_amir_dog_scroll/",
+                "title": "Dog Scroll"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/1ecjcb0/geoffrey_the_dumbass_legal_advice/",
+                "title": "Legal Advice"
+            },
+            {
+                "ep_type": "jna",
+                "reddit_url": "/r/jakeandamir/comments/1ecjox9/jake_and_amir_march_madness_10/",
+                "title": "March Madness 10"
+            },
+            {
+                "ep_type": "gtd",
+                "reddit_url": "/r/jakeandamir/comments/1eck1ff/geoffrey_the_dumbass_halloween_pranks/",
+                "title": "Halloween Pranks"
             }
         ],
         "IIWY": [
@@ -4811,6 +4841,11 @@
                 "episode_num": 213,
                 "reddit_url": "/r/jakeandamir/comments/1e6ydtt/the_headgum_podcast_episode_213_2d_vance/",
                 "title": "2.D. Vance"
+            },
+            {
+                "episode_num": 214,
+                "reddit_url": "/r/jakeandamir/comments/1eciku3/the_headgum_podcast_episode_214_delve_or_shelves/",
+                "title": "Delve or Shelves"
             }
         ],
         "nadd": [
