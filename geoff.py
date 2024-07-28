@@ -67,9 +67,12 @@ def to_reddit_url(link):
         link = '[' + link.split('.com')[0].split('.org')[0].split('.net')[0] + '](http://' + link.lower() + ')'
     return link
 
-def get_gtd_info(depth=0):
+def get_gtd_info(depth=0, topN=1):
+    '''
+        topN: get the most recent N GtD's
+    '''
     headgum_channel_id = 'UCV58y_DbGkuYCNQC2OjJWOw'
-    url_fmtstring = 'https://www.googleapis.com/youtube/v3/search?key={key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=15&safeSearch=none'
+    url_fmtstring = 'https://www.googleapis.com/youtube/v3/search?key={key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=50&safeSearch=none'
     url = url_fmtstring.format(
         channel_id=headgum_channel_id,
         key=reddit_password.get_yt_api_key(),
@@ -98,7 +101,10 @@ def get_gtd_info(depth=0):
     GTD_objs = [GTD.from_json_obj(item) for item in most_recent_vidz]
     GTD_objs = [x for x in GTD_objs if x]
     if GTD_objs:
-        return GTD_objs[0]
+        if topN > 1:
+            return GTD_objs[:topN]
+        else:
+            return GTD_objs[0]
     else:
         return None
 
@@ -207,3 +213,8 @@ if __name__ == '__main__':
     print(gtd)
     print(gtd.reddit_title)
     print(get_comment_text(gtd))
+
+    gtds = get_gtd_info(topN=50)
+    print(gtds)
+    print("{} videos found out of 25".format(len(gtds)))
+

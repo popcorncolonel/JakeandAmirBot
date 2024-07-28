@@ -90,6 +90,14 @@ class JjkaeTest(unittest.TestCase):
         self.assertIsNotNone(gtd_obj.ep_type)
         geoff.check_gtd_and_post_if_new(self.mod_info, testmode=True)
 
+    def test_multiple_gtds(self):
+        import geoff
+        gtd_objs = geoff.get_gtd_info(topN=50)
+        self.assertGreater(len(gtd_objs), 1)
+        print('found a bunch of gtd objects: ')
+        for obj in gtd_objs:
+            print(obj)
+
     def test_jna(self):
         return
         import jakeandamir

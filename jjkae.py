@@ -81,16 +81,15 @@ def initialize_foundlist():
     nadd_obj = nadd.get_nadd_info()
     revue_obj = revue.get_revue_info()
     headgum_obj = headgum.get_headgum_info()
-    gtd_obj = geoff.get_gtd_info()
-    #jna_obj = jakeandamir.get_jna_info()
+    gtd_objs = geoff.get_gtd_info(topN=50)
     print("Name of most recent IIWY is: \"" + iiwy_obj.title + "\"", "with URL", iiwy_obj.url,
           "and description", iiwy_obj.desc)
     print("Most recent Twinnovation is: {}".format(twins_obj.reddit_title))
     print("Most recent NaddPod is: {}".format(nadd_obj.reddit_title))
     print("Most recent Review Revue is: {}".format(revue_obj.reddit_title))
     print("Most recent Headgum Pod is: {}".format(headgum_obj.reddit_title))
-    #print("Most recent Jake and Amir is: {}".format(jna_obj.reddit_title))
-    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, revue_obj.reddit_title, headgum_obj.reddit_title, gtd_obj.reddit_title]#, jna_obj.reddit_title]
+    print("Most recent Headgum videos are: {}".format([gtd.reddit_title for gtd in gtd_objs]))
+    foundlist = ["", iiwy_obj.number, twins_obj.reddit_title, nadd_obj.reddit_title, revue_obj.reddit_title, headgum_obj.reddit_title] + [gtd_obj.reddit_title for gtd_obj in gtd_objs]
     return foundlist
 
 
