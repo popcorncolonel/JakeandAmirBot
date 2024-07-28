@@ -72,7 +72,7 @@ def get_gtd_info(depth=0, topN=1):
         topN: get the most recent N GtD's
     '''
     headgum_channel_id = 'UCV58y_DbGkuYCNQC2OjJWOw'
-    url_fmtstring = 'https://www.googleapis.com/youtube/v3/search?key={key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=50&safeSearch=none'
+    url_fmtstring = 'https://www.googleapis.com/youtube/v3/search?key={key}&channelId={channel_id}&part=snippet,id&order=date&maxResults=50&safeSearch=none&publishedAfter=2024-01-01T00:00:00Z'
     url = url_fmtstring.format(
         channel_id=headgum_channel_id,
         key=reddit_password.get_yt_api_key(),
