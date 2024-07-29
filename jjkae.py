@@ -156,5 +156,6 @@ def main():
 
 
 if __name__ == "__main__":
+    print('I HOPE THIS IS BEING RUN WITH jjkae_run.py !!!')
     main()
 
