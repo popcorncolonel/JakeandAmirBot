@@ -1665,6 +1665,105 @@
         ],
         "twinnovation": []
     },
+    "Aug 2024": {
+        "GTD": [
+            {
+                "ep_type": "jna",
+                "reddit_url": "/r/jakeandamir/comments/1ex3hf5/jake_and_amir_earthquake/",
+                "title": "Earthquake"
+            }
+        ],
+        "IIWY": [
+            {
+                "number": 40,
+                "reddit_url": "/r/jakeandamir/comments/1eki91o/episode_40_wallpaper/",
+                "title": "Wallpaper"
+            },
+            {
+                "number": 41,
+                "reddit_url": "/r/jakeandamir/comments/1eq7zfw/episode_41_lightning_round/",
+                "title": "Lightning Round"
+            },
+            {
+                "number": 42,
+                "reddit_url": "/r/jakeandamir/comments/1evw88i/episode_42_poop_fiasco/",
+                "title": "Poop Fiasco"
+            },
+            {
+                "number": 43,
+                "reddit_url": "/r/jakeandamir/comments/1f1iqqw/episode_43_jv_dance/",
+                "title": "JV Dance"
+            }
+        ],
+        "headgum": [
+            {
+                "episode_num": 216,
+                "reddit_url": "/r/jakeandamir/comments/1enu31q/the_headgum_podcast_episode_216_minute_to_shin_it/",
+                "title": "Minute To Shin It"
+            },
+            {
+                "episode_num": 217,
+                "reddit_url": "/r/jakeandamir/comments/1etj3fp/the_headgum_podcast_episode_217_johnnys_lawyer_w/",
+                "title": "Johnny's Lawyer (w/ Jacob Dysart!)"
+            },
+            {
+                "episode_num": 218,
+                "reddit_url": "/r/jakeandamir/comments/1ez75ai/the_headgum_podcast_episode_218_goggins/",
+                "title": "Goggins"
+            },
+            {
+                "episode_num": 219,
+                "reddit_url": "/r/jakeandamir/comments/1f4prdn/the_headgum_podcast_episode_219_hospital_johnny/",
+                "title": "Hospital Johnny"
+            }
+        ],
+        "nadd": [
+            {
+                "number": 64,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/1ei22up/episode_64_fatebringers_a_faerie_tale_ending/",
+                "title": "Fatebringers (A Faerie Tale Ending)"
+            },
+            {
+                "number": "Hearthside Chat Q&A",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/1en3kwv/episode_hearthside_chat_qa_summer_fruit_smackdown/",
+                "title": "Summer Fruit Smackdown"
+            },
+            {
+                "number": 65,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/1ethfmz/episode_65_sea_beast_a_faerie_tale_ending/",
+                "title": "Sea Beast (A Faerie Tale Ending)"
+            },
+            {
+                "number": "D&D Court",
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/1eywxv2/episode_dd_court_longwinded_dms_dashing_daddies/",
+                "title": "Long-Winded DMs, Dashing Daddies and The Tale of Ser Flatbread"
+            },
+            {
+                "number": 66,
+                "reddit_url": "/r/NotAnotherDnDPodcast/comments/1f4ujqj/episode_66_wavemother_a_faerie_tale_ending/",
+                "title": "Wavemother (A Faerie Tale Ending)"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/1elblg5/review_revue_playing_cards/",
+                "title": "Playing Cards"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/1er2sfz/review_revue_popsockets/",
+                "title": "Popsockets"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/1ewqaq0/review_revue_pencil_pouches/",
+                "title": "Pencil Pouches"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/1f2b6d6/review_revue_coffee_creamer/",
+                "title": "Coffee Creamer"
+            }
+        ],
+        "twinnovation": []
+    },
     "Dec 2016": {
         "GTD": [
             {
@@ -4829,6 +4928,11 @@
                 "number": 38,
                 "reddit_url": "/r/jakeandamir/comments/1e98pvn/episode_38_old_food/",
                 "title": "Old Food"
+            },
+            {
+                "number": 39,
+                "reddit_url": "/r/jakeandamir/comments/1eetykq/episode_39_would_you_do_that/",
+                "title": "Would You Do That?"
             }
         ],
         "headgum": [
@@ -4891,6 +4995,10 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/1ea1m47/review_revue_baskinrobbins/",
                 "title": "Baskin-Robbins"
+            },
+            {
+                "reddit_url": "/r/ReviewRevue/comments/1efngzs/review_revue_littlest_pet_shop/",
+                "title": "Littlest Pet Shop"
             }
         ],
         "twinnovation": []
@@ -9836,6 +9944,21 @@
             {
                 "reddit_url": "/r/ReviewRevue/comments/16si5bl/review_revue_olive_garden/",
                 "title": "Olive Garden"
+            }
+        ]
+    },
+    "Sep 2024": {
+        "IIWY": [
+            {
+                "number": 44,
+                "reddit_url": "/r/jakeandamir/comments/1f71b27/episode_44_six_degrees/",
+                "title": "Six Degrees"
+            }
+        ],
+        "revue": [
+            {
+                "reddit_url": "/r/ReviewRevue/comments/1f7tch9/review_revue_diaries/",
+                "title": "Diaries"
             }
         ]
     }
